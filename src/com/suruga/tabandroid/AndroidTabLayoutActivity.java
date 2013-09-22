@@ -15,31 +15,32 @@ public class AndroidTabLayoutActivity extends TabActivity {
         
         TabHost tabHost = getTabHost();
         
-        // Tab for Photos
-        TabSpec mainspec = tabHost.newTabSpec("Main");
+        TabSpec guidespec = tabHost.newTabSpec("Guide");
        // photospec.setIndicator("Main", getResources().getDrawable(R.drawable.icon_photos_tab));
-        mainspec.setIndicator("Main");
-        Intent photosIntent = new Intent(this, PhotosActivity.class);
-        mainspec.setContent(photosIntent);
+        guidespec.setIndicator("Guide");
+        Intent guideIntent = new Intent(this, GuideActivity.class);
+        guidespec.setContent(guideIntent);
         
-        // Tab for Songs
         TabSpec settingsspec = tabHost.newTabSpec("Settings");
         // setting Title and Icon for the Tab
-        //songspec.setIndicator("Settings", getResources().getDrawable(R.drawable.icon_songs_tab));
         settingsspec.setIndicator("Settings");
-        Intent songsIntent = new Intent(this, SongsActivity.class);
-        settingsspec.setContent(songsIntent);
+        Intent settingsIntent = new Intent(this, SettingsActivity.class);
+        settingsspec.setContent(settingsIntent);
         
-        // Tab for Videos
         TabSpec itemspec = tabHost.newTabSpec("Item");
-     //   videospec.setIndicator("Videos", getResources().getDrawable(R.drawable.icon_videos_tab));
         itemspec.setIndicator("Items");
-        Intent videosIntent = new Intent(this, VideosActivity.class);
-        itemspec.setContent(videosIntent);
+        Intent itemIntent = new Intent(this, ItemActivity.class);
+        itemspec.setContent(itemIntent);
+        
+        TabSpec analysisspec = tabHost.newTabSpec("Analysis");
+        analysisspec.setIndicator("Analysis");
+        Intent analysisIntent = new Intent(this, AnalysisActivity.class);
+        analysisspec.setContent(analysisIntent);
         
         // Adding all TabSpec to TabHost
-        tabHost.addTab(mainspec); // Adding photos tab
-        tabHost.addTab(settingsspec); // Adding songs tab
-        tabHost.addTab(itemspec); // Adding videos tab
+        tabHost.addTab(guidespec); 
+        tabHost.addTab(settingsspec);
+        tabHost.addTab(itemspec);
+        tabHost.addTab(analysisspec);
     }
 }

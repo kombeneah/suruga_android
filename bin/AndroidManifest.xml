@@ -15,13 +15,14 @@
         </activity>
         
         <!--  Songs Activity -->
-        <activity android:name=".SongsActivity" />
+        <activity android:name="com.suruga.tabandroid.SettingsActivity" />
         
         <!--  Videos Activity -->
-        <activity android:name=".VideosActivity" />
+        <activity android:name="com.suruga.tabandroid.ItemActivity" />
         
         <!--  Photos Activity -->
-        <activity android:name=".PhotosActivity" />
+        <activity android:name="com.suruga.tabandroid.GuideActivity" />
+        <activity android:name=".AnalysisActivity"></activity>
 
     </application>
 </manifest>
