@@ -2,4 +2,12 @@
 <resources>
     <string name="hello">Hello World, AndroidTabLayoutActivity!</string>
     <string name="app_name">AndroidTabLayout</string>
+    
+    <string-array name="city_arrays">
+        <item>Tokyo</item>
+        <item>Kanagawa</item>
+        <item>Osaka</item>
+        <item>Aichi</item>
+        <item>Hokkaido</item>
+    </string-array>
 </resources>
