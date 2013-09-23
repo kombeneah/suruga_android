@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<AbsoluteLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:orientation="vertical"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent">
-  
-  <!-- Screen Design for the SONGS -->
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android1="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!-- Screen Design for the SONGS -->
 
     <Spinner
         android:id="@+id/spinner1"
@@ -14,5 +14,70 @@
         android:layout_x="42dp"
         android:layout_y="21dp"
         android:entries="@array/city_arrays" />
+
+    <com.suruga.tabandroid.SegmentedRadioGroup
+        android1:id="@+id/segment_text"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_margin="5dip"
+        android1:layout_x="72dp"
+        android1:layout_y="138dp"
+        android1:checkedButton="@+id/button_one"
+        android1:orientation="horizontal" >
+
+        <RadioButton
+            android1:id="@id/button_one"
+            android1:layout_width="match_parent"
+            android1:layout_height="match_parent"
+            android1:button="@null"
+            android1:gravity="center"
+            android1:minHeight="33dip"
+            android1:minWidth="80dip"
+            android1:text="Renting"
+            android1:textAppearance="?android:attr/textAppearanceSmall"
+            android1:textColor="@color/radio_colors" />
+
+        <RadioButton
+            android1:id="@+id/button_three"
+            android1:layout_width="match_parent"
+            android1:layout_height="match_parent"
+            android1:button="@null"
+            android1:gravity="center"
+            android1:minHeight="33dip"
+            android1:minWidth="80dip"
+            android1:text="Buying"
+            android1:textAppearance="?android:attr/textAppearanceSmall"
+            android1:textColor="@color/radio_colors" />
+    </com.suruga.tabandroid.SegmentedRadioGroup>
+
+    <TextView
+        android1:id="@+id/textView1"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_x="37dp"
+        android1:layout_y="228dp"
+        android1:text="Savings"
+        android1:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android1:id="@+id/TextView01"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_x="245dp"
+        android1:layout_y="227dp"
+        android1:text="Yen"
+        android1:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android1:id="@+id/editText1"
+        android1:layout_width="96dp"
+        android1:layout_height="wrap_content"
+        android1:layout_x="142dp"
+        android1:layout_y="215dp"
+        android1:ems="10"
+        android1:inputType="number" >
+
+        <requestFocus />
+    </EditText>
 
 </AbsoluteLayout>
