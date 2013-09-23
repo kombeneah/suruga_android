@@ -1,12 +1,21 @@
 package com.suruga.tabandroid;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.View.OnTouchListener;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.AbsoluteLayout;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.TextView.OnEditorActionListener;
 import android.widget.Toast;
 import android.widget.RadioGroup.OnCheckedChangeListener;
+import android.view.MotionEvent;
 
 public class SettingsActivity extends Activity implements OnCheckedChangeListener {
 
@@ -26,9 +35,32 @@ public class SettingsActivity extends Activity implements OnCheckedChangeListene
 		addListenerOnSpinnerItemSelection();
 		segmentText = (SegmentedRadioGroup) findViewById(R.id.segment_text);
         segmentText.setOnCheckedChangeListener(this);
+        
+        editText1=(EditText) findViewById(R.id.editText1);
+        AbsoluteLayout layout = (AbsoluteLayout) findViewById(R.id.layout);
+        
+        layout.setOnTouchListener(new OnTouchListener()
+        {
+            @Override
+            public boolean onTouch(View view, MotionEvent ev)
+            {
+                hideKeyboard(view);
+                return false;
+            }
+        });
+        
+        
+
 
         mToast = Toast.makeText(this, "", Toast.LENGTH_SHORT);
 	}
+	
+	protected void hideKeyboard(View view)
+	{
+	    InputMethodManager in = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+	    in.hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+	}
+    
 	
 	public void onCheckedChanged(RadioGroup group, int checkedId) {
 		if (group == segmentText) {
