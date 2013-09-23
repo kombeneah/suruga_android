@@ -80,4 +80,40 @@
         <requestFocus />
     </EditText>
 
+    <TextView
+        android1:id="@+id/TextView02"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_x="38dp"
+        android1:layout_y="273dp"
+        android1:text="Monthly"
+        android1:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android1:id="@+id/editText2"
+        android1:layout_width="96dp"
+        android1:layout_height="wrap_content"
+        android1:layout_x="142dp"
+        android1:layout_y="266dp"
+        android1:ems="10"
+        android1:inputType="number" />
+
+    <TextView
+        android1:id="@+id/TextView03"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_x="248dp"
+        android1:layout_y="276dp"
+        android1:text="Yen"
+        android1:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android1:id="@+id/textView2"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_x="120dp"
+        android1:layout_y="362dp"
+        android1:text="Go to guide afterwards"
+        android1:textAppearance="?android:attr/textAppearanceMedium" />
+
 </AbsoluteLayout>

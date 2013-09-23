@@ -2,6 +2,7 @@ package com.suruga.tabandroid;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -13,13 +14,14 @@ public class SettingsActivity extends Activity implements OnCheckedChangeListene
 	//The segment selection button
 	SegmentedRadioGroup segmentText;
 	Toast mToast;
+	EditText editText1;
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.settings_layout);
 		
-//		segmentText = (SegmentedRadioGroup) findViewById(R.id.segment_text);
-//        segmentText.setOnCheckedChangeListener(this);
+		segmentText = (SegmentedRadioGroup) findViewById(R.id.segment_text);
+        segmentText.setOnCheckedChangeListener(this);
 
 		addListenerOnSpinnerItemSelection();
 		segmentText = (SegmentedRadioGroup) findViewById(R.id.segment_text);
