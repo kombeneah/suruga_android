@@ -3,108 +3,178 @@ package com.suruga.tabandroid;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import com.suruga.tabandroid.listview.LazyAdapter;
-import com.suruga.tabandroid.listview.XMLParser;
+import com.suruga.tabandroid.listview.BinderData;
+import com.suruga.tabandroid.listview.SampleActivity;
+import com.suruga.tabandroid.listview.WeatherActivity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
 
 public class ItemActivity extends Activity {
-	// All static variables
-	//static final String URL = "http://api.androidhive.info/music/music.xml";
 	// XML node keys
-	static final String KEY_SONG = "song"; // parent node
-	static final String KEY_ID = "id";
-	static final String KEY_TITLE = "title";
-	static final String KEY_ARTIST = "artist";
-	static final String KEY_DURATION = "duration";
-	static final String KEY_THUMB_URL = "thumb_url";
-
-	ListView list;
-	LazyAdapter adapter;
-
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(com.suruga.tabandroid.R.layout.item_layout);
-
-		ArrayList<HashMap<String, String>> songsList = new ArrayList<HashMap<String, String>>();
-
+    static final String KEY_TAG = "weatherdata"; // parent node
+    static final String KEY_ID = "id";
+    static final String KEY_CITY = "city";
+    static final String KEY_TEMP_C = "tempc";
+    static final String KEY_TEMP_F = "tempf";
+    static final String KEY_CONDN = "condition";
+    static final String KEY_SPEED = "windspeed";
+    static final String KEY_ICON = "icon";
+    
+    // List items 
+    ListView list;
+    BinderData adapter = null;
+    List<HashMap<String,String>> weatherDataCollection;
+  
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(com.suruga.tabandroid.R.layout.item_layout);
+        
 		try {
 			
-			XMLParser parser = new XMLParser();
-
-			DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory
-					.newInstance();
-			DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
-			Document doc = docBuilder
-					.parse(getAssets().open("house.xml"));
-			NodeList nl = doc.getElementsByTagName(KEY_SONG);
 			
-			// looping through all song nodes <song>
-			for (int i = 0; i < nl.getLength(); i++) {
-				// creating new HashMap
-				HashMap<String, String> map = new HashMap<String, String>();
-				Element e = (Element) nl.item(i);
-				// adding each child node to HashMap key => value
-				map.put(KEY_ID, parser.getValue(e, KEY_ID));
-				map.put(KEY_TITLE, parser.getValue(e, KEY_TITLE));
-				map.put(KEY_ARTIST, parser.getValue(e, KEY_ARTIST));
-				map.put(KEY_DURATION, parser.getValue(e, KEY_DURATION));
-				map.put(KEY_THUMB_URL, parser.getValue(e, KEY_THUMB_URL));
+			DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
+	        DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
+	        Document doc = docBuilder.parse (getAssets().open("house.xml"));
 
-				// adding HashList to ArrayList
-				songsList.add(map);
+	        weatherDataCollection = new ArrayList<HashMap<String,String>>();
+	        
+	        // normalize text representation
+            doc.getDocumentElement ().normalize ();
+	                    
+            NodeList weatherList = doc.getElementsByTagName("housedata");
+            
+			HashMap<String,String> map = null;
+			
+			for (int i = 0; i < weatherList.getLength(); i++) {
+				 
+				   map = new HashMap<String,String>(); 
+				   
+				   Node firstWeatherNode = weatherList.item(i);
+				   
+	                if(firstWeatherNode.getNodeType() == Node.ELEMENT_NODE){
+
+	                    Element firstWeatherElement = (Element)firstWeatherNode;
+	                    //-------
+	                    NodeList idList = firstWeatherElement.getElementsByTagName(KEY_ID);
+	                    Element firstIdElement = (Element)idList.item(0);
+	                    NodeList textIdList = firstIdElement.getChildNodes();
+	                    //--id
+	                    map.put(KEY_ID, ((Node)textIdList.item(0)).getNodeValue().trim());
+	                    
+	                    //2.-------
+	                    NodeList cityList = firstWeatherElement.getElementsByTagName(KEY_CITY);
+	                    Element firstCityElement = (Element)cityList.item(0);
+	                    NodeList textCityList = firstCityElement.getChildNodes();
+	                    //--city
+	                    map.put(KEY_CITY, ((Node)textCityList.item(0)).getNodeValue().trim());
+	                    
+	                    //3.-------
+	                    NodeList tempList = firstWeatherElement.getElementsByTagName(KEY_TEMP_C);
+	                    Element firstTempElement = (Element)tempList.item(0);
+	                    NodeList textTempList = firstTempElement.getChildNodes();
+	                    //--city
+	                    map.put(KEY_TEMP_C, ((Node)textTempList.item(0)).getNodeValue().trim());
+	                    
+	                    //4.-------
+	                    NodeList condList = firstWeatherElement.getElementsByTagName(KEY_CONDN);
+	                    Element firstCondElement = (Element)condList.item(0);
+	                    NodeList textCondList = firstCondElement.getChildNodes();
+	                    //--city
+	                    map.put(KEY_CONDN, ((Node)textCondList.item(0)).getNodeValue().trim());
+	                    
+	                    //5.-------
+	                    NodeList speedList = firstWeatherElement.getElementsByTagName(KEY_SPEED);
+	                    Element firstSpeedElement = (Element)speedList.item(0);
+	                    NodeList textSpeedList = firstSpeedElement.getChildNodes();
+	                    //--city
+	                    map.put(KEY_SPEED, ((Node)textSpeedList.item(0)).getNodeValue().trim());
+	                    
+	                    //6.-------
+	                    NodeList iconList = firstWeatherElement.getElementsByTagName(KEY_ICON);
+	                    Element firstIconElement = (Element)iconList.item(0);
+	                    NodeList textIconList = firstIconElement.getChildNodes();
+	                    //--city
+	                    map.put(KEY_ICON, ((Node)textIconList.item(0)).getNodeValue().trim());
+	               
+	                    //Add to the Arraylist
+	                    weatherDataCollection.add(map);
+				}		
 			}
+			
+	
+			BinderData bindingData = new BinderData(this,weatherDataCollection);
 
+						
 			list = (ListView) findViewById(com.suruga.tabandroid.R.id.list);
 
-			// Getting adapter by passing xml data ArrayList
-			adapter = new LazyAdapter(this, songsList);
-			list.setAdapter(adapter);
+			Log.i("BEFORE", "<<------------- Before SetAdapter-------------->>");
+
+			list.setAdapter(bindingData);
+
+			Log.i("AFTER", "<<------------- After SetAdapter-------------->>");
 
 			// Click event for single list row
 			list.setOnItemClickListener(new OnItemClickListener() {
 
-				@Override
 				public void onItemClick(AdapterView<?> parent, View view,
 						int position, long id) {
 
+					Intent i = new Intent();
+					i.setClass(ItemActivity.this, SampleActivity.class);
+
+					// parameters
+					i.putExtra("position", String.valueOf(position + 1));
+					
+					/* selected item parameters
+					 * 1.	City name
+					 * 2.	Weather
+					 * 3.	Wind speed
+					 * 4.	Temperature
+					 * 5.	Weather icon   
+					 */
+					i.putExtra("city", weatherDataCollection.get(position).get(KEY_CITY));
+					i.putExtra("weather", weatherDataCollection.get(position).get(KEY_CONDN));
+					i.putExtra("windspeed", weatherDataCollection.get(position).get(KEY_SPEED));
+					i.putExtra("temperature", weatherDataCollection.get(position).get(KEY_TEMP_C));
+					i.putExtra("icon", weatherDataCollection.get(position).get(KEY_ICON));
+
+					// start the sample activity
+					startActivity(i);
 				}
 			});
-		}
 
+		}
+		
 		catch (IOException ex) {
 			Log.e("Error", ex.getMessage());
-		} catch (Exception ex) {
+		}
+		catch (Exception ex) {
 			Log.e("Error", "Loading exception");
 		}
-
-		
-		//String xml = parser.getXmlFromUrl(URL); // getting XML from URL
-		//Document doc = parser.getDomElement(xml); // getting DOM element
-		// DocumentBuilderFactory docBuilderFactory =
-		// DocumentBuilderFactory.newInstance();
-		// DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
-		// Document doc = docBuilder.parse
-		// (getAssets().open("weatherdata.xml"));
-		// InputStream is = res.openRawResource(R.raw.fileName);
-		// xr.parse(new InputSource(is));
-
-		
-		
-	}
+    }
+    
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(com.suruga.tabandroid.R.menu.main, menu);
+        return true;
+    }
 }
