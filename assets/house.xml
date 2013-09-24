@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<music>
+    <song>
+        <id>1</id>    
+        <title>Someone Like You2</title>
+        <artist>Adele</artist>
+        <duration>4:47</duration>
+		<thumb_url>http://api.androidhive.info/music/images/adele.png</thumb_url>
+    </song>
+	<song>
+        <id>2</id>    
+        <title>Space Bound</title>
+        <artist>Eminem</artist>
+        <duration>4:38</duration>
+		<thumb_url>http://api.androidhive.info/music/images/eminem.png</thumb_url>
+    </song>
+	<song>
+        <id>3</id>    
+        <title>Stranger In Moscow</title>
+        <artist>Michael Jackson</artist>
+        <duration>5:44</duration>
+		<thumb_url>http://api.androidhive.info/music/images/mj.png</thumb_url>
+    </song>
+</music>

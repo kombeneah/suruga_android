@@ -1,7 +1,11 @@
 package com.suruga.tabandroid;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -12,6 +16,7 @@ import com.suruga.tabandroid.listview.XMLParser;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -19,31 +24,36 @@ import android.widget.AdapterView.OnItemClickListener;
 
 public class ItemActivity extends Activity {
 	// All static variables
-		static final String URL = "http://api.androidhive.info/music/music.xml";
-		// XML node keys
-		static final String KEY_SONG = "song"; // parent node
-		static final String KEY_ID = "id";
-		static final String KEY_TITLE = "title";
-		static final String KEY_ARTIST = "artist";
-		static final String KEY_DURATION = "duration";
-		static final String KEY_THUMB_URL = "thumb_url";
-		
-		ListView list;
-	    LazyAdapter adapter;
+	//static final String URL = "http://api.androidhive.info/music/music.xml";
+	// XML node keys
+	static final String KEY_SONG = "song"; // parent node
+	static final String KEY_ID = "id";
+	static final String KEY_TITLE = "title";
+	static final String KEY_ARTIST = "artist";
+	static final String KEY_DURATION = "duration";
+	static final String KEY_THUMB_URL = "thumb_url";
 
-		@Override
-		public void onCreate(Bundle savedInstanceState) {
-			super.onCreate(savedInstanceState);
-			setContentView(com.suruga.tabandroid.R.layout.item_layout);
+	ListView list;
+	LazyAdapter adapter;
+
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(com.suruga.tabandroid.R.layout.item_layout);
+
+		ArrayList<HashMap<String, String>> songsList = new ArrayList<HashMap<String, String>>();
+
+		try {
 			
-
-			ArrayList<HashMap<String, String>> songsList = new ArrayList<HashMap<String, String>>();
-
 			XMLParser parser = new XMLParser();
-			String xml = parser.getXmlFromUrl(URL); // getting XML from URL
-			Document doc = parser.getDomElement(xml); // getting DOM element
-			
+
+			DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory
+					.newInstance();
+			DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
+			Document doc = docBuilder
+					.parse(getAssets().open("house.xml"));
 			NodeList nl = doc.getElementsByTagName(KEY_SONG);
+			
 			// looping through all song nodes <song>
 			for (int i = 0; i < nl.getLength(); i++) {
 				// creating new HashMap
@@ -59,24 +69,42 @@ public class ItemActivity extends Activity {
 				// adding HashList to ArrayList
 				songsList.add(map);
 			}
-			
 
-			list=(ListView)findViewById(com.suruga.tabandroid.R.id.list);
-			
+			list = (ListView) findViewById(com.suruga.tabandroid.R.id.list);
+
 			// Getting adapter by passing xml data ArrayList
-	        adapter=new LazyAdapter(this, songsList);        
-	        list.setAdapter(adapter);
-	        
+			adapter = new LazyAdapter(this, songsList);
+			list.setAdapter(adapter);
 
-	        // Click event for single list row
-	        list.setOnItemClickListener(new OnItemClickListener() {
+			// Click event for single list row
+			list.setOnItemClickListener(new OnItemClickListener() {
 
 				@Override
 				public void onItemClick(AdapterView<?> parent, View view,
 						int position, long id) {
-								
 
 				}
-			});		
-		}	
+			});
+		}
+
+		catch (IOException ex) {
+			Log.e("Error", ex.getMessage());
+		} catch (Exception ex) {
+			Log.e("Error", "Loading exception");
+		}
+
+		
+		//String xml = parser.getXmlFromUrl(URL); // getting XML from URL
+		//Document doc = parser.getDomElement(xml); // getting DOM element
+		// DocumentBuilderFactory docBuilderFactory =
+		// DocumentBuilderFactory.newInstance();
+		// DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
+		// Document doc = docBuilder.parse
+		// (getAssets().open("weatherdata.xml"));
+		// InputStream is = res.openRawResource(R.raw.fileName);
+		// xr.parse(new InputSource(is));
+
+		
+		
+	}
 }
