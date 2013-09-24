@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/list_selector"
@@ -28,56 +28,41 @@
     </LinearLayout>
 
     <!-- Rightend Arrow -->
-    <ImageView
-        android:id="@+id/imageView1"
-        android:contentDescription="@string/app_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:src="@drawable/arrow" />
 
     <!-- City-->
-    <TextView
-        android:id="@+id/tvCity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/list_image"
-        android:layout_toRightOf="@+id/list_image"
-        android:layout_marginLeft="75dip"
-        android:layout_centerVertical="true"
-        android:paddingBottom ="9dip"
-        android:text="@string/strCity"
-        android:textColor="#040404"
-        android:textSize="25dip"
-        android:textStyle="bold"
-        android:typeface="sans" />
     
     <!-- Weather Information-->
 
     <TextView
-        android:id="@+id/tvCondition"
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvCity"
-        android:layout_alignLeft="@+id/tvCity"
-		android:layout_alignBottom="@+id/list_image"
-        android:paddingTop="5dip"
-        android:layout_centerHorizontal="true"
-        android:text="@string/strWeather"
-        android:textColor="#343434"
-        android:textSize="15dip" />
+        android:layout_x="88dp"
+        android:layout_y="47dp"
+        android:text="Label"
+        android:textColor="#040404" />
 
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="305dp"
+        android:layout_y="32dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/arrow" />
 
     <TextView
-        android:id="@+id/tvTemp"
+        android:id="@+id/tvCity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-		android:layout_marginRight="20dip"
-		android:layout_alignTop="@+id/tvCity"
-        android:layout_toLeftOf="@+id/imageView1"
-        android:text="@string/strTemp"
-        android:textSize="30dip" />
+        android:layout_marginLeft="75dip"
+        android:layout_x="88dp"
+        android:layout_y="9dp"
+        android:paddingBottom="9dip"
+        android:text="@string/strCity"
+        android:textColor="#040404"
+        android:textSize="16dip"
+        android:textStyle="bold"
+        android:typeface="sans" />
 
-</RelativeLayout>
+</AbsoluteLayout>

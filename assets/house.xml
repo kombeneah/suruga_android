@@ -2,47 +2,56 @@
 <House>
 	<housedata>
 	    <id>1</id>
-		<city>Berlin</city>
+		<number>House 1</number>
        	<tempc>0°C</tempc>
        	<tempf>32°F</tempf>
 		<condition>Snowing</condition>
 		<windspeed>5 kmph</windspeed>
-		<icon>snowing</icon>
-	</weatherdata>
-	<weatherdata>
+		<icon>img1</icon>
+	</housedata>
+	<housedata>
 	    <id>2</id>
-		<city>Bangalore</city>
+		<number>House 2</number>
 		<tempc>23°C</tempc>
        	<tempf>73.4°F</tempf>
 		<condition>Thunderstorms</condition>
 		<windspeed>10 kmph</windspeed>
-		<icon>thunder</icon>
-	</weatherdata>
-	<weatherdata>
+		<icon>img2</icon>
+	</housedata>
+	<housedata>
 	    <id>3</id>
-		<city>London</city>
+		<number>House 3</number>
 		<tempc>5°C</tempc>
        	<tempf>41°F</tempf>
 		<condition>Rainy</condition>
 		<windspeed>2 kmph</windspeed>
-		<icon>rainy</icon>
-	</weatherdata>
-	<weatherdata>
-	    <id>4</id>
-		<city>New York</city>
-       	<tempc>18°C</tempc>
-       	<tempf>64.4°F</tempf>
-		<condition>Cloudy</condition>
-		<windspeed>7 kmph</windspeed>
-		<icon>cloudy</icon>
-	</weatherdata>
-	<weatherdata>
-	    <id>5</id>
-		<city>Sydney</city>
-       	<tempc>32°C</tempc>
-       	<tempf>89.6°F</tempf>
-		<condition>Sunny</condition>
-		<windspeed>10 kmph</windspeed>
-		<icon>sunny</icon>
+		<icon>img21</icon>
+	</housedata>
+	<housedata>
+	    <id>3</id>
+		<number>House 4</number>
+		<tempc>5°C</tempc>
+       	<tempf>41°F</tempf>
+		<condition>Rainy</condition>
+		<windspeed>2 kmph</windspeed>
+		<icon>img22</icon>
+	</housedata>
+	<housedata>
+	    <id>3</id>
+		<number>House 5</number>
+		<tempc>5°C</tempc>
+       	<tempf>41°F</tempf>
+		<condition>Rainy</condition>
+		<windspeed>2 kmph</windspeed>
+		<icon>img3</icon>
+	</housedata>
+	<housedata>
+	    <id>3</id>
+		<number>House 6</number>
+		<tempc>5°C</tempc>
+       	<tempf>41°F</tempf>
+		<condition>Rainy</condition>
+		<windspeed>2 kmph</windspeed>
+		<icon>img4</icon>
 	</housedata>
 </House>

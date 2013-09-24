@@ -38,7 +38,7 @@ public class XParser extends DefaultHandler {
 		
 		if (localName.equalsIgnoreCase("id")) {
 			tempStore = "";
-		} else if (localName.equalsIgnoreCase("city")) {
+		} else if (localName.equalsIgnoreCase("number")) {
 			tempStore = "";
 		} 
 		else if (localName.equalsIgnoreCase("tempc")) {
@@ -70,7 +70,7 @@ public class XParser extends DefaultHandler {
 		if (localName.equalsIgnoreCase("id")) {
 			idlist.add(tempStore);
 		} 
-		else if (localName.equalsIgnoreCase("city")) {
+		else if (localName.equalsIgnoreCase("number")) {
 			citylist.add(tempStore);
 		}
 		else if (localName.equalsIgnoreCase("tempc")) {

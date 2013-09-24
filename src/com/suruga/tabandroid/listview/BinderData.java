@@ -19,7 +19,7 @@ public class BinderData extends BaseAdapter {
 	// XML node keys
     static final String KEY_TAG = "weatherdata"; // parent node
     static final String KEY_ID = "id";
-    static final String KEY_CITY = "city";
+    static final String KEY_CITY = "number";
     static final String KEY_TEMP_C = "tempc";
     static final String KEY_TEMP_F = "tempf";
     static final String KEY_CONDN = "condition";
@@ -68,8 +68,7 @@ public class BinderData extends BaseAdapter {
 	      holder = new ViewHolder();
 	     
 	      holder.tvCity = (TextView)vi.findViewById(com.suruga.tabandroid.R.id.tvCity); // city name
-	      holder.tvWeather = (TextView)vi.findViewById(com.suruga.tabandroid.R.id.tvCondition); // city weather overview
-	      holder.tvTemperature =  (TextView)vi.findViewById(com.suruga.tabandroid.R.id.tvTemp); // city temperature
+
 	      holder.tvWeatherImage =(ImageView)vi.findViewById(com.suruga.tabandroid.R.id.list_image); // thumb image
 	 
 	      vi.setTag(holder);
@@ -82,8 +81,7 @@ public class BinderData extends BaseAdapter {
 	      // Setting all values in listview
 	      
 	      holder.tvCity.setText(weatherDataCollection.get(position).get(KEY_CITY));
-	      holder.tvWeather.setText(weatherDataCollection.get(position).get(KEY_CONDN));
-	      holder.tvTemperature.setText(weatherDataCollection.get(position).get(KEY_TEMP_C));
+
 	      
 	      //Setting an image
 	      String uri = "drawable/"+ weatherDataCollection.get(position).get(KEY_ICON);

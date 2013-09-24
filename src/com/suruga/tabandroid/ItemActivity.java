@@ -15,7 +15,6 @@ import org.w3c.dom.NodeList;
 
 import com.suruga.tabandroid.listview.BinderData;
 import com.suruga.tabandroid.listview.SampleActivity;
-import com.suruga.tabandroid.listview.WeatherActivity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -31,7 +30,7 @@ public class ItemActivity extends Activity {
 	// XML node keys
     static final String KEY_TAG = "weatherdata"; // parent node
     static final String KEY_ID = "id";
-    static final String KEY_CITY = "city";
+    static final String KEY_CITY = "number";
     static final String KEY_TEMP_C = "tempc";
     static final String KEY_TEMP_F = "tempf";
     static final String KEY_CONDN = "condition";
@@ -151,7 +150,7 @@ public class ItemActivity extends Activity {
 					 * 4.	Temperature
 					 * 5.	Weather icon   
 					 */
-					i.putExtra("city", weatherDataCollection.get(position).get(KEY_CITY));
+					i.putExtra("number", weatherDataCollection.get(position).get(KEY_CITY));
 					i.putExtra("weather", weatherDataCollection.get(position).get(KEY_CONDN));
 					i.putExtra("windspeed", weatherDataCollection.get(position).get(KEY_SPEED));
 					i.putExtra("temperature", weatherDataCollection.get(position).get(KEY_TEMP_C));
