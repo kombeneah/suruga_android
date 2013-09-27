@@ -8,10 +8,20 @@ public class Item implements Serializable {
 	private String name = "";
 	private double value = 0;
 	private String image = "";
+	private int id=0;
 
-	public Item(String name, String img) {
+	public Item(int id, String name, String img) {
+		this.setId(id);
 		this.setName(name);
 		this.setImage(img);
+	}
+	
+	public int getId(){
+		return id;
+	}
+	
+	public void setId(int id){
+		this.id=id;
 	}
 	
 	public String getImage(){

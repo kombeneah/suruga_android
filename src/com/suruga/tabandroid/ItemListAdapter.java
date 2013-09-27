@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsoluteLayout;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -45,7 +46,12 @@ public class ItemListAdapter extends ArrayAdapter<Item> {
 		row = inflater.inflate(layoutResourceId, parent, false);
 
 		holder = new ItemHolder();
+		
+		
 		holder.item = items.get(position);
+		
+		holder.arrow=(ImageView)row.findViewById(R.id.arrow);
+		
 		holder.info = (ImageButton)row.findViewById(R.id.imageButton);
 		holder.info.setTag(holder.item);
 		
@@ -61,6 +67,7 @@ public class ItemListAdapter extends ArrayAdapter<Item> {
 	    holder.list_image.setImageDrawable(image);
 		//setNameTextChangeListener(holder);
 		//setValueTextListeners(holder);
+	    //row.findViewById(R.id.cellOnClick).setTag(position);
 
 		row.setTag(holder);
 
@@ -79,7 +86,9 @@ public class ItemListAdapter extends ArrayAdapter<Item> {
 		Item item;
 		TextView name;
 		TextView value;
+		AbsoluteLayout cell;
 		ImageButton info;
+		ImageView arrow;
 		ImageView list_image;
 	}
 	

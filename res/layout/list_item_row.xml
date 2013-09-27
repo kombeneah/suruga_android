@@ -5,7 +5,8 @@
     android:background="@drawable/list_selector"
     android:orientation="horizontal"
     android:onClick="cellOnClickHandler"
-    android:padding="5dip" >
+    android:padding="5dip" 
+    android:id="@+id/cell">
     
     <!-- ListRow Left sied Thumbnail image -->
 
@@ -40,7 +41,7 @@
         android:textColor="#040404" />
 
     <ImageView
-        android:id="@+id/imageView1"
+        android:id="@+id/arrow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_x="295dp"
