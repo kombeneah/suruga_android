@@ -67,11 +67,11 @@ public class ItemActivity extends Activity {
 				 
 				   map = new HashMap<String,String>(); 
 				   
-				   Node firstWeatherNode = weatherList.item(i);
+				   Node firstHouseNode = weatherList.item(i);
 				   
-	                if(firstWeatherNode.getNodeType() == Node.ELEMENT_NODE){
+	                if(firstHouseNode.getNodeType() == Node.ELEMENT_NODE){
 
-	                    Element firstWeatherElement = (Element)firstWeatherNode;
+	                    Element firstWeatherElement = (Element)firstHouseNode;
 	                    //-------
 	                    NodeList idList = firstWeatherElement.getElementsByTagName(KEY_ID);
 	                    Element firstIdElement = (Element)idList.item(0);
@@ -130,7 +130,7 @@ public class ItemActivity extends Activity {
 			list.setAdapter(bindingData);
 
 			Log.i("AFTER", "<<------------- After SetAdapter-------------->>");
-
+            
 			// Click event for single list row
 			list.setOnItemClickListener(new OnItemClickListener() {
 
@@ -144,7 +144,7 @@ public class ItemActivity extends Activity {
 					i.putExtra("position", String.valueOf(position + 1));
 					
 					/* selected item parameters
-					 * 1.	City name
+					 * 1.	House number
 					 * 2.	Weather
 					 * 3.	Wind speed
 					 * 4.	Temperature

@@ -3,19 +3,16 @@ package com.suruga.tabandroid;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AbsoluteLayout;
 import android.widget.EditText;
 import android.widget.RadioGroup;
-import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.TextView.OnEditorActionListener;
-import android.widget.Toast;
 import android.widget.RadioGroup.OnCheckedChangeListener;
-import android.view.MotionEvent;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 public class SettingsActivity extends Activity implements OnCheckedChangeListener {
 

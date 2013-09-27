@@ -1,18 +1,13 @@
 package com.suruga.tabandroid.listview;
 
-import android.media.MediaPlayer;
-import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
-import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 public class SampleActivity extends Activity {
@@ -38,12 +33,12 @@ public class SampleActivity extends Activity {
 		try {
 			
 			//handle for the UI elements 
-			imgWeatherIcon = (ImageButton) findViewById(com.suruga.tabandroid.R.id.imageButtonAlpha);
+			//imgWeatherIcon = (ImageButton) findViewById(com.suruga.tabandroid.R.id.imageButtonAlpha);
 			//Text fields
-			tvcity = (TextView) findViewById(com.suruga.tabandroid.R.id.textViewCity);
-			tvtemp = (TextView) findViewById(com.suruga.tabandroid.R.id.textViewTemperature);
-			tvwindspeed = (TextView) findViewById(com.suruga.tabandroid.R.id.textViewWindSpeed);
-			tvCondition = (TextView) findViewById(com.suruga.tabandroid.R.id.textViewCondition);
+			//tvcity = (TextView) findViewById(com.suruga.tabandroid.R.id.textViewCity);
+			//tvtemp = (TextView) findViewById(com.suruga.tabandroid.R.id.textViewTemperature);
+			//tvwindspeed = (TextView) findViewById(com.suruga.tabandroid.R.id.textViewWindSpeed);
+			//tvCondition = (TextView) findViewById(com.suruga.tabandroid.R.id.textViewCondition);
 			
 			// Get position to display
 	        Intent i = getIntent();
@@ -61,13 +56,13 @@ public class SampleActivity extends Activity {
 		
 		    
 		    //text elements
-		    tvcity.setText(city);
-		    tvtemp.setText(temperature);
-		    tvwindspeed.setText(windSpeed);
-		    tvCondition.setText(weather);
+		    //tvcity.setText(city);
+		    //tvtemp.setText(temperature);
+		    //tvwindspeed.setText(windSpeed);
+		    //tvCondition.setText(weather);
 		    
 		    //thumb_image.setImageDrawable(image);
-		    imgWeatherIcon.setImageDrawable(dimgbutton);
+		    //imgWeatherIcon.setImageDrawable(dimgbutton);
 		
 			
 		}
