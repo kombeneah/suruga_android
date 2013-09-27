@@ -7,17 +7,20 @@ public class Item implements Serializable {
 	
 	private String name = "";
 	private double value = 0;
-	//private ImageButton image = null;
+	private String image = "";
 
-	public Item(String name, double value) {
+	public Item(String name, String img) {
 		this.setName(name);
-		this.setValue(value);
-		//this.setImage(imgB);
+		this.setImage(img);
 	}
 	
-//	public void setImage(ImageButton imgB){
-//		this.image=imgB;
-//	}
+	public String getImage(){
+		return image;
+	}
+	
+	public void setImage(String img){
+		this.image=img;
+	}
 
 	public String getName() {
 		return name;
@@ -26,12 +29,5 @@ public class Item implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	public double getValue() {
-		return value;
-	}
-
-	public void setValue(double value) {
-		this.value = value;
-	}
+	
 }
