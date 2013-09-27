@@ -12,7 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ItemListAdapter extends ArrayAdapter<Item> {
 
@@ -28,6 +30,9 @@ public class ItemListAdapter extends ArrayAdapter<Item> {
 		this.context = context;
 		this.items = items;
 	}
+	
+	
+	
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
@@ -82,23 +87,4 @@ public class ItemListAdapter extends ArrayAdapter<Item> {
 		});
 	}
 
-	private void setValueTextListeners(final ItemHolder holder) {
-		holder.value.addTextChangedListener(new TextWatcher() {
-
-			@Override
-			public void onTextChanged(CharSequence s, int start, int before, int count) {
-				try{
-					holder.atomPayment.setValue(Double.parseDouble(s.toString()));
-				}catch (NumberFormatException e) {
-					Log.e(LOG_TAG, "error reading double value: " + s.toString());
-				}
-			}
-
-			@Override
-			public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
-
-			@Override
-			public void afterTextChanged(Editable s) { }
-		});
-	}
 }
