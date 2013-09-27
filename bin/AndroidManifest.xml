@@ -21,7 +21,7 @@
         <activity android:name=".ItemActivity" />
         
         <activity android:name=".AnalysisActivity" />
-        <activity android:name="com.suruga.tabandroid.listview.SampleActivity"></activity>
+        <activity android:name="com.suruga.tabandroid.listview.HouseInfoActivity"></activity>
 
     </application>
     

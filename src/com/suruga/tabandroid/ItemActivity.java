@@ -14,7 +14,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import com.suruga.tabandroid.listview.BinderData;
-import com.suruga.tabandroid.listview.SampleActivity;
+import com.suruga.tabandroid.listview.HouseInfoActivity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -138,7 +138,7 @@ public class ItemActivity extends Activity {
 						int position, long id) {
 
 					Intent i = new Intent();
-					i.setClass(ItemActivity.this, SampleActivity.class);
+					i.setClass(ItemActivity.this, HouseInfoActivity.class);
 
 					// parameters
 					i.putExtra("position", String.valueOf(position + 1));

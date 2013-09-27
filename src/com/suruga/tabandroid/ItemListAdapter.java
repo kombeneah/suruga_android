@@ -39,13 +39,14 @@ public class ItemListAdapter extends ArrayAdapter<Item> {
 
 		holder = new ItemHolder();
 		holder.atomPayment = items.get(position);
-		holder.removePaymentButton = (ImageButton)row.findViewById(R.id.atomPay_removePay);
-		holder.removePaymentButton.setTag(holder.atomPayment);
+		holder.info = (ImageButton)row.findViewById(R.id.imageButton);
+		holder.info.setTag(holder.atomPayment);
+		
+		holder.info.setImageResource(R.drawable.information);
 
-		holder.name = (TextView)row.findViewById(R.id.atomPay_name);
-		setNameTextChangeListener(holder);
-		holder.value = (TextView)row.findViewById(R.id.atomPay_value);
-		setValueTextListeners(holder);
+		//holder.name = (TextView)row.findViewById(R.id.atomPay_name);
+		//setNameTextChangeListener(holder);
+		//setValueTextListeners(holder);
 
 		row.setTag(holder);
 
@@ -54,15 +55,15 @@ public class ItemListAdapter extends ArrayAdapter<Item> {
 	}
 
 	private void setupItem(ItemHolder holder) {
-		holder.name.setText(holder.atomPayment.getName());
-		holder.value.setText(String.valueOf(holder.atomPayment.getValue()));
+		//holder.name.setText(holder.atomPayment.getName());
+		//holder.value.setText(String.valueOf(holder.atomPayment.getValue()));
 	}
 
 	public static class ItemHolder {
 		Item atomPayment;
 		TextView name;
 		TextView value;
-		ImageButton removePaymentButton;
+		ImageButton info;
 	}
 	
 	private void setNameTextChangeListener(final ItemHolder holder) {
