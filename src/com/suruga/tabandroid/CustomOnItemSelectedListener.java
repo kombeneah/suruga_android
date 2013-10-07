@@ -1,3 +1,7 @@
+/*
+ * The file to see if one of the segmented control option is selected
+ */
+
 package com.suruga.tabandroid;
 
 import android.view.View;

@@ -14,10 +14,11 @@ import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class SettingsActivity extends Activity implements OnCheckedChangeListener {
+public class SettingsActivity extends Activity implements
+		OnCheckedChangeListener {
 
 	private Spinner spinner1;
-	//The segment selection button
+	// The segment selection button
 	SegmentedRadioGroup segmentText;
 	Toast mToast;
 	EditText editText1;
@@ -25,57 +26,48 @@ public class SettingsActivity extends Activity implements OnCheckedChangeListene
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.settings_layout);
-		
+
 		segmentText = (SegmentedRadioGroup) findViewById(R.id.segment_text);
-        segmentText.setOnCheckedChangeListener(this);
+		segmentText.setOnCheckedChangeListener(this);
 
 		addListenerOnSpinnerItemSelection();
 		segmentText = (SegmentedRadioGroup) findViewById(R.id.segment_text);
-        segmentText.setOnCheckedChangeListener(this);
-        
-        editText1=(EditText) findViewById(R.id.editText1);
-        AbsoluteLayout layout = (AbsoluteLayout) findViewById(R.id.layout);
-        
-        layout.setOnTouchListener(new OnTouchListener()
-        {
-            @Override
-            public boolean onTouch(View view, MotionEvent ev)
-            {
-                hideKeyboard(view);
-                return false;
-            }
-        });
-        
-        
+		segmentText.setOnCheckedChangeListener(this);
 
+		editText1 = (EditText) findViewById(R.id.editText1);
+		AbsoluteLayout layout = (AbsoluteLayout) findViewById(R.id.layout);
 
-        mToast = Toast.makeText(this, "", Toast.LENGTH_SHORT);
+		layout.setOnTouchListener(new OnTouchListener() {
+			@Override
+			public boolean onTouch(View view, MotionEvent ev) {
+				hideKeyboard(view);
+				return false;
+			}
+		});
+
 	}
-	
-	protected void hideKeyboard(View view)
-	{
-	    InputMethodManager in = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-	    in.hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+
+	protected void hideKeyboard(View view) {
+		InputMethodManager in = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+		in.hideSoftInputFromWindow(view.getWindowToken(),
+				InputMethodManager.HIDE_NOT_ALWAYS);
 	}
-    
-	
+
 	public void onCheckedChanged(RadioGroup group, int checkedId) {
 		if (group == segmentText) {
 			if (checkedId == R.id.button_one) {
-//				mToast.setText("One");
-//				mToast.show();
+				// mToast.setText("One");
+				// mToast.show();
 			} else if (checkedId == R.id.button_three) {
 			}
-		} 
+		}
 	}
 
 	public void addListenerOnSpinnerItemSelection() {
 
 		spinner1 = (Spinner) findViewById(R.id.spinner1);
 		spinner1.setOnItemSelectedListener(new CustomOnItemSelectedListener());
-		
+
 	}
-	
-	
 
 }

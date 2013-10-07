@@ -31,6 +31,7 @@ public class ItemActivity extends Activity {
 
 		setupListViewAdapter();
 		
+		//add all the house items
 		ArrayList<Item> items=new ArrayList<Item>();
 		items.add(new Item(0, "House 1", "img1"));
 		items.add(new Item(1, "House 2", "img2"));
@@ -58,32 +59,33 @@ public class ItemActivity extends Activity {
 		
 		
 		if (selected==false){
+			itemsSelected.add(String.valueOf(position));
+			Set<String> set = new HashSet<String>();
+			set.addAll(itemsSelected);
+			editor.putStringSet("key", set);
+			editor.commit();
+			
 			itemHolder.arrow.setImageResource(R.drawable.check);
 			itemHolder.info.setVisibility(View.INVISIBLE);
 		    selected=true;
 		    
-		    itemsSelected.add(String.valueOf(position));
+		    
 		    
 		}
 		else{
+			itemsSelected.remove(String.valueOf(position));
+			Set<String> set = new HashSet<String>();
+			set.addAll(itemsSelected);
+			editor.putStringSet("key", set);
+			editor.commit();
+			
 			itemHolder.info.setVisibility(View.VISIBLE);
 			itemHolder.info.setImageResource(R.drawable.information);
 			itemHolder.arrow.setImageResource(R.drawable.arrow);
 			selected=false;
 			
-			itemsSelected.remove(String.valueOf(position));
+			
 		}
-		
-		Set<String> set = new HashSet<String>();
-		set.addAll(itemsSelected);
-		editor.putStringSet("key", set);
-		editor.commit();
-		
-		//i.setClass(ItemActivity.this, HouseInfoActivity.class);
-
-
-		// start the detail page
-		//startActivity(i);
 		
 	}
 
@@ -106,12 +108,6 @@ public class ItemActivity extends Activity {
 		// weatherDataCollection.get(position).get(KEY_CITY));
 		// i.putExtra("weather",
 		// weatherDataCollection.get(position).get(KEY_CONDN));
-		// i.putExtra("windspeed",
-		// weatherDataCollection.get(position).get(KEY_SPEED));
-		// i.putExtra("temperature",
-		// weatherDataCollection.get(position).get(KEY_TEMP_C));
-		// i.putExtra("icon",
-		// weatherDataCollection.get(position).get(KEY_ICON));
 
 		// start the detail page
 		startActivity(i);

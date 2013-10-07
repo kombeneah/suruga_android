@@ -36,9 +36,6 @@ public class HouseInfoActivity extends Activity {
 			//imgWeatherIcon = (ImageButton) findViewById(com.suruga.tabandroid.R.id.imageButtonAlpha);
 			//Text fields
 			//tvcity = (TextView) findViewById(com.suruga.tabandroid.R.id.textViewCity);
-			//tvtemp = (TextView) findViewById(com.suruga.tabandroid.R.id.textViewTemperature);
-			//tvwindspeed = (TextView) findViewById(com.suruga.tabandroid.R.id.textViewWindSpeed);
-			//tvCondition = (TextView) findViewById(com.suruga.tabandroid.R.id.textViewCondition);
 			
 			// Get position to display
 	        Intent i = getIntent();
@@ -57,9 +54,7 @@ public class HouseInfoActivity extends Activity {
 		    
 		    //text elements
 		    //tvcity.setText(city);
-		    //tvtemp.setText(temperature);
-		    //tvwindspeed.setText(windSpeed);
-		    //tvCondition.setText(weather);
+
 		    
 		    //thumb_image.setImageDrawable(image);
 		    //imgWeatherIcon.setImageDrawable(dimgbutton);

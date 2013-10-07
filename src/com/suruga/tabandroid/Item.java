@@ -6,7 +6,6 @@ public class Item implements Serializable {
 	private static final long serialVersionUID = -5435670920302756945L;
 	
 	private String name = "";
-	private double value = 0;
 	private String image = "";
 	private int id=0;
 
