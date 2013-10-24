@@ -57,7 +57,7 @@ public class SettingsActivity extends Activity {
 	public void cellOnClickHandler(View v) {
 		
 
-		ItemListAdapter.ItemHolder itemHolder= (ItemListAdapter.ItemHolder) v.getTag();
+		SettingListAdapter.ItemHolder itemHolder= (SettingListAdapter.ItemHolder) v.getTag();
 		int position=itemHolder.item.getId();
 		
 		SharedPreferences prefs = this.getSharedPreferences(
@@ -65,34 +65,34 @@ public class SettingsActivity extends Activity {
 		Editor editor = prefs.edit();
 		
 		
-		if (selected==false){
-			itemsSelected.add(String.valueOf(position));
-			Set<String> set = new HashSet<String>();
-			set.addAll(itemsSelected);
-			editor.putStringSet("key", set);
-			editor.commit();
-			
-			itemHolder.arrow.setImageResource(R.drawable.check);
-			itemHolder.info.setVisibility(View.INVISIBLE);
-		    selected=true;
-		    
-		    
-		    
-		}
-		else{
-			itemsSelected.remove(String.valueOf(position));
-			Set<String> set = new HashSet<String>();
-			set.addAll(itemsSelected);
-			editor.putStringSet("key", set);
-			editor.commit();
-			
-			itemHolder.info.setVisibility(View.VISIBLE);
-			itemHolder.info.setImageResource(R.drawable.information);
-			itemHolder.arrow.setImageResource(R.drawable.arrow);
-			selected=false;
-			
-			
-		}
+//		if (selected==false){
+//			itemsSelected.add(String.valueOf(position));
+//			Set<String> set = new HashSet<String>();
+//			set.addAll(itemsSelected);
+//			editor.putStringSet("key", set);
+//			editor.commit();
+//			
+//			itemHolder.arrow.setImageResource(R.drawable.check);
+//			itemHolder.info.setVisibility(View.INVISIBLE);
+//		    selected=true;
+//		    
+//		    
+//		    
+//		}
+//		else{
+//			itemsSelected.remove(String.valueOf(position));
+//			Set<String> set = new HashSet<String>();
+//			set.addAll(itemsSelected);
+//			editor.putStringSet("key", set);
+//			editor.commit();
+//			
+//			itemHolder.info.setVisibility(View.VISIBLE);
+//			itemHolder.info.setImageResource(R.drawable.information);
+//			itemHolder.arrow.setImageResource(R.drawable.arrow);
+//			selected=false;
+//			
+//			
+//		}
 		
 	}
 
