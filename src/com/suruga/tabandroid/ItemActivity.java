@@ -43,7 +43,7 @@ public class ItemActivity extends Activity {
 		for (int i=0;i<items.size();i++){
 			adapter.insert(items.get(i),i);
 		}
-
+        
 	}
 	
 	@SuppressLint("NewApi")
