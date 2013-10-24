@@ -7,11 +7,8 @@
 
     <application android:icon="@drawable/icon" android:label="Suruga">
         <activity android:name=".AndroidTabLayoutActivity"
-                  android:label="Suruga">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+                  >
+            
         </activity>
 
         <activity android:name=".GuideActivity" />
@@ -22,6 +19,13 @@
         
         <activity android:name=".AnalysisActivity" />
         <activity android:name="com.suruga.tabandroid.listview.HouseInfoActivity"></activity>
+        <activity android:name=".WelcomeActivity"
+            android:label="Suruga">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
     </application>
     

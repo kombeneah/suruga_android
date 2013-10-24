@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/list_selector"
+    android:orientation="horizontal"
+    android:onClick="cellOnClickHandler"
+    android:padding="5dip" 
+    android:id="@+id/cell">
+    
+    <!-- ListRow Left sied Thumbnail image -->
+
+    <LinearLayout
+        android:id="@+id/thumbnail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="5dip"
+        android:padding="3dip" >
+
+
+        <ImageView
+            android:id="@+id/list_image"
+            android:layout_width="60dip"
+            android:layout_height="60dip"
+            android:layout_gravity="top"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/img1" />
+
+    </LinearLayout>
+    
+    <!-- Rightend Arrow -->
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="88dp"
+        android:layout_y="47dp"
+        android:text="Label"
+        android:textColor="#040404" />
+
+    <ImageView
+        android:id="@+id/arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="295dp"
+        android:layout_y="32dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/arrow" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="75dip"
+        android:layout_x="88dp"
+        android:layout_y="9dp"
+        android:paddingBottom="9dip"
+        android:text="House 1"
+        android:textColor="#040404"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:typeface="sans" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:onClick="infoOnClickHandler"
+        android:layout_width="24dp"
+        android:layout_height="25dp"
+        android:layout_x="263dp"
+        android:layout_y="25dp"
+        android:background="@null"
+        android:contentDescription="lala"
+        android:scaleType="fitXY"
+        android:src="@drawable/information" />
+    
+    
+</AbsoluteLayout>

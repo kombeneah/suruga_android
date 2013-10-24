@@ -14,15 +14,15 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class ItemListAdapter extends ArrayAdapter<Item> {
+public class SettingListAdapter extends ArrayAdapter<Item> {
 
-	protected static final String LOG_TAG = ItemListAdapter.class.getSimpleName();
+	protected static final String LOG_TAG = SettingListAdapter.class.getSimpleName();
 	
 	private List<Item> items;
 	private int layoutResourceId;
 	private Context context;
 
-	public ItemListAdapter(Context context, int layoutResourceId, List<Item> items) {
+	public SettingListAdapter(Context context, int layoutResourceId, List<Item> items) {
 		super(context, layoutResourceId, items);
 		this.layoutResourceId = layoutResourceId;
 		this.context = context;

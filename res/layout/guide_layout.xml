@@ -8,20 +8,21 @@
   <!-- Screen Design for Photos -->
 
     <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="123dp"
-        android:layout_y="29dp"
-        android:text="Title"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
         android:id="@+id/textView2"
         android:layout_width="261dp"
         android:layout_height="80dp"
         android:layout_x="29dp"
         android:layout_y="102dp"
-        android:text="Welcome to the application. Please got to &apos;Settings&apos; tab and select your city. Enter your savings and monthly budget." />
+        android:text="Please go to the &quot;Settings&quot; tab and create your profile" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="66dp"
+        android:layout_y="36dp"
+        android:text="1. Settings"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="32sp" />
     
 </AbsoluteLayout>

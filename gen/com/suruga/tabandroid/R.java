@@ -87,28 +87,27 @@ public final class R {
         public static final int videos_white=0x7f020043;
     }
     public static final class id {
-        public static final int TextView01=0x7f090011;
-        public static final int TextView02=0x7f090013;
-        public static final int TextView03=0x7f090015;
+        public static final int TextView01=0x7f090010;
+        public static final int TextView02=0x7f090012;
+        public static final int TextView03=0x7f090014;
         public static final int arrow=0x7f090008;
-        public static final int button_one=0x7f09000f;
-        public static final int button_three=0x7f090010;
+        public static final int button_one=0x7f09000e;
+        public static final int button_three=0x7f09000f;
         public static final int cell=0x7f090005;
-        public static final int editText1=0x7f090012;
-        public static final int editText2=0x7f090014;
+        public static final int editText1=0x7f090011;
+        public static final int editText2=0x7f090013;
         public static final int imageButton=0x7f09000a;
         public static final int imageView1=0x7f090002;
         public static final int itemList=0x7f090000;
-        public static final int layout=0x7f09000c;
+        public static final int layout=0x7f09000b;
         public static final int list=0x7f090004;
         public static final int list_image=0x7f090007;
-        public static final int menu_settings=0x7f090016;
-        public static final int segment_text=0x7f09000e;
-        public static final int spinner1=0x7f09000d;
+        public static final int menu_settings=0x7f090015;
+        public static final int segment_text=0x7f09000d;
+        public static final int spinner1=0x7f09000c;
         public static final int textView1=0x7f090001;
         public static final int textView2=0x7f090003;
         public static final int thumbnail=0x7f090006;
-        public static final int tvCity=0x7f09000b;
         public static final int tvName=0x7f090009;
     }
     public static final class layout {
@@ -118,8 +117,8 @@ public final class R {
         public static final int guide_layout=0x7f030003;
         public static final int item_layout=0x7f030004;
         public static final int list_item_row=0x7f030005;
-        public static final int list_row=0x7f030006;
-        public static final int main=0x7f030007;
+        public static final int main=0x7f030006;
+        public static final int setting_row=0x7f030007;
         public static final int settings_layout=0x7f030008;
         public static final int welcome_layout=0x7f030009;
     }
