@@ -1,7 +1,17 @@
 package com.suruga.tabandroid;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+
+import com.suruga.tabandroid.listview.HouseInfoActivity;
+
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -9,64 +19,115 @@ import android.view.View.OnTouchListener;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AbsoluteLayout;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class SettingsActivity extends Activity implements
-		OnCheckedChangeListener {
+public class SettingsActivity extends Activity {
 
-	private Spinner spinner1;
-	// The segment selection button
-	SegmentedRadioGroup segmentText;
-	Toast mToast;
-	EditText editText1;
+	private SettingListAdapter adapter;
+	private ArrayList<String> itemsSelected=new ArrayList<String>();
+	private boolean selected=false;
 
-	public void onCreate(Bundle savedInstanceState) {
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.settings_layout);
+		setContentView(R.layout.activity_list_view);
 
-		segmentText = (SegmentedRadioGroup) findViewById(R.id.segment_text);
-		segmentText.setOnCheckedChangeListener(this);
-
-		addListenerOnSpinnerItemSelection();
-		segmentText = (SegmentedRadioGroup) findViewById(R.id.segment_text);
-		segmentText.setOnCheckedChangeListener(this);
-
-		editText1 = (EditText) findViewById(R.id.editText1);
-		AbsoluteLayout layout = (AbsoluteLayout) findViewById(R.id.layout);
-
-		layout.setOnTouchListener(new OnTouchListener() {
-			@Override
-			public boolean onTouch(View view, MotionEvent ev) {
-				hideKeyboard(view);
-				return false;
-			}
-		});
-
-	}
-
-	protected void hideKeyboard(View view) {
-		InputMethodManager in = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-		in.hideSoftInputFromWindow(view.getWindowToken(),
-				InputMethodManager.HIDE_NOT_ALWAYS);
-	}
-
-	public void onCheckedChanged(RadioGroup group, int checkedId) {
-		if (group == segmentText) {
-			if (checkedId == R.id.button_one) {
-				// mToast.setText("One");
-				// mToast.show();
-			} else if (checkedId == R.id.button_three) {
-			}
+		setupListViewAdapter();
+		
+		//add all the house items
+		ArrayList<Item> items=new ArrayList<Item>();
+		items.add(new Item(0, "House 1", "img1"));
+		items.add(new Item(1, "House 2", "img2"));
+		items.add(new Item(2, "House 3", "img21"));
+		items.add(new Item(3, "House 4", "img22"));
+		items.add(new Item(4, "House 5", "img3"));
+		items.add(new Item(5, "House 6", "img4"));
+		
+		for (int i=0;i<items.size();i++){
+			adapter.insert(items.get(i),i);
 		}
+        
+	}
+	
+	@SuppressLint("NewApi")
+	public void cellOnClickHandler(View v) {
+		
+
+		ItemListAdapter.ItemHolder itemHolder= (ItemListAdapter.ItemHolder) v.getTag();
+		int position=itemHolder.item.getId();
+		
+		SharedPreferences prefs = this.getSharedPreferences(
+			      "com.suruga.tabandroid", Context.MODE_PRIVATE);
+		Editor editor = prefs.edit();
+		
+		
+		if (selected==false){
+			itemsSelected.add(String.valueOf(position));
+			Set<String> set = new HashSet<String>();
+			set.addAll(itemsSelected);
+			editor.putStringSet("key", set);
+			editor.commit();
+			
+			itemHolder.arrow.setImageResource(R.drawable.check);
+			itemHolder.info.setVisibility(View.INVISIBLE);
+		    selected=true;
+		    
+		    
+		    
+		}
+		else{
+			itemsSelected.remove(String.valueOf(position));
+			Set<String> set = new HashSet<String>();
+			set.addAll(itemsSelected);
+			editor.putStringSet("key", set);
+			editor.commit();
+			
+			itemHolder.info.setVisibility(View.VISIBLE);
+			itemHolder.info.setImageResource(R.drawable.information);
+			itemHolder.arrow.setImageResource(R.drawable.arrow);
+			selected=false;
+			
+			
+		}
+		
 	}
 
-	public void addListenerOnSpinnerItemSelection() {
+	public void infoOnClickHandler(View v) {
+		
+		
+		Item itemToRemove = (Item) v.getTag();
+		
+		Intent i = new Intent();
+		i.setClass(SettingsActivity.this, HouseInfoActivity.class);
 
-		spinner1 = (Spinner) findViewById(R.id.spinner1);
-		spinner1.setOnItemSelectedListener(new CustomOnItemSelectedListener());
+		// parameters
+		// i.putExtra("position", String.valueOf(position + 1));
+
+		/*
+		 * selected item parameters 1. House number 2. Weather 3. Wind speed 4.
+		 * Temperature 5. Weather icon
+		 */
+		// i.putExtra("number",
+		// weatherDataCollection.get(position).get(KEY_CITY));
+		// i.putExtra("weather",
+		// weatherDataCollection.get(position).get(KEY_CONDN));
+
+		// start the detail page
+		startActivity(i);
+		
+	}
+
+	private void setupListViewAdapter() {
+		adapter = new SettingListAdapter(SettingsActivity.this,
+				R.layout.setting_row, new ArrayList<Item>());
+		ListView list = (ListView) findViewById(R.id.itemList);
+
+		list.setAdapter(adapter);
+		
 
 	}
 
