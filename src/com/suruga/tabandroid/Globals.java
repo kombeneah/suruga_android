@@ -10,9 +10,27 @@ public class Globals {
 	private Set<String> selectedHouses;
 	private String city;
 	private String interest;
+	private int monthly;
+	private int savings;
 
 	// Restrict the constructor from being instantiated
 	private Globals() {
+	}
+	
+	public void setSavings(int savings) {
+		this.savings = savings;
+	}
+
+	public int getSavings(){
+		return this.savings;
+	}
+	
+	public void setMonthly(int monthly) {
+		this.monthly = monthly;
+	}
+
+	public int getMonthly() {
+		return this.monthly;
 	}
 	
 	public void setInterest(String interest) {

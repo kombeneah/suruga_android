@@ -101,6 +101,9 @@ public class SettingsActivity extends Activity {
 		} else if (position == 1) {
 			i.setClass(SettingsActivity.this,
 					com.suruga.tabandroid.selections.InterestActivity.class);
+		} else if (position == 2){
+			i.setClass(SettingsActivity.this,
+					com.suruga.tabandroid.selections.MonthlyActivity.class);
 		}
 
 		startActivity(i);
