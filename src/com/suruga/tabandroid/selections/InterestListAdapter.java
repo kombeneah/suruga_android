@@ -1,9 +1,12 @@
-package com.suruga.tabandroid;
+package com.suruga.tabandroid.selections;
 
 import java.util.List;
 
+import com.suruga.tabandroid.R;
+
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,19 +16,19 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class SettingListAdapter extends ArrayAdapter<Setting> {
+public class InterestListAdapter extends ArrayAdapter<City> {
 
-	protected static final String LOG_TAG = SettingListAdapter.class.getSimpleName();
+	protected static final String LOG_TAG = InterestListAdapter.class.getSimpleName();
 	
-	private List<Setting> settings;
+	private List<City> cities;
 	private int layoutResourceId;
 	private Context context;
 
-	public SettingListAdapter(Context context, int layoutResourceId, List<Setting> settings) {
-		super(context, layoutResourceId, settings);
+	public InterestListAdapter(Context context, int layoutResourceId, List<City> cities) {
+		super(context, layoutResourceId, cities);
 		this.layoutResourceId = layoutResourceId;
 		this.context = context;
-		this.settings = settings;
+		this.cities = cities;
 	}
 	
 	
@@ -41,15 +44,15 @@ public class SettingListAdapter extends ArrayAdapter<Setting> {
 
 		holder = new ItemHolder();
 		
-		holder.setting = settings.get(position);
+		
+		holder.city = cities.get(position);
 		
 		holder.arrow=(ImageView)row.findViewById(R.id.arrow);
-		holder.value=(TextView)row.findViewById(R.id.textView1);
 		
-		//holder.info = (ImageButton)row.findViewById(R.id.imageButton);
-		//holder.info.setTag(holder.item);
-		
-		//holder.info.setImageResource(R.drawable.information);
+//		holder.info = (ImageButton)row.findViewById(R.id.imageButton);
+//		holder.info.setTag(holder.city);
+//		
+//		holder.info.setImageResource(R.drawable.information);
 
 		holder.name = (TextView)row.findViewById(R.id.tvName);
 		
@@ -65,13 +68,12 @@ public class SettingListAdapter extends ArrayAdapter<Setting> {
 	
 
 	private void setupItem(ItemHolder holder) {
-		holder.name.setText(holder.setting.getName());
-		holder.value.setText(holder.setting.getValue());
+		holder.name.setText(holder.city.getName());
 		
 	}
 
 	public static class ItemHolder {
-		Setting setting;
+		City city;
 		TextView name;
 		TextView value;
 		AbsoluteLayout cell;

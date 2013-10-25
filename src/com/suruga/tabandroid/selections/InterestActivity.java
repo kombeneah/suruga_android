@@ -16,7 +16,7 @@ import com.suruga.tabandroid.Globals;
 import com.suruga.tabandroid.ItemListAdapter;
 import com.suruga.tabandroid.R;
 
-public class CityActivity extends Activity {
+public class InterestActivity extends Activity {
 
 	private CityListAdapter adapter;
 	private ArrayList<String> itemsSelected = new ArrayList<String>();
@@ -32,11 +32,8 @@ public class CityActivity extends Activity {
 
 		// add all the house items
 		ArrayList<City> cities = new ArrayList<City>();
-		cities.add(new City(0, "Tokyo", "img1", false));
-		cities.add(new City(0, "Kanagawa", "img1", false));
-		cities.add(new City(0, "Aichi", "img1", false));
-		cities.add(new City(0, "Osaka", "img1", false));
-		cities.add(new City(0, "Hokkaido", "img1", false));
+		cities.add(new City(0, "Buying", "img1", false));
+		cities.add(new City(0, "Renting", "img1", false));
 
 		for (int i = 0; i < cities.size(); i++) {
 			adapter.insert(cities.get(i), i);
@@ -108,7 +105,7 @@ public class CityActivity extends Activity {
 	// }
 
 	private void setupListViewAdapter() {
-		adapter = new CityListAdapter(CityActivity.this, R.layout.city_row,
+		adapter = new CityListAdapter(InterestActivity.this, R.layout.city_row,
 				new ArrayList<City>());
 		ListView list = (ListView) findViewById(R.id.itemList);
 

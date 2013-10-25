@@ -8,16 +8,25 @@ public class Globals {
 	// Global variable
 	private int data;
 	private Set<String> selectedHouses;
+	private String city;
 
 	// Restrict the constructor from being instantiated
 	private Globals() {
 	}
+	
+	public void setCity(String city) {
+		this.city = city;
+	}
 
-	public synchronized void setSelectedHouses(Set<String> input) {
+	public String getCity() {
+		return this.city;
+	}
+
+	public void setSelectedHouses(Set<String> input) {
 		this.selectedHouses = input;
 	}
 
-	public synchronized Set<String> getSelectedHouses() {
+	public Set<String> getSelectedHouses() {
 		return this.selectedHouses;
 	}
 

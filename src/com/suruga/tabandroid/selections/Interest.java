@@ -1,26 +1,26 @@
-package com.suruga.tabandroid;
+package com.suruga.tabandroid.selections;
 
 import java.io.Serializable;
 
-public class Setting implements Serializable {
+public class Interest implements Serializable {
 	private static final long serialVersionUID = -5435670920302756945L;
 	
 	private String name = "";
 	private String value = "";
-	private int id=0;
+	private boolean selected=true;
 
-	public Setting(int id, String name, String value) {
+	public Interest(int id, String name, String value, boolean selected) {
 		this.setName(name);
 		this.setValue(value);
-		this.setId(id);
+		this.setSelected(selected);
 	}
 	
-	public int getId(){
-		return id;
+	public boolean getSelected(){
+		return selected;
 	}
 	
-	public void setId(int id){
-		this.id=id;
+	public void setSelected(boolean selected){
+		this.selected=selected;
 	}
 	
 	public String getValue(){

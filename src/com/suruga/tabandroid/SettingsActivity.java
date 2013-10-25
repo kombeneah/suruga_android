@@ -41,41 +41,66 @@ public class SettingsActivity extends Activity {
 		setupListViewAdapter();
 
 		// add all the house items
-		ArrayList<Item> items = new ArrayList<Item>();
-		items.add(new Item(0, "City", "img1", false, 0));
-		items.add(new Item(1, "Interested In", "img2", false, 500000000));
-		items.add(new Item(2, "Monthly Budget", "img21", false, 0));
-		items.add(new Item(3, "Savings", "img22", false, 0));
+		ArrayList<Setting> settings = new ArrayList<Setting>();
+		settings.add(new Setting(0, "City", ""));
+		settings.add(new Setting(1, "Interested In", ""));
+		settings.add(new Setting(2, "Monthly Budget", ""));
+		settings.add(new Setting(3, "Savings", ""));
 
-		for (int i = 0; i < items.size(); i++) {
-			adapter.insert(items.get(i), i);
+		for (int i = 0; i < settings.size(); i++) {
+			adapter.insert(settings.get(i), i);
 		}
 
 	}
-	
+
 	@SuppressLint("NewApi")
 	@Override
 	public void onResume() {
 		super.onResume();
 
-		SharedPreferences prefs = this.getSharedPreferences(
-				"com.suruga.tabandroid", Context.MODE_PRIVATE);
-		String city = prefs.getString("city", "");
-		
+		setupListViewAdapter();
 
-//		 Toast.makeText(getApplicationContext(), city,
-//		 Toast.LENGTH_LONG).show();
+		ArrayList<Setting> settings = new ArrayList<Setting>();
+
+		// SharedPreferences prefs = this.getSharedPreferences(
+		// "com.suruga.tabandroid", Context.MODE_PRIVATE);
+		// String city = prefs.getString("city", "");
+		Globals g = Globals.getInstance();
+		String city = g.getCity();
+
+		settings.add(new Setting(0, "City", city));
+		settings.add(new Setting(1, "Interested In", ""));
+		settings.add(new Setting(2, "Monthly Budget", ""));
+		settings.add(new Setting(3, "Savings", ""));
+
+		for (int i = 0; i < settings.size(); i++) {
+			adapter.insert(settings.get(i), i);
+		}
+
+		// adapter.insert(itemsToDisplay.get(i), i);
+
+		// Toast.makeText(getApplicationContext(), city,
+		// Toast.LENGTH_LONG).show();
 	}
 
 	@SuppressLint("NewApi")
 	public void cellOnClickHandler(View v) {
 
-		// ItemListAdapter.ItemHolder itemHolder= (ItemListAdapter.ItemHolder)
-		// v.getTag();
+		SettingListAdapter.ItemHolder settingHolder = (SettingListAdapter.ItemHolder) v
+				.getTag();
+		int position = settingHolder.setting.getId();
 
 		Intent i = new Intent();
-		i.setClass(SettingsActivity.this,
-				com.suruga.tabandroid.selections.CityActivity.class);
+
+		if (position == 0) {
+
+			i.setClass(SettingsActivity.this,
+					com.suruga.tabandroid.selections.CityActivity.class);
+
+		} else if (position == 1) {
+			i.setClass(SettingsActivity.this,
+					com.suruga.tabandroid.selections.InterestActivity.class);
+		}
 
 		startActivity(i);
 
@@ -83,7 +108,7 @@ public class SettingsActivity extends Activity {
 
 	private void setupListViewAdapter() {
 		adapter = new SettingListAdapter(SettingsActivity.this,
-				R.layout.setting_row, new ArrayList<Item>());
+				R.layout.setting_row, new ArrayList<Setting>());
 		ListView list = (ListView) findViewById(R.id.itemList);
 
 		list.setAdapter(adapter);
