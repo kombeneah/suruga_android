@@ -67,9 +67,10 @@ public class SettingsActivity extends Activity {
 		// String city = prefs.getString("city", "");
 		Globals g = Globals.getInstance();
 		String city = g.getCity();
+		String interest=g.getInterest();
 
 		settings.add(new Setting(0, "City", city));
-		settings.add(new Setting(1, "Interested In", ""));
+		settings.add(new Setting(1, "Interested In", interest));
 		settings.add(new Setting(2, "Monthly Budget", ""));
 		settings.add(new Setting(3, "Savings", ""));
 

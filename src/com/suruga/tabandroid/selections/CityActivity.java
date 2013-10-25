@@ -66,7 +66,7 @@ public class CityActivity extends Activity {
 		// startActivity(i);
 
 		itemHolder.arrow.setVisibility(View.VISIBLE);
-		itemHolder.arrow.setImageResource(R.drawable.check);
+		itemHolder.arrow.setImageResource(R.drawable.check_medium);
 		
 		Globals g = Globals.getInstance();
 		g.setCity(itemHolder.city.getName());

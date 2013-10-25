@@ -28,7 +28,7 @@
         android:id="@+id/arrow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="295dp"
+        android:layout_x="285dp"
         android:layout_y="20dp"
         android:contentDescription="@string/app_name" />
 

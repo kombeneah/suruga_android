@@ -28,7 +28,7 @@
         android:id="@+id/arrow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="295dp"
+        android:layout_x="285dp"
         android:layout_y="20dp"
         android:contentDescription="@string/app_name" />
 
@@ -40,7 +40,7 @@
         android:layout_x="15dp"
         android:layout_y="17dp"
         android:paddingBottom="9dip"
-        android:text="City"
+        android:text="Buying"
         android:textColor="#040404"
         android:textSize="16sp"
         android:typeface="sans" />

@@ -49,13 +49,6 @@ public class InterestActivity extends Activity {
 		CityListAdapter.ItemHolder itemHolder = (CityListAdapter.ItemHolder) v
 				.getTag();
 
-		SharedPreferences prefs = this.getSharedPreferences(
-				"com.suruga.tabandroid", Context.MODE_PRIVATE);
-		Editor editor = prefs.edit();
-
-		// ItemListAdapter.ItemHolder itemHolder= (ItemListAdapter.ItemHolder)
-		// v.getTag();
-
 		// Intent i = new Intent();
 		// i.setClass(CityActivity.this,
 		// com.suruga.tabandroid.selections.City.class);
@@ -63,10 +56,10 @@ public class InterestActivity extends Activity {
 		// startActivity(i);
 
 		itemHolder.arrow.setVisibility(View.VISIBLE);
-		itemHolder.arrow.setImageResource(R.drawable.check);
+		itemHolder.arrow.setImageResource(R.drawable.check_medium);
 		
 		Globals g = Globals.getInstance();
-		g.setCity(itemHolder.city.getName());
+		g.setInterest(itemHolder.city.getName());
 		
 		//editor.putString("city", itemHolder.city.getName());
 		//editor.commit();

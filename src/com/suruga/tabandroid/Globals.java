@@ -9,9 +9,18 @@ public class Globals {
 	private int data;
 	private Set<String> selectedHouses;
 	private String city;
+	private String interest;
 
 	// Restrict the constructor from being instantiated
 	private Globals() {
+	}
+	
+	public void setInterest(String interest) {
+		this.interest = interest;
+	}
+
+	public String getInterest() {
+		return this.interest;
 	}
 	
 	public void setCity(String city) {
