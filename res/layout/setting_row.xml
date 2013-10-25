@@ -19,6 +19,7 @@
         android:padding="3dip" >
 
 
+        
 
     </LinearLayout>
     
@@ -33,26 +34,29 @@
         android:contentDescription="@string/app_name"
         android:src="@drawable/arrow" />
 
-    <TextView
-        android:id="@+id/tvName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="75dip"
-        android:layout_x="15dp"
-        android:layout_y="17dp"
-        android:paddingBottom="9dip"
-        android:text="City"
-        android:textColor="#040404"
-        android:textSize="16sp"
-        android:typeface="sans" />
+    
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="248dp"
-        android:layout_y="16dp"
+        android:layout_x="195dp"
+        android:layout_y="20dp"
         android:text="Label"
         android:textColor="#040404" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="75dip"
+        android:layout_x="26dp"
+        android:layout_y="20dp"
+        android:paddingBottom="9dip"
+        android:text="City"
+        android:textColor="#040404"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:typeface="sans" />
     
 </AbsoluteLayout>

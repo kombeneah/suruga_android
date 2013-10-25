@@ -22,7 +22,7 @@ public class ItemActivity extends Activity {
 	
 	private ItemListAdapter adapter;
 	private ArrayList<String> itemsSelected=new ArrayList<String>();
-	private boolean selected=false;
+	//private boolean selected=false;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -33,12 +33,12 @@ public class ItemActivity extends Activity {
 		
 		//add all the house items
 		ArrayList<Item> items=new ArrayList<Item>();
-		items.add(new Item(0, "House 1", "img1"));
-		items.add(new Item(1, "House 2", "img2"));
-		items.add(new Item(2, "House 3", "img21"));
-		items.add(new Item(3, "House 4", "img22"));
-		items.add(new Item(4, "House 5", "img3"));
-		items.add(new Item(5, "House 6", "img4"));
+		items.add(new Item(0, "House 1", "img1", false, 0));
+		items.add(new Item(1, "House 2", "img2", false, 500000000));
+		items.add(new Item(2, "House 3", "img21", false,0));
+		items.add(new Item(3, "House 4", "img22", false,0));
+		items.add(new Item(4, "House 5", "img3", false,0));
+		items.add(new Item(5, "House 6", "img4", false,0));
 		
 		for (int i=0;i<items.size();i++){
 			adapter.insert(items.get(i),i);
@@ -52,22 +52,29 @@ public class ItemActivity extends Activity {
 
 		ItemListAdapter.ItemHolder itemHolder= (ItemListAdapter.ItemHolder) v.getTag();
 		int position=itemHolder.item.getId();
+		boolean selected=itemHolder.item.getSelected();
 		
 		SharedPreferences prefs = this.getSharedPreferences(
-			      "com.suruga.tabandroid", Context.MODE_PRIVATE);
+			      "com.suruga.tabandroid", Context.MODE_MULTI_PROCESS);
 		Editor editor = prefs.edit();
 		
+		Globals g=Globals.getInstance();
 		
 		if (selected==false){
 			itemsSelected.add(String.valueOf(position));
 			Set<String> set = new HashSet<String>();
 			set.addAll(itemsSelected);
-			editor.putStringSet("key", set);
-			editor.commit();
+			
+			AndroidTabLayoutActivity.selectedHouses=set;
+			
+			//editor.putStringSet("key", set);
+			//editor.commit();
 			
 			itemHolder.arrow.setImageResource(R.drawable.check);
 			itemHolder.info.setVisibility(View.INVISIBLE);
-		    selected=true;
+			
+			itemHolder.item.setSelected(true);
+		    //selected=true;
 		    
 		    
 		    
@@ -76,13 +83,18 @@ public class ItemActivity extends Activity {
 			itemsSelected.remove(String.valueOf(position));
 			Set<String> set = new HashSet<String>();
 			set.addAll(itemsSelected);
-			editor.putStringSet("key", set);
-			editor.commit();
+			
+			AndroidTabLayoutActivity.selectedHouses=set;
+			//g.setSelectedHouses(set);
+			//editor.putStringSet("key", set);
+			//editor.commit();
 			
 			itemHolder.info.setVisibility(View.VISIBLE);
 			itemHolder.info.setImageResource(R.drawable.information);
 			itemHolder.arrow.setImageResource(R.drawable.arrow);
-			selected=false;
+			
+			itemHolder.item.setSelected(false);
+			//selected=false;
 			
 			
 		}

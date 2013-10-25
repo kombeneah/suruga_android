@@ -41,12 +41,7 @@ public class AnalysisActivity extends Activity {
 
 		setupListViewAdapter();
 
-		items.add(new Item(0, "House 1", "img1"));
-		items.add(new Item(1, "House 2", "img2"));
-		items.add(new Item(2, "House 3", "img21"));
-		items.add(new Item(3, "House 4", "img22"));
-		items.add(new Item(4, "House 5", "img3"));
-		items.add(new Item(5, "House 6", "img4"));
+		items.add(new Item(0, "House 1", "img1", false,0));
 
 		// Toast.makeText(getApplicationContext(),
 		// "this is my Toast message!!! =)", Toast.LENGTH_LONG).show();
@@ -68,9 +63,13 @@ public class AnalysisActivity extends Activity {
 
 		Set<String> set = new HashSet<String>();
 
-		SharedPreferences prefs = this.getSharedPreferences(
-				"com.suruga.tabandroid", Context.MODE_PRIVATE);
-		set = prefs.getStringSet("key", set);
+	//	SharedPreferences prefs = this.getSharedPreferences(
+		//		"com.suruga.tabandroid", Context.MODE_MULTI_PROCESS);
+		//set = prefs.getStringSet("key", set);
+		
+		
+		set=AndroidTabLayoutActivity.selectedHouses;
+		
 		for (String i : set) {
 			itemsId.add(Integer.valueOf(i));
 			// itemsToDisplay.add(items.get(Integer.valueOf(i)));
