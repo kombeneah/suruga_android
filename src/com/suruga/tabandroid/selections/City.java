@@ -7,10 +7,20 @@ public class City implements Serializable {
 	
 	private String name = "";
 	private String value = "";
+	private boolean selected=true;
 
-	public City(int id, String name, String value) {
+	public City(int id, String name, String value, boolean selected) {
 		this.setName(name);
 		this.setValue(value);
+		this.setSelected(selected);
+	}
+	
+	public boolean getSelected(){
+		return selected;
+	}
+	
+	public void setSelected(boolean selected){
+		this.selected=selected;
 	}
 	
 	public String getValue(){

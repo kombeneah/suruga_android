@@ -30,8 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_x="295dp"
         android:layout_y="20dp"
-        android:contentDescription="@string/app_name"
-        android:src="@drawable/arrow" />
+        android:contentDescription="@string/app_name" />
 
     <TextView
         android:id="@+id/tvName"
@@ -45,14 +44,5 @@
         android:textColor="#040404"
         android:textSize="16sp"
         android:typeface="sans" />
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="248dp"
-        android:layout_y="16dp"
-        android:text="Label"
-        android:textColor="#040404" />
     
 </AbsoluteLayout>

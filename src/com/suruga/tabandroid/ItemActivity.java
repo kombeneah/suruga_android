@@ -54,11 +54,10 @@ public class ItemActivity extends Activity {
 		int position=itemHolder.item.getId();
 		boolean selected=itemHolder.item.getSelected();
 		
-		SharedPreferences prefs = this.getSharedPreferences(
-			      "com.suruga.tabandroid", Context.MODE_MULTI_PROCESS);
-		Editor editor = prefs.edit();
+//		SharedPreferences prefs = this.getSharedPreferences(
+//			      "com.suruga.tabandroid", Context.MODE_MULTI_PROCESS);
+//		Editor editor = prefs.edit();
 		
-		Globals g=Globals.getInstance();
 		
 		if (selected==false){
 			itemsSelected.add(String.valueOf(position));

@@ -47,7 +47,7 @@ public class CityListAdapter extends ArrayAdapter<City> {
 		
 		holder.city = cities.get(position);
 		
-//		holder.arrow=(ImageView)row.findViewById(R.id.arrow);
+		holder.arrow=(ImageView)row.findViewById(R.id.arrow);
 		
 //		holder.info = (ImageButton)row.findViewById(R.id.imageButton);
 //		holder.info.setTag(holder.city);
