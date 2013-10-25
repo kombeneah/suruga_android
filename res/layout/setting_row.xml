@@ -40,9 +40,9 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="195dp"
-        android:layout_y="20dp"
-        android:text="Label"
+        android:layout_x="225dp"
+        android:layout_y="18dp"
+        android:text=""
         android:textColor="#040404" />
 
     <TextView

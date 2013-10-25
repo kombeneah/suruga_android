@@ -4,7 +4,10 @@ import java.util.ArrayList;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
@@ -39,7 +42,7 @@ public class CityActivity extends Activity {
 		}
 
 	}
-	
+
 	CityListAdapter.ItemHolder oldItemHolder = null;
 
 	@SuppressLint("NewApi")
@@ -48,7 +51,9 @@ public class CityActivity extends Activity {
 		CityListAdapter.ItemHolder itemHolder = (CityListAdapter.ItemHolder) v
 				.getTag();
 
-		boolean selected = itemHolder.city.getSelected();
+		SharedPreferences prefs = this.getSharedPreferences(
+				"com.suruga.tabandroid", Context.MODE_PRIVATE);
+		Editor editor = prefs.edit();
 
 		// ItemListAdapter.ItemHolder itemHolder= (ItemListAdapter.ItemHolder)
 		// v.getTag();
@@ -58,16 +63,18 @@ public class CityActivity extends Activity {
 		// com.suruga.tabandroid.selections.City.class);
 		//
 		// startActivity(i);
-		
+
 		itemHolder.arrow.setVisibility(View.VISIBLE);
 		itemHolder.arrow.setImageResource(R.drawable.check);
 		
-		if(oldItemHolder!=null){
+		editor.putString("city", itemHolder.city.getName());
+		editor.commit();
+
+		if (oldItemHolder != null && oldItemHolder.equals(itemHolder) == false) {
 			oldItemHolder.arrow.setVisibility(View.INVISIBLE);
 		}
-		
-		oldItemHolder=itemHolder;
-		
+
+		oldItemHolder = itemHolder;
 
 	}
 
