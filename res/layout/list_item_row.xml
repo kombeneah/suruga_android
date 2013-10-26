@@ -68,7 +68,7 @@
         android:onClick="infoOnClickHandler"
         android:layout_width="24dp"
         android:layout_height="25dp"
-        android:layout_x="263dp"
+        android:layout_x="253dp"
         android:layout_y="25dp"
         android:background="@null"
         android:contentDescription="lala"
