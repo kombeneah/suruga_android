@@ -96,7 +96,7 @@ public class AnalysisActivity extends Activity {
 
 	private void setupListViewAdapter() {
 		adapter = new ItemListAdapter(AnalysisActivity.this,
-				R.layout.list_item_row, new ArrayList<Item>());
+				R.layout.analysis_row, new ArrayList<Item>());
 		ListView list = (ListView) findViewById(R.id.itemList);
 
 		list.setAdapter(adapter);

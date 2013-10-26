@@ -9,22 +9,32 @@ public class Item implements Serializable {
 	private String image = "";
 	private int id=0;
 	private boolean selected=true;
-	private int price=0;
+	private int monthly=0;
+	private int savings=0;
 
-	public Item(int id, String name, String img, boolean selected, int price) {
+	public Item(int id, String name, String img, boolean selected, int monthly, int savings) {
 		this.setId(id);
 		this.setName(name);
 		this.setImage(img);
 		this.setSelected(selected);
-		this.setPrice(price);
+		this.setMonthly(monthly);
+		this.setSavings(savings);
 	}
 	
-	public int getPrice(){
-		return price;
+	public int getSavings(){
+		return savings;
 	}
 	
-	public void setPrice(int price){
-		this.price=price;
+	public void setSavings(int savings){
+		this.monthly=savings;
+	}
+	
+	public int getMonthly(){
+		return monthly;
+	}
+	
+	public void setMonthly(int monthly){
+		this.monthly=monthly;
 	}
 	
 	public boolean getSelected(){

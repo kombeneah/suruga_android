@@ -14,13 +14,13 @@ import com.suruga.tabandroid.GuideActivity;
 import com.suruga.tabandroid.R;
 import com.suruga.tabandroid.SettingsActivity;
 
-public class MonthlyActivity extends Activity {
+public class SavingsActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 
 		final EditText editText1;
 
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.monthly_layout);
+		setContentView(R.layout.savings_layout);
 
 		editText1 = (EditText) findViewById(R.id.editText1);
 
@@ -29,21 +29,19 @@ public class MonthlyActivity extends Activity {
 			@Override
 			public boolean onKey(View v, int keyCode, KeyEvent event) {
 
-				
+				Globals g = Globals.getInstance();
 
 				if (event.getAction() == KeyEvent.ACTION_DOWN
 						&& keyCode == KeyEvent.KEYCODE_BACK) {
 
-					Globals g = Globals.getInstance();
-					g.setMonthly(editText1.getText().toString());
-					onBackPressed();
+					g.setSavings(editText1.getText().toString());
 
-//					Intent i = new Intent();
-//					
-//					i.setClass(MonthlyActivity.this,
-//							com.suruga.tabandroid.SettingsActivity.class);
-//
-//					startActivity(i);
+					Intent i = new Intent();
+					
+					i.setClass(SavingsActivity.this,
+							com.suruga.tabandroid.SettingsActivity.class);
+
+					startActivity(i);
 
 					return true;
 				}

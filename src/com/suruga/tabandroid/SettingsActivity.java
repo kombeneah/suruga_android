@@ -68,11 +68,13 @@ public class SettingsActivity extends Activity {
 		Globals g = Globals.getInstance();
 		String city = g.getCity();
 		String interest=g.getInterest();
+		String monthly=g.getMonthly();
+		String savings=g.getSavings();
 
 		settings.add(new Setting(0, "City", city));
 		settings.add(new Setting(1, "Interested In", interest));
-		settings.add(new Setting(2, "Monthly Budget", ""));
-		settings.add(new Setting(3, "Savings", ""));
+		settings.add(new Setting(2, "Monthly Budget", monthly));
+		settings.add(new Setting(3, "Savings", savings));
 
 		for (int i = 0; i < settings.size(); i++) {
 			adapter.insert(settings.get(i), i);
@@ -104,6 +106,9 @@ public class SettingsActivity extends Activity {
 		} else if (position == 2){
 			i.setClass(SettingsActivity.this,
 					com.suruga.tabandroid.selections.MonthlyActivity.class);
+		} else if (position == 3){
+			i.setClass(SettingsActivity.this,
+					com.suruga.tabandroid.selections.SavingsActivity.class);
 		}
 
 		startActivity(i);

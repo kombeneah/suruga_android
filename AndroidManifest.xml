@@ -29,6 +29,7 @@
         <activity android:name="com.suruga.tabandroid.selections.CityActivity"></activity>
         <activity android:name="com.suruga.tabandroid.selections.InterestActivity"></activity>
         <activity android:name=".selections.MonthlyActivity"></activity>
+        <activity android:name=".selections.SavingsActivity"></activity>
 
     </application>
     
