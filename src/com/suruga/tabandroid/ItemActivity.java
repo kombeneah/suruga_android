@@ -66,9 +66,6 @@ public class ItemActivity extends Activity {
 			
 			AndroidTabLayoutActivity.selectedHouses=set;
 			
-			//editor.putStringSet("key", set);
-			//editor.commit();
-			
 			itemHolder.arrow.setImageResource(R.drawable.check);
 			itemHolder.info.setVisibility(View.INVISIBLE);
 			

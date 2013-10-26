@@ -24,7 +24,7 @@ import android.widget.Toast;
 
 public class AnalysisActivity extends Activity {
 
-	private ItemListAdapter adapter;
+	private AnalysisListAdapter adapter;
 
 	Set<String> set = new HashSet<String>();
 	ArrayList<Item> items = new ArrayList<Item>();
@@ -41,12 +41,12 @@ public class AnalysisActivity extends Activity {
 
 		setupListViewAdapter();
 
-		items.add(new Item(0, "House 1", "img1", false, 0));
-		items.add(new Item(1, "House 2", "img2", false, 500000000));
-		items.add(new Item(2, "House 3", "img21", false,0));
-		items.add(new Item(3, "House 4", "img22", false,0));
-		items.add(new Item(4, "House 5", "img3", false,0));
-		items.add(new Item(5, "House 6", "img4", false,0));
+		items.add(new Item(0, "House 1", "img1", false, 0, 0));
+		items.add(new Item(1, "House 2", "img2", false, 500000000, 0));
+		items.add(new Item(2, "House 3", "img21", false,0, 0));
+		items.add(new Item(3, "House 4", "img22", false,0, 0));
+		items.add(new Item(4, "House 5", "img3", false,0, 0));
+		items.add(new Item(5, "House 6", "img4", false,0, 0));
 
 		// Toast.makeText(getApplicationContext(),
 		// "this is my Toast message!!! =)", Toast.LENGTH_LONG).show();
@@ -95,7 +95,7 @@ public class AnalysisActivity extends Activity {
 	}
 
 	private void setupListViewAdapter() {
-		adapter = new ItemListAdapter(AnalysisActivity.this,
+		adapter = new AnalysisListAdapter(AnalysisActivity.this,
 				R.layout.analysis_row, new ArrayList<Item>());
 		ListView list = (ListView) findViewById(R.id.itemList);
 

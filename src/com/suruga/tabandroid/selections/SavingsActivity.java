@@ -36,12 +36,7 @@ public class SavingsActivity extends Activity {
 
 					g.setSavings(editText1.getText().toString());
 
-					Intent i = new Intent();
-					
-					i.setClass(SavingsActivity.this,
-							com.suruga.tabandroid.SettingsActivity.class);
-
-					startActivity(i);
+					onBackPressed();
 
 					return true;
 				}

@@ -26,7 +26,7 @@ public class Item implements Serializable {
 	}
 	
 	public void setSavings(int savings){
-		this.monthly=savings;
+		this.savings=savings;
 	}
 	
 	public int getMonthly(){

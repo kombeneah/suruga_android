@@ -63,18 +63,6 @@
         android:textStyle="bold"
         android:typeface="sans" />
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:onClick="infoOnClickHandler"
-        android:layout_width="24dp"
-        android:layout_height="25dp"
-        android:layout_x="263dp"
-        android:layout_y="25dp"
-        android:background="@null"
-        android:contentDescription="lala"
-        android:scaleType="fitXY"
-        android:src="@drawable/information" />
-
     <ImageView
         android:id="@+id/monthly"
         android:layout_width="30dp"
