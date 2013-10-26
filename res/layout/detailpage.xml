@@ -6,8 +6,8 @@
 
     <ImageView
         android:id="@+id/imageView1"
-        android:layout_width="160dp"
-        android:layout_height="162dp"
+        android:layout_width="124dp"
+        android:layout_height="126dp"
         android:layout_x="14dp"
         android:layout_y="16dp"
         android:src="@drawable/img1" />
@@ -21,14 +21,35 @@
         android:text="Description"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <Button
-        android:id="@+id/button1"
+    <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="198dp"
-        android:layout_y="22dp"
+        android:layout_x="146dp"
+        android:layout_y="30dp"
+        android:text="Rating: "
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="24dp"
+        android:layout_height="38dp"
+        android:layout_x="210dp"
+        android:layout_y="21dp"
+        android:background="@null"
         android:text="-"
-        android:textColor="#00FF00"
-        android:background="@null" />
+        android:textColor="#FFFFFF"
+        android:textSize="32sp" />
+
+    <Button
+        android:id="@+id/Button01"
+        android:layout_width="24dp"
+        android:layout_height="38dp"
+        android:layout_x="289dp"
+        android:layout_y="21dp"
+        android:background="@null"
+        android:text="+"
+        android:textColor="#FFFFFF"
+        android:textSize="32sp" />
 
 </AbsoluteLayout>
