@@ -93,17 +93,17 @@ public class AnalysisListAdapter extends ArrayAdapter<Item> {
 				.getDrawable(imageResourceRed);
         
 		if (monthly != null && savings != null) {
-			holder.name.setText(String.valueOf(holder.item.getMonthly()));
-			if (holder.item.getMonthly() >= monthlyInt) {
+			
+			if (holder.item.getMonthly() <= monthlyInt) {
 				holder.monthly.setImageDrawable(green);
 			} else {
 				holder.monthly.setImageDrawable(red);
 			}
 
-			if (holder.item.getSavings() >= savingsInt) {
-				holder.monthly.setImageDrawable(green);
+			if (holder.item.getSavings() <= savingsInt) {
+				holder.savings.setImageDrawable(green);
 			} else {
-				holder.monthly.setImageDrawable(red);
+				holder.savings.setImageDrawable(red);
 			}
 		}
 
@@ -125,7 +125,7 @@ public class AnalysisListAdapter extends ArrayAdapter<Item> {
 
 		row.setTag(holder);
 
-		//setupItem(holder);
+		setupItem(holder);
 		return row;
 	}
 

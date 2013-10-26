@@ -42,7 +42,7 @@ public class AnalysisActivity extends Activity {
 		setupListViewAdapter();
 
 		items.add(new Item(0, "House 1", "img1", false, 0, 0));
-		items.add(new Item(1, "House 2", "img2", false, 500000000, 0));
+		items.add(new Item(1, "House 2", "img2", false, 500000, 500000));
 		items.add(new Item(2, "House 3", "img21", false,0, 0));
 		items.add(new Item(3, "House 4", "img22", false,0, 0));
 		items.add(new Item(4, "House 5", "img3", false,0, 0));
