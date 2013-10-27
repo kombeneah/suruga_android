@@ -32,11 +32,75 @@ public class Item implements Serializable {
 		this.setSavings(savings);
 	}
 	
+	public int getTimeToStation(){
+		return timeToStation;
+	}
+	
+	public void setTimeToStation(int timeToStation){
+		this.timeToStation=timeToStation;
+	}
+	
+	public int getSize(){
+		return size;
+	}
+	
+	public void setSize(int size){
+		this.size=size;
+	}
+	
+	public int getRating(){
+		return rating;
+	}
+	
+	public void setRating(int rating){
+		this.rating=rating;
+	}
+	
+	public String getNotes(){
+		return layout;
+	}
+	
+	public void setNotes(String notes){
+		this.notes=notes;
+	}
+	
+	public String getLayout(){
+		return layout;
+	}
+	
+	public void setLayout(String layout){
+		this.layout=layout;
+	}
+	
+	public boolean getInComparison(){
+		return inComparison;
+	}
+	
+	public void setInComparison(boolean inComparison){
+		this.inComparison=inComparison;
+	}
+	
+	public String getAvailableFor(){
+		return availableFor;
+	}
+	
+	public void setAvailableFor(String availableFor){
+		this.availableFor=availableFor;
+	}
+	
+	public String getAddress(){
+		return address;
+	}
+	
+	public void setAddress(String address){
+		this.address=address;
+	}
+	
 	public String getCity(){
 		return city;
 	}
 	
-	public void setSavings(String city){
+	public void setCity(String city){
 		this.city=city;
 	}
 	
