@@ -97,13 +97,13 @@ public final class R {
         public static final int button_one=0x7f090013;
         public static final int button_three=0x7f090014;
         public static final int cell=0x7f090001;
-        public static final int editText1=0x7f09000f;
+        public static final int editText1=0x7f09000d;
         public static final int editText2=0x7f090017;
-        public static final int imageButton=0x7f09000e;
+        public static final int imageButton=0x7f09000f;
         public static final int imageView1=0x7f090009;
         public static final int itemList=0x7f090000;
         public static final int layout=0x7f090010;
-        public static final int list=0x7f09000d;
+        public static final int list=0x7f09000e;
         public static final int list_image=0x7f090003;
         public static final int menu_settings=0x7f090019;
         public static final int monthly=0x7f090007;
