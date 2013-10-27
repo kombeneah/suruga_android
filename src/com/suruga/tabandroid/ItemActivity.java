@@ -33,12 +33,12 @@ public class ItemActivity extends Activity {
 		
 		//add all the house items
 		ArrayList<Item> items=new ArrayList<Item>();
-		items.add(new Item(0, "House 1", "img1", false, 0, 0));
-		items.add(new Item(1, "House 2", "img2", false, 500000000, 0));
-		items.add(new Item(2, "House 3", "img21", false,0, 0));
-		items.add(new Item(3, "House 4", "img22", false,0, 0));
-		items.add(new Item(4, "House 5", "img3", false,0, 0));
-		items.add(new Item(5, "House 6", "img4", false,0, 0));
+		items.add(new Item(0, "House 1", "img1", false, 0, 0,"Tokyo", "", "", true, "", "", 0, 0, 0));
+		items.add(new Item(1, "House 2", "img2", false, 500000000, 0,"Tokyo", "", "", true, "", "", 0, 0, 0));
+		items.add(new Item(2, "House 3", "img21", false,0, 0,"", "", "", true, "", "", 0, 0, 0));
+		items.add(new Item(3, "House 4", "img22", false,0, 0,"", "", "", true, "", "", 0, 0, 0));
+		items.add(new Item(4, "House 5", "img3", false,0, 0,"", "", "", true, "", "", 0, 0, 0));
+		items.add(new Item(5, "House 6", "img4", false,0, 0,"", "", "", true, "", "", 0, 0, 0));
 		
 		for (int i=0;i<items.size();i++){
 			adapter.insert(items.get(i),i);
