@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.suruga.tabandroid.listview.HouseInfoActivity;
+import com.suruga.tabandroid.listview.DetailActivity;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;

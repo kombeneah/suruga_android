@@ -16,7 +16,7 @@ import android.widget.AbsoluteLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.suruga.tabandroid.listview.HouseInfoActivity;
+import com.suruga.tabandroid.listview.DetailActivity;
 
 public class ItemActivity extends Activity {
 	
@@ -103,7 +103,7 @@ public class ItemActivity extends Activity {
 		Item itemToRemove = (Item) v.getTag();
 		
 		Intent i = new Intent();
-		i.setClass(ItemActivity.this, HouseInfoActivity.class);
+		i.setClass(ItemActivity.this, DetailActivity.class);
 
 		// parameters
 		// i.putExtra("position", String.valueOf(position + 1));

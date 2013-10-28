@@ -1,6 +1,6 @@
 package com.suruga.tabandroid;
 
-import com.suruga.tabandroid.listview.HouseInfoActivity;
+import com.suruga.tabandroid.listview.DetailActivity;
 
 import android.app.Activity;
 import android.content.Intent;

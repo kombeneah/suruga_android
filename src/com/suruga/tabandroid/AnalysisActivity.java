@@ -5,22 +5,13 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.suruga.tabandroid.AnalysisActivity;
-import com.suruga.tabandroid.ItemListAdapter;
-import com.suruga.tabandroid.Item;
-import com.suruga.tabandroid.R;
-import com.suruga.tabandroid.listview.HouseInfoActivity;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
-import android.widget.Toast;
 
 public class AnalysisActivity extends Activity {
 
@@ -36,17 +27,14 @@ public class AnalysisActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_list_view);
 
-		SharedPreferences prefs = this.getSharedPreferences(
-				"com.suruga.tabandroid", Context.MODE_PRIVATE);
-
 		setupListViewAdapter();
 
-		items.add(new Item(0, "House 1", "img1", false, 0, 0));
-		items.add(new Item(1, "House 2", "img2", false, 500000, 500000));
-		items.add(new Item(2, "House 3", "img21", false,0, 0));
-		items.add(new Item(3, "House 4", "img22", false,0, 0));
-		items.add(new Item(4, "House 5", "img3", false,0, 0));
-		items.add(new Item(5, "House 6", "img4", false,0, 0));
+		items.add(new Item(0, "House 1", "img1", false, 0, 0,"Tokyo", "", "", true, "", "", 0, 0, 0));
+		items.add(new Item(1, "House 2", "img2", false, 500000000, 0,"Tokyo", "", "", true, "", "", 0, 0, 0));
+		items.add(new Item(2, "House 3", "img21", false,0, 0,"", "", "", true, "", "", 0, 0, 0));
+		items.add(new Item(3, "House 4", "img22", false,0, 0,"", "", "", true, "", "", 0, 0, 0));
+		items.add(new Item(4, "House 5", "img3", false,0, 0,"", "", "", true, "", "", 0, 0, 0));
+		items.add(new Item(5, "House 6", "img4", false,0, 0,"", "", "", true, "", "", 0, 0, 0));
 
 		// Toast.makeText(getApplicationContext(),
 		// "this is my Toast message!!! =)", Toast.LENGTH_LONG).show();
