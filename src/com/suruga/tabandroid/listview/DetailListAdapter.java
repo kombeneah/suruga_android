@@ -2,12 +2,8 @@ package com.suruga.tabandroid.listview;
 
 import java.util.List;
 
-import com.suruga.tabandroid.R;
-import com.suruga.tabandroid.selections.City;
-
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,19 +13,21 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class DetailListAdapter extends ArrayAdapter<City> {
+import com.suruga.tabandroid.R;
+
+public class DetailListAdapter extends ArrayAdapter<Detail> {
 
 	protected static final String LOG_TAG = DetailListAdapter.class.getSimpleName();
 	
-	private List<City> cities;
+	private List<Detail> details;
 	private int layoutResourceId;
 	private Context context;
 
-	public DetailListAdapter(Context context, int layoutResourceId, List<City> cities) {
-		super(context, layoutResourceId, cities);
+	public DetailListAdapter(Context context, int layoutResourceId, List<Detail> details) {
+		super(context, layoutResourceId, details);
 		this.layoutResourceId = layoutResourceId;
 		this.context = context;
-		this.cities = cities;
+		this.details = details;
 	}
 	
 	
@@ -46,12 +44,12 @@ public class DetailListAdapter extends ArrayAdapter<City> {
 		holder = new ItemHolder();
 		
 		
-		holder.city = cities.get(position);
+		holder.detail = details.get(position);
 		
 		holder.arrow=(ImageView)row.findViewById(R.id.arrow);
 		
 //		holder.info = (ImageButton)row.findViewById(R.id.imageButton);
-//		holder.info.setTag(holder.city);
+//		holder.info.setTag(holder.detail);
 //		
 //		holder.info.setImageResource(R.drawable.information);
 
@@ -69,12 +67,12 @@ public class DetailListAdapter extends ArrayAdapter<City> {
 	
 
 	private void setupItem(ItemHolder holder) {
-		holder.name.setText(holder.city.getName());
+		holder.name.setText(holder.detail.getName());
 		
 	}
 
 	public static class ItemHolder {
-		City city;
+		Detail detail;
 		TextView name;
 		TextView value;
 		AbsoluteLayout cell;
