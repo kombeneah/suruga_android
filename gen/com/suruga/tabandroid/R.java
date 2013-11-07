@@ -88,12 +88,10 @@ public final class R {
         public static final int videos_white=0x7f020044;
     }
     public static final class id {
-        public static final int Button01=0x7f09000c;
         public static final int TextView01=0x7f090015;
         public static final int TextView02=0x7f090016;
         public static final int TextView03=0x7f090018;
         public static final int arrow=0x7f090005;
-        public static final int button1=0x7f09000b;
         public static final int button_one=0x7f090013;
         public static final int button_three=0x7f090014;
         public static final int cell=0x7f090001;
@@ -106,7 +104,9 @@ public final class R {
         public static final int list=0x7f09000e;
         public static final int list_image=0x7f090003;
         public static final int menu_settings=0x7f090019;
+        public static final int minus=0x7f09000b;
         public static final int monthly=0x7f090007;
+        public static final int plus=0x7f09000c;
         public static final int savings=0x7f090008;
         public static final int segment_text=0x7f090012;
         public static final int spinner1=0x7f090011;

@@ -13,6 +13,8 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -41,7 +43,14 @@ public class DetailActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(com.suruga.tabandroid.R.layout.detailpage);
         
-        
+        final Button minus = (Button) findViewById(R.id.minus);
+        minus.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	 Toast.makeText(getApplicationContext(),
+        		 "minus", Toast.LENGTH_LONG).show();
+                // Perform action on click
+            }
+        });
         
         ArrayList<Detail> details = new ArrayList<Detail>();
 		details.add(new Detail(0, "Layout", "img1", false));

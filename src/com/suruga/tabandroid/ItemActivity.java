@@ -6,15 +6,10 @@ import java.util.Set;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AbsoluteLayout;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.suruga.tabandroid.listview.DetailActivity;
 

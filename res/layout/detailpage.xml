@@ -22,7 +22,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/minus"
         android:layout_width="24dp"
         android:layout_height="38dp"
         android:layout_x="210dp"
@@ -33,7 +33,7 @@
         android:textSize="32sp" />
 
     <Button
-        android:id="@+id/Button01"
+        android:id="@+id/plus"
         android:layout_width="24dp"
         android:layout_height="38dp"
         android:layout_x="289dp"
