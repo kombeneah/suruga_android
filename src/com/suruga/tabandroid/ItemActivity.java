@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.suruga.tabandroid.listview.DetailActivity;
 
@@ -65,9 +66,6 @@ public class ItemActivity extends Activity {
 			itemHolder.info.setVisibility(View.INVISIBLE);
 			
 			itemHolder.item.setSelected(true);
-		    //selected=true;
-		    
-		    
 		    
 		}
 		else{
@@ -102,6 +100,7 @@ public class ItemActivity extends Activity {
 		//i.putExtra("image","FirstKeyValue");
 		
 		i.setClass(ItemActivity.this, DetailActivity.class);
+		Toast.makeText(getApplicationContext(), itemToRemove.toString(), Toast.LENGTH_LONG).show();
 
 		// parameters
 		// i.putExtra("position", String.valueOf(position + 1));

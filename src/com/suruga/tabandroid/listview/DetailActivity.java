@@ -1,12 +1,17 @@
 package com.suruga.tabandroid.listview;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
+import com.suruga.tabandroid.AndroidTabLayoutActivity;
+import com.suruga.tabandroid.ItemListAdapter;
 import com.suruga.tabandroid.R;
 import com.suruga.tabandroid.selections.City;
 import com.suruga.tabandroid.selections.CityActivity;
 import com.suruga.tabandroid.selections.CityListAdapter;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -33,10 +38,7 @@ public class DetailActivity extends Activity {
 	String iconfile = "";
 	ImageButton imgWeatherIcon;
 	
-	TextView tvcity;
-	TextView tvtemp;
-	TextView tvwindspeed;
-	TextView tvCondition;
+	int rating_int=0;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -45,21 +47,32 @@ public class DetailActivity extends Activity {
         
         final Button minus = (Button) findViewById(R.id.minus);
         final Button plus = (Button) findViewById(R.id.plus);
+        final TextView rating = (TextView) findViewById(R.id.rating);
+        
         
         minus.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-            	
-//            	 Toast.makeText(getApplicationContext(),
-//        		 "minus", Toast.LENGTH_LONG).show();
-                // Perform action on click
+            	if(rating_int>=1 && rating_int<=5){
+            		rating_int--;
+            		if(rating_int==0){
+            			rating.setText(" ? ");
+            		}
+            		else{
+            		    rating.setText(" "+String.valueOf(rating_int));
+            		}
+            	}
+
             }
         });
         
         plus.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-            	 Toast.makeText(getApplicationContext(),
-        		 "plus", Toast.LENGTH_LONG).show();
-                // Perform action on click
+            	if(rating_int>=0 && rating_int<=4){
+            		rating_int++;
+            		rating.setText(" "+String.valueOf(rating_int));
+            	}
+            	
+
             }
         });
         
@@ -96,7 +109,6 @@ public class DetailActivity extends Activity {
 	        String uri = "drawable/"+ "d" + iconfile;
 	        int imageBtnResource = getResources().getIdentifier(uri, null, getPackageName());
 		    Drawable dimgbutton = getResources().getDrawable(imageBtnResource);
-		
 			
 		}
 		
@@ -106,10 +118,15 @@ public class DetailActivity extends Activity {
 		
     }
     
+    @SuppressLint("NewApi")
+	public void cellOnClickHandler(View v) {
+
+	}
+    
     private void setupListViewAdapter() {
 		adapter = new DetailListAdapter(DetailActivity.this, R.layout.detail_row,
 				new ArrayList<Detail>());
-		ListView list = (ListView) findViewById(R.id.list);
+		ListView list = (ListView) findViewById(R.id.detaillist);
 
 		list.setAdapter(adapter);
 

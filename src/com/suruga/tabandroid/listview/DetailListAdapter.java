@@ -47,16 +47,9 @@ public class DetailListAdapter extends ArrayAdapter<Detail> {
 		holder.detail = details.get(position);
 		
 		holder.arrow=(ImageView)row.findViewById(R.id.arrow);
-		
-//		holder.info = (ImageButton)row.findViewById(R.id.imageButton);
-//		holder.info.setTag(holder.detail);
-//		
-//		holder.info.setImageResource(R.drawable.information);
 
 		holder.name = (TextView)row.findViewById(R.id.tvName);
 		
-
-	    //row.findViewById(R.id.cellOnClick).setTag(position);
 
 		row.setTag(holder);
 
