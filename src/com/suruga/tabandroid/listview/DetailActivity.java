@@ -31,10 +31,7 @@ public class DetailActivity extends Activity {
 	private DetailListAdapter adapter;
 	
 	String position = "1";
-	String city = "";
-	String weather = "";
-	String temperature = "";
-	String windSpeed = "";
+
 	String iconfile = "";
 	ImageButton imgWeatherIcon;
 	
@@ -48,6 +45,12 @@ public class DetailActivity extends Activity {
         final Button minus = (Button) findViewById(R.id.minus);
         final Button plus = (Button) findViewById(R.id.plus);
         final TextView rating = (TextView) findViewById(R.id.rating);
+        
+        Intent j = getIntent();
+        
+        //this.position = i.getStringExtra("position");
+        rating_int=j.getIntExtra("rating", 0);
+        
         
         
         minus.setOnClickListener(new View.OnClickListener() {
@@ -100,15 +103,11 @@ public class DetailActivity extends Activity {
 	        Intent i = getIntent();
 	        
 	        this.position = i.getStringExtra("position");
-	        this.city = i.getStringExtra("city");
-	        this.weather=	i.getStringExtra("weather");
-	        this.temperature =  i.getStringExtra("temperature");
-	        this.windSpeed =  i.getStringExtra("windspeed");
-	        this.iconfile = i.getStringExtra("icon");
+	        //this.rating_int=i;
+            
 	        
 	        String uri = "drawable/"+ "d" + iconfile;
 	        int imageBtnResource = getResources().getIdentifier(uri, null, getPackageName());
-		    Drawable dimgbutton = getResources().getDrawable(imageBtnResource);
 			
 		}
 		

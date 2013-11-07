@@ -80,8 +80,7 @@ public class ItemActivity extends Activity {
 			itemHolder.arrow.setImageResource(R.drawable.arrow);
 			
 			itemHolder.item.setSelected(false);
-			//selected=false;
-			
+
 			
 		}
 		
@@ -89,20 +88,17 @@ public class ItemActivity extends Activity {
 
 	public void infoOnClickHandler(View v) {
 		
-		//ItemListAdapter.ItemHolder itemHolder= (ItemListAdapter.ItemHolder) v.getTag();
-		
 		//itemHolder.
 		
-		Item itemToRemove = (Item) v.getTag();
+		Item itemSelected = (Item) v.getTag();
 		
 		Intent i = new Intent();
 		
-		//i.putExtra("image","FirstKeyValue");
-		
 		i.setClass(ItemActivity.this, DetailActivity.class);
-		Toast.makeText(getApplicationContext(), itemToRemove.toString(), Toast.LENGTH_LONG).show();
+		//Toast.makeText(getApplicationContext(), itemselected.toString(), Toast.LENGTH_LONG).show();
 
 		// parameters
+		i.putExtra("rating", itemSelected.getRating());
 		// i.putExtra("position", String.valueOf(position + 1));
 
 		// start the detail page
