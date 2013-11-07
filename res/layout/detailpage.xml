@@ -67,4 +67,15 @@
         android:listSelector="@drawable/list_selector" >
     </ListView>
 
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="258dp"
+        android:layout_y="29dp"
+        android:text=" ? "
+        android:textColor="#000000"
+        android:background="#ffff00"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
 </AbsoluteLayout>

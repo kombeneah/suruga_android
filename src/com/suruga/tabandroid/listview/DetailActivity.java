@@ -44,10 +44,21 @@ public class DetailActivity extends Activity {
         setContentView(com.suruga.tabandroid.R.layout.detailpage);
         
         final Button minus = (Button) findViewById(R.id.minus);
+        final Button plus = (Button) findViewById(R.id.plus);
+        
         minus.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+            	
+//            	 Toast.makeText(getApplicationContext(),
+//        		 "minus", Toast.LENGTH_LONG).show();
+                // Perform action on click
+            }
+        });
+        
+        plus.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
             	 Toast.makeText(getApplicationContext(),
-        		 "minus", Toast.LENGTH_LONG).show();
+        		 "plus", Toast.LENGTH_LONG).show();
                 // Perform action on click
             }
         });
