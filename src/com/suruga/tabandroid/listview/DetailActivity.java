@@ -41,6 +41,8 @@ public class DetailActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(com.suruga.tabandroid.R.layout.detailpage);
         
+        
+        
         ArrayList<Detail> details = new ArrayList<Detail>();
 		details.add(new Detail(0, "Layout", "img1", false));
 		details.add(new Detail(0, "Size", "img1", false));
@@ -74,7 +76,6 @@ public class DetailActivity extends Activity {
 	        String uri = "drawable/"+ "d" + iconfile;
 	        int imageBtnResource = getResources().getIdentifier(uri, null, getPackageName());
 		    Drawable dimgbutton = getResources().getDrawable(imageBtnResource);
-         
 		
 			
 		}

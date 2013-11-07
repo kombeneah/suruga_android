@@ -45,8 +45,8 @@
 
     <EditText
         android:id="@+id/editText1"
-        android:layout_width="82dp"
-        android:layout_height="48dp"
+        android:layout_width="134dp"
+        android:layout_height="64dp"
         android:layout_x="166dp"
         android:layout_y="70dp"
         android:background="#ffff00"
