@@ -1,22 +1,10 @@
 package com.suruga.tabandroid.listview;
 
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
-
-import com.suruga.tabandroid.AndroidTabLayoutActivity;
-import com.suruga.tabandroid.Globals;
-import com.suruga.tabandroid.Item;
-import com.suruga.tabandroid.ItemListAdapter;
-import com.suruga.tabandroid.R;
-import com.suruga.tabandroid.selections.City;
-import com.suruga.tabandroid.selections.CityActivity;
-import com.suruga.tabandroid.selections.CityListAdapter;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -25,7 +13,10 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.suruga.tabandroid.Globals;
+import com.suruga.tabandroid.Item;
+import com.suruga.tabandroid.R;
 
 
 public class DetailActivity extends Activity {
@@ -40,9 +31,7 @@ public class DetailActivity extends Activity {
 	int rating_int=0;
 	
 	Item item=null;
-	
-	
-	
+
 	Globals g=Globals.getInstance();
 	
 	
@@ -104,17 +93,10 @@ public class DetailActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(com.suruga.tabandroid.R.layout.detailpage);
-        
-        final Button minus = (Button) findViewById(R.id.minus);
-        final Button plus = (Button) findViewById(R.id.plus);
-        final TextView rating = (TextView) findViewById(R.id.rating);
-        
+
         Intent j = getIntent();
         
         rating_int=j.getIntExtra("rating", 0);
-        
-        
-        
         
         ArrayList<Detail> details = new ArrayList<Detail>();
 		details.add(new Detail(0, "Layout", "img1", false));
@@ -144,7 +126,7 @@ public class DetailActivity extends Activity {
             
 	        
 	        String uri = "drawable/"+ "d" + iconfile;
-	        int imageBtnResource = getResources().getIdentifier(uri, null, getPackageName());
+	       // int imageBtnResource = getResources().getIdentifier(uri, null, getPackageName());
 			
 		}
 		

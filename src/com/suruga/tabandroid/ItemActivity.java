@@ -1,7 +1,6 @@
 package com.suruga.tabandroid;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -11,7 +10,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.suruga.tabandroid.listview.DetailActivity;
 
@@ -19,8 +17,6 @@ public class ItemActivity extends Activity {
 
 	private ItemListAdapter adapter;
 	private ArrayList<String> itemsSelected = new ArrayList<String>();
-
-	// private boolean selected=false;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -115,8 +111,6 @@ public class ItemActivity extends Activity {
 		Intent i = new Intent();
 
 		i.setClass(ItemActivity.this, DetailActivity.class);
-//		 Toast.makeText(getApplicationContext(), String.valueOf(itemSelected.getId()),
-//		 Toast.LENGTH_LONG).show();
 
 		// parameters
 		

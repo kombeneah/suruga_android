@@ -66,7 +66,7 @@ public class Item implements Serializable {
 	}
 	
 	public String getNotes(){
-		return layout;
+		return notes;
 	}
 	
 	public void setNotes(String notes){

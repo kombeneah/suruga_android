@@ -5,6 +5,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 import com.suruga.tabandroid.AndroidTabLayoutActivity;
+import com.suruga.tabandroid.Globals;
+import com.suruga.tabandroid.Item;
 import com.suruga.tabandroid.ItemListAdapter;
 import com.suruga.tabandroid.R;
 import com.suruga.tabandroid.selections.City;
@@ -36,11 +38,39 @@ public class DetailReviewActivity extends Activity {
 	ImageButton imgWeatherIcon;
 	
 	int rating_int=0;
+	Item item=null;
+	Globals g=Globals.getInstance();
+	
+	@SuppressLint("NewApi")
+	@Override
+	public void onResume() {
+		super.onResume();
+
+		final TextView rating = (TextView) findViewById(R.id.rating);
+		
+		Intent j = getIntent();
+
+	    int index=j.getIntExtra("index", 0);
+		
+		item=g.getItems().get(index);
+		
+		rating_int=item.getRating();
+		
+		rating.setText(" "+String.valueOf(rating_int));
+        
+//		if(rating_int==0){
+//			rating.setText(" ? ");
+//		}
+//		else{
+//		    rating.setText(" "+String.valueOf(rating_int));
+//		}
+		
+	}
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.suruga.tabandroid.R.layout.detailpage);
+        setContentView(com.suruga.tabandroid.R.layout.detailreviewpage);
         
         final Button minus = (Button) findViewById(R.id.minus);
         final Button plus = (Button) findViewById(R.id.plus);
@@ -50,43 +80,10 @@ public class DetailReviewActivity extends Activity {
         
         //this.position = i.getStringExtra("position");
         rating_int=j.getIntExtra("rating", 0);
-        
-        
-        
-        minus.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-            	if(rating_int>=1 && rating_int<=5){
-            		rating_int--;
-            		if(rating_int==0){
-            			rating.setText(" ? ");
-            		}
-            		else{
-            		    rating.setText(" "+String.valueOf(rating_int));
-            		}
-            	}
-
-            }
-        });
-        
-        plus.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-            	if(rating_int>=0 && rating_int<=4){
-            		rating_int++;
-            		rating.setText(" "+String.valueOf(rating_int));
-            	}
-            	
-
-            }
-        });
+    
         
         ArrayList<Detail> details = new ArrayList<Detail>();
-		details.add(new Detail(0, "Layout", "img1", false));
-		details.add(new Detail(0, "Size", "img1", false));
-		details.add(new Detail(0, "Nearest Station", "img1", false));
-		details.add(new Detail(0, "Time to Station", "img1", false));
-		details.add(new Detail(0, "Address", "img1", false));
-		details.add(new Detail(0, "Monthly Cost", "img1", false));
-		details.add(new Detail(0, "Downpayment", "img1", false));
+		details.add(new Detail(0, "Review your financial plan", "img1", false));
 		
 		setupListViewAdapter();
 		

@@ -5,11 +5,15 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.suruga.tabandroid.listview.DetailActivity;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class AnalysisActivity extends Activity {
 
@@ -26,21 +30,34 @@ public class AnalysisActivity extends Activity {
 		setContentView(R.layout.activity_list_view);
 
 		setupListViewAdapter();
-
-		items.add(new Item(0, "House 1", "img1", false, 0, 0,"Tokyo", "", "", true, "", "", 0, 0, 0));
-		items.add(new Item(1, "House 2", "img2", false, 500000000, 0,"Tokyo", "", "", true, "", "", 0, 0, 0));
-		items.add(new Item(2, "House 3", "img21", false,0, 0,"", "", "", true, "", "", 0, 0, 0));
-		items.add(new Item(3, "House 4", "img22", false,0, 0,"", "", "", true, "", "", 0, 0, 0));
-		items.add(new Item(4, "House 5", "img3", false,0, 0,"", "", "", true, "", "", 0, 0, 0));
-		items.add(new Item(5, "House 6", "img4", false,0, 0,"", "", "", true, "", "", 0, 0, 0));
+		
+		Globals g=Globals.getInstance();
+		items=g.getItems();
 
 		// Toast.makeText(getApplicationContext(),
 		// "this is my Toast message!!! =)", Toast.LENGTH_LONG).show();
 
 	}
 
+	@SuppressLint("NewApi")
 	public void cellOnClickHandler(View v) {
+		AnalysisListAdapter.ItemHolder itemHolder = (AnalysisListAdapter.ItemHolder) v
+				.getTag();
+		int position = itemHolder.item.getId();
+		
+//		Toast.makeText(getApplicationContext(), String.valueOf(position), Toast.LENGTH_LONG).show();
+//
+		Intent i = new Intent();
 
+		i.setClass(AnalysisActivity.this, com.suruga.tabandroid.listview.DetailReviewActivity.class);
+		//i.setClass(AnalysisActivity.this, WelcomeActivity.class);
+
+//		// parameters
+//		
+		i.putExtra("index", position);
+
+//		// start the detail page
+		startActivity(i);
 	}
 
 	@SuppressLint("NewApi")
@@ -75,8 +92,6 @@ public class AnalysisActivity extends Activity {
 			adapter.insert(itemsToDisplay.get(i), i);
 		}
 
-		// Toast.makeText(getApplicationContext(), String.valueOf(set.size()),
-		// Toast.LENGTH_LONG).show();
 	}
 
 	private void setupListViewAdapter() {

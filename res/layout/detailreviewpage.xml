@@ -21,49 +21,12 @@
         android:text="Rating: "
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <Button
-        android:id="@+id/minus"
-        android:layout_width="24dp"
-        android:layout_height="38dp"
-        android:layout_x="210dp"
-        android:layout_y="21dp"
-        android:background="@null"
-        android:text="-"
-        android:textColor="#FFFFFF"
-        android:textSize="32sp" />
-
-    <Button
-        android:id="@+id/plus"
-        android:layout_width="24dp"
-        android:layout_height="38dp"
-        android:layout_x="289dp"
-        android:layout_y="21dp"
-        android:background="@null"
-        android:text="+"
-        android:textColor="#FFFFFF"
-        android:textSize="32sp" />
-
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="140dp"
-        android:layout_height="70dp"
-        android:layout_x="166dp"
-        android:layout_y="70dp"
-        android:background="#ffff00"
-        android:ems="10"
-        android:gravity="top|left"
-        android:inputType="textMultiLine"
-        android:text="Notes:..." >
-
-        <requestFocus />
-    </EditText>
-
     <ListView
         android:id="@+id/detaillist"
         android:layout_width="fill_parent"
-        android:layout_height="317dp"
+        android:layout_height="250dp"
         android:layout_x="0dp"
-        android:layout_y="153dp"
+        android:layout_y="219dp"
         android:divider="#b5b5b5"
         android:dividerHeight="1dp"
         android:listSelector="@drawable/list_selector" >
@@ -75,9 +38,17 @@
         android:layout_height="wrap_content"
         android:layout_x="252dp"
         android:layout_y="30dp"
-        android:background="#ffff00"
         android:text=" ? "
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#000000" />
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="14dp"
+        android:layout_y="166dp"
+        android:text="Need to review your budget."
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </AbsoluteLayout>

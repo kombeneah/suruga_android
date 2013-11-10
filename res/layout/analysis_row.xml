@@ -65,6 +65,7 @@
 
     <ImageView
         android:id="@+id/monthly"
+        
         android:layout_width="30dp"
         android:layout_height="33dp"
         android:layout_x="167dp"
@@ -73,6 +74,7 @@
 
     <ImageView
         android:id="@+id/savings"
+        
         android:layout_width="30dp"
         android:layout_height="33dp"
         android:layout_x="220dp"
