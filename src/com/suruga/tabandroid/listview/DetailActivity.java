@@ -39,27 +39,39 @@ public class DetailActivity extends Activity {
 	
 	int rating_int=0;
 	
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(com.suruga.tabandroid.R.layout.detailpage);
-        
-        final Button minus = (Button) findViewById(R.id.minus);
+	Item item=null;
+	
+	
+	
+	Globals g=Globals.getInstance();
+	
+	
+	
+	@SuppressLint("NewApi")
+	@Override
+	public void onResume() {
+		super.onResume();
+		
+		final Button minus = (Button) findViewById(R.id.minus);
         final Button plus = (Button) findViewById(R.id.plus);
-        final TextView rating = (TextView) findViewById(R.id.rating);
+		final TextView rating = (TextView) findViewById(R.id.rating);
+		
+		Intent j = getIntent();
+
+	    int index=j.getIntExtra("index", 0);
+		
+		item=g.getItems().get(index);
+		
+		rating_int=item.getRating();
         
-        Intent j = getIntent();
-        
-        //this.position = i.getStringExtra("position");
-        int index=j.getIntExtra("index", 0);
-        rating_int=j.getIntExtra("rating", 0);
-        
-        Globals g=Globals.getInstance();
-        Item item=g.getItems().get(index);
-        
-        
-        
-        minus.setOnClickListener(new View.OnClickListener() {
+		if(rating_int==0){
+			rating.setText(" ? ");
+		}
+		else{
+		    rating.setText(" "+String.valueOf(rating_int));
+		}
+		
+		minus.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
             	if(rating_int>=1 && rating_int<=5){
             		rating_int--;
@@ -69,6 +81,7 @@ public class DetailActivity extends Activity {
             		else{
             		    rating.setText(" "+String.valueOf(rating_int));
             		}
+            		item.setRating(rating_int);
             	}
 
             }
@@ -81,9 +94,27 @@ public class DetailActivity extends Activity {
             		rating.setText(" "+String.valueOf(rating_int));
             	}
             	
-
+            	item.setRating(rating_int);
             }
         });
+		
+	}
+	
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(com.suruga.tabandroid.R.layout.detailpage);
+        
+        final Button minus = (Button) findViewById(R.id.minus);
+        final Button plus = (Button) findViewById(R.id.plus);
+        final TextView rating = (TextView) findViewById(R.id.rating);
+        
+        Intent j = getIntent();
+        
+        rating_int=j.getIntExtra("rating", 0);
+        
+        
+        
         
         ArrayList<Detail> details = new ArrayList<Detail>();
 		details.add(new Detail(0, "Layout", "img1", false));

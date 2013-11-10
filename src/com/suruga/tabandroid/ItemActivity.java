@@ -114,7 +114,7 @@ public class ItemActivity extends Activity {
 
 		Intent i = new Intent();
 
-//		i.setClass(ItemActivity.this, DetailActivity.class);
+		i.setClass(ItemActivity.this, DetailActivity.class);
 //		 Toast.makeText(getApplicationContext(), String.valueOf(itemSelected.getId()),
 //		 Toast.LENGTH_LONG).show();
 
