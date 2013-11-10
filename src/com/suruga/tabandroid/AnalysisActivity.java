@@ -58,7 +58,6 @@ public class AnalysisActivity extends Activity {
 		//		"com.suruga.tabandroid", Context.MODE_MULTI_PROCESS);
 		//set = prefs.getStringSet("key", set);
 		
-		
 		set=AndroidTabLayoutActivity.selectedHouses;
 		
 		for (String i : set) {

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="124dp"
+        android:layout_height="126dp"
+        android:layout_x="14dp"
+        android:layout_y="16dp"
+        android:src="@drawable/img1" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="146dp"
+        android:layout_y="30dp"
+        android:text="Rating: "
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/minus"
+        android:layout_width="24dp"
+        android:layout_height="38dp"
+        android:layout_x="210dp"
+        android:layout_y="21dp"
+        android:background="@null"
+        android:text="-"
+        android:textColor="#FFFFFF"
+        android:textSize="32sp" />
+
+    <Button
+        android:id="@+id/plus"
+        android:layout_width="24dp"
+        android:layout_height="38dp"
+        android:layout_x="289dp"
+        android:layout_y="21dp"
+        android:background="@null"
+        android:text="+"
+        android:textColor="#FFFFFF"
+        android:textSize="32sp" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="140dp"
+        android:layout_height="70dp"
+        android:layout_x="166dp"
+        android:layout_y="70dp"
+        android:background="#ffff00"
+        android:ems="10"
+        android:gravity="top|left"
+        android:inputType="textMultiLine"
+        android:text="Notes:..." >
+
+        <requestFocus />
+    </EditText>
+
+    <ListView
+        android:id="@+id/detaillist"
+        android:layout_width="fill_parent"
+        android:layout_height="317dp"
+        android:layout_x="0dp"
+        android:layout_y="153dp"
+        android:divider="#b5b5b5"
+        android:dividerHeight="1dp"
+        android:listSelector="@drawable/list_selector" >
+    </ListView>
+
+    <TextView
+        android:id="@+id/rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="252dp"
+        android:layout_y="30dp"
+        android:background="#ffff00"
+        android:text=" ? "
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#000000" />
+
+</AbsoluteLayout>
