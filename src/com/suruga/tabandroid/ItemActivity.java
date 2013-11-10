@@ -32,11 +32,7 @@ public class ItemActivity extends Activity {
 		Globals global = Globals.getInstance();
 
 		// retrieve all items from the singleton class
-		ArrayList<Item> items = global.getItems();
-		
-		 Toast.makeText(getApplicationContext(), global.getCity(),
-				 Toast.LENGTH_LONG).show();
-				 
+		ArrayList<Item> items = global.getItems();		 
 
 		for (int i = 0; i < items.size(); i++) {
 			if (items.get(i).getCity().equals("Tokyo")) {
@@ -59,13 +55,11 @@ public class ItemActivity extends Activity {
 
 		// retrieve all items from the singleton class
 		ArrayList<Item> items = global.getItems();
-		
-		 Toast.makeText(getApplicationContext(), global.getCity(),
-				 Toast.LENGTH_LONG).show();
 				 
 
 		for (int i = 0; i < items.size(); i++) {
 			if (items.get(i).getCity().equals("Tokyo")) {
+			//if (items.get(i).getCity().equals(global.getCity())) {
 				adapter.insert(items.get(i), i);
 			}
 		}
@@ -120,11 +114,13 @@ public class ItemActivity extends Activity {
 
 		Intent i = new Intent();
 
-		i.setClass(ItemActivity.this, DetailActivity.class);
-		// Toast.makeText(getApplicationContext(), itemselected.toString(),
-		// Toast.LENGTH_LONG).show();
+//		i.setClass(ItemActivity.this, DetailActivity.class);
+//		 Toast.makeText(getApplicationContext(), String.valueOf(itemSelected.getId()),
+//		 Toast.LENGTH_LONG).show();
 
 		// parameters
+		
+		i.putExtra("index", itemSelected.getId());
 		i.putExtra("rating", itemSelected.getRating());
 		// i.putExtra("position", String.valueOf(position + 1));
 

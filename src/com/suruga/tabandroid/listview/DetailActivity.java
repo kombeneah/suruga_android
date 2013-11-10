@@ -5,6 +5,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 import com.suruga.tabandroid.AndroidTabLayoutActivity;
+import com.suruga.tabandroid.Globals;
+import com.suruga.tabandroid.Item;
 import com.suruga.tabandroid.ItemListAdapter;
 import com.suruga.tabandroid.R;
 import com.suruga.tabandroid.selections.City;
@@ -49,7 +51,11 @@ public class DetailActivity extends Activity {
         Intent j = getIntent();
         
         //this.position = i.getStringExtra("position");
+        int index=j.getIntExtra("index", 0);
         rating_int=j.getIntExtra("rating", 0);
+        
+        Globals g=Globals.getInstance();
+        Item item=g.getItems().get(index);
         
         
         
