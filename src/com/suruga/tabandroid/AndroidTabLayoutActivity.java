@@ -1,5 +1,6 @@
 package com.suruga.tabandroid;
 
+import java.util.ArrayList;
 import java.util.Set;
 
 import android.app.TabActivity;
@@ -11,6 +12,9 @@ import android.widget.TabHost.TabSpec;
 public class AndroidTabLayoutActivity extends TabActivity {
 	
 	public static Set<String> selectedHouses;
+	
+	public static ArrayList<Item> items=new ArrayList<Item>();
+	
 	
     /** Called when the activity is first created. */
     @Override

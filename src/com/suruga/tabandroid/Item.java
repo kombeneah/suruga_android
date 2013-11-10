@@ -30,6 +30,15 @@ public class Item implements Serializable {
 		this.setSelected(selected);
 		this.setMonthly(monthly);
 		this.setSavings(savings);
+		this.setCity(city);
+		this.setAddress(address);
+		this.setAvailableFor(availableFor);
+		this.setInComparison(inComparison);
+		this.setLayout(layout);
+		this.setNotes(notes);
+		this.setRating(rating);
+		this.setSize(size);
+		this.setTimeToStation(timeToStation);
 	}
 	
 	public int getTimeToStation(){

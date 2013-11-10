@@ -56,15 +56,6 @@ public class CityActivity extends Activity {
 				"com.suruga.tabandroid", Context.MODE_PRIVATE);
 		Editor editor = prefs.edit();
 
-		// ItemListAdapter.ItemHolder itemHolder= (ItemListAdapter.ItemHolder)
-		// v.getTag();
-
-		// Intent i = new Intent();
-		// i.setClass(CityActivity.this,
-		// com.suruga.tabandroid.selections.City.class);
-		//
-		// startActivity(i);
-
 		itemHolder.arrow.setVisibility(View.VISIBLE);
 		itemHolder.arrow.setImageResource(R.drawable.check_medium);
 		
