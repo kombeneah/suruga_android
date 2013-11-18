@@ -54,8 +54,8 @@ public class ItemActivity extends Activity {
 				 
 
 		for (int i = 0; i < items.size(); i++) {
-			if (items.get(i).getCity().equals("Tokyo")) {
-			//if (items.get(i).getCity().equals(global.getCity())) {
+			//if (items.get(i).getCity().equals("Tokyo")) {
+			if (items.get(i).getCity().equals(global.getCity())) {
 				adapter.insert(items.get(i), i);
 			}
 		}

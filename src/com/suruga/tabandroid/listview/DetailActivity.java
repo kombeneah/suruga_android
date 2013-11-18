@@ -68,7 +68,7 @@ public class DetailActivity extends Activity {
             			rating.setText(" ? ");
             		}
             		else{
-            		    rating.setText(" "+String.valueOf(rating_int));
+            		    rating.setText(" "+String.valueOf(rating_int)+" ");
             		}
             		item.setRating(rating_int);
             	}
@@ -80,7 +80,7 @@ public class DetailActivity extends Activity {
             public void onClick(View v) {
             	if(rating_int>=0 && rating_int<=4){
             		rating_int++;
-            		rating.setText(" "+String.valueOf(rating_int));
+            		rating.setText(" "+String.valueOf(rating_int)+" ");
             	}
             	
             	item.setRating(rating_int);
