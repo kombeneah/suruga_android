@@ -4,6 +4,7 @@ import com.suruga.tabandroid.R;
 import com.suruga.tabandroid.R.layout;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 public class ReviewActivity extends Activity {
@@ -11,6 +12,10 @@ public class ReviewActivity extends Activity {
 		super.onCreate(savedInstanceState);
 
 	    setContentView(R.layout.review_layout);
+	    
+	    Intent i = new Intent();
+	    
+	    int solutionNumber=i.getIntExtra("solutionNumber", 0);
 
 	}
 }

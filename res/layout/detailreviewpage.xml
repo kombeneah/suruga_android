@@ -24,9 +24,9 @@
     <ListView
         android:id="@+id/detaillist"
         android:layout_width="fill_parent"
-        android:layout_height="250dp"
+        android:layout_height="214dp"
         android:layout_x="0dp"
-        android:layout_y="219dp"
+        android:layout_y="252dp"
         android:divider="#b5b5b5"
         android:dividerHeight="1dp"
         android:listSelector="@drawable/list_selector" >
@@ -44,10 +44,10 @@
 
     <TextView
         android:id="@+id/affordLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="276dp"
+        android:layout_height="84dp"
         android:layout_x="14dp"
-        android:layout_y="166dp"
+        android:layout_y="152dp"
         android:text="Need to review your budget."
         android:textAppearance="?android:attr/textAppearanceMedium" />
 

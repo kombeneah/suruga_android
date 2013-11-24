@@ -72,31 +72,6 @@ public class InterestActivity extends Activity {
 
 	}
 
-	// public void infoOnClickHandler(View v) {
-	//
-	//
-	// Item itemToRemove = (Item) v.getTag();
-	//
-	// Intent i = new Intent();
-	// i.setClass(SettingsActivity.this, HouseInfoActivity.class);
-	//
-	// // parameters
-	// // i.putExtra("position", String.valueOf(position + 1));
-	//
-	// /*
-	// * selected item parameters 1. House number 2. Weather 3. Wind speed 4.
-	// * Temperature 5. Weather icon
-	// */
-	// // i.putExtra("number",
-	// // weatherDataCollection.get(position).get(KEY_CITY));
-	// // i.putExtra("weather",
-	// // weatherDataCollection.get(position).get(KEY_CONDN));
-	//
-	// // start the detail page
-	// startActivity(i);
-	//
-	// }
-
 	private void setupListViewAdapter() {
 		adapter = new CityListAdapter(InterestActivity.this, R.layout.city_row,
 				new ArrayList<City>());

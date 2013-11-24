@@ -87,12 +87,41 @@ public class DetailReviewActivity extends Activity {
 		}
 		
 		//just downpayment negative. and buying
-		else if(monthlyCost < monthlyInt && downPayment > savingsInt){
+		else if(monthlyCost < monthlyInt && downPayment > savingsInt && g.getInterest().equals("Buying")){
 			affordLabel.setText("Need to review your initial budget for making surplus in the initial balance.");
 			solutions = 2;
 		}
 		
 		//just downpayment negative
+		else if(monthlyCost < monthlyInt && downPayment > savingsInt){
+			affordLabel.setText("Need to review your initial budget for making surplus in the initial balance.");
+			solutions = 3;
+		}
+		
+		//both negative
+		else if(monthlyCost > monthlyInt && downPayment > savingsInt){
+			affordLabel.setText("Need to review your budget.");
+			solutions = 4;
+		}
+		
+		ArrayList<Detail> details = new ArrayList<Detail>();
+        if(solutions==0){
+        	
+        }else if(solutions==1){
+		    
+		    details.add(new Detail(0, "Review your current loans", "img1", false));
+		    details.add(new Detail(1, "Review other expenses", "img1", false));
+		    details.add(new Detail(2, "Review your current insurance", "img1", false));
+        }
+      //display in short period of time
+//        Toast.makeText(getApplicationContext(), String.valueOf(solutions),
+//                              Toast.LENGTH_SHORT).show();
+        
+        setupListViewAdapter();
+        
+        for (int i = 0; i < details.size(); i++) {
+			adapter.insert(details.get(i), i);
+		}
 		
 
 		rating_int = item.getRating();
@@ -144,10 +173,16 @@ public class DetailReviewActivity extends Activity {
 
 	@SuppressLint("NewApi")
 	public void cellOnClickHandler(View v) {
+		DetailListAdapter.ItemHolder itemHolder = (DetailListAdapter.ItemHolder) v
+				.getTag();
+		int position = itemHolder.detail.getId();
+		
 		Intent i = new Intent();
 
 		i.setClass(DetailReviewActivity.this,
 				com.suruga.tabandroid.listview.ReviewActivity.class);
+		
+		i.putExtra("solutionNumber", solutions);
 
 		startActivity(i);
 	}

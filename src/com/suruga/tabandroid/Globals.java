@@ -19,7 +19,7 @@ public class Globals {
 
 	// Restrict the constructor from being instantiated
 	private Globals() {
-		this.items.add(new Item(0, "House 1", "img1", false, 0, 0,"Tokyo", "", "", true, "", "", 0, 0, 0));
+		this.items.add(new Item(0, "House 1", "img1", false, 5, 0,"Tokyo", "", "", true, "", "", 0, 0, 0));
 		this.items.add(new Item(1, "House 2", "img2", false, 500000000, 0,"Tokyo", "", "", true, "", "", 0, 0, 0));
 		this.items.add(new Item(2, "House 3", "img21", false,0, 0,"", "", "", true, "", "", 0, 0, 0));
 		this.items.add(new Item(3, "House 4", "img22", false,0, 0,"", "", "", true, "", "", 0, 0, 0));

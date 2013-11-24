@@ -8,11 +8,21 @@ public class Detail implements Serializable {
 	private String name = "";
 	private String value = "";
 	private boolean selected=true;
+	private int id=0;
 
 	public Detail(int id, String name, String value, boolean selected) {
+		this.setId(id);
 		this.setName(name);
 		this.setValue(value);
 		this.setSelected(selected);
+	}
+	
+	public int getId(){
+		return id;
+	}
+	
+	public void setId(int id){
+		this.id=id;
 	}
 	
 	public boolean getSelected(){
