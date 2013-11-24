@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.View.OnKeyListener;
 import android.widget.EditText;
 
-public class WelcomeActivity extends Activity {
+public class ReviewActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 
 		final EditText editText1;
@@ -29,7 +29,7 @@ public class WelcomeActivity extends Activity {
 					if (editText1.getText().toString().equals("963369")) {
 
 						Intent i = new Intent();
-						i.setClass(WelcomeActivity.this,
+						i.setClass(ReviewActivity.this,
 								AndroidTabLayoutActivity.class);
 
 						startActivity(i);
