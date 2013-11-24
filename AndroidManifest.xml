@@ -34,6 +34,7 @@
         <activity android:name=".selections.MonthlyActivity"></activity>
         <activity android:name=".selections.SavingsActivity"></activity>
         <activity android:name=".listview.DetailReviewActivity"></activity>
+        <activity android:name=".listview.ReviewActivity"></activity>
 
     </application>
     

@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.suruga.tabandroid.Globals;
 import com.suruga.tabandroid.Item;
+import com.suruga.tabandroid.ItemActivity;
 import com.suruga.tabandroid.R;
 
 
@@ -138,7 +139,8 @@ public class DetailActivity extends Activity {
     
     @SuppressLint("NewApi")
 	public void cellOnClickHandler(View v) {
-
+    
+    	
 	}
     
     private void setupListViewAdapter() {

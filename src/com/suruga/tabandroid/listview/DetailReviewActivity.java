@@ -116,7 +116,11 @@ public class DetailReviewActivity extends Activity {
     
     @SuppressLint("NewApi")
 	public void cellOnClickHandler(View v) {
+    	Intent i = new Intent();
 
+		i.setClass(DetailReviewActivity.this, com.suruga.tabandroid.listview.ReviewActivity.class);
+
+		startActivity(i);
 	}
     
     private void setupListViewAdapter() {
