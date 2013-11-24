@@ -43,7 +43,7 @@
         android:textColor="#FFFFFF" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/affordLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_x="14dp"

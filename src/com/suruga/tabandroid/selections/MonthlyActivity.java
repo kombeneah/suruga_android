@@ -38,13 +38,6 @@ public class MonthlyActivity extends Activity {
 					g.setMonthly(editText1.getText().toString());
 					onBackPressed();
 
-//					Intent i = new Intent();
-//					
-//					i.setClass(MonthlyActivity.this,
-//							com.suruga.tabandroid.SettingsActivity.class);
-//
-//					startActivity(i);
-
 					return true;
 				}
 				return false;

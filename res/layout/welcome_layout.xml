@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_x="48dp"
         android:layout_y="62dp"
-        android:text="Please enter your 4 digit survey code." />
+        android:text="Please enter your 6 digit survey code." />
 
     <EditText
         android:id="@+id/editText1"

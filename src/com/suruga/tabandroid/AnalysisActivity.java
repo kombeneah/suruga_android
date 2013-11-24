@@ -44,15 +44,11 @@ public class AnalysisActivity extends Activity {
 		AnalysisListAdapter.ItemHolder itemHolder = (AnalysisListAdapter.ItemHolder) v
 				.getTag();
 		int position = itemHolder.item.getId();
-		
-//		Toast.makeText(getApplicationContext(), String.valueOf(position), Toast.LENGTH_LONG).show();
-//
+
 		Intent i = new Intent();
 
 		i.setClass(AnalysisActivity.this, com.suruga.tabandroid.listview.DetailReviewActivity.class);
-		//i.setClass(AnalysisActivity.this, WelcomeActivity.class);
 
-//		// parameters
 //		
 		i.putExtra("index", position);
 

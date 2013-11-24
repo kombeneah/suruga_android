@@ -41,10 +41,6 @@ public class WelcomeActivity extends Activity {
 			}
 		});
 
-		// Intent i = new Intent();
-		// i.setClass(ItemActivity.this, HouseInfoActivity.class);
-		//
-		// startActivity(i);
 
 	}
 }
