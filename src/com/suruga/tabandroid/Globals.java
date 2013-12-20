@@ -74,7 +74,7 @@ public class Globals {
 	public void setData(int d) {
 		this.data = d;
 	}
-
+    
 	public int getData() {
 		return this.data;
 	}

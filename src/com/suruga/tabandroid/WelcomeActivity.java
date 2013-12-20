@@ -10,6 +10,11 @@ import android.view.View;
 import android.view.View.OnKeyListener;
 import android.widget.EditText;
 
+/**
+ * 
+ * @author changey
+ * The welcome page which prompts users to enter passcode, the current passcode is 963369
+ */
 public class WelcomeActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 
