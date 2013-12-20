@@ -15,6 +15,11 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
 
+/**
+ * 
+ * @author changey
+ * The page to analyze whether selected items meet monthly and savings budget
+ */
 public class AnalysisActivity extends Activity {
 
 	private AnalysisListAdapter adapter;

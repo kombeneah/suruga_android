@@ -23,6 +23,11 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.widget.RadioButton;
 
+/**
+ * 
+ * @author changey
+ * class not used
+ */
 public class CenteredRadioImageButton extends RadioButton {
 
 	Drawable image;

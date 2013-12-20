@@ -3,6 +3,12 @@ package com.suruga.tabandroid;
 import java.util.ArrayList;
 import java.util.Set;
 
+/**
+ * 
+ * @author changey
+ * The class that stores global variables such as savings and monthly income
+ */
+
 public class Globals {
 	private static Globals instance;
 
