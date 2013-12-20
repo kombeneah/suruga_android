@@ -13,6 +13,11 @@ import android.widget.ListView;
 
 import com.suruga.tabandroid.listview.DetailActivity;
 
+/**
+ * 
+ * @author changey
+ * The item activity will display houses based on selection criteria (city, buying or renting...)
+ */
 public class ItemActivity extends Activity {
 
 	private ItemListAdapter adapter;
