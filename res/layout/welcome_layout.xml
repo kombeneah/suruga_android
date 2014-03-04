@@ -3,7 +3,8 @@
     android:id="@+id/RelativeLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:background="@android:color/white" >
 
     <!-- Screen Design for Photos -->
 
@@ -14,9 +15,11 @@
         android:layout_alignLeft="@+id/textView2"
         android:layout_below="@+id/textView2"
         android:layout_marginTop="22dp"
-        android:background="#ffffff"
         android:ems="10"
-        android:inputType="number" >
+        android:hint="@string/passcodeEntryHint"
+        android:inputType="number"
+        android:textColor="@android:color/black"
+        android:textCursorDrawable="@null" >
 
         <requestFocus />
     </EditText>
@@ -28,7 +31,8 @@
         android:layout_below="@+id/textView1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="14dp"
-        android:text="@string/codeEntryInstructions" />
+        android:text="@string/codeEntryInstructions"
+        android:textColor="@android:color/black" />
 
     <TextView
         android:id="@+id/textView1"
@@ -38,6 +42,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="46dp"
         android:text="@string/welcome"
+        android:textColor="@android:color/black"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>

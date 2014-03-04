@@ -25,4 +25,6 @@
     
     <string name="welcome">Welcome!</string>
     <string name="codeEntryInstructions">Please enter your 6 digit survey code.</string>
+    <string name="passcodeEntryHint">Enter Passcode</string>
+    
 </resources>

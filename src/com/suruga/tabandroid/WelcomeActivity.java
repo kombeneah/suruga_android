@@ -35,11 +35,7 @@ public class WelcomeActivity extends Activity {
 		final InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 		imm.showSoftInput(welcomeEditText, InputMethodManager.SHOW_IMPLICIT);
 		
-		// put this where we need to remove the focus on the editText
-		/*
-		
-		*/
-
+		// listener for the DONE button on passcode entry
 		welcomeEditText.setOnKeyListener(new OnKeyListener() {
 
 			@Override

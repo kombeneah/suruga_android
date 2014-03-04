@@ -157,6 +157,7 @@ public final class R {
         public static final int menu_settings=0x7f050007;
         public static final int ok=0x7f05000b;
         public static final int passcode=0x7f050008;
+        public static final int passcodeEntryHint=0x7f05000e;
         public static final int passcodeErrorMessage=0x7f05000a;
         public static final int passcodeErrorTitle=0x7f050009;
         public static final int strCity=0x7f050002;
