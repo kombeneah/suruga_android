@@ -16,4 +16,13 @@
         <item>Aichi</item>
         <item>Hokkaido</item>
     </string-array>
+    
+    <string name="passcode">963369</string>
+    <string name="passcodeErrorTitle">Passcode Error</string>
+    <string name="passcodeErrorMessage">You provided a wrong passcode. Please try again.</string>
+    
+    <string name="ok">OK</string>
+    
+    <string name="welcome">Welcome!</string>
+    <string name="codeEntryInstructions">Please enter your 6 digit survey code.</string>
 </resources>

@@ -23,6 +23,7 @@
         <activity android:name="com.suruga.tabandroid.listview.DetailActivity"></activity>
         <activity android:name=".WelcomeActivity"
                    android:label="Suruga"
+                   android:windowSoftInputMode="stateVisible"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
