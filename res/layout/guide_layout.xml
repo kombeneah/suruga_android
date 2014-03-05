@@ -1,28 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<AbsoluteLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:orientation="vertical"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent">
-  
-  <!-- Screen Design for Photos -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white" >
+
+    <!-- Screen Design for Photos -->
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="261dp"
-        android:layout_height="80dp"
-        android:layout_x="29dp"
-        android:layout_y="102dp"
-        android:text="Please go to the &quot;Settings&quot; tab and create your profile" />
-
-    <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/guideTitleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="66dp"
-        android:layout_y="36dp"
-        android:text="1. Settings"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="36dp"
+        android:text="@string/guideSettingsHeader"
+        android:textColor="@android:color/black"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="32sp" />
-    
-</AbsoluteLayout>
+
+    <TextView
+        android:id="@+id/guideInfoTextView"
+        android:layout_width="261dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/guideTitleTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="@string/guideSettingsInfo"
+        android:textColor="@android:color/black" />
+
+</RelativeLayout>

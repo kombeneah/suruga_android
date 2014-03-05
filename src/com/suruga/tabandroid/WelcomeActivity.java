@@ -5,7 +5,6 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -43,15 +42,13 @@ public class WelcomeActivity extends Activity {
 				if (event.getAction() == KeyEvent.ACTION_DOWN
 						&& keyCode == KeyEvent.KEYCODE_ENTER) {
 					
-					Resources res = getResources();
-					String passcode = res.getString(R.string.passcode);
+					String passcode = getResources().getString(R.string.passcode);
 					
 					// correct passcode provided
 					if (welcomeEditText.getText().toString().equals(passcode)) {
 
 						Intent i = new Intent();
-						i.setClass(WelcomeActivity.this,
-								AndroidTabLayoutActivity.class);
+						i.setClass(WelcomeActivity.this, AndroidTabLayoutActivity.class);
 						
 						// dismiss the dialog
 						imm.hideSoftInputFromWindow(welcomeEditText.getWindowToken(), 0);
@@ -76,6 +73,7 @@ public class WelcomeActivity extends Activity {
 					}
 					
 				}
+				
 				return false;
 			}
 		});

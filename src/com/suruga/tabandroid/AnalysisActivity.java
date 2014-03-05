@@ -78,6 +78,11 @@ public class AnalysisActivity extends Activity {
 		
 		set=AndroidTabLayoutActivity.selectedHouses;
 		
+		if (set == null) {
+			// no selected houses, exit
+			return;
+		}
+		
 		for (String i : set) {
 			itemsId.add(Integer.valueOf(i));
 			// itemsToDisplay.add(items.get(Integer.valueOf(i)));

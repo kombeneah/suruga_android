@@ -20,11 +20,27 @@ public class Globals {
 	private String monthly;
 	private String savings;
 	
+	protected static enum GuideStatus {
+		goToSettings,
+		goToHouses,
+		goToAnalysis,
+		done;
+	}
+	
+	private GuideStatus guideStatus;
+	
 	private ArrayList<Item> items=new ArrayList<Item>();
 	
 
 	// Restrict the constructor from being instantiated
 	private Globals() {
+		this.city = "";
+		this.interest = "";
+		this.monthly = "";
+		this.savings = "";
+		
+		this.setGuideStatus(GuideStatus.goToSettings);
+		
 		this.items.add(new Item(0, "House 1", "img1", false, 5, 0,"Tokyo", "", "", true, "", "", 0, 0, 0));
 		this.items.add(new Item(1, "House 2", "img2", false, 500000000, 0,"Tokyo", "", "", true, "", "", 0, 0, 0));
 		this.items.add(new Item(2, "House 3", "img21", false,0, 0,"", "", "", true, "", "", 0, 0, 0));
@@ -90,5 +106,13 @@ public class Globals {
 			instance = new Globals();
 		}
 		return instance;
+	}
+
+	public GuideStatus getGuideStatus() {
+		return guideStatus;
+	}
+
+	public void setGuideStatus(GuideStatus guideStatus) {
+		this.guideStatus = guideStatus;
 	}
 }

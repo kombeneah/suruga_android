@@ -25,6 +25,23 @@
     
     <string name="welcome">Welcome!</string>
     <string name="codeEntryInstructions">Please enter your 6 digit survey code.</string>
-    <string name="passcodeEntryHint">Enter Passcode</string>
+    <string name="passcodeEntryHint">Enter Code</string>
+    
+    <string name="guideSettingsHeader">1. Settings</string>
+    <string name="guideSettingsInfo">Please go to the settings tab and create your financial profile.</string>
+    
+    <string name="guideHousesHeader">2. Houses</string>
+    <string name="guideHousesInfo">Please go to the houses tab and select the houses that interest you.</string>
+    
+    <string name="guideFinancialsHeader">3. Financials</string>
+    <string name="guideFinancialsInfo">Please go to the Financials tab and view further options.</string>
+    
+    <string name="guideDoneHeader">4. Done</string>
+    <string name="guideDoneInfo">You have completed the survey! Thank you.</string>
+    
+    <string name="guide">Guide</string>
+    <string name="settings">Settings</string>
+    <string name="houses">Houses</string>
+    <string name="analysis">Analysis</string>
     
 </resources>
