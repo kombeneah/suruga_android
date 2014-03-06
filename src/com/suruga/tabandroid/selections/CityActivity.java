@@ -70,7 +70,8 @@ public class CityActivity extends Activity {
 		}
 
 		oldItemHolder = itemHolder;
-
+		
+		finish();
 	}
 
 	private void setupListViewAdapter() {

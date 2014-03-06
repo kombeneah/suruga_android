@@ -69,7 +69,8 @@ public class InterestActivity extends Activity {
 		}
 
 		oldItemHolder = itemHolder;
-
+		
+		finish();
 	}
 
 	private void setupListViewAdapter() {

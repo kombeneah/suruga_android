@@ -168,11 +168,13 @@ public final class R {
         public static final int hello=0x7f050000;
         public static final int houses=0x7f050019;
         public static final int menu_settings=0x7f050007;
+        public static final int monthlyMessage=0x7f05001b;
         public static final int ok=0x7f05000b;
         public static final int passcode=0x7f050008;
         public static final int passcodeEntryHint=0x7f05000e;
         public static final int passcodeErrorMessage=0x7f05000a;
         public static final int passcodeErrorTitle=0x7f050009;
+        public static final int savingsMessage=0x7f05001c;
         public static final int settings=0x7f050018;
         public static final int strCity=0x7f050002;
         public static final int strTemp=0x7f050004;
@@ -180,6 +182,7 @@ public final class R {
         public static final int strWindSpeed=0x7f050005;
         public static final int txtWindSpeed=0x7f050006;
         public static final int welcome=0x7f05000c;
+        public static final int yenSign=0x7f05001d;
     }
     public static final class styleable {
         /** Attributes that can be used with a CompoundButton.

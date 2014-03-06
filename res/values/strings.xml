@@ -44,4 +44,8 @@
     <string name="houses">Houses</string>
     <string name="analysis">Analysis</string>
     
+    <string name="monthlyMessage">Please enter your available monthly funds for housing expenses</string>
+    <string name="savingsMessage">Please enter your available savings for the downpayment and initial cost of the house.</string>
+    <string name="yenSign">¥</string>
+    
 </resources>
