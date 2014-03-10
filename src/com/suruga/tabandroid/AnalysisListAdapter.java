@@ -66,7 +66,7 @@ public class AnalysisListAdapter extends ArrayAdapter<Item> {
 		}
 
 
-		String uriGreen = "drawable/green";
+		String uriGreen = "drawable/affordable";
 		int imageResourceGreen = row
 				.getContext()
 				.getApplicationContext()
@@ -79,7 +79,7 @@ public class AnalysisListAdapter extends ArrayAdapter<Item> {
 		Drawable green = row.getContext().getResources()
 				.getDrawable(imageResourceGreen);
 
-		String uriRed = "drawable/red";
+		String uriRed = "drawable/unaffordable";
 		int imageResourceRed = row
 				.getContext()
 				.getApplicationContext()

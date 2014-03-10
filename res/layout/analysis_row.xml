@@ -1,61 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cell"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/list_selector"
-    android:orientation="horizontal"
+    android:background="@android:color/white"
     android:onClick="cellOnClickHandler"
-    android:padding="5dip" 
-    android:id="@+id/cell">
+    android:orientation="horizontal"
+    android:padding="5dip" >
     
+    <!-- android:background="@drawable/list_selector" -->
+
     <!-- ListRow Left sied Thumbnail image -->
 
-    <LinearLayout
-        android:id="@+id/thumbnail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_marginRight="5dip"
-        android:padding="3dip" >
-
-
-        <ImageView
-            android:id="@+id/list_image"
-            android:layout_width="60dip"
-            android:layout_height="60dip"
-            android:layout_gravity="top"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/img1" />
-
-    </LinearLayout>
-    
     <!-- Rightend Arrow -->
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="88dp"
-        android:layout_y="47dp"
-        android:text="Label"
-        android:textColor="#040404" />
+    <ImageView
+        android:id="@+id/list_image"
+        android:layout_width="60dip"
+        android:layout_height="60dip"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/tvName"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/img1" />
 
     <ImageView
         android:id="@+id/arrow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="295dp"
-        android:layout_y="32dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
         android:contentDescription="@string/app_name"
         android:src="@drawable/arrow" />
+
+    <ImageView
+        android:id="@+id/savings"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="18dp"
+        android:layout_toLeftOf="@+id/arrow"
+        android:src="@drawable/green" />
+
+    <ImageView
+        android:id="@+id/monthly"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="17dp"
+        android:layout_toLeftOf="@+id/savings"
+        android:src="@drawable/green" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvName"
+        android:layout_below="@+id/savings"
+        android:text="Label"
+        android:textColor="#040404" />
 
     <TextView
         android:id="@+id/tvName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="75dip"
-        android:layout_x="88dp"
-        android:layout_y="9dp"
+        android:layout_above="@+id/textView1"
+        android:layout_marginLeft="14dp"
+        android:layout_toRightOf="@+id/list_image"
         android:paddingBottom="9dip"
         android:text="House 1"
         android:textColor="#040404"
@@ -63,22 +73,4 @@
         android:textStyle="bold"
         android:typeface="sans" />
 
-    <ImageView
-        android:id="@+id/monthly"
-        
-        android:layout_width="30dp"
-        android:layout_height="33dp"
-        android:layout_x="167dp"
-        android:layout_y="20dp"
-        android:src="@drawable/green" />
-
-    <ImageView
-        android:id="@+id/savings"
-        
-        android:layout_width="30dp"
-        android:layout_height="33dp"
-        android:layout_x="220dp"
-        android:layout_y="20dp"
-        android:src="@drawable/green" />
-    
-</AbsoluteLayout>
+</RelativeLayout>

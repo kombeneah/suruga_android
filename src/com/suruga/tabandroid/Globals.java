@@ -86,8 +86,8 @@ public class Globals {
 									name, 			
 									imageArray, 
 									false, 			// selected?
-									5, 				// monthly cost
-									5, 				// savings
+									3000, 			// monthly cost
+									300000, 		// savings
 									cityName, 
 									address, 
 									"", 			// available for renting or buying?

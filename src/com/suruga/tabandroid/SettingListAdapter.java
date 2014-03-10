@@ -44,7 +44,7 @@ public class SettingListAdapter extends ArrayAdapter<Setting> {
 		holder.setting = settings.get(position);
 		
 		holder.arrow=(ImageView)row.findViewById(R.id.arrow);
-		holder.value=(TextView)row.findViewById(R.id.textView1);
+		holder.value=(TextView)row.findViewById(R.id.settingRowTextView);
 		
 		//holder.info = (ImageButton)row.findViewById(R.id.imageButton);
 		//holder.info.setTag(holder.item);
