@@ -46,25 +46,20 @@ public class ItemListAdapter extends ArrayAdapter<Item> {
 		
 		holder.item = items.get(position);
 		
-		holder.arrow=(ImageView)row.findViewById(R.id.arrow);
-		
-		holder.info = (ImageButton)row.findViewById(R.id.imageButton);
-		holder.info.setTag(holder.item);
-		
-		holder.info.setImageResource(R.drawable.information);
+		holder.checkbox = (ImageView) row.findViewById(R.id.select_image);
 
 		holder.name = (TextView)row.findViewById(R.id.tvName);
 		holder.list_image= (ImageView)row.findViewById(R.id.list_image);
 		
 		//set up the image of a cell
-		//Log.i("image id: ", holder.item.getImageArray()[0]);
 		String uri = "drawable/"+holder.item.getImageArray()[0];
 	    int imageResource = row.getContext().getApplicationContext().getResources().getIdentifier(uri, null, row.getContext().getApplicationContext().getPackageName());
 		Drawable image = row.getContext().getResources().getDrawable(imageResource);
 	    holder.list_image.setImageDrawable(image);
 	    //row.findViewById(R.id.cellOnClick).setTag(position);
 
-		row.setTag(holder);
+		holder.checkbox.setTag(holder);
+		row.setTag(holder.item);
 
 		setupItem(holder);
 		return row;
@@ -82,9 +77,8 @@ public class ItemListAdapter extends ArrayAdapter<Item> {
 		TextView name;
 		TextView value;
 		AbsoluteLayout cell;
-		ImageButton info;
-		ImageView arrow;
 		ImageView list_image;
+		ImageView checkbox;
 	}
 
 }

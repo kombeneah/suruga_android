@@ -9,6 +9,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.suruga.tabandroid.listview.DetailActivity;
@@ -40,9 +41,7 @@ public class ItemActivity extends Activity {
 		ArrayList<Item> items = global.getItems(global.getCity());		 
 
 		for (int i = 0; i < items.size(); i++) {
-			//if (items.get(i).getCity().equals("Tokyo")) {
-				adapter.insert(items.get(i), i);
-			//}
+			adapter.insert(items.get(i), i);
 		}
 
 	}
@@ -59,13 +58,10 @@ public class ItemActivity extends Activity {
 		Globals global = Globals.getInstance(getApplicationContext());
 
 		// retrieve all items from the singleton class
-		ArrayList<Item> items = global.getItems(global.getCity());
-				 
+		ArrayList<Item> items = global.getItems(global.getCity());			 
 
 		for (int i = 0; i < items.size(); i++) {
-			if (items.get(i).getCity().equals(global.getCity())) {
-				adapter.insert(items.get(i), i);
-			}
+			adapter.insert(items.get(i), i);
 		}
 	}
 
@@ -88,9 +84,7 @@ public class ItemActivity extends Activity {
 
 			AndroidTabLayoutActivity.selectedHouses = set;
 
-			itemHolder.arrow.setImageResource(R.drawable.check);
-			itemHolder.info.setVisibility(View.INVISIBLE);
-
+			itemHolder.checkbox.setImageResource(R.drawable.checkedcheckbox);
 			itemHolder.item.setSelected(true);
 
 		} else {
@@ -100,9 +94,7 @@ public class ItemActivity extends Activity {
 
 			AndroidTabLayoutActivity.selectedHouses = set;
 
-			itemHolder.info.setVisibility(View.VISIBLE);
-			itemHolder.info.setImageResource(R.drawable.information);
-			itemHolder.arrow.setImageResource(R.drawable.arrow);
+			itemHolder.checkbox.setImageResource(R.drawable.emptycheckbox);
 
 			itemHolder.item.setSelected(false);
 

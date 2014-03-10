@@ -1,61 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cell"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/list_selector"
     android:orientation="horizontal"
-    android:onClick="cellOnClickHandler"
+    android:onClick="infoOnClickHandler"
     android:padding="5dip" 
-    android:id="@+id/cell">
+    android:background="@android:color/white" >
     
     <!-- ListRow Left sied Thumbnail image -->
 
-    <LinearLayout
-        android:id="@+id/thumbnail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_marginRight="5dip"
-        android:padding="3dip" >
-
-
-        <ImageView
-            android:id="@+id/list_image"
-            android:layout_width="60dip"
-            android:layout_height="60dip"
-            android:layout_gravity="top"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/img1" />
-
-    </LinearLayout>
-    
     <!-- Rightend Arrow -->
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="88dp"
-        android:layout_y="47dp"
+        android:layout_alignLeft="@+id/tvName"
+        android:layout_below="@+id/tvName"
         android:text="Label"
         android:textColor="#040404" />
 
     <ImageView
-        android:id="@+id/arrow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="295dp"
-        android:layout_y="32dp"
+        android:id="@+id/select_image"
+        android:layout_width="60dip"
+        android:layout_height="60dip"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:onClick="cellOnClickHandler"
         android:contentDescription="@string/app_name"
-        android:src="@drawable/arrow" />
+        android:src="@drawable/emptycheckbox" />
 
     <TextView
         android:id="@+id/tvName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="75dip"
-        android:layout_x="88dp"
-        android:layout_y="9dp"
+        android:layout_alignTop="@+id/list_image"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@+id/list_image"
         android:paddingBottom="9dip"
         android:text="House 1"
         android:textColor="#040404"
@@ -63,17 +45,14 @@
         android:textStyle="bold"
         android:typeface="sans" />
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:onClick="infoOnClickHandler"
-        android:layout_width="24dp"
-        android:layout_height="25dp"
-        android:layout_x="253dp"
-        android:layout_y="25dp"
-        android:background="@null"
-        android:contentDescription="lala"
-        android:scaleType="fitXY"
-        android:src="@drawable/information" />
-    
-    
-</AbsoluteLayout>
+    <ImageView
+        android:id="@+id/list_image"
+        android:layout_width="60dip"
+        android:layout_height="60dip"
+        android:layout_alignTop="@+id/select_image"
+        android:layout_marginLeft="14dp"
+        android:layout_toRightOf="@+id/select_image"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/img1" />
+
+</RelativeLayout>
