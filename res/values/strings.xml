@@ -9,14 +9,6 @@
 	<string name="txtWindSpeed">WindSpeed</string>
 	<string name="menu_settings">Settings</string>
     
-    <string-array name="city_arrays">
-        <item>Tokyo</item>
-        <item>Kanagawa</item>
-        <item>Osaka</item>
-        <item>Aichi</item>
-        <item>Hokkaido</item>
-    </string-array>
-    
     <string name="passcode">963369</string>
     <string name="passcodeErrorTitle">Passcode Error</string>
     <string name="passcodeErrorMessage">You provided a wrong passcode. Please try again.</string>
@@ -47,5 +39,286 @@
     <string name="monthlyMessage">Please enter your available monthly funds for housing expenses</string>
     <string name="savingsMessage">Please enter your available savings for the downpayment and initial cost of the house.</string>
     <string name="yenSign">¥</string>
+    
+     <!-- City and house data -->
+    
+    <string-array name="city_arrays">
+        <item>Tokyo</item>
+        <item>Osaka</item>
+        <item>Nagoya</item>
+        <item>Fukuoka</item>
+        <item>Hokkaido</item>
+    </string-array>
+     
+     <array name="citiesAndHousesData">
+         <item>@array/TokyoApts</item>
+         <item>@array/OsakaApts</item>
+         <item>@array/NagoyaApts</item>
+         <item>@array/FukuokaApts</item>
+         <item>@array/HokkaidoApts</item>
+     </array>
+     
+    <string-array name="aptAimages">
+        <item>a1</item>
+        <item>a2</item>
+        <item>a3</item>
+    </string-array>
+    <string-array name="aptBimages">
+        <item>b1</item>
+        <item>b2</item>
+        <item>b3</item>
+    </string-array>
+    <string-array name="aptCimages">
+        <item>c1</item>
+        <item>c2</item>
+        <item>c3</item>
+    </string-array>
+    <string-array name="aptDimages">
+        <item>d1</item>
+        <item>d2</item>
+        <item>d3</item>
+    </string-array>
+    <string-array name="aptEimages">
+        <item>e1</item>
+        <item>e2</item>
+        <item>e3</item>
+    </string-array>
+    <string-array name="aptFimages">
+        <item>f1</item>
+        <item>f2</item>
+        <item>f3</item>
+    </string-array>
+     
+    <!-- Tokyo -->
+     <array name="TokyoApts">
+         <item>@array/tokyoA</item>
+         <item>@array/tokyoB</item>
+         <item>@array/tokyoC</item>
+         <item>@array/tokyoD</item>
+         <item>@array/tokyoE</item>
+         <item>@array/tokyoF</item>
+     </array>
+     <array name="tokyoA">
+        <item>Apt. Shibuya</item>
+        <item>Shibuya</item>
+        <item>Shibuya-ku, Tokyo</item>
+        <item>@array/aptAimages</item>
+    </array>
+    <array name="tokyoB">
+        <item>Apt. Shinjuku</item>
+        <item>Shinjuku</item>
+        <item>Chiba, Chiba</item>
+        <item>@array/aptBimages</item>
+    </array>
+    <array name="tokyoC">
+        <item>House Omiya</item>
+        <item>Omiya</item>
+        <item>Saitama, Saitama</item>
+        <item>@array/aptCimages</item>
+    </array>
+    <array name="tokyoD">
+        <item>Apt. Tokyo</item>
+        <item>Tokyo</item>
+        <item>Chuo-ku, Tokyo</item>
+        <item>@array/aptDimages</item>
+    </array>
+    <array name="tokyoE">
+        <item>House Yokohama</item>
+        <item>Yokohama</item>
+        <item>Yokohama, Kanagawa</item>
+        <item>@array/aptEimages</item>
+    </array>
+    <array name="tokyoF">
+        <item>Apt. Roppongi</item>
+        <item>Roppongi</item>
+        <item>Minato-ku, Tokyo</item>
+        <item>@array/aptFimages</item>
+    </array>
+    
+    <!-- Osaka -->
+    <array name="OsakaApts">
+         <item>@array/osakaA</item>
+         <item>@array/osakaB</item>
+         <item>@array/osakaC</item>
+         <item>@array/osakaD</item>
+         <item>@array/osakaE</item>
+         <item>@array/osakaF</item>
+     </array>
+     <array name="osakaA">
+        <item>Apt. Doujima</item>
+        <item>Osaka</item>
+        <item>Osaka, Osaka</item>
+        <item>@array/aptAimages</item>
+    </array>
+    <array name="osakaB">
+        <item>Apt. Nishinomiya</item>
+        <item>Nishinomiya</item>
+        <item>Nishinomiya, Hyogo</item>
+        <item>@array/aptBimages</item>
+    </array>
+    <array name="osakaC">
+        <item>Apt. Kyoto</item>
+        <item>Kyoto</item>
+        <item>Kyoto, Kyoto</item>
+        <item>@array/aptCimages</item>
+    </array>
+    <array name="osakaD">
+        <item>Apt. Umeda</item>
+        <item>Umeda</item>
+        <item>Osaka, Osaka</item>
+        <item>@array/aptDimages</item>
+    </array>
+    <array name="osakaE">
+        <item>House Sakai</item>
+        <item>Sakaigashi</item>
+        <item>Sakai, Osaka</item>
+        <item>@array/aptEimages</item>
+    </array>
+    <array name="osakaF">
+        <item>House Toyonaka</item>
+        <item>Toyonaka</item>
+        <item>Toyonaka, Osaka</item>
+        <item>@array/aptFimages</item>
+    </array>
+    
+    <!-- Nagoya -->
+    <array name="NagoyaApts">
+         <item>@array/nagoyaA</item>
+         <item>@array/nagoyaB</item>
+         <item>@array/nagoyaC</item>
+         <item>@array/nagoyaD</item>
+         <item>@array/nagoyaE</item>
+         <item>@array/nagoyaF</item>
+     </array>
+     <array name="nagoyaA">
+        <item>Apt. Anjyo</item>
+        <item>Anjyo</item>
+        <item>Anjyo, Aichi</item>
+        <item>@array/aptAimages</item>
+    </array>
+    <array name="nagoyaB">
+        <item>Apt. Yottukaichi</item>
+        <item>Yottukaichi</item>
+        <item>Yottukaichi, Mie</item>
+        <item>@array/aptBimages</item>
+    </array>
+    <array name="nagoyaC">
+        <item>Apt. Yabacho</item>
+        <item>Yabacho</item>
+        <item>Nagoya, Aichi</item>
+        <item>@array/aptCimages</item>
+    </array>
+    <array name="nagoyaD">
+        <item>Apt. Sakae</item>
+        <item>Sakae</item>
+        <item>Nagoya, Aichi</item>
+        <item>@array/aptDimages</item>
+    </array>
+    <array name="nagoyaE">
+        <item>House Sakai</item>
+        <item>Sakaigashi</item>
+        <item>Sakai, Osaka</item>
+        <item>@array/aptEimages</item>
+    </array>
+    <array name="nagoyaF">
+        <item>House Toyohashi</item>
+        <item>Shinkawa</item>
+        <item>Toyohashi, Aichi</item>
+        <item>@array/aptFimages</item>
+    </array>
+     
+    <!-- Fukuoka -->
+    <array name="FukuokaApts">
+         <item>@array/fukuokaA</item>
+         <item>@array/fukuokaB</item>
+         <item>@array/fukuokaC</item>
+         <item>@array/fukuokaD</item>
+         <item>@array/fukuokaE</item>
+         <item>@array/fukuokaF</item>
+     </array>
+     <array name="fukuokaA">
+        <item>Apt. Kitakyusyu</item>
+        <item>Kawaraguri Mihagino</item>
+        <item>Kitakyusyu, Fukuoka</item>
+        <item>@array/aptAimages</item>
+    </array>
+    <array name="fukuokaB">
+        <item>Apt. Itoshima</item>
+        <item>Thikuzen Mehara</item>
+        <item>Itoshima, Fukuoka</item>
+        <item>@array/aptBimages</item>
+    </array>
+    <array name="fukuokaC">
+        <item>Apt. Hakata</item>
+        <item>Hakata</item>
+        <item>Fukuoka, Fukuoka</item>
+        <item>@array/aptCimages</item>
+    </array>
+    <array name="fukuokaD">
+        <item>Apt. Tenjin</item>
+        <item>Tenjin</item>
+        <item>Fukuoka, Fukuoka</item>
+        <item>@array/aptDimages</item>
+    </array>
+    <array name="fukuokaE">
+        <item>House Kurume</item>
+        <item>Kurume</item>
+        <item>Kurume, Fukuoka</item>
+        <item>@array/aptEimages</item>
+    </array>
+    <array name="fukuokaF">
+        <item>House Fukuoka Higashi</item>
+        <item>Hihaya</item>
+        <item>Fukuoka, Fukuoka</item>
+        <item>@array/aptFimages</item>
+    </array>
+    
+    <!-- Hokkaido -->
+    <array name="HokkaidoApts">
+         <item>@array/hokkaidoA</item>
+         <item>@array/hokkaidoB</item>
+         <item>@array/hokkaidoC</item>
+         <item>@array/hokkaidoD</item>
+         <item>@array/hokkaidoE</item>
+         <item>@array/hokkaidoF</item>
+     </array>
+     <array name="hokkaidoA">
+        <item>Apt. Kitahiroshima</item>
+        <item>Kitahiroshima</item>
+        <item>Kitahiroshima, Hokkaido</item>
+        <item>@array/aptAimages</item>
+    </array>
+    <array name="hokkaidoB">
+        <item>Apt. Sattuporo Higashi</item>
+        <item>Motomachi</item>
+        <item>Sapporo, Hokkaido</item>
+        <item>@array/aptBimages</item>
+    </array>
+    <array name="hokkaidoC">
+        <item>Apt. Kita Nijyou</item>
+        <item>Sapporo</item>
+        <item>Sapporo, Hokkaido</item>
+        <item>@array/aptCimages</item>
+    </array>
+    <array name="hokkaidoD">
+        <item>Apt. Kita Sanjyou</item>
+        <item>Sapporo</item>
+        <item>Sapporo, Hokkaido</item>
+        <item>@array/aptDimages</item>
+    </array>
+    <array name="hokkaidoE">
+        <item>House Hakodate</item>
+        <item>Goryoukau</item>
+        <item>Hakodate, Hokkaido</item>
+        <item>@array/aptEimages</item>
+    </array>
+    <array name="hokkaidoF">
+        <item>House Obihiro</item>
+        <item>Obihiro</item>
+        <item>Obihiro, Hokkaido</item>
+        <item>@array/aptFimages</item>
+    </array>
+     
+     <!-- End of city and house data -->
     
 </resources>

@@ -35,7 +35,7 @@ public class SavingsActivity extends Activity {
 			@Override
 			public boolean onKey(View v, int keyCode, KeyEvent event) {
 
-				Globals g = Globals.getInstance();
+				Globals g = Globals.getInstance(getApplicationContext());
 
 				if (event.getAction() == KeyEvent.ACTION_DOWN
 						&& keyCode == KeyEvent.KEYCODE_BACK) {

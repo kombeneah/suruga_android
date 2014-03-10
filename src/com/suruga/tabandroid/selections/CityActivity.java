@@ -32,16 +32,12 @@ public class CityActivity extends Activity {
 
 		// add all the house items
 		ArrayList<City> cities = new ArrayList<City>();
-		cities.add(new City(0, "Tokyo", "img1", false));
-		cities.add(new City(0, "Kanagawa", "img1", false));
-		cities.add(new City(0, "Aichi", "img1", false));
-		cities.add(new City(0, "Osaka", "img1", false));
-		cities.add(new City(0, "Hokkaido", "img1", false));
-
-		for (int i = 0; i < cities.size(); i++) {
-			adapter.insert(cities.get(i), i);
+		String[] cityNames = getApplicationContext().getResources().getStringArray(R.array.city_arrays);
+		for (int i = 0; i<cityNames.length; i++) {
+			City city = new City(i, cityNames[i], "img1", false);
+			cities.add(city);
+			adapter.insert(city, i);
 		}
-
 	}
 
 	CityListAdapter.ItemHolder oldItemHolder = null;
@@ -59,7 +55,7 @@ public class CityActivity extends Activity {
 		itemHolder.arrow.setVisibility(View.VISIBLE);
 		itemHolder.arrow.setImageResource(R.drawable.check_medium);
 		
-		Globals g = Globals.getInstance();
+		Globals g = Globals.getInstance(getApplicationContext());
 		g.setCity(itemHolder.city.getName());
 		
 		//editor.putString("city", itemHolder.city.getName());

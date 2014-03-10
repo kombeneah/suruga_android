@@ -29,9 +29,6 @@ public class DetailListAdapter extends ArrayAdapter<Detail> {
 		this.context = context;
 		this.details = details;
 	}
-	
-	
-	
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {

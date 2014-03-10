@@ -18,7 +18,7 @@ public class GuideActivity extends Activity {
     
     public void onResume() {
     	super.onResume();
-    	switch (Globals.getInstance().getGuideStatus()) {
+    	switch (Globals.getInstance(getApplicationContext()).getGuideStatus()) {
     	
     	case goToSettings:
     	{

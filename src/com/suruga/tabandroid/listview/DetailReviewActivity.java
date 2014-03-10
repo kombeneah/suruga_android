@@ -39,7 +39,7 @@ public class DetailReviewActivity extends Activity {
 
 	int rating_int = 0;
 	Item item = null;
-	Globals g = Globals.getInstance();
+	Globals g;
 
 	int solutions = 0;
 
@@ -58,7 +58,7 @@ public class DetailReviewActivity extends Activity {
 
 		int index = j.getIntExtra("index", 0);
 
-		item = g.getItems().get(index);
+		item = g.getItems(g.getCity()).get(index);
 
 		String monthly = g.getMonthly();
 		String savings = g.getSavings();
@@ -134,6 +134,8 @@ public class DetailReviewActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(com.suruga.tabandroid.R.layout.detailreviewpage);
+		
+		g = Globals.getInstance(getApplicationContext());
 
 		Intent j = getIntent();
 

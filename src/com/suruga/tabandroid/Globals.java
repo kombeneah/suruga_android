@@ -1,7 +1,14 @@
 package com.suruga.tabandroid;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Set;
+
+import android.content.Context;
+import android.content.res.Resources;
+import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
+import android.util.TypedValue;
 
 /**
  * 
@@ -15,10 +22,11 @@ public class Globals {
 	// Global variable
 	private int data;
 	private Set<String> selectedHouses;
-	private String city;
+	private String selectedCity;
 	private String interest;
 	private String monthly;
 	private String savings;
+	private Context context;
 	
 	protected static enum GuideStatus {
 		goToSettings,
@@ -29,30 +37,85 @@ public class Globals {
 	
 	private GuideStatus guideStatus;
 	
-	private ArrayList<Item> items=new ArrayList<Item>();
+	private HashMap<String, ArrayList<Item>> items = new HashMap<String, ArrayList<Item>>();
 	
 
 	// Restrict the constructor from being instantiated
-	private Globals() {
-		this.city = "";
+	private Globals(Context cxt) {
+
+		this.selectedCity = "";
 		this.interest = "";
 		this.monthly = "";
 		this.savings = "";
-		
+
 		this.setGuideStatus(GuideStatus.goToSettings);
-		
-		this.items.add(new Item(0, "House 1", "img1", false, 5, 0,"Tokyo", "", "", true, "", "", 0, 0, 0));
-		this.items.add(new Item(1, "House 2", "img2", false, 500000000, 0,"Tokyo", "", "", true, "", "", 0, 0, 0));
-		this.items.add(new Item(2, "House 3", "img21", false,0, 0,"", "", "", true, "", "", 0, 0, 0));
-		this.items.add(new Item(3, "House 4", "img22", false,0, 0,"", "", "", true, "", "", 0, 0, 0));
-		this.items.add(new Item(4, "House 5", "img3", false,0, 0,"", "", "", true, "", "", 0, 0, 0));
-		this.items.add(new Item(5, "House 6", "img4", false,0, 0,"", "", "", true, "", "", 0, 0, 0));
+		this.context = cxt;
+
+		Resources res = this.context.getResources();
+		TypedArray housesByCity = res.obtainTypedArray(R.array.citiesAndHousesData);
+		String[] cityNames = res.getStringArray(R.array.city_arrays);
+
+		for (int i = 0; i < cityNames.length; i++) {
+			String cityName = cityNames[i];
+			ArrayList<Item> cityItems = new ArrayList<Item>();
+
+			// get the id of the current city's array of data
+			int id = housesByCity.getResourceId(i, 0);
+			if (id > 0) {
+				TypedArray cityDatas = res.obtainTypedArray(id);
+				for (int j = 0; j < cityDatas.length(); j++) {
+					int subId = cityDatas.getResourceId(j, 0);
+					if (subId > 0) {
+						TypedArray cityData = res.obtainTypedArray(subId);
+
+						/***
+						 * TypedArray data schema is:
+						 * 
+						 * [name, nearestStation, address, imageArray]
+						 * 
+						 ***/
+
+						String name = cityData.getString(0);
+						String nearestStation = cityData.getString(1);
+						String address = cityData.getString(2);
+						int imageArrayID = cityData.getResourceId(3, 0);
+						if (imageArrayID > 0) {
+							String[] imageArray = res.getStringArray(imageArrayID);
+							Item cityItem = new Item(
+									j,				// index: 0->5
+									name, 			
+									imageArray, 
+									false, 			// selected?
+									5, 				// monthly cost
+									5, 				// savings
+									cityName, 
+									address, 
+									"", 			// available for renting or buying?
+									false, 			// in comparison?
+									"", 			// layout
+									"", 			// notes
+									0, 				// rating
+									0, 				// size
+									nearestStation,
+									0				// time to station
+									);
+							cityItems.add(cityItem);
+						}
+						cityData.recycle();
+					}
+				}
+
+				cityDatas.recycle();
+			}
+			this.items.put(cityName, cityItems);
+		}
+		housesByCity.recycle();
 	}
-	
-	public ArrayList<Item> getItems() {
-		return this.items;
+
+	public ArrayList<Item> getItems(String city) {
+		return this.items.get(city);
 	}
-	
+
 	public void setSavings(String savings) {
 		this.savings = savings;
 	}
@@ -78,11 +141,11 @@ public class Globals {
 	}
 	
 	public void setCity(String city) {
-		this.city = city;
+		this.selectedCity = city;
 	}
 
 	public String getCity() {
-		return this.city;
+		return this.selectedCity;
 	}
 
 	public void setSelectedHouses(Set<String> input) {
@@ -101,9 +164,9 @@ public class Globals {
 		return this.data;
 	}
 
-	public static synchronized Globals getInstance() {
+	public static synchronized Globals getInstance(Context context) {
 		if (instance == null) {
-			instance = new Globals();
+			instance = new Globals(context);
 		}
 		return instance;
 	}

@@ -5,6 +5,7 @@ import java.util.List;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,7 +57,8 @@ public class ItemListAdapter extends ArrayAdapter<Item> {
 		holder.list_image= (ImageView)row.findViewById(R.id.list_image);
 		
 		//set up the image of a cell
-		String uri = "drawable/"+holder.item.getImage();
+		//Log.i("image id: ", holder.item.getImageArray()[0]);
+		String uri = "drawable/"+holder.item.getImageArray()[0];
 	    int imageResource = row.getContext().getApplicationContext().getResources().getIdentifier(uri, null, row.getContext().getApplicationContext().getPackageName());
 		Drawable image = row.getContext().getResources().getDrawable(imageResource);
 	    holder.list_image.setImageDrawable(image);

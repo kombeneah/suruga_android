@@ -2,11 +2,13 @@ package com.suruga.tabandroid;
 
 import java.io.Serializable;
 
+import android.content.res.TypedArray;
+
 public class Item implements Serializable {
 	private static final long serialVersionUID = -5435670920302756945L;
 	
 	private String name = "";
-	private String image = "";
+	private String[] imageArray;
 	private int id=0;
 	private boolean selected=true;
 	private int monthly=0;
@@ -19,14 +21,15 @@ public class Item implements Serializable {
 	private String notes="";
 	private int rating=0;
 	private int size=0;
+	private String nearestStation = "";
 	private int timeToStation=0;
 
-	public Item(int id, String name, String img, boolean selected, int monthly, int savings,
+	public Item(int id, String name, String[] imageArray, boolean selected, int monthly, int savings,
 			String city, String address, String availableFor, boolean inComparison, String layout,
-			String notes, int rating, int size, int timeToStation) {
+			String notes, int rating, int size, String nearestStation, int timeToStation) {
 		this.setId(id);
 		this.setName(name);
-		this.setImage(img);
+		this.setImageArray(imageArray);
 		this.setSelected(selected);
 		this.setMonthly(monthly);
 		this.setSavings(savings);
@@ -38,6 +41,7 @@ public class Item implements Serializable {
 		this.setNotes(notes);
 		this.setRating(rating);
 		this.setSize(size);
+		this.setNearestStation(nearestStation);
 		this.setTimeToStation(timeToStation);
 	}
 	
@@ -145,12 +149,12 @@ public class Item implements Serializable {
 		this.id=id;
 	}
 	
-	public String getImage(){
-		return image;
+	public String[] getImageArray(){
+		return imageArray;
 	}
 	
-	public void setImage(String img){
-		this.image=img;
+	public void setImageArray(String[] imageArray){
+		this.imageArray = imageArray;
 	}
 
 	public String getName() {
@@ -159,6 +163,14 @@ public class Item implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getNearestStation() {
+		return nearestStation;
+	}
+
+	public void setNearestStation(String nearestStation) {
+		this.nearestStation = nearestStation;
 	}
 	
 }

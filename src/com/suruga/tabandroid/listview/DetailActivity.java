@@ -11,12 +11,12 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.suruga.tabandroid.Globals;
 import com.suruga.tabandroid.Item;
-import com.suruga.tabandroid.ItemActivity;
 import com.suruga.tabandroid.R;
 
 
@@ -33,7 +33,7 @@ public class DetailActivity extends Activity {
 	
 	Item item=null;
 
-	Globals g=Globals.getInstance();
+	Globals g;
 	
 	
 	
@@ -41,16 +41,7 @@ public class DetailActivity extends Activity {
 	@Override
 	public void onResume() {
 		super.onResume();
-		
-		final Button minus = (Button) findViewById(R.id.minus);
-        final Button plus = (Button) findViewById(R.id.plus);
 		final TextView rating = (TextView) findViewById(R.id.rating);
-		
-		Intent j = getIntent();
-
-	    int index=j.getIntExtra("index", 0);
-		
-		item=g.getItems().get(index);
 		
 		rating_int=item.getRating();
         
@@ -60,6 +51,24 @@ public class DetailActivity extends Activity {
 		else{
 		    rating.setText(" "+String.valueOf(rating_int));
 		}
+	}
+	
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(com.suruga.tabandroid.R.layout.detailpage);
+        g = Globals.getInstance(getApplicationContext());
+
+        Intent j = getIntent();
+        
+        int index = j.getIntExtra("index", -1); // -1 is invalid index
+        item = g.getItems(g.getCity()).get(index);
+        
+        rating_int=j.getIntExtra("rating", 0);
+
+		final Button minus = (Button) findViewById(R.id.minus);
+        final Button plus = (Button) findViewById(R.id.plus);
+		final TextView rating = (TextView) findViewById(R.id.rating);
 		
 		minus.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -87,17 +96,12 @@ public class DetailActivity extends Activity {
             	item.setRating(rating_int);
             }
         });
-		
-	}
-	
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(com.suruga.tabandroid.R.layout.detailpage);
-
-        Intent j = getIntent();
         
-        rating_int=j.getIntExtra("rating", 0);
+        ImageView thumbnail = (ImageView) findViewById(R.id.detailImage);
+        String iconUri = "drawable/"+item.getImageArray()[0];
+        int imageResource = getApplicationContext().getResources().getIdentifier
+        		(iconUri, null, getApplicationContext().getPackageName());
+        thumbnail.setImageResource(imageResource);
         
         ArrayList<Detail> details = new ArrayList<Detail>();
 		details.add(new Detail(0, "Layout", "img1", false));

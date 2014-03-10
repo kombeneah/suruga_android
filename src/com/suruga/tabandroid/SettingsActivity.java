@@ -96,7 +96,7 @@ public class SettingsActivity extends Activity {
 	}
 	
 	private void populateSettingsArray(ArrayList<Setting> settings) {
-		Globals g = Globals.getInstance();
+		Globals g = Globals.getInstance(getApplicationContext());
 		String city = g.getCity();
 		String interest=g.getInterest();
 		String monthly=g.getMonthly();

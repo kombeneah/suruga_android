@@ -52,7 +52,7 @@ public class AnalysisListAdapter extends ArrayAdapter<Item> {
 		holder.name = (TextView) row.findViewById(R.id.tvName);
 		holder.list_image = (ImageView) row.findViewById(R.id.list_image);
 
-		Globals g = Globals.getInstance();
+		Globals g = Globals.getInstance(context);
 
 		String monthly = g.getMonthly();
 		String savings = g.getSavings();
@@ -108,7 +108,7 @@ public class AnalysisListAdapter extends ArrayAdapter<Item> {
 		}
 
 		// set up the image of a cell
-		String uri = "drawable/" + holder.item.getImage();
+		String uri = "drawable/" + holder.item.getImageArray()[0];
 		int imageResource = row
 				.getContext()
 				.getApplicationContext()

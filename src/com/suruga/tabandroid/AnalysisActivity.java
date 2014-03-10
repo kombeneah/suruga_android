@@ -36,11 +36,8 @@ public class AnalysisActivity extends Activity {
 
 		setupListViewAdapter();
 		
-		Globals g=Globals.getInstance();
-		items=g.getItems();
-
-		// Toast.makeText(getApplicationContext(),
-		// "this is my Toast message!!! =)", Toast.LENGTH_LONG).show();
+		Globals g=Globals.getInstance(getApplicationContext());
+		items=g.getItems(g.getCity());
 
 	}
 
@@ -53,11 +50,10 @@ public class AnalysisActivity extends Activity {
 		Intent i = new Intent();
 
 		i.setClass(AnalysisActivity.this, com.suruga.tabandroid.listview.DetailReviewActivity.class);
-
-//		
+	
 		i.putExtra("index", position);
 
-//		// start the detail page
+		// start the detail page
 		startActivity(i);
 	}
 

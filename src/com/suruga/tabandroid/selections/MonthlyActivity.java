@@ -38,7 +38,7 @@ public class MonthlyActivity extends Activity {
 				if (event.getAction() == KeyEvent.ACTION_DOWN
 						&& keyCode == KeyEvent.KEYCODE_BACK) {
 
-					Globals g = Globals.getInstance();
+					Globals g = Globals.getInstance(getApplicationContext());
 					g.setMonthly(editText1.getText().toString());
 					done();
 

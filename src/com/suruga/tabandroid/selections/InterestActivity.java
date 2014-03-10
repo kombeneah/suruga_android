@@ -58,7 +58,7 @@ public class InterestActivity extends Activity {
 		itemHolder.arrow.setVisibility(View.VISIBLE);
 		itemHolder.arrow.setImageResource(R.drawable.check_medium);
 		
-		Globals g = Globals.getInstance();
+		Globals g = Globals.getInstance(getApplicationContext());
 		g.setInterest(itemHolder.city.getName());
 		
 		//editor.putString("city", itemHolder.city.getName());

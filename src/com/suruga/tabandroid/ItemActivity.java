@@ -34,15 +34,15 @@ public class ItemActivity extends Activity {
 
 		setupListViewAdapter();
 
-		Globals global = Globals.getInstance();
+		Globals global = Globals.getInstance(getApplicationContext());
 
-		// retrieve all items from the singleton class
-		ArrayList<Item> items = global.getItems();		 
+		// retrieve all items for the selected city from the singleton class
+		ArrayList<Item> items = global.getItems(global.getCity());		 
 
 		for (int i = 0; i < items.size(); i++) {
-			if (items.get(i).getCity().equals("Tokyo")) {
+			//if (items.get(i).getCity().equals("Tokyo")) {
 				adapter.insert(items.get(i), i);
-			}
+			//}
 		}
 
 	}
@@ -56,14 +56,13 @@ public class ItemActivity extends Activity {
 
 		setupListViewAdapter();
 
-		Globals global = Globals.getInstance();
+		Globals global = Globals.getInstance(getApplicationContext());
 
 		// retrieve all items from the singleton class
-		ArrayList<Item> items = global.getItems();
+		ArrayList<Item> items = global.getItems(global.getCity());
 				 
 
 		for (int i = 0; i < items.size(); i++) {
-			//if (items.get(i).getCity().equals("Tokyo")) {
 			if (items.get(i).getCity().equals(global.getCity())) {
 				adapter.insert(items.get(i), i);
 			}
