@@ -38,12 +38,14 @@ public class ItemActivity extends Activity {
 		Globals global = Globals.getInstance(getApplicationContext());
 
 		// retrieve all items for the selected city from the singleton class
-		ArrayList<Item> items = global.getItems(global.getCity());		 
-
-		for (int i = 0; i < items.size(); i++) {
-			adapter.insert(items.get(i), i);
+		ArrayList<Item> items = global.getItems(global.getCity()); 
+		
+		if (items != null) { //items may be null if no city is selected
+			for (int i = 0; i < items.size(); i++) {
+				adapter.insert(items.get(i), i);
+			}
 		}
-
+		// TODO: suggest filling out the settings info first
 	}
 	
 	@SuppressLint("NewApi")
@@ -60,9 +62,13 @@ public class ItemActivity extends Activity {
 		// retrieve all items from the singleton class
 		ArrayList<Item> items = global.getItems(global.getCity());			 
 
-		for (int i = 0; i < items.size(); i++) {
-			adapter.insert(items.get(i), i);
+		if (items != null) { //items may be null if no city is selected
+			for (int i = 0; i < items.size(); i++) {
+				adapter.insert(items.get(i), i);
+			}
 		}
+		
+		// TODO: Fix OnResume to display check mark on selected items.
 	}
 
 	@SuppressLint("NewApi")
@@ -129,6 +135,5 @@ public class ItemActivity extends Activity {
 		ListView list = (ListView) findViewById(R.id.itemList);
 
 		list.setAdapter(adapter);
-
 	}
 }

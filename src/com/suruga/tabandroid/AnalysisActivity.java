@@ -63,6 +63,8 @@ public class AnalysisActivity extends Activity {
 		super.onResume();
 		itemsId = new ArrayList<Integer>();
 		setupListViewAdapter();
+		Globals g = Globals.getInstance(getApplicationContext());
+		items = g.getItems(g.getCity());
 
 		itemsToDisplay = new ArrayList<Item>();
 
@@ -72,7 +74,7 @@ public class AnalysisActivity extends Activity {
 		//		"com.suruga.tabandroid", Context.MODE_MULTI_PROCESS);
 		//set = prefs.getStringSet("key", set);
 		
-		set=AndroidTabLayoutActivity.selectedHouses;
+		set = AndroidTabLayoutActivity.selectedHouses;
 		
 		if (set == null) {
 			// no selected houses, exit

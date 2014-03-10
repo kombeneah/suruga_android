@@ -29,7 +29,7 @@
         android:layout_centerVertical="true"
         android:onClick="cellOnClickHandler"
         android:contentDescription="@string/app_name"
-        android:src="@drawable/emptycheckbox" />
+         />
 
     <TextView
         android:id="@+id/tvName"

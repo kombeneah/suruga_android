@@ -43,20 +43,26 @@ public class ItemListAdapter extends ArrayAdapter<Item> {
 
 		holder = new ItemHolder();
 		
-		
-		holder.item = items.get(position);
-		
+		holder.item = items.get(position);	
 		holder.checkbox = (ImageView) row.findViewById(R.id.select_image);
 
 		holder.name = (TextView)row.findViewById(R.id.tvName);
 		holder.list_image= (ImageView)row.findViewById(R.id.list_image);
+		
+		// ensure the checkbox reflects whether the item is selected
+		boolean selected = holder.item.getSelected();
+		if (selected) {
+			holder.checkbox.setImageResource(R.drawable.checkedcheckbox);
+		}
+		else {
+			holder.checkbox.setImageResource(R.drawable.emptycheckbox);
+		}
 		
 		//set up the image of a cell
 		String uri = "drawable/"+holder.item.getImageArray()[0];
 	    int imageResource = row.getContext().getApplicationContext().getResources().getIdentifier(uri, null, row.getContext().getApplicationContext().getPackageName());
 		Drawable image = row.getContext().getResources().getDrawable(imageResource);
 	    holder.list_image.setImageDrawable(image);
-	    //row.findViewById(R.id.cellOnClick).setTag(position);
 
 		holder.checkbox.setTag(holder);
 		row.setTag(holder.item);
