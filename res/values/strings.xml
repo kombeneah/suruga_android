@@ -103,36 +103,84 @@
         <item>Shibuya</item>
         <item>Shibuya-ku, Tokyo</item>
         <item>@array/aptAimages</item>
+        <item>50</item>
+        <item>2DK</item>
+        <item>3</item>
+        <item>2500</item>
+        <item>1000</item>
+        <item>250000</item>
+        <item>1050</item>
+        <item>225000</item>
     </array>
     <array name="tokyoB">
         <item>Apt. Shinjuku</item>
         <item>Shinjuku</item>
         <item>Chiba, Chiba</item>
         <item>@array/aptBimages</item>
+        <item>60</item>
+        <item>2DK</item>
+        <item>5</item>
+        <item>3000</item>
+        <item>1500</item>
+        <item>350000</item>
+        <item>1500</item>
+        <item>315000</item>
     </array>
     <array name="tokyoC">
         <item>House Omiya</item>
         <item>Omiya</item>
         <item>Saitama, Saitama</item>
         <item>@array/aptCimages</item>
+        <item>70</item>
+        <item>4LDK</item>
+        <item>3</item>
+        <item>6000</item>
+        <item>2000</item>
+        <item>450000</item>
+        <item>1920</item>
+        <item>405000</item>
     </array>
     <array name="tokyoD">
         <item>Apt. Tokyo</item>
         <item>Tokyo</item>
         <item>Chuo-ku, Tokyo</item>
         <item>@array/aptDimages</item>
+        <item>80</item>
+        <item>3LDK</item>
+        <item>8</item>
+        <item>7500</item>
+        <item>2500</item>
+        <item>650000</item>
+        <item>2772</item>
+        <item>585000</item>
     </array>
     <array name="tokyoE">
         <item>House Yokohama</item>
         <item>Yokohama</item>
         <item>Yokohama, Kanagawa</item>
         <item>@array/aptEimages</item>
+        <item>90</item>
+        <item>4LDK</item>
+        <item>5</item>
+        <item>10000</item>
+        <item>3000</item>
+        <item>850000</item>
+        <item>3624</item>
+        <item>765000</item>
     </array>
     <array name="tokyoF">
         <item>Apt. Roppongi</item>
         <item>Roppongi</item>
         <item>Minato-ku, Tokyo</item>
         <item>@array/aptFimages</item>
+        <item>70</item>
+        <item>2LDK</item>
+        <item>5</item>
+        <item>15000</item>
+        <item>5000</item>
+        <item>1100000</item>
+        <item>4692</item>
+        <item>990000</item>
     </array>
     
     <!-- Osaka -->
@@ -149,36 +197,84 @@
         <item>Osaka</item>
         <item>Osaka, Osaka</item>
         <item>@array/aptAimages</item>
+        <item>50</item>
+        <item>2DK</item>
+        <item>8</item>
+        <item>2500</item>
+        <item>1000</item>
+        <item>250000</item>
+        <item>1050</item>
+        <item>225000</item>
     </array>
     <array name="osakaB">
         <item>Apt. Nishinomiya</item>
         <item>Nishinomiya</item>
         <item>Nishinomiya, Hyogo</item>
         <item>@array/aptBimages</item>
+        <item>80</item>
+        <item>3LDK</item>
+        <item>4</item>
+        <item>7500</item>
+        <item>3000</item>
+        <item>650000</item>
+        <item>2772</item>
+        <item>585000</item>
     </array>
     <array name="osakaC">
         <item>Apt. Kyoto</item>
         <item>Kyoto</item>
         <item>Kyoto, Kyoto</item>
         <item>@array/aptCimages</item>
+        <item>80</item>
+        <item>2LDK</item>
+        <item>1</item>
+        <item>10000</item>
+        <item>4000</item>
+        <item>850000</item>
+        <item>3624</item>
+        <item>765000</item>
     </array>
     <array name="osakaD">
         <item>Apt. Umeda</item>
         <item>Umeda</item>
         <item>Osaka, Osaka</item>
         <item>@array/aptDimages</item>
+        <item>70</item>
+        <item>2LDK</item>
+        <item>2</item>
+        <item>15000</item>
+        <item>5000</item>
+        <item>1100000</item>
+        <item>4692</item>
+        <item>990000</item>
     </array>
     <array name="osakaE">
         <item>House Sakai</item>
         <item>Sakaigashi</item>
         <item>Sakai, Osaka</item>
         <item>@array/aptEimages</item>
+        <item>90</item>
+        <item>4LDK</item>
+        <item>8</item>
+        <item>3000</item>
+        <item>1500</item>
+        <item>350000</item>
+        <item>1500</item>
+        <item>315000</item>
     </array>
     <array name="osakaF">
         <item>House Toyonaka</item>
         <item>Toyonaka</item>
         <item>Toyonaka, Osaka</item>
         <item>@array/aptFimages</item>
+        <item>100</item>
+        <item>4LDK</item>
+        <item>7</item>
+        <item>6000</item>
+        <item>2000</item>
+        <item>450000</item>
+        <item>1920</item>
+        <item>405000</item>
     </array>
     
     <!-- Nagoya -->
@@ -195,36 +291,84 @@
         <item>Anjyo</item>
         <item>Anjyo, Aichi</item>
         <item>@array/aptAimages</item>
+        <item>70</item>
+        <item>2LDK</item>
+        <item>9</item>
+        <item>2500</item>
+        <item>1000</item>
+        <item>250000</item>
+        <item>1050</item>
+        <item>225000</item>
     </array>
     <array name="nagoyaB">
         <item>Apt. Yottukaichi</item>
         <item>Yottukaichi</item>
         <item>Yottukaichi, Mie</item>
         <item>@array/aptBimages</item>
+        <item>80</item>
+        <item>2LDK</item>
+        <item>9</item>
+        <item>2500</item>
+        <item>1000</item>
+        <item>250000</item>
+        <item>1050</item>
+        <item>225000</item>
     </array>
     <array name="nagoyaC">
         <item>Apt. Yabacho</item>
         <item>Yabacho</item>
         <item>Nagoya, Aichi</item>
         <item>@array/aptCimages</item>
+        <item>80</item>
+        <item>2LDK</item>
+        <item>10</item>
+        <item>10000</item>
+        <item>3000</item>
+        <item>650000</item>
+        <item>2772</item>
+        <item>585000</item>
     </array>
     <array name="nagoyaD">
         <item>Apt. Sakae</item>
         <item>Sakae</item>
         <item>Nagoya, Aichi</item>
         <item>@array/aptDimages</item>
+        <item>80</item>
+        <item>2LDK</item>
+        <item>7</item>
+        <item>15000</item>
+        <item>3000</item>
+        <item>750000</item>
+        <item>3192</item>
+        <item>675000</item>
     </array>
     <array name="nagoyaE">
-        <item>House Sakai</item>
-        <item>Sakaigashi</item>
-        <item>Sakai, Osaka</item>
+        <item>House Gifu</item>
+        <item>Gifu</item>
+        <item>Gifu, Gifu</item>
         <item>@array/aptEimages</item>
+        <item>90</item>
+        <item>3LDK</item>
+        <item>10</item>
+        <item>3000</item>
+        <item>1500</item>
+        <item>350000</item>
+        <item>1500</item>
+        <item>315000</item>
     </array>
     <array name="nagoyaF">
         <item>House Toyohashi</item>
         <item>Shinkawa</item>
         <item>Toyohashi, Aichi</item>
         <item>@array/aptFimages</item>
+        <item>120</item>
+        <item>3LDK</item>
+        <item>3</item>
+        <item>7500</item>
+        <item>2500</item>
+        <item>550000</item>
+        <item>2340</item>
+        <item>495000</item>
     </array>
      
     <!-- Fukuoka -->
@@ -239,38 +383,86 @@
      <array name="fukuokaA">
         <item>Apt. Kitakyusyu</item>
         <item>Kawaraguri Mihagino</item>
-        <item>Kitakyusyu, Fukuoka</item>
+        <item>Kitakyushu, Fukuoka</item>
         <item>@array/aptAimages</item>
+        <item>80</item>
+        <item>2LDK</item>
+        <item>8</item>
+        <item>2500</item>
+        <item>1000</item>
+        <item>250000</item>
+        <item>1050</item>
+        <item>225000</item>
     </array>
     <array name="fukuokaB">
         <item>Apt. Itoshima</item>
         <item>Thikuzen Mehara</item>
         <item>Itoshima, Fukuoka</item>
         <item>@array/aptBimages</item>
+        <item>70</item>
+        <item>2LDK</item>
+        <item>1</item>
+        <item>3000</item>
+        <item>1500</item>
+        <item>350000</item>
+        <item>1500</item>
+        <item>315000</item>
     </array>
     <array name="fukuokaC">
         <item>Apt. Hakata</item>
         <item>Hakata</item>
         <item>Fukuoka, Fukuoka</item>
         <item>@array/aptCimages</item>
+        <item>80</item>
+        <item>2LDK</item>
+        <item>4</item>
+        <item>6750</item>
+        <item>2500</item>
+        <item>550000</item>
+        <item>2340</item>
+        <item>495000</item>
     </array>
     <array name="fukuokaD">
         <item>Apt. Tenjin</item>
         <item>Tenjin</item>
         <item>Fukuoka, Fukuoka</item>
         <item>@array/aptDimages</item>
+        <item>80</item>
+        <item>3LDK</item>
+        <item>3</item>
+        <item>7500</item>
+        <item>2500</item>
+        <item>650000</item>
+        <item>2772</item>
+        <item>585000</item>
     </array>
     <array name="fukuokaE">
         <item>House Kurume</item>
         <item>Kurume</item>
         <item>Kurume, Fukuoka</item>
         <item>@array/aptEimages</item>
+        <item>100</item>
+        <item>4LDK</item>
+        <item>11</item>
+        <item>5000</item>
+        <item>2000</item>
+        <item>450000</item>
+        <item>1920</item>
+        <item>405000</item>
     </array>
     <array name="fukuokaF">
         <item>House Fukuoka Higashi</item>
         <item>Hihaya</item>
         <item>Fukuoka, Fukuoka</item>
         <item>@array/aptFimages</item>
+        <item>100</item>
+        <item>4LDK</item>
+        <item>18</item>
+        <item>6000</item>
+        <item>2000</item>
+        <item>500000</item>
+        <item>2136</item>
+        <item>450000</item>
     </array>
     
     <!-- Hokkaido -->
@@ -287,36 +479,84 @@
         <item>Kitahiroshima</item>
         <item>Kitahiroshima, Hokkaido</item>
         <item>@array/aptAimages</item>
+        <item>60</item>
+        <item>2DK</item>
+        <item>1</item>
+        <item>2500</item>
+        <item>1000</item>
+        <item>250000</item>
+        <item>1050</item>
+        <item>225000</item>
     </array>
     <array name="hokkaidoB">
         <item>Apt. Sattuporo Higashi</item>
         <item>Motomachi</item>
         <item>Sapporo, Hokkaido</item>
         <item>@array/aptBimages</item>
+        <item>80</item>
+        <item>4LDK</item>
+        <item>4</item>
+        <item>6000</item>
+        <item>2000</item>
+        <item>500000</item>
+        <item>2136</item>
+        <item>450000</item>
     </array>
     <array name="hokkaidoC">
         <item>Apt. Kita Nijyou</item>
         <item>Sapporo</item>
         <item>Sapporo, Hokkaido</item>
         <item>@array/aptCimages</item>
+        <item>80</item>
+        <item>2LDK</item>
+        <item>11</item>
+        <item>6750</item>
+        <item>2500</item>
+        <item>550000</item>
+        <item>2340</item>
+        <item>495000</item>
     </array>
     <array name="hokkaidoD">
         <item>Apt. Kita Sanjyou</item>
         <item>Sapporo</item>
         <item>Sapporo, Hokkaido</item>
         <item>@array/aptDimages</item>
+        <item>70</item>
+        <item>3LDK</item>
+        <item>5</item>
+        <item>7500</item>
+        <item>2500</item>
+        <item>650000</item>
+        <item>2772</item>
+        <item>585000</item>
     </array>
     <array name="hokkaidoE">
         <item>House Hakodate</item>
         <item>Goryoukau</item>
         <item>Hakodate, Hokkaido</item>
         <item>@array/aptEimages</item>
+        <item>100</item>
+        <item>2LDK</item>
+        <item>38</item>
+        <item>3000</item>
+        <item>1500</item>
+        <item>350000</item>
+        <item>1500</item>
+        <item>315000</item>
     </array>
     <array name="hokkaidoF">
         <item>House Obihiro</item>
         <item>Obihiro</item>
         <item>Obihiro, Hokkaido</item>
         <item>@array/aptFimages</item>
+        <item>100</item>
+        <item>4LDK</item>
+        <item>10</item>
+        <item>5000</item>
+        <item>2000</item>
+        <item>450000</item>
+        <item>1920</item>
+        <item>405000</item>
     </array>
      
      <!-- End of city and house data -->
