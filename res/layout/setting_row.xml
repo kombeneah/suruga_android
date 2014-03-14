@@ -1,63 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cell"
     android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/list_selector"
-    android:orientation="horizontal"
+    android:layout_height="50dp"
+    android:background="@android:color/white"
     android:onClick="cellOnClickHandler"
-    android:padding="5dip" 
-    android:id="@+id/cell">
-    
+    android:orientation="horizontal"
+    android:padding="5dip" >
+
     <!-- ListRow Left sied Thumbnail image -->
 
-    <LinearLayout
-        android:id="@+id/thumbnail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_marginRight="5dip"
-        android:padding="3dip" 
-        android:orientation="horizontal">
 
-
-        
-
-    </LinearLayout>
-    
     <!-- Rightend Arrow -->
-
-    <ImageView
-        android:id="@+id/arrow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="295dp"
-        android:layout_y="20dp"
-        android:contentDescription="@string/app_name"
-        android:src="@drawable/arrow" />
-
-    
-
-    <TextView
-        android:id="@+id/settingRowTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="225dp"
-        android:layout_y="18dp"
-        android:text=""
-        android:textColor="#040404" />
 
     <TextView
         android:id="@+id/tvName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="75dip"
-        android:layout_x="26dp"
-        android:layout_y="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
         android:paddingBottom="9dip"
         android:text="City"
-        android:textColor="#040404"
+        android:textColor="@android:color/black"
         android:textSize="16sp"
         android:textStyle="bold"
         android:typeface="sans" />
-    
-</AbsoluteLayout>
+
+    <TextView
+        android:id="@+id/settingRowTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="51dp"
+        android:layout_toLeftOf="@+id/arrow"
+        android:text="Osaka"
+        android:textColor="@android:color/black" />
+
+    <ImageView
+        android:id="@+id/arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="20dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/arrow" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="@android:color/darker_gray" />
+
+</RelativeLayout>

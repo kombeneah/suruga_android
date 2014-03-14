@@ -11,34 +11,36 @@ public class Item implements Serializable {
 	private String[] imageArray;
 	private int id=0;
 	private boolean selected=true;
-	private int monthly=0;
-	private int savings=0;
+	private int rentingMonthly = 0;
+	private int rentingUpfront = 0;
+	private int buyingMonthly = 0;
+	private int buyingUpfront = 0;
+	private int mortgageLoan = 0;
 	private String city="";
 	private String address="";
-	private String availableFor="";
 	private boolean inComparison=true;
 	private String layout="";
-	private String notes="";
 	private int rating=0;
 	private int size=0;
 	private String nearestStation = "";
 	private int timeToStation=0;
 
-	public Item(int id, String name, String[] imageArray, boolean selected, int monthly, int savings,
-			String city, String address, String availableFor, boolean inComparison, String layout,
-			String notes, int rating, int size, String nearestStation, int timeToStation) {
+	public Item(int id, String name, String[] imageArray, boolean selected, int rentingMonthly, int rentingUpfront,
+			int buyingMonthly, int buyingUpfront, int mortgageLoan, String city, String address, boolean inComparison,
+			String layout, int rating, int size, String nearestStation, int timeToStation) {
 		this.setId(id);
 		this.setName(name);
 		this.setImageArray(imageArray);
 		this.setSelected(selected);
-		this.setMonthly(monthly);
-		this.setSavings(savings);
+		this.setRentingMonthly(rentingMonthly);
+		this.setRentingUpfront(rentingUpfront);
+		this.setBuyingMonthly(buyingMonthly);
+		this.setBuyingUpfront(buyingUpfront);
+		this.setMortgageLoan(mortgageLoan);
 		this.setCity(city);
 		this.setAddress(address);
-		this.setAvailableFor(availableFor);
 		this.setInComparison(inComparison);
 		this.setLayout(layout);
-		this.setNotes(notes);
 		this.setRating(rating);
 		this.setSize(size);
 		this.setNearestStation(nearestStation);
@@ -69,14 +71,6 @@ public class Item implements Serializable {
 		this.rating=rating;
 	}
 	
-	public String getNotes(){
-		return notes;
-	}
-	
-	public void setNotes(String notes){
-		this.notes=notes;
-	}
-	
 	public String getLayout(){
 		return layout;
 	}
@@ -93,14 +87,6 @@ public class Item implements Serializable {
 		this.inComparison=inComparison;
 	}
 	
-	public String getAvailableFor(){
-		return availableFor;
-	}
-	
-	public void setAvailableFor(String availableFor){
-		this.availableFor=availableFor;
-	}
-	
 	public String getAddress(){
 		return address;
 	}
@@ -115,22 +101,6 @@ public class Item implements Serializable {
 	
 	public void setCity(String city){
 		this.city=city;
-	}
-	
-	public int getSavings(){
-		return savings;
-	}
-	
-	public void setSavings(int savings){
-		this.savings=savings;
-	}
-	
-	public int getMonthly(){
-		return monthly;
-	}
-	
-	public void setMonthly(int monthly){
-		this.monthly=monthly;
 	}
 	
 	public boolean getSelected(){
@@ -171,6 +141,46 @@ public class Item implements Serializable {
 
 	public void setNearestStation(String nearestStation) {
 		this.nearestStation = nearestStation;
+	}
+
+	public int getRentingMonthly() {
+		return rentingMonthly;
+	}
+
+	public void setRentingMonthly(int rentingMonthly) {
+		this.rentingMonthly = rentingMonthly;
+	}
+
+	public int getRentingUpfront() {
+		return rentingUpfront;
+	}
+
+	public void setRentingUpfront(int rentingUpfront) {
+		this.rentingUpfront = rentingUpfront;
+	}
+
+	public int getBuyingMonthly() {
+		return buyingMonthly;
+	}
+
+	public void setBuyingMonthly(int buyingMonthly) {
+		this.buyingMonthly = buyingMonthly;
+	}
+
+	public int getBuyingUpfront() {
+		return buyingUpfront;
+	}
+
+	public void setBuyingUpfront(int buyingUpfront) {
+		this.buyingUpfront = buyingUpfront;
+	}
+
+	public int getMortgageLoan() {
+		return mortgageLoan;
+	}
+
+	public void setMortgageLoan(int mortgageLoan) {
+		this.mortgageLoan = mortgageLoan;
 	}
 	
 }

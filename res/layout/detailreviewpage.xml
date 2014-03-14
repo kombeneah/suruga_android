@@ -13,8 +13,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="21dp"
-        android:layout_marginTop="24dp"
-        android:src="@drawable/img1" />
+        android:layout_marginTop="24dp"/>
 
     <TextView
         android:id="@+id/textView2"

@@ -67,8 +67,6 @@ public class ItemActivity extends Activity {
 				adapter.insert(items.get(i), i);
 			}
 		}
-		
-		// TODO: Fix OnResume to display check mark on selected items.
 	}
 
 	@SuppressLint("NewApi")

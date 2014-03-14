@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnKeyListener;
@@ -39,8 +40,14 @@ public class SavingsActivity extends Activity {
 
 				if (event.getAction() == KeyEvent.ACTION_DOWN
 						&& keyCode == KeyEvent.KEYCODE_BACK) {
-
-					g.setSavings(editText1.getText().toString());
+					
+					int savings = 0;
+					try {
+						savings = Integer.parseInt(editText1.getText().toString());
+						g.setSavings(savings);
+					} catch (NumberFormatException nfe) {
+						Log.e("SavingsActivity", "Integer.parseInt() error parsing: "+editText1.getText().toString(), nfe);
+					}
 
 					onBackPressed();
 

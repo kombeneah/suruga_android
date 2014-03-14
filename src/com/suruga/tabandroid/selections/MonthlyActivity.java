@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnKeyListener;
@@ -39,7 +40,14 @@ public class MonthlyActivity extends Activity {
 						&& keyCode == KeyEvent.KEYCODE_BACK) {
 
 					Globals g = Globals.getInstance(getApplicationContext());
-					g.setMonthly(editText1.getText().toString());
+					
+					int monthly = 0;
+					try {
+						monthly = Integer.parseInt(editText1.getText().toString());
+						g.setMonthly(monthly);
+					} catch (NumberFormatException nfe) {
+						Log.e("MonthlyActivity", "Integer.parseInt() error parsing: "+editText1.getText().toString(), nfe);
+					}
 					done();
 
 					return true;

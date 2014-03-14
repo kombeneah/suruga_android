@@ -67,10 +67,8 @@ public class SettingsActivity extends Activity {
 		Intent i = new Intent();
 
 		if (position == 0) {
-
 			i.setClass(SettingsActivity.this,
 					com.suruga.tabandroid.selections.CityActivity.class);
-
 		} else if (position == 1) {
 			i.setClass(SettingsActivity.this,
 					com.suruga.tabandroid.selections.InterestActivity.class);
@@ -92,20 +90,22 @@ public class SettingsActivity extends Activity {
 		ListView list = (ListView) findViewById(R.id.itemList);
 
 		list.setAdapter(adapter);
-
 	}
 	
 	private void populateSettingsArray(ArrayList<Setting> settings) {
 		Globals g = Globals.getInstance(getApplicationContext());
 		String city = g.getCity();
-		String interest=g.getInterest();
-		String monthly=g.getMonthly();
-		String savings=g.getSavings();
+		boolean forRent = g.isForRent();
+		int monthly = g.getMonthly();
+		int savings = g.getSavings();
 
 		settings.add(new Setting(0, "City", city));
-		settings.add(new Setting(1, "Interested In", interest));
-		settings.add(new Setting(2, "Monthly Budget", monthly));
-		settings.add(new Setting(3, "Savings", savings));
+		
+		String buyOrRent = forRent ? "Renting" : "Buying";
+		settings.add(new Setting(1, "Interested In", buyOrRent));
+		
+		settings.add(new Setting(2, "Monthly Budget", String.valueOf(monthly)));
+		settings.add(new Setting(3, "Savings", String.valueOf(savings)));
 	}
 
 }

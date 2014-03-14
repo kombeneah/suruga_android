@@ -49,8 +49,7 @@
         android:layout_height="126dp"
         android:layout_alignParentLeft="true"
         android:layout_alignTop="@+id/textView2"
-        android:layout_marginLeft="14dp"
-        android:src="@drawable/img1" />
+        android:layout_marginLeft="14dp" />
 
     <TextView
         android:id="@+id/rating"

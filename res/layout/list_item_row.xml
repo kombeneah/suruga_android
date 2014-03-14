@@ -18,15 +18,16 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/tvName"
         android:layout_below="@+id/tvName"
-        android:text="Label"
-        android:textColor="#040404" />
+        android:text="Nearest Station:"
+        android:textColor="@android:color/black" />
 
     <ImageView
         android:id="@+id/select_image"
-        android:layout_width="60dip"
-        android:layout_height="60dip"
+        android:layout_width="30dip"
+        android:layout_height="30dip"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
         android:onClick="cellOnClickHandler"
         android:contentDescription="@string/app_name"
          />
@@ -50,9 +51,25 @@
         android:layout_width="60dip"
         android:layout_height="60dip"
         android:layout_alignTop="@+id/select_image"
-        android:layout_marginLeft="14dp"
+        android:layout_marginLeft="10dp"
         android:layout_toRightOf="@+id/select_image"
+        android:contentDescription="@string/app_name"/>
+    
+    <ImageView
+        android:id="@+id/arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
         android:contentDescription="@string/app_name"
-        android:src="@drawable/img1" />
+        android:src="@drawable/arrow" />
+    
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="@android:color/darker_gray" />
 
 </RelativeLayout>

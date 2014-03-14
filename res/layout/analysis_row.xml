@@ -20,8 +20,7 @@
         android:layout_height="60dip"
         android:layout_alignParentLeft="true"
         android:layout_alignTop="@+id/tvName"
-        android:contentDescription="@string/app_name"
-        android:src="@drawable/img1" />
+        android:contentDescription="@string/app_name"/>
 
     <ImageView
         android:id="@+id/arrow"

@@ -54,17 +54,8 @@ public class AnalysisListAdapter extends ArrayAdapter<Item> {
 
 		Globals g = Globals.getInstance(context);
 
-		String monthly = g.getMonthly();
-		String savings = g.getSavings();
-		
-		int monthlyInt =0;
-		int savingsInt =0;
-        
-		if (monthly != null && savings != null) {
-		  monthlyInt = Integer.valueOf(monthly);
-		  savingsInt = Integer.valueOf(savings);
-		}
-
+		int monthlyInt = g.getMonthly();
+		int savingsInt = g.getSavings();
 
 		String uriGreen = "drawable/affordable";
 		int imageResourceGreen = row
@@ -92,15 +83,31 @@ public class AnalysisListAdapter extends ArrayAdapter<Item> {
 		Drawable red = row.getContext().getResources()
 				.getDrawable(imageResourceRed);
         
-		if (monthly != null && savings != null) {
+		if (g.isForRent()) {
 			
-			if (holder.item.getMonthly() <= monthlyInt) {
+			if (holder.item.getRentingMonthly() <= monthlyInt) {
 				holder.monthly.setImageDrawable(green);
 			} else {
 				holder.monthly.setImageDrawable(red);
 			}
 
-			if (holder.item.getSavings() <= savingsInt) {
+			if (holder.item.getRentingUpfront() <= savingsInt) {
+				holder.savings.setImageDrawable(green);
+			} else {
+				holder.savings.setImageDrawable(red);
+			}
+		}
+		
+		// buying
+		else {
+			
+			if (holder.item.getBuyingMonthly() <= monthlyInt) {
+				holder.monthly.setImageDrawable(green);
+			} else {
+				holder.monthly.setImageDrawable(red);
+			}
+
+			if (holder.item.getRentingUpfront() <= savingsInt + holder.item.getMortgageLoan()) {
 				holder.savings.setImageDrawable(green);
 			} else {
 				holder.savings.setImageDrawable(red);

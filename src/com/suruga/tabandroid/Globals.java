@@ -12,7 +12,7 @@ import android.util.TypedValue;
 
 /**
  * 
- * @author changey
+ * @author changey, kombeneah
  * The class that stores global variables such as savings and monthly income
  */
 
@@ -23,10 +23,10 @@ public class Globals {
 	private int data;
 	private Set<String> selectedHouses;
 	private String selectedCity;
-	private String interest;
-	private String monthly;
-	private String savings;
+	private int monthly;
+	private int savings;
 	private Context context;
+	private boolean forRent;
 	
 	protected static enum GuideStatus {
 		goToSettings,
@@ -42,18 +42,21 @@ public class Globals {
 
 	// Restrict the constructor from being instantiated
 	private Globals(Context cxt) {
-
-		this.selectedCity = "";
-		this.interest = "";
-		this.monthly = "";
-		this.savings = "";
+		this.context = cxt;
+		Resources res = this.context.getResources();
+		String[] cityNames = res.getStringArray(R.array.city_arrays);
+		
+		// randomly auto select a default city
+		this.selectedCity = cityNames[(int) Math.floor(Math.random()*(cityNames.length - 1))];
+		this.monthly = 2000;
+		this.savings = 25000;
+		
+		// randomize default for buying/renting
+		this.forRent = Math.floor(Math.random() + 0.5) >= 1.0;
 
 		this.setGuideStatus(GuideStatus.goToSettings);
-		this.context = cxt;
-
-		Resources res = this.context.getResources();
+		
 		TypedArray housesByCity = res.obtainTypedArray(R.array.citiesAndHousesData);
-		String[] cityNames = res.getStringArray(R.array.city_arrays);
 
 		for (int i = 0; i < cityNames.length; i++) {
 			String cityName = cityNames[i];
@@ -71,7 +74,8 @@ public class Globals {
 						/***
 						 * TypedArray data schema is:
 						 * 
-						 * [name, nearestStation, address, imageArray]
+						 * [name, nearestStation, address, imageArray, size, layout, timeToStation,
+						 * rentalUpfront, rentalMonthly, buyingUpfront, buyingMonthly, mortgageLoan]
 						 * 
 						 ***/
 
@@ -79,25 +83,34 @@ public class Globals {
 						String nearestStation = cityData.getString(1);
 						String address = cityData.getString(2);
 						int imageArrayID = cityData.getResourceId(3, 0);
+						int size = cityData.getInt(4, 0);
+						String layout = cityData.getString(5);
+						int timeToNearestStation = cityData.getInt(6, 0);
+						int rentalUpfront = cityData.getInt(7, 0);
+						int rentalMonthly = cityData.getInt(8, 0);
+						int buyingUpfront = cityData.getInt(9, 0);
+						int buyingMonthly = cityData.getInt(10, 0);
+						int mortgageLoan = cityData.getInt(11, 0);
 						if (imageArrayID > 0) {
 							String[] imageArray = res.getStringArray(imageArrayID);
 							Item cityItem = new Item(
-									j,				// index: 0->5
+									j,						// index: 0->5
 									name, 			
 									imageArray, 
-									false, 			// selected?
-									3000, 			// monthly cost
-									300000, 		// savings
+									false, 					// selected?
+									rentalMonthly,
+									rentalUpfront, 
+									buyingMonthly,
+									buyingUpfront,
+									mortgageLoan,
 									cityName, 
 									address, 
-									"", 			// available for renting or buying?
-									false, 			// in comparison?
-									"", 			// layout
-									"", 			// notes
-									0, 				// rating
-									0, 				// size
+									false, 					// in comparison?
+									layout,
+									0,
+									size,
 									nearestStation,
-									0				// time to station
+									timeToNearestStation
 									);
 							cityItems.add(cityItem);
 						}
@@ -116,28 +129,20 @@ public class Globals {
 		return this.items.get(city);
 	}
 
-	public void setSavings(String savings) {
+	public void setSavings(int savings) {
 		this.savings = savings;
 	}
 
-	public String getSavings(){
+	public int getSavings(){
 		return this.savings;
 	}
 	
-	public void setMonthly(String monthly) {
+	public void setMonthly(int monthly) {
 		this.monthly = monthly;
 	}
 
-	public String getMonthly() {
+	public int getMonthly() {
 		return this.monthly;
-	}
-	
-	public void setInterest(String interest) {
-		this.interest = interest;
-	}
-
-	public String getInterest() {
-		return this.interest;
 	}
 	
 	public void setCity(String city) {
@@ -177,5 +182,13 @@ public class Globals {
 
 	public void setGuideStatus(GuideStatus guideStatus) {
 		this.guideStatus = guideStatus;
+	}
+
+	public boolean isForRent() {
+		return forRent;
+	}
+
+	public void setForRent(boolean forRent) {
+		this.forRent = forRent;
 	}
 }

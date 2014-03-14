@@ -1,32 +1,21 @@
 package com.suruga.tabandroid.listview;
 
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
-
-import com.suruga.tabandroid.AndroidTabLayoutActivity;
-import com.suruga.tabandroid.Globals;
-import com.suruga.tabandroid.Item;
-import com.suruga.tabandroid.ItemListAdapter;
-import com.suruga.tabandroid.R;
-import com.suruga.tabandroid.selections.City;
-import com.suruga.tabandroid.selections.CityActivity;
-import com.suruga.tabandroid.selections.CityListAdapter;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.suruga.tabandroid.Globals;
+import com.suruga.tabandroid.Item;
+import com.suruga.tabandroid.R;
 
 public class DetailReviewActivity extends Activity {
 
@@ -60,62 +49,72 @@ public class DetailReviewActivity extends Activity {
 
 		item = g.getItems(g.getCity()).get(index);
 
-		String monthly = g.getMonthly();
-		String savings = g.getSavings();
-
-		int monthlyInt = 0;
-		int savingsInt = 0;
-
-		if (monthly != null && savings != null) {
-			monthlyInt = Integer.valueOf(monthly);
-			savingsInt = Integer.valueOf(savings);
-		}
-
-		int downPayment = item.getSavings();
-		int monthlyCost = item.getMonthly();
-
-		//can afford.
-		if (downPayment < savingsInt && monthlyCost < monthlyInt) {
+		int monthlyBudget = g.getMonthly();
+		int savings = g.getSavings();
+		
+		int downPayment = g.isForRent() ? item.getRentingUpfront() : item.getBuyingUpfront();
+		int monthlyCost = g.isForRent() ? item.getRentingMonthly() : item.getBuyingMonthly();
+		
+		// can absolutely afford.
+		if (downPayment <= savings && monthlyCost <= monthlyBudget) {
 			affordLabel.setText("This home is within your budget.");
 			solutions = 0;
 		}
 		
-		//just monthly negative.
-		else if(monthlyCost > monthlyInt && downPayment < savingsInt){
+		// absolutely have enough savings for down payment
+		// but monthly cost too high for budget.
+		else if (downPayment <= savings && monthlyCost > monthlyBudget){
 			affordLabel.setText("Need to review your monthly budget for making surplus in the monthly balance.");
 			solutions = 1;
 		}
 		
-		//just downpayment negative. and buying
-		else if(monthlyCost < monthlyInt && downPayment > savingsInt && g.getInterest().equals("Buying")){
-			affordLabel.setText("Need to review your initial budget for making surplus in the initial balance.");
-			solutions = 2;
-		}
-		
-		//just downpayment negative
-		else if(monthlyCost < monthlyInt && downPayment > savingsInt){
-			affordLabel.setText("Need to review your initial budget for making surplus in the initial balance.");
-			solutions = 3;
-		}
+        // not enough savings for down payment
+        // but enough monthly budget for the monthly cost
+		else if (downPayment > savings && monthlyCost <= monthlyBudget) {
+
+            // trying to buy? 
+            if (!g.isForRent()) {
+            	
+            	// mortgage allows to buy?
+            	if (downPayment <= (savings + item.getMortgageLoan())) {
+            		affordLabel.setText("Need to review your initial budget for making surplus in the initial balance.");
+        			solutions = 2;
+            	}
+            	
+            	// can't even be helped by mortgage
+            	else {
+            		// TODO: What happens here?
+            	}
+            }
+
+            // otherwise renting
+            else {
+            	affordLabel.setText("Need to review your initial budget for making surplus in the initial balance.");
+    			solutions = 3;
+            }
+        }
 		
 		//both negative
-		else if(monthlyCost > monthlyInt && downPayment > savingsInt){
+		else if (downPayment > savings && monthlyCost > monthlyBudget){
 			affordLabel.setText("Need to review your budget.");
 			solutions = 4;
 		}
 		
+		// we shouldn't ever get into this block
+		else {
+			Log.e("Analysis", "Failed to classify the user data into one of the suggetsion buckets");
+		}
+		
 		ArrayList<Detail> details = new ArrayList<Detail>();
-        if(solutions==0){
+		
+        if (solutions==0) {
         	
-        }else if(solutions==1){
+        } else if (solutions==1) {
 		    
 		    details.add(new Detail(0, "Review your current loans", "img1", false));
 		    details.add(new Detail(1, "Review other expenses", "img1", false));
 		    details.add(new Detail(2, "Review your current insurance", "img1", false));
         }
-      //display in short period of time
-//        Toast.makeText(getApplicationContext(), String.valueOf(solutions),
-//                              Toast.LENGTH_SHORT).show();
         
         setupListViewAdapter();
         
