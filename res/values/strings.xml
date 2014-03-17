@@ -9,7 +9,7 @@
 	<string name="txtWindSpeed">WindSpeed</string>
 	<string name="menu_settings">Settings</string>
     
-    <string name="passcode">963369</string>
+    <string name="passcode">508689</string>
     <string name="passcodeErrorTitle">Passcode Error</string>
     <string name="passcodeErrorMessage">You provided a wrong passcode. Please try again.</string>
     

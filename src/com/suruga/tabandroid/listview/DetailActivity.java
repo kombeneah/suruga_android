@@ -29,28 +29,40 @@ public class DetailActivity extends Activity {
 	String iconfile = "";
 	ImageButton imgWeatherIcon;
 	
-	int rating_int=0;
+	int rating_int = 0;
 	
 	Item item=null;
 
 	Globals g;
 	
 	
-	
 	@SuppressLint("NewApi")
 	@Override
 	public void onResume() {
 		super.onResume();
-		final TextView rating = (TextView) findViewById(R.id.rating);
+		
+		item = g.getItems(g.getCity()).get(getIntent().getIntExtra("index", -1));
 		
 		rating_int=item.getRating();
+
+		int filledStarId = getApplicationContext().getResources().getIdentifier
+				("filledstar", "drawable", getApplicationContext().getPackageName());
+		int emptyStarId = getApplicationContext().getResources().getIdentifier
+				("emptystar", "drawable", getApplicationContext().getPackageName());
         
-		if(rating_int==0){
-			rating.setText(" ? ");
-		}
-		else{
-		    rating.setText(" "+String.valueOf(rating_int));
-		}
+        for (int i = 1; i <= 5; i++) {
+        	String viewUri = "starRating"+String.valueOf(i);
+			int viewId = getApplicationContext().getResources().getIdentifier
+					(viewUri, "id", getApplicationContext().getPackageName());
+			ImageView star = (ImageView) findViewById(viewId);
+			
+        	if (rating_int >= i) {
+        		star.setImageResource(filledStarId);
+        	}
+        	else {
+        		star.setImageResource(emptyStarId);
+        	}
+        }
 	}
 	
     @Override
@@ -64,44 +76,19 @@ public class DetailActivity extends Activity {
         int index = j.getIntExtra("index", -1); // -1 is invalid index
         item = g.getItems(g.getCity()).get(index);
         
-        rating_int=j.getIntExtra("rating", 0);
-
-		final Button minus = (Button) findViewById(R.id.minus);
-        final Button plus = (Button) findViewById(R.id.plus);
-		final TextView rating = (TextView) findViewById(R.id.rating);
-		
-		minus.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-            	if(rating_int>=1 && rating_int<=5){
-            		rating_int--;
-            		if(rating_int==0){
-            			rating.setText(" ? ");
-            		}
-            		else{
-            		    rating.setText(" "+String.valueOf(rating_int)+" ");
-            		}
-            		item.setRating(rating_int);
-            	}
-
-            }
-        });
+        rating_int = j.getIntExtra("rating", 0);
         
-        plus.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-            	if(rating_int>=0 && rating_int<=4){
-            		rating_int++;
-            		rating.setText(" "+String.valueOf(rating_int)+" ");
-            	}
-            	
-            	item.setRating(rating_int);
-            }
-        });
-        
-        ImageView thumbnail = (ImageView) findViewById(R.id.detailImage);
-        String iconUri = "drawable/"+item.getImageArray()[0];
-        int imageResource = getApplicationContext().getResources().getIdentifier
-        		(iconUri, null, getApplicationContext().getPackageName());
-        thumbnail.setImageResource(imageResource);
+		for (int i = 0; i < 3; i++) {
+			String viewUri = "detailImage"+String.valueOf(i);
+			int viewId = getApplicationContext().getResources().getIdentifier
+					(viewUri, "id", getApplicationContext().getPackageName());
+			
+			ImageView thumbnail = (ImageView) findViewById(viewId);
+			String iconUri = "drawable/"+item.getImageArray()[i];
+			int imageResource = getApplicationContext().getResources().getIdentifier
+					(iconUri, null, getApplicationContext().getPackageName());
+			thumbnail.setImageResource(imageResource);
+		}
         
         ArrayList<Detail> details = new ArrayList<Detail>();
 		details.add(new Detail(0, "Layout", "img1", false));
@@ -160,5 +147,49 @@ public class DetailActivity extends Activity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(com.suruga.tabandroid.R.menu.main, menu);
         return true;
+    }
+    
+    public void onClickStar(View v) {
+    	
+    	int filledStarId = getApplicationContext().getResources().getIdentifier
+				("filledstar", "drawable", getApplicationContext().getPackageName());
+		int emptyStarId = getApplicationContext().getResources().getIdentifier
+				("emptystar", "drawable", getApplicationContext().getPackageName());
+		
+		int newRating = 0;
+		switch (v.getId()) {
+		case R.id.starRating1:
+			newRating = 1;
+			break;
+		case R.id.starRating2:
+			newRating = 2;
+			break;
+		case R.id.starRating3:
+			newRating = 3;
+			break;
+		case R.id.starRating4:
+			newRating = 4;
+			break;
+		case R.id.starRating5:
+			newRating = 5;
+			break;
+		}
+		
+		item.setRating(newRating);
+		
+    	for (int i = 1; i <= 5; i++) {
+    		
+        	String viewUri = "starRating"+String.valueOf(i);
+			int viewId = getApplicationContext().getResources().getIdentifier
+					(viewUri, "id", getApplicationContext().getPackageName());
+			ImageView star = (ImageView) findViewById(viewId);
+			
+        	if (newRating >= i) {
+        		star.setImageResource(filledStarId);
+        	}
+        	else {
+        		star.setImageResource(emptyStarId);
+        	}
+        }
     }
 }

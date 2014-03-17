@@ -5,90 +5,96 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@android:color/white">
-    
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="14dp"
-        android:layout_toRightOf="@+id/detailImage"
-        android:text="Rating: "
-        android:textColor="@android:color/black"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <Button
-        android:id="@+id/minus"
-        android:layout_width="24dp"
-        android:layout_height="38dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="3dp"
-        android:layout_marginTop="7dp"
-        android:layout_toRightOf="@+id/textView2"
-        android:background="@null"
-        android:text="-"
-        android:textColor="@android:color/black"
-        android:textSize="32sp" />
 
     <ListView
         android:id="@+id/detaillist"
         android:layout_width="fill_parent"
         android:layout_height="317dp"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/detailImage"
-        android:layout_marginTop="16dp"
+        android:layout_below="@+id/sliderImages"
+        android:layout_marginTop="60dp"
         android:divider="#b5b5b5"
         android:dividerHeight="1dp"
         android:listSelector="@drawable/list_selector" >
     </ListView>
+    
+    <LinearLayout
+        android:id="@id/sliderImages"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/detailImage0"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/detailImage1"
+            android:layout_marginLeft="5dp"
+            android:layout_height="fill_parent" 
+            android:layout_width="fill_parent"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/detailImage2"
+            android:layout_marginLeft="5dp"
+            android:layout_height="fill_parent" 
+            android:layout_width="fill_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
 
     <ImageView
-        android:id="@+id/detailImage"
-        android:layout_width="124dp"
-        android:layout_height="126dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignTop="@+id/textView2"
-        android:layout_marginLeft="14dp" />
+        android:id="@+id/starRating3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignTop="@+id/starRating1"
+        android:layout_centerHorizontal="true"
+        android:onClick="onClickStar"
+        android:src="@drawable/emptystar" />
 
-    <TextView
-        android:id="@+id/rating"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/textView2"
-        android:layout_toRightOf="@+id/minus"
-        android:background="@android:color/white"
-        android:text=" ? "
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@android:color/black" />
+    <ImageView
+        android:id="@+id/starRating2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignTop="@+id/starRating1"
+        android:layout_marginRight="14dp"
+        android:layout_toLeftOf="@+id/starRating3"
+        android:onClick="onClickStar"
+        android:src="@drawable/emptystar" />
 
-    <Button
-        android:id="@+id/plus"
-        android:layout_width="24dp"
-        android:layout_height="38dp"
-        android:layout_alignBaseline="@+id/minus"
-        android:layout_alignBottom="@+id/minus"
-        android:layout_toRightOf="@+id/rating"
-        android:background="@null"
-        android:text="+"
-        android:textColor="@android:color/black"
-        android:textSize="32sp" />
+    <ImageView
+        android:id="@+id/starRating1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/sliderImages"
+        android:layout_marginRight="14dp"
+        android:layout_marginTop="21dp"
+        android:layout_toLeftOf="@+id/starRating2"
+        android:onClick="onClickStar"
+        android:src="@drawable/emptystar" />
 
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="wrap_content"
-        android:layout_height="70dp"
-        android:layout_alignBottom="@+id/detailImage"
-        android:layout_alignLeft="@+id/textView2"
-        android:background="#ffffff"
-        android:ems="10"
-        android:gravity="top|left"
-        android:inputType="textMultiLine"
-        android:textColor="@android:color/black"
-        android:textCursorDrawable="@null"
-        android:hint="Notes..." >
+    <ImageView
+        android:id="@+id/starRating4"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignTop="@+id/starRating1"
+        android:layout_marginLeft="14dp"
+        android:layout_toRightOf="@+id/starRating3"
+        android:onClick="onClickStar"
+        android:src="@drawable/emptystar" />
 
-        <requestFocus />
-    </EditText>
+    <ImageView
+        android:id="@+id/starRating5"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignTop="@+id/starRating1"
+        android:layout_marginLeft="14dp"
+        android:layout_toRightOf="@+id/starRating4"
+        android:onClick="onClickStar"
+        android:src="@drawable/emptystar" />
 
 </RelativeLayout>
