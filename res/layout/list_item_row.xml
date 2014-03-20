@@ -12,15 +12,6 @@
 
     <!-- Rightend Arrow -->
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/tvName"
-        android:layout_below="@+id/tvName"
-        android:text="Nearest Station:"
-        android:textColor="@android:color/black" />
-
     <ImageView
         android:id="@+id/select_image"
         android:layout_width="30dip"
@@ -28,6 +19,17 @@
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
         android:layout_marginLeft="10dp"
+        android:onClick="cellOnClickHandler"
+        android:contentDescription="@string/app_name"
+         />
+    
+    <ImageView
+        android:id="@+id/select_view_area"
+        android:layout_width="50dip"
+        android:layout_height="50dip"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="0dp"
         android:onClick="cellOnClickHandler"
         android:contentDescription="@string/app_name"
          />
@@ -71,5 +73,55 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:background="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/unitsize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="size"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/nearestStation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/unitsize"
+        android:layout_toRightOf="@+id/textView1"
+        android:layout_marginLeft="5dp"
+        android:text="Name"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvName"
+        android:layout_below="@+id/tvName"
+        android:text="Station:"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/starCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/unitsize"
+        android:layout_alignBottom="@+id/unitsize"
+        android:layout_alignLeft="@+id/nearestStation"
+        android:text="5"
+        android:textColor="@android:color/black" />
+
+    <ImageView
+        android:id="@+id/star"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_alignTop="@+id/starCount"
+        android:layout_toRightOf="@+id/starCount"
+        android:layout_marginLeft="5dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/filledstar" />
 
 </RelativeLayout>

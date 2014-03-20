@@ -27,9 +27,6 @@ public class SettingListAdapter extends ArrayAdapter<Setting> {
 		this.context = context;
 		this.settings = settings;
 	}
-	
-	
-	
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
@@ -68,6 +65,10 @@ public class SettingListAdapter extends ArrayAdapter<Setting> {
 		holder.name.setText(holder.setting.getName());
 		holder.value.setText(holder.setting.getValue());
 		
+	}
+	
+	public void updateInterest(String value) {
+		// TODO: udate this to toggle buy/rent state
 	}
 
 	public static class ItemHolder {

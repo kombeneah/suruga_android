@@ -45,8 +45,9 @@ public class ItemListAdapter extends ArrayAdapter<Item> {
 		
 		holder.item = items.get(position);	
 		holder.checkbox = (ImageView) row.findViewById(R.id.select_image);
+		holder.check_area = (ImageView) row.findViewById(R.id.select_view_area);
 
-		holder.name = (TextView)row.findViewById(R.id.tvName);
+		holder.name = (TextView) row.findViewById(R.id.tvName);
 		holder.list_image= (ImageView)row.findViewById(R.id.list_image);
 		
 		// ensure the checkbox reflects whether the item is selected
@@ -65,7 +66,17 @@ public class ItemListAdapter extends ArrayAdapter<Item> {
 	    holder.list_image.setImageDrawable(image);
 
 		holder.checkbox.setTag(holder);
+		holder.check_area.setTag(holder);
 		row.setTag(holder.item);
+
+		holder.station = (TextView) row.findViewById(R.id.nearestStation);
+		holder.station.setText(holder.item.getNearestStation());
+		
+		holder.star_count = (TextView) row.findViewById(R.id.starCount);
+		holder.star_count.setText(String.valueOf(holder.item.getRating()));
+		
+		holder.size = (TextView) row.findViewById(R.id.unitsize);
+		holder.size.setText(holder.item.getLayout());
 
 		setupItem(holder);
 		return row;
@@ -81,10 +92,13 @@ public class ItemListAdapter extends ArrayAdapter<Item> {
 	public static class ItemHolder {
 		Item item;
 		TextView name;
-		TextView value;
+		TextView station;
 		AbsoluteLayout cell;
 		ImageView list_image;
 		ImageView checkbox;
+		ImageView check_area;
+		TextView star_count;
+		TextView size;
 	}
 
 }
