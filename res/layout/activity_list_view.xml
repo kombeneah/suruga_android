@@ -8,8 +8,9 @@
     <ListView
         android:id="@+id/itemList"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        tools:listitem="@layout/atom_pay_list_item" >
+        android:layout_height="match_parent"
+        android:divider="#b5b5b5"
+        android:dividerHeight="1dp" >
 
     </ListView>
 

@@ -38,7 +38,6 @@ public class InterestActivity extends Activity {
 		for (int i = 0; i < cities.size(); i++) {
 			adapter.insert(cities.get(i), i);
 		}
-
 	}
 
 	CityListAdapter.ItemHolder oldItemHolder = null;
@@ -59,6 +58,8 @@ public class InterestActivity extends Activity {
 		itemHolder.arrow.setImageResource(R.drawable.check_medium);
 		
 		Globals g = Globals.getInstance(getApplicationContext());
+		boolean forRent = itemHolder.city.getName().equals("Renting");
+		g.setForRent(forRent);
 		
 		//editor.putString("city", itemHolder.city.getName());
 		//editor.commit();

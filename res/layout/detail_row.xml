@@ -1,49 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cell"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/list_selector"
+    android:background="@android:color/white"
     android:orientation="horizontal"
-    android:onClick="cellOnClickHandler"
-    android:padding="5dip" 
-    android:id="@+id/cell">
+    android:padding="5dip" >
     
-    <!-- ListRow Left sied Thumbnail image -->
-
-    <LinearLayout
-        android:id="@+id/thumbnail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_marginRight="5dip"
-        android:padding="3dip" 
-        android:orientation="horizontal">
-
-
-
-    </LinearLayout>
-    
-    <!-- Rightend Arrow -->
-
-    <ImageView
-        android:id="@+id/arrow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="285dp"
-        android:layout_y="20dp"
-        android:contentDescription="@string/app_name" />
-
     <TextView
         android:id="@+id/tvName"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="75dip"
-        android:layout_x="15dp"
-        android:layout_y="17dp"
-        android:paddingBottom="9dip"
-        android:text="City"
-        android:textColor="#040404"
+        android:layout_height="match_parent"
+        android:paddingBottom="10dip"
+        android:paddingTop="10dip"
+        android:paddingRight="5dip"
+        android:text="Detail"
+        android:gravity="right"
+        android:textColor="#287AA9"
+        android:textSize="16sp"
+        android:typeface="sans"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/detailsData"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="Data"
+        android:textColor="@android:color/black"
+        android:layout_weight="1"
+        android:gravity="left"
+        android:paddingBottom="10dip"
+        android:paddingTop="10dip"
+        android:paddingLeft="5dip"
         android:textSize="16sp"
         android:typeface="sans" />
-    
-</AbsoluteLayout>
+
+</LinearLayout>

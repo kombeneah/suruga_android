@@ -3,37 +3,35 @@
     android:id="@+id/cell"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/list_selector"
+    android:background="@android:color/white"
     android:onClick="cellOnClickHandler"
     android:orientation="horizontal"
     android:padding="5dip" >
-
-    <!-- ListRow Left sied Thumbnail image -->
-
-
-    <!-- Rightend Arrow -->
 
     <ImageView
         android:id="@+id/arrow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvName"
         android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginRight="20dp"
+        android:layout_marginRight="10dp"
         android:layout_centerVertical="true"
-        android:contentDescription="@string/app_name" />
+        android:layout_alignParentTop="true"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/arrow" />
 
     <TextView
         android:id="@+id/tvName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="10dp"
         android:paddingBottom="10dip"
+        android:paddingRight="5dip"
         android:paddingTop="10dip"
-        android:text="City"
-        android:textColor="#040404"
+        android:text="Review"
+        android:textColor="@android:color/black"
         android:textSize="16sp"
         android:typeface="sans" />
 

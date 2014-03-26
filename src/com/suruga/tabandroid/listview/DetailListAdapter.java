@@ -40,13 +40,10 @@ public class DetailListAdapter extends ArrayAdapter<Detail> {
 
 		holder = new ItemHolder();
 		
-		
 		holder.detail = details.get(position);
-		
-		holder.arrow=(ImageView)row.findViewById(R.id.arrow);
 
-		holder.name = (TextView)row.findViewById(R.id.tvName);
-		
+		holder.name = (TextView) row.findViewById(R.id.tvName);
+		holder.value = (TextView) row.findViewById(R.id.detailsData);
 
 		row.setTag(holder);
 
@@ -58,7 +55,7 @@ public class DetailListAdapter extends ArrayAdapter<Detail> {
 
 	private void setupItem(ItemHolder holder) {
 		holder.name.setText(holder.detail.getName());
-		
+		holder.value.setText(holder.detail.getValue());
 	}
 
 	public static class ItemHolder {

@@ -9,25 +9,71 @@
     <!-- Screen Design for Photos -->
 
     <TextView
+        android:id="@+id/guideInfoTextView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/guideTitleTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:text="@string/guideSettingsInfo"
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
+
+    <TextView
         android:id="@+id/guideTitleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/guideInfoTextView"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="36dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginTop="20dp"
         android:text="@string/guideSettingsHeader"
-        android:textColor="@android:color/black"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="32sp" />
+        android:textColor="@android:color/black"
+        android:textSize="28sp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:scaleType="fitXY"
+        android:layout_alignTop="@+id/imageView1"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@+id/imageView1"
+        android:src="@drawable/hollow" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="150dp"
+        android:layout_height="25dp"
+        android:layout_alignLeft="@+id/guideInfoTextView"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="21dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/surugawriting" />
+    
+    <TextView
+        android:id="@+id/appCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appCodeDesc"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:textColor="@android:color/black"
+        android:textSize="28sp"
+        android:text="54321" />
 
     <TextView
-        android:id="@+id/guideInfoTextView"
-        android:layout_width="261dp"
-        android:layout_height="80dp"
-        android:layout_below="@+id/guideTitleTextView"
+        android:id="@+id/appCodeDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/guideInfoTextView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:text="@string/guideSettingsInfo"
-        android:textColor="@android:color/black" />
+        android:layout_marginTop="52dp"
+        android:text="Your app code is"
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
 
 </RelativeLayout>

@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.View.OnKeyListener;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.TabHost.TabSpec;
 
 import com.suruga.tabandroid.Globals;
@@ -20,10 +21,18 @@ import com.suruga.tabandroid.SettingsActivity;
 public class SavingsActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 
-		final EditText editText1;
-
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.savings_layout);
+		
+		final TextView messageView = (TextView) findViewById(R.id.textView2);
+		if (Globals.getInstance(getApplicationContext()).isForRent()) {
+			messageView.setText(R.string.rentalUpfrontDesc);
+		}
+		else {
+			messageView.setText(R.string.buyingUpfrontDesc);
+		}
+
+		final EditText editText1;
 
 		editText1 = (EditText) findViewById(R.id.editText1);
 

@@ -20,7 +20,7 @@
     <string name="passcodeEntryHint">Enter Code</string>
     
     <string name="guideSettingsHeader">1. Settings</string>
-    <string name="guideSettingsInfo">Please go to the settings tab and create your financial profile.</string>
+    <string name="guideSettingsInfo">"You can use a profile function before visiting a new home.\n\nIn this function, you set up city, housing type (renting or buying), budget for renting or buying, budget after renting or buying.\n\nTo complete task 1, please go to the Settings tab and fill out all the fields.</string>
     
     <string name="guideHousesHeader">2. Houses</string>
     <string name="guideHousesInfo">Please go to the houses tab and select the houses that interest you.</string>
@@ -40,6 +40,13 @@
     <string name="savingsMessage">Please enter your available savings for the downpayment and initial cost of the house.</string>
     <string name="yenSign">¥</string>
     
+    <string name="rentalUpfrontDesc">A sum of money you will be able to pay in a lump, when you rent a new home.  For example, money for a deposit/a key money, an agent commission, a prepaid rent, and fire insurance.</string>
+    <string name="rentalMonthlyDesc">A sum of money you will able to pay every month, after you rent a new home.  For example, money for a rent fee, a management fee, and a parking fee.</string>
+    <string name="buyingUpfrontDesc">A sum of money you will be able to pay in a lump, when you buy a new home.  For example, money for lump for a down payment, registration costs, mortgage costs, the stamp/license/real estate acquisition tax, an agent commission, and fire insurance.</string>
+    <string name="buyingMonthlyDesc">A sum of money you will able to pay every month, after you buy a new home.  For example, money for a mortgage repayment, the real estate tax, a management fee, and a parking fee.</string>
+    <string name="sizem2">Size (m²)</string>
+    
+    
      <!-- City and house data -->
     
     <string-array name="city_arrays">
@@ -48,6 +55,14 @@
         <item>Nagoya</item>
         <item>Fukuoka</item>
         <item>Hokkaido</item>
+    </string-array>
+    
+    <string-array name="long_city_arrays">
+        <item>Tokyo Metropolitan Area</item>
+        <item>Osaka Metropolitan Area</item>
+        <item>Nagoya Metropolitan Area</item>
+        <item>Fukuoka Metropolitan Area</item>
+        <item>Hokkaido Metropolitan Area</item>
     </string-array>
      
      <array name="citiesAndHousesData">

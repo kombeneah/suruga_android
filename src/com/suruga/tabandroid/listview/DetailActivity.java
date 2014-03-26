@@ -6,19 +6,23 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.suruga.tabandroid.Globals;
 import com.suruga.tabandroid.Item;
 import com.suruga.tabandroid.R;
 
+/**
+ * 
+ * @author kombeneah, changey
+ *
+ */
 
 public class DetailActivity extends Activity {
 	
@@ -91,13 +95,20 @@ public class DetailActivity extends Activity {
 		}
         
         ArrayList<Detail> details = new ArrayList<Detail>();
-		details.add(new Detail(0, "Layout", "img1", false));
-		details.add(new Detail(0, "Size", "img1", false));
-		details.add(new Detail(0, "Nearest Station", "img1", false));
-		details.add(new Detail(0, "Time to Station", "img1", false));
-		details.add(new Detail(0, "Address", "img1", false));
-		details.add(new Detail(0, "Monthly Cost", "img1", false));
-		details.add(new Detail(0, "Downpayment", "img1", false));
+		details.add(new Detail(0, "Size (m"+Html.fromHtml("<sup><small>2</small></sup>")+")", String.valueOf(item.getSize()), item.getSelected()));
+		details.add(new Detail(0, "Layout", item.getLayout(), item.getSelected()));
+		details.add(new Detail(0, "Nearest Station", item.getNearestStation(), item.getSelected()));
+		details.add(new Detail(0, "Time to Station", String.valueOf(item.getTimeToStation()), item.getSelected()));
+		details.add(new Detail(0, "Address", item.getAddress(), item.getSelected()));
+		
+		if (g.isForRent()) {
+			details.add(new Detail(0, "Cost after renting", String.valueOf(item.getRentingMonthly()), item.getSelected()));
+			details.add(new Detail(0, "Cost for renting", String.valueOf(item.getRentingUpfront()), item.getSelected()));
+		}
+		else {
+			details.add(new Detail(0, "Cost after buying", String.valueOf(item.getBuyingMonthly()), item.getSelected()));
+			details.add(new Detail(0, "Cost for buying", String.valueOf(item.getBuyingUpfront()), item.getSelected()));
+		}
 		
 		setupListViewAdapter();
 		
@@ -128,12 +139,6 @@ public class DetailActivity extends Activity {
 		
     }
     
-    @SuppressLint("NewApi")
-	public void cellOnClickHandler(View v) {
-    
-    	
-	}
-    
     private void setupListViewAdapter() {
 		adapter = new DetailListAdapter(DetailActivity.this, R.layout.detail_row,
 				new ArrayList<Detail>());
@@ -157,7 +162,10 @@ public class DetailActivity extends Activity {
 				("emptystar", "drawable", getApplicationContext().getPackageName());
 		
 		int newRating = 0;
-		switch (v.getId()) {
+		
+		switch (v.getId())
+		
+		{
 		case R.id.starRating1:
 			newRating = 1;
 			break;

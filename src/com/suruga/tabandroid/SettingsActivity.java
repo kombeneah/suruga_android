@@ -74,9 +74,9 @@ public class SettingsActivity extends Activity {
 					com.suruga.tabandroid.selections.InterestActivity.class);
 //			Globals g = Globals.getInstance(getApplicationContext());
 //			String newState = g.isForRent() ? "Buying" : "Renting";
-//			adapter.updateInterest(newState);
-//			
-//			g.setForRent(!g.isForRent());			
+//			settingHolder.setting.setValue(newState);
+//			g.setForRent(!g.isForRent());
+//			return;
 		} else if (position == 2){
 			i.setClass(SettingsActivity.this,
 					com.suruga.tabandroid.selections.MonthlyActivity.class);

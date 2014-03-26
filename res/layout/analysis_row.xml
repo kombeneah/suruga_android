@@ -50,19 +50,29 @@
         android:src="@drawable/green" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/analysisRating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/tvName"
         android:layout_below="@+id/savings"
-        android:text="Label"
+        android:text="5"
         android:textColor="#040404" />
+    
+    <ImageView
+        android:id="@+id/analysisStar"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_alignTop="@+id/analysisRating"
+        android:layout_toRightOf="@+id/analysisRating"
+        android:layout_marginLeft="5dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/filledstar" />
 
     <TextView
         android:id="@+id/tvName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/textView1"
+        android:layout_above="@+id/analysisRating"
         android:layout_marginLeft="14dp"
         android:layout_toRightOf="@+id/list_image"
         android:paddingBottom="9dip"

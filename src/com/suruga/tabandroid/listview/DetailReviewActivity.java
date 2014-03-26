@@ -19,7 +19,7 @@ import com.suruga.tabandroid.R;
 
 public class DetailReviewActivity extends Activity {
 
-	private DetailListAdapter adapter;
+	private DetailReviewListAdapter adapter;
 
 	String position = "1";
 
@@ -40,8 +40,11 @@ public class DetailReviewActivity extends Activity {
 		final TextView affordLabel;
 
 		affordLabel = (TextView) findViewById(R.id.affordLabel);
-
-		final TextView rating = (TextView) findViewById(R.id.rating);
+		
+		final TextView houseMonthly = (TextView) findViewById(R.id.TextViewHouseMonthly);
+		final TextView houseUpfront = (TextView) findViewById(R.id.TextViewHouseUpfront);
+		final TextView yourMonthly = (TextView) findViewById(R.id.TextViewYourMonthly);
+		final TextView yourUpfront = (TextView) findViewById(R.id.TextViewYourUpfront);
 
 		Intent j = getIntent();
 
@@ -54,6 +57,11 @@ public class DetailReviewActivity extends Activity {
 		
 		int downPayment = g.isForRent() ? item.getRentingUpfront() : item.getBuyingUpfront();
 		int monthlyCost = g.isForRent() ? item.getRentingMonthly() : item.getBuyingMonthly();
+		
+		yourMonthly.setText(String.valueOf(monthlyBudget) + " Yen");
+		yourUpfront.setText(String.valueOf(savings) + " Yen");
+		houseMonthly.setText(String.valueOf(monthlyCost) + " Yen");
+		houseUpfront.setText(String.valueOf(downPayment) + " Yen");
 		
 		// can absolutely afford.
 		if (downPayment <= savings && monthlyCost <= monthlyBudget) {
@@ -121,12 +129,8 @@ public class DetailReviewActivity extends Activity {
         for (int i = 0; i < details.size(); i++) {
 			adapter.insert(details.get(i), i);
 		}
-		
 
 		rating_int = item.getRating();
-
-		rating.setText(" " + String.valueOf(rating_int));
-
 	}
 
 	@Override
@@ -154,7 +158,6 @@ public class DetailReviewActivity extends Activity {
 		}
 
 		try {
-
 			Intent i = getIntent();
 
 			this.position = i.getStringExtra("position");
@@ -174,8 +177,9 @@ public class DetailReviewActivity extends Activity {
 
 	@SuppressLint("NewApi")
 	public void cellOnClickHandler(View v) {
-		DetailListAdapter.ItemHolder itemHolder = (DetailListAdapter.ItemHolder) v
-				.getTag();
+		DetailReviewListAdapter.ItemHolder itemHolder = 
+				(DetailReviewListAdapter.ItemHolder) v.getTag();
+		
 		int position = itemHolder.detail.getId();
 		
 		Intent i = new Intent();
@@ -189,8 +193,9 @@ public class DetailReviewActivity extends Activity {
 	}
 
 	private void setupListViewAdapter() {
-		adapter = new DetailListAdapter(DetailReviewActivity.this,
-				R.layout.detail_row, new ArrayList<Detail>());
+		adapter = new DetailReviewListAdapter(DetailReviewActivity.this,
+				R.layout.detail_review_row, new ArrayList<Detail>());
+		
 		ListView list = (ListView) findViewById(R.id.detaillist);
 
 		list.setAdapter(adapter);

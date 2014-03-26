@@ -1,46 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<AbsoluteLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:orientation="vertical"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent">
-  
-  <!-- Screen Design for Photos -->
-
-    <TextView
-        android:id="@+id/tips"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="20dp"
-        android:layout_y="12dp"
-        android:textColor="#00FFFF"
-        android:textStyle="bold"
-        android:text="Tips" />
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@color/White" >
 
     <TextView
         android:id="@+id/tipDetail"
-        android:layout_width="269dp"
-        android:layout_height="112dp"
-        android:layout_x="19dp"
-        android:layout_y="120dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="15dp"
+        android:textSize="16sp"
+        android:textColor="@color/Black"
         android:text="You need to review current insurances you take out, such as insurances for a life, a health and a casualty. A bank could help you to look into whether you have appropriate insurance products or amounts according to your life plan." />
 
     <TextView
         android:id="@+id/recomm"
-        android:layout_width="142dp"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_x="24dp"
-        android:layout_y="326dp"
-        android:text="Recommended Bank Product/Service"
-        android:textColor="#00FFFF"
-        android:textStyle="bold" />
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tipDetail"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="50dp"
+        android:text="Recommendation of bank's product or service"
+        android:textColor="@color/Black"
+        android:textStyle="bold"
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/recommDetail"
-        android:layout_width="269dp"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_x="22dp"
-        android:layout_y="370dp"
-        android:text="Insurance consulting service" />
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/recomm"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/DeepSkyBlue"
+        android:text="Insurance consulting service"
+        android:textSize="16sp" />
     
-</AbsoluteLayout>
+    <TextView
+        android:id="@+id/presentedBy"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/recommDetail"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="20dp"
+        android:text="Presented by"
+        android:textColor="@color/Black"
+        android:textStyle="bold"
+        android:textSize="16sp" />
+    
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:scaleType="fitXY"
+        android:layout_alignTop="@+id/imageView1"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@+id/imageView1"
+        android:src="@drawable/hollow" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="150dp"
+        android:layout_height="25dp"
+        android:layout_alignLeft="@+id/presentedBy"
+        android:layout_below="@+id/presentedBy"
+        android:layout_marginTop="15dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/surugawriting" />
+
+</RelativeLayout>

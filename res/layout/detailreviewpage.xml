@@ -1,64 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/RelativeLayout1"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
     android:orientation="vertical" 
     android:background="@android:color/white">
 
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="124dp"
-        android:layout_height="126dp"
+    <TableLayout 
+        android:id="@+id/table"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="21dp"
-        android:layout_marginTop="24dp"/>
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="21dp"
-        android:layout_toRightOf="@+id/imageView1"
-        android:text="Rating: "
-        android:textColor="@android:color/black"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:layout_marginTop="15dp">
+        
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/TextViewTopLeft"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="2dip"
+                android:text="            "
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/TextViewMonthlyTitle"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="2dip"
+                android:text="Budget after renting"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/TextViewUpfrontTitle"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="2dip"
+                android:text="Budget for renting"
+                android:textColor="#000000" />
+        </TableRow>
+        
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/TextViewHouseCosts"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="2dip"
+                android:text="House Costs"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/TextViewHouseMonthly"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="2dip"
+                android:text="0 Yen"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/TextViewHouseUpfront"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="2dip"
+                android:text="0 Yen"
+                android:textColor="#000000" />
+        </TableRow>
+        
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/TextViewYourBudget"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="2dip"
+                android:text="Your Budget"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/TextViewYourMonthly"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="2dip"
+                android:text="0 Yen"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/TextViewYourUpfront"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="2dip"
+                android:text="0 Yen"
+                android:textColor="#000000" />
+        </TableRow>
+        
+    </TableLayout>
 
     <ListView
         android:id="@+id/detaillist"
         android:layout_width="fill_parent"
-        android:layout_height="214dp"
+        android:layout_height="fill_parent"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/affordLabel"
-        android:layout_marginTop="24dp"
+        android:layout_below="@+id/recsLabel"
         android:divider="#b5b5b5"
         android:dividerHeight="1dp"
         android:listSelector="@drawable/list_selector" >
     </ListView>
 
     <TextView
-        android:id="@+id/rating"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/textView2"
-        android:layout_marginLeft="66dp"
-        android:layout_toRightOf="@+id/textView2"
-        android:text=" ? "
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@android:color/black" />
-
-    <TextView
         android:id="@+id/affordLabel"
-        android:layout_width="276dp"
-        android:layout_height="84dp"
-        android:layout_alignLeft="@+id/imageView1"
-        android:layout_below="@+id/imageView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/table"
         android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
         android:text="Need to review your budget."
         android:textColor="@android:color/black"
         android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    <TextView
+        android:id="@+id/recsLabel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/affordLabel"
+        android:layout_marginTop="25dp"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text="Personalized Recommendations!"
+        android:textColor="@android:color/black"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:background="#D3D3D3" />
 
 </RelativeLayout>

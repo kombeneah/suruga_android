@@ -60,8 +60,7 @@ public class DetailReviewListAdapter extends ArrayAdapter<Detail> {
 	
 
 	private void setupItem(ItemHolder holder) {
-		holder.name.setText(holder.detail.getName());
-		
+		holder.name.setText(holder.detail.getName());		
 	}
 
 	public static class ItemHolder {

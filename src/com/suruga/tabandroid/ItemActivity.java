@@ -15,7 +15,7 @@ import com.suruga.tabandroid.listview.DetailActivity;
 
 /**
  * 
- * @author changey
+ * @author changey, kombeneah
  * The item activity will display houses based on selection criteria (city, buying or renting...)
  */
 

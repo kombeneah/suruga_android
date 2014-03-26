@@ -51,6 +51,9 @@ public class AnalysisListAdapter extends ArrayAdapter<Item> {
 
 		holder.name = (TextView) row.findViewById(R.id.tvName);
 		holder.list_image = (ImageView) row.findViewById(R.id.list_image);
+		
+		holder.value = (TextView) row.findViewById(R.id.analysisRating);
+		holder.value.setText(String.valueOf(holder.item.getRating()));
 
 		Globals g = Globals.getInstance(context);
 

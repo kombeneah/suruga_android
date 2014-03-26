@@ -66,10 +66,6 @@ public class SettingListAdapter extends ArrayAdapter<Setting> {
 		holder.value.setText(holder.setting.getValue());
 		
 	}
-	
-	public void updateInterest(String value) {
-		// TODO: udate this to toggle buy/rent state
-	}
 
 	public static class ItemHolder {
 		Setting setting;

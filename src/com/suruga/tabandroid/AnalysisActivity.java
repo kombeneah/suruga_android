@@ -13,7 +13,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
+
 
 /**
  * 
@@ -32,7 +34,7 @@ public class AnalysisActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_list_view);
+		setContentView(R.layout.analysis_page);
 
 		setupListViewAdapter();
 		
@@ -61,6 +63,10 @@ public class AnalysisActivity extends Activity {
 	@Override
 	public void onResume() {
 		super.onResume();
+		
+		TextView monthlyHeader = (TextView) findViewById(R.id.budgetAfterHeader);
+		TextView upfrontHeader = (TextView) findViewById(R.id.budgetBeforeHeader);
+		
 		itemsId = new ArrayList<Integer>();
 		setupListViewAdapter();
 		Globals g = Globals.getInstance(getApplicationContext());
@@ -101,7 +107,7 @@ public class AnalysisActivity extends Activity {
 	private void setupListViewAdapter() {
 		adapter = new AnalysisListAdapter(AnalysisActivity.this,
 				R.layout.analysis_row, new ArrayList<Item>());
-		ListView list = (ListView) findViewById(R.id.itemList);
+		ListView list = (ListView) findViewById(R.id.analysisItemList);
 
 		list.setAdapter(adapter);
 

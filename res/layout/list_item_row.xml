@@ -67,12 +67,7 @@
         android:contentDescription="@string/app_name"
         android:src="@drawable/arrow" />
     
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:background="@android:color/darker_gray" />
+
 
     <TextView
         android:id="@+id/unitsize"
