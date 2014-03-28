@@ -33,7 +33,7 @@
     <string name="analysis">Compare</string>
     
     <string name="appCodeDesc">Your app code is:</string>
-    <string name="appcode">215954</string>
+    <string name="appCode">215954</string>
     
     <string name="alert1header">Task 1 Complete!</string>
     <string name="alertContentGeneric">Please go to the \"Guide\" tab to view your next task.</string>

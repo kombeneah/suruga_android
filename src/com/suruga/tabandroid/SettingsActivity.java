@@ -80,6 +80,16 @@ public class SettingsActivity extends Activity {
 		int position = settingHolder.setting.getId();
 
 		Intent i = new Intent();
+		
+		if (Globals.getInstance(getApplicationContext()).getGuideStatus()
+				!= GuideStatus.goToSettings)
+		{
+			// TODO:
+			// We had gone past this already, need to reset all state
+			// reset the globals
+			// reset the houses and compare tabs (RESTART them?)
+			//	- may need to move the activity stored booleans to Globals and have the reset there (easier)
+		}
 
 		if (position == 0) {
 			i.setClass(SettingsActivity.this,
@@ -103,50 +113,60 @@ public class SettingsActivity extends Activity {
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 	    
-	    if (requestCode == SET_CITY_REQUEST) {
-	        if (resultCode == RESULT_OK) {
-	        	isCitySelected = true;
-	        }
-	    }
-	    
-	    else if (requestCode == SET_RENTAL_REQUEST) {
-	        if (resultCode == RESULT_OK) {
-	        	isRentalSelected = true;
-	        }
-	    }
-	    
-	    else if (requestCode == SET_MONTHLY_REQUEST) {
-	        if (resultCode == RESULT_OK) {
-	        	isMonthlySet = true;
-	        }
-	    }
-	    
-	    else if (requestCode == SET_UPFRONT_REQUEST) {
-	        if (resultCode == RESULT_OK) {
-	        	isUpfrontSet = true;
-	        }
-	    }
-	    
-	    // If everything is set, update the global settings so that
-	    // the guide tab is updated. Then show pop up.
-	    
-	    if (isCitySelected && isRentalSelected && 
-	    		isMonthlySet && isUpfrontSet)
-	    {
-	    	Globals.getInstance(getApplicationContext()).setGuideStatus(GuideStatus.goToHouses);
-	    	
-	    	AlertDialog.Builder builder = new AlertDialog.Builder(SettingsActivity.this);
-			builder.setMessage(R.string.alertContentGeneric)
-				.setTitle(R.string.alert1header);
-			builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-				public void onClick(DialogInterface dialog, int id) {
-					// navigate to the guide tab
-					SettingsActivity.this.onBackPressed();
+		if (Globals.getInstance(getApplicationContext()).getGuideStatus()
+				== GuideStatus.goToSettings)
+		{
+			if (requestCode == SET_CITY_REQUEST) {
+				if (resultCode == RESULT_OK) {
+					isCitySelected = true;
 				}
-			});
-			AlertDialog dialog = builder.create();
-			dialog.show();
-	    }
+			}
+
+			else if (requestCode == SET_RENTAL_REQUEST) {
+				if (resultCode == RESULT_OK) {
+					isRentalSelected = true;
+				}
+			}
+
+			else if (requestCode == SET_MONTHLY_REQUEST) {
+				if (resultCode == RESULT_OK) {
+					isMonthlySet = true;
+				}
+			}
+
+			else if (requestCode == SET_UPFRONT_REQUEST) {
+				if (resultCode == RESULT_OK) {
+					isUpfrontSet = true;
+				}
+			}
+		}
+
+		this.CheckTaskCompletion();
+	}
+	
+	private void CheckTaskCompletion() {
+
+		if (Globals.getInstance(getApplicationContext()).getGuideStatus()
+				== GuideStatus.goToSettings)
+		{
+			if (isCitySelected && isRentalSelected && 
+					isMonthlySet && isUpfrontSet)
+			{
+				Globals.getInstance(getApplicationContext()).setGuideStatus(GuideStatus.goToHouses);
+
+				AlertDialog.Builder builder = new AlertDialog.Builder(SettingsActivity.this);
+				builder.setMessage(R.string.alertContentGeneric)
+				.setTitle(R.string.alert1header);
+				builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int id) {
+						// navigate to the guide tab
+						SettingsActivity.this.onBackPressed();
+					}
+				});
+				AlertDialog dialog = builder.create();
+				dialog.show();
+			}
+		}
 	}
 
 	private void setupListViewAdapter() {

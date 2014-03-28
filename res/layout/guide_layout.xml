@@ -25,16 +25,6 @@
             android:textColor="@android:color/black"
             android:textSize="16sp" />
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_alignTop="@+id/imageView1"
-            android:layout_marginLeft="15dp"
-            android:layout_toRightOf="@+id/imageView1"
-            android:scaleType="fitXY"
-            android:src="@drawable/hollow" />
-
         <TextView
             android:id="@+id/appCode"
             android:layout_width="wrap_content"
@@ -42,7 +32,7 @@
             android:layout_below="@+id/appCodeDesc"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="5dp"
-            android:text="54321"
+            android:text="@string/appCode"
             android:textColor="@android:color/black"
             android:textSize="28sp" />
 
@@ -53,7 +43,7 @@
             android:layout_below="@+id/guideInfoTextView"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
-            android:text="Your app code is"
+            android:text="@string/appCodeDesc"
             android:textColor="@android:color/black"
             android:textSize="16sp" />
 
@@ -69,15 +59,37 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
-        <ImageView
-            android:id="@+id/imageView1"
-            android:layout_width="150dp"
-            android:layout_height="25dp"
+        <LinearLayout
+            android:id="@+id/LinearLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/guideInfoTextView"
             android:layout_below="@+id/appCode"
-            android:layout_marginTop="36dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/surugawriting" />
+            android:layout_marginTop="50dp"
+            android:background="@android:color/white"
+            android:orientation="horizontal"
+            android:layout_marginBottom="30dp" >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/surugawriting"
+                android:layout_weight="5" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/hollow"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+        
     </RelativeLayout>
 
 </ScrollView>
