@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, AndroidTabLayoutActivity!</string>
-    <string name="app_name">AndroidTabLayout</string>
-    <string name="strCity">Sydney</string>
-	<string name="strWeather">Sunny</string>
-	<string name="strTemp">32°C</string>
+    <string name="app_name">Suruga</string>
 	<string name="strWindSpeed">5kmph</string>
 	<string name="txtWindSpeed">WindSpeed</string>
 	<string name="menu_settings">Settings</string>
@@ -19,22 +15,31 @@
     <string name="codeEntryInstructions">Please enter your 6 digit survey code.</string>
     <string name="passcodeEntryHint">Enter Code</string>
     
-    <string name="guideSettingsHeader">1. Settings</string>
-    <string name="guideSettingsInfo">"You can use a profile function before visiting a new home.\n\nIn this function, you set up city, housing type (renting or buying), budget for renting or buying, budget after renting or buying.\n\nTo complete task 1, please go to the Settings tab and fill out all the fields.</string>
+    <string name="guideSettingsHeader">Task 1： Setting profile</string>
+    <string name="guideSettingsInfo">You can use a profile function before visiting a new home.\n\nIn this function, you set up city, housing type (renting or buying), budget for renting or buying, budget after renting or buying.\n\nTo complete task 1, please go to the \"Profile\" tab and fill out all the fields.</string>
     
-    <string name="guideHousesHeader">2. Houses</string>
-    <string name="guideHousesInfo">Please go to the houses tab and select the houses that interest you.</string>
+    <string name="guideHousesHeader">Task 2： Housing information</string>
+    <string name="guideHousesInfo">You can use a houses function when viewing new homes. In this function, you can file housing basic information, picture, and rating for homes.\n\nThe prototype app provides six samples of new home that we already registered information. To complete task 2, please go to the “Houses” tab and do the following actions.\n\n(1) Check detail information of two homes at least from six samples. You can go to a detail information screen, when you can push a picture on a housing information list.\n\n(2) Rate two homes you selected on the detail information screen. (Rating shows as stars)\n\n(3) Return to the housing information list screen, please select your favorite three houses at least by using the check boxes.</string>
     
-    <string name="guideFinancialsHeader">3. Financials</string>
-    <string name="guideFinancialsInfo">Please go to the Financials tab and view further options.</string>
+    <string name="guideFinancialsHeader">Task 3: Compare housing options</string>
+    <string name="guideFinancialsInfo">You can use a comparison function when you compare some housing options. In this function, you can compare your budget conditions and your rating on a comparison list. To complete task 3, please go to the “Compare” tab, and do the following actions.\n\n(1) Check about whether houses are within the your budget or not on the comparison list.\n\n(2) Select one house, and check a budget diagnosis.\nYou can go to the budget diagnosis screen by tapping a picture on the comparison list.\n\n(3) Select one personalized recommendation on the budget diagnosis, and then please got financial advice.</string>
     
-    <string name="guideDoneHeader">4. Done</string>
-    <string name="guideDoneInfo">You have completed the survey! Thank you.</string>
+    <string name="guideDoneHeader">4. Back to the Online Survey</string>
+    <string name="guideDoneInfo">Thank you for trying out Suruga bank demo application. Please write the following code in your online survey and answer the last questions to complete your participation in this study.</string>
     
     <string name="guide">Guide</string>
-    <string name="settings">Settings</string>
+    <string name="settings">Profile</string>
     <string name="houses">Houses</string>
-    <string name="analysis">Analysis</string>
+    <string name="analysis">Compare</string>
+    
+    <string name="appCodeDesc">Your app code is:</string>
+    <string name="appcode">215954</string>
+    
+    <string name="alert1header">Task 1 Complete!</string>
+    <string name="alertContentGeneric">Please go to the \"Guide\" tab to view your next task.</string>
+    <string name="alert2header">Task 2 Complete!</string>
+    <string name="alert3header">Congratulations!</string>
+    <string name="alert3Content">You are almost done. Please go to the \"Guide\" tab to finish this task.</string>
     
     <string name="monthlyMessage">Please enter your available monthly funds for housing expenses</string>
     <string name="savingsMessage">Please enter your available savings for the downpayment and initial cost of the house.</string>

@@ -67,6 +67,7 @@ public class CityActivity extends Activity {
 
 		oldItemHolder = itemHolder;
 		
+		setResult(RESULT_OK);
 		finish();
 	}
 

@@ -61,4 +61,9 @@ public class AndroidTabLayoutActivity extends TabActivity {
             t.setTextColor(getResources().getColor(android.R.color.black));
         }
     }
+    
+    public void switchTab(int tab) {
+    	getTabHost().setCurrentTab(tab);
+    }
+    
 }

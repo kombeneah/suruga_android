@@ -110,6 +110,8 @@ public class DetailActivity extends Activity {
 			details.add(new Detail(0, "Cost for buying", String.valueOf(item.getBuyingUpfront()), item.getSelected()));
 		}
 		
+		details.add(new Detail(0, "House mortgage", String.valueOf(item.getMortgageLoan()), item.getSelected()));
+		
 		setupListViewAdapter();
 		
 		// Toast.makeText(getApplicationContext(), details.get(0).getName(), Toast.LENGTH_LONG).show();
@@ -199,5 +201,7 @@ public class DetailActivity extends Activity {
         		star.setImageResource(emptyStarId);
         	}
         }
+    	
+    	setResult(RESULT_OK);
     }
 }

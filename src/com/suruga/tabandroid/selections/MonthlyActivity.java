@@ -35,6 +35,8 @@ public class MonthlyActivity extends Activity {
 		final EditText editText1;
 
 		editText1 = (EditText) findViewById(R.id.editText1);
+		editText1.setText(String.valueOf
+				(Globals.getInstance(getApplicationContext()).getMonthly()));
 
 		// automatically show the keypad for text input to the editBox.
 		final InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -54,6 +56,8 @@ public class MonthlyActivity extends Activity {
 					try {
 						monthly = Integer.parseInt(editText1.getText().toString());
 						g.setMonthly(monthly);
+						
+						setResult(RESULT_OK);
 					} catch (NumberFormatException nfe) {
 						Log.e("MonthlyActivity", "Integer.parseInt() error parsing: "+editText1.getText().toString(), nfe);
 					}

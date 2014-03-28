@@ -70,6 +70,7 @@ public class InterestActivity extends Activity {
 
 		oldItemHolder = itemHolder;
 		
+		setResult(RESULT_OK);
 		finish();
 	}
 

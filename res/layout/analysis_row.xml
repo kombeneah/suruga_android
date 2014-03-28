@@ -29,6 +29,7 @@
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:contentDescription="@string/app_name"
+        android:layout_marginRight="15dp"
         android:src="@drawable/arrow" />
 
     <ImageView
@@ -36,7 +37,7 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_centerVertical="true"
-        android:layout_marginRight="18dp"
+        android:layout_marginRight="10dp"
         android:layout_toLeftOf="@+id/arrow"
         android:src="@drawable/green" />
 
@@ -45,7 +46,7 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_centerVertical="true"
-        android:layout_marginRight="17dp"
+        android:layout_marginRight="30dp"
         android:layout_toLeftOf="@+id/savings"
         android:src="@drawable/green" />
 

@@ -188,6 +188,8 @@ public class DetailReviewActivity extends Activity {
 				com.suruga.tabandroid.listview.ReviewActivity.class);
 		
 		i.putExtra("solutionNumber", solutions);
+		
+		setResult(RESULT_OK);
 
 		startActivity(i);
 	}

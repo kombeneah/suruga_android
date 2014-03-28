@@ -1,79 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/RelativeLayout1"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@android:color/white" >
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
 
-    <!-- Screen Design for Photos -->
-
-    <TextView
-        android:id="@+id/guideInfoTextView"
+    <RelativeLayout
+        android:id="@+id/RelativeLayout1"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/guideTitleTextView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:text="@string/guideSettingsInfo"
-        android:textColor="@android:color/black"
-        android:textSize="16sp" />
+        android:layout_height="fill_parent"
+        android:background="@android:color/white"
+        android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/guideTitleTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/guideInfoTextView"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="26dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/guideSettingsHeader"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@android:color/black"
-        android:textSize="28sp" />
+        <!-- Screen Design for Photos -->
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:scaleType="fitXY"
-        android:layout_alignTop="@+id/imageView1"
-        android:layout_marginLeft="15dp"
-        android:layout_toRightOf="@+id/imageView1"
-        android:src="@drawable/hollow" />
+        <TextView
+            android:id="@+id/guideInfoTextView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/guideTitleTextView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/guideSettingsInfo"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
 
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="150dp"
-        android:layout_height="25dp"
-        android:layout_alignLeft="@+id/guideInfoTextView"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="21dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/surugawriting" />
-    
-    <TextView
-        android:id="@+id/appCode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/appCodeDesc"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
-        android:textColor="@android:color/black"
-        android:textSize="28sp"
-        android:text="54321" />
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignTop="@+id/imageView1"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/imageView1"
+            android:scaleType="fitXY"
+            android:src="@drawable/hollow" />
 
-    <TextView
-        android:id="@+id/appCodeDesc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/guideInfoTextView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="52dp"
-        android:text="Your app code is"
-        android:textColor="@android:color/black"
-        android:textSize="16sp" />
+        <TextView
+            android:id="@+id/appCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/appCodeDesc"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:text="54321"
+            android:textColor="@android:color/black"
+            android:textSize="28sp" />
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/appCodeDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/guideInfoTextView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:text="Your app code is"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/guideTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="14dp"
+            android:text="@string/guideSettingsHeader"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="150dp"
+            android:layout_height="25dp"
+            android:layout_alignLeft="@+id/guideInfoTextView"
+            android:layout_below="@+id/appCode"
+            android:layout_marginTop="36dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/surugawriting" />
+    </RelativeLayout>
+
+</ScrollView>

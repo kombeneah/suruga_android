@@ -5,13 +5,18 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.suruga.tabandroid.Globals.GuideStatus;
 import com.suruga.tabandroid.listview.DetailActivity;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AnimationUtils;
+import android.view.animation.RotateAnimation;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,6 +28,11 @@ import android.widget.Toast;
  * The page to analyze whether selected items meet monthly and savings budget
  */
 public class AnalysisActivity extends Activity {
+	
+	static final int VIEW_RECOMMENDATION_REQUEST = 5;
+	
+	boolean isBudgetDiagnosisSeen = false;
+	boolean isRecommendationSeen = false;
 
 	private AnalysisListAdapter adapter;
 
@@ -38,8 +48,8 @@ public class AnalysisActivity extends Activity {
 
 		setupListViewAdapter();
 		
-		Globals g=Globals.getInstance(getApplicationContext());
-		items=g.getItems(g.getCity());
+		Globals g = Globals.getInstance(getApplicationContext());
+		items = g.getItems(g.getCity());
 
 	}
 
@@ -54,18 +64,30 @@ public class AnalysisActivity extends Activity {
 		i.setClass(AnalysisActivity.this, com.suruga.tabandroid.listview.DetailReviewActivity.class);
 	
 		i.putExtra("index", position);
+		
+		this.isBudgetDiagnosisSeen = true;
+		this.CheckTaskCompletion();
 
 		// start the detail page
-		startActivity(i);
+		startActivityForResult(i, VIEW_RECOMMENDATION_REQUEST);
+	}
+	
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+		if (requestCode == VIEW_RECOMMENDATION_REQUEST) {
+			if (resultCode == RESULT_OK) {
+				this.isRecommendationSeen = true;
+
+				this.CheckTaskCompletion();
+			}
+		}
 	}
 
 	@SuppressLint("NewApi")
 	@Override
 	public void onResume() {
 		super.onResume();
-		
-		TextView monthlyHeader = (TextView) findViewById(R.id.budgetAfterHeader);
-		TextView upfrontHeader = (TextView) findViewById(R.id.budgetBeforeHeader);
 		
 		itemsId = new ArrayList<Integer>();
 		setupListViewAdapter();
@@ -103,6 +125,25 @@ public class AnalysisActivity extends Activity {
 		}
 
 	}
+	
+	private void CheckTaskCompletion() {
+		if (isBudgetDiagnosisSeen && isRecommendationSeen)
+	    {
+	    	Globals.getInstance(getApplicationContext()).setGuideStatus(GuideStatus.done);
+	    	
+	    	AlertDialog.Builder builder = new AlertDialog.Builder(AnalysisActivity.this);
+			builder.setMessage(R.string.alert3Content)
+				.setTitle(R.string.alert3header);
+			builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+				public void onClick(DialogInterface dialog, int id) {
+					// navigate to the guide tab
+					AnalysisActivity.this.onBackPressed();
+				}
+			});
+			AlertDialog dialog = builder.create();
+			dialog.show();
+	    }
+	}
 
 	private void setupListViewAdapter() {
 		adapter = new AnalysisListAdapter(AnalysisActivity.this,
@@ -111,6 +152,13 @@ public class AnalysisActivity extends Activity {
 
 		list.setAdapter(adapter);
 
+	}
+	
+	@Override
+	public void onBackPressed() {
+		AndroidTabLayoutActivity parentActivity;
+        parentActivity = (AndroidTabLayoutActivity) this.getParent();
+        parentActivity.switchTab(0);
 	}
 
 }
