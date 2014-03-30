@@ -48,12 +48,16 @@ public class Globals {
 	private boolean isRatingComplete = false;
 	private ArrayList<String> itemsSelectedList = new ArrayList<String>();
 	
+	// Comparison
+	private boolean isBudgetDiagnosisSeen = false;
+	private boolean isRecommendationSeen = false;
 	
 	protected static final int SET_CITY_REQUEST = 0;
 	protected static final int SET_RENTAL_REQUEST = 1;
 	protected static final int SET_MONTHLY_REQUEST = 2;
 	protected static final int SET_UPFRONT_REQUEST = 3;
 	protected static final int SET_RATING_REQUEST = 4;
+	protected static final int VIEW_RECOMMENDATION_REQUEST = 5;
 	
 	protected static enum GuideStatus {
 		goToSettings,
@@ -361,5 +365,21 @@ public class Globals {
 
 	public void setItemsSelectedList(ArrayList<String> itemsSelectedList) {
 		this.itemsSelectedList = itemsSelectedList;
+	}
+
+	public boolean isBudgetDiagnosisSeen() {
+		return isBudgetDiagnosisSeen;
+	}
+
+	public void setBudgetDiagnosisSeen(boolean isBudgetDiagnosisSeen) {
+		this.isBudgetDiagnosisSeen = isBudgetDiagnosisSeen;
+	}
+
+	public boolean isRecommendationSeen() {
+		return isRecommendationSeen;
+	}
+
+	public void setRecommendationSeen(boolean isRecommendationSeen) {
+		this.isRecommendationSeen = isRecommendationSeen;
 	}
 }

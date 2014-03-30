@@ -28,11 +28,6 @@ import android.widget.Toast;
  * The page to analyze whether selected items meet monthly and savings budget
  */
 public class AnalysisActivity extends Activity {
-	
-	static final int VIEW_RECOMMENDATION_REQUEST = 5;
-	
-	boolean isBudgetDiagnosisSeen = false;
-	boolean isRecommendationSeen = false;
 
 	private AnalysisListAdapter adapter;
 
@@ -55,9 +50,11 @@ public class AnalysisActivity extends Activity {
 
 	@SuppressLint("NewApi")
 	public void cellOnClickHandler(View v) {
-		AnalysisListAdapter.ItemHolder itemHolder = (AnalysisListAdapter.ItemHolder) v
-				.getTag();
+		AnalysisListAdapter.ItemHolder itemHolder = 
+				(AnalysisListAdapter.ItemHolder) v.getTag();
 		int position = itemHolder.item.getId();
+		
+		Globals g = Globals.getInstance(getApplicationContext());
 
 		Intent i = new Intent();
 
@@ -65,21 +62,29 @@ public class AnalysisActivity extends Activity {
 	
 		i.putExtra("index", position);
 		
-		this.isBudgetDiagnosisSeen = true;
-		this.CheckTaskCompletion();
+		if (g.getGuideStatus() == GuideStatus.goToAnalysis)
+		{
+			g.setBudgetDiagnosisSeen(true);
+			this.CheckTaskCompletion();
+		}
 
 		// start the detail page
-		startActivityForResult(i, VIEW_RECOMMENDATION_REQUEST);
+		startActivityForResult(i, Globals.VIEW_RECOMMENDATION_REQUEST);
 	}
 	
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-		if (requestCode == VIEW_RECOMMENDATION_REQUEST) {
-			if (resultCode == RESULT_OK) {
-				this.isRecommendationSeen = true;
+		Globals g = Globals.getInstance(getApplicationContext());
+		
+		if (g.getGuideStatus() == GuideStatus.goToAnalysis)
+		{
+			if (requestCode == Globals.VIEW_RECOMMENDATION_REQUEST) {
+				if (resultCode == RESULT_OK) {
+					g.setRecommendationSeen(true);
 
-				this.CheckTaskCompletion();
+					this.CheckTaskCompletion();
+				}
 			}
 		}
 	}
@@ -127,22 +132,27 @@ public class AnalysisActivity extends Activity {
 	}
 	
 	private void CheckTaskCompletion() {
-		if (isBudgetDiagnosisSeen && isRecommendationSeen)
-	    {
-	    	Globals.getInstance(getApplicationContext()).setGuideStatus(GuideStatus.done);
-	    	
-	    	AlertDialog.Builder builder = new AlertDialog.Builder(AnalysisActivity.this);
-			builder.setMessage(R.string.alert3Content)
+
+		Globals g = Globals.getInstance(getApplicationContext());
+		if (g.getGuideStatus() == GuideStatus.goToAnalysis)
+		{
+			if (g.isBudgetDiagnosisSeen() && g.isRecommendationSeen())
+			{
+				Globals.getInstance(getApplicationContext()).setGuideStatus(GuideStatus.done);
+
+				AlertDialog.Builder builder = new AlertDialog.Builder(AnalysisActivity.this);
+				builder.setMessage(R.string.alert3Content)
 				.setTitle(R.string.alert3header);
-			builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-				public void onClick(DialogInterface dialog, int id) {
-					// navigate to the guide tab
-					AnalysisActivity.this.onBackPressed();
-				}
-			});
-			AlertDialog dialog = builder.create();
-			dialog.show();
-	    }
+				builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int id) {
+						// navigate to the guide tab
+						AnalysisActivity.this.onBackPressed();
+					}
+				});
+				AlertDialog dialog = builder.create();
+				dialog.show();
+			}
+		}
 	}
 
 	private void setupListViewAdapter() {
