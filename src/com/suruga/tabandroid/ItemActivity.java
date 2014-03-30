@@ -25,19 +25,9 @@ import com.suruga.tabandroid.listview.DetailActivity;
 public class ItemActivity extends Activity {
 
 	private ItemListAdapter adapter;
-	private ArrayList<String> itemsSelected = new ArrayList<String>();
-	
-	int ratedItems = 0;
-	int detailViewedItems = 0;
-	
-	boolean isSelectionComplete = false;
-	boolean isDetailsViewed = false;
-	boolean isRatingComplete = false;
-	
-	static final int SET_RATING_REQUEST = 4;
 
 	/**
-	 * oncreate is the method called when the activity is created
+	 * onCreate is the method called when the activity is created
 	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -68,20 +58,27 @@ public class ItemActivity extends Activity {
 
 		setupListViewAdapter();
 
-		Globals global = Globals.getInstance(getApplicationContext());
+		Globals g = Globals.getInstance(getApplicationContext());
 
 		// retrieve all items from the singleton class
-		ArrayList<Item> items = global.getItems(global.getCity());			 
+		ArrayList<Item> items = g.getItems(g.getCity());			 
 
 		if (items != null) { //items may be null if no city is selected
 			for (int i = 0; i < items.size(); i++) {
 				adapter.insert(items.get(i), i);
 			}
 		}
+		
+		if (g.getGuideStatus() == GuideStatus.goToHouses)
+		{
+			this.CheckTaskCompletion();
+		}
 	}
 
 	@SuppressLint("NewApi")
 	public void cellOnClickHandler(View v) {
+		
+		Globals g = Globals.getInstance(getApplicationContext());
 
 		ItemListAdapter.ItemHolder itemHolder = (ItemListAdapter.ItemHolder) v
 				.getTag();
@@ -93,34 +90,46 @@ public class ItemActivity extends Activity {
 		// Editor editor = prefs.edit();
 
 		if (selected == false) {
-			itemsSelected.add(String.valueOf(position));
+			ArrayList<String> temp = g.getItemsSelectedList();
+			temp.add(String.valueOf(position));
+			g.setItemsSelectedList(temp);
+			
 			Set<String> set = new HashSet<String>();
-			set.addAll(itemsSelected);
+			set.addAll(g.getItemsSelectedList());
 
 			AndroidTabLayoutActivity.selectedHouses = set;
 
 			itemHolder.checkbox.setImageResource(R.drawable.checkedcheckbox);
 			itemHolder.item.setSelected(true);
 			
-			if (itemsSelected.size() >= 3) {
-				this.isSelectionComplete = true;
-				
-				this.CheckTaskCompletion();
+			if (g.getGuideStatus() == GuideStatus.goToHouses)
+			{
+				if (g.getItemsSelectedList().size() >= 3) {
+					g.setSelectionComplete(true);
+
+					this.CheckTaskCompletion();
+				}
 			}
 
-		} else {
-			itemsSelected.remove(String.valueOf(position));
+		} else {			
+			ArrayList<String> temp = g.getItemsSelectedList();
+			temp.remove(String.valueOf(position));
+			g.setItemsSelectedList(temp);
+			
 			Set<String> set = new HashSet<String>();
-			set.addAll(itemsSelected);
+			set.addAll(g.getItemsSelectedList());
 
 			AndroidTabLayoutActivity.selectedHouses = set;
 
 			itemHolder.checkbox.setImageResource(R.drawable.emptycheckbox);
 
 			itemHolder.item.setSelected(false);
-			
-			if (this.itemsSelected.size() < 3) {
-				this.isSelectionComplete = false;
+
+			if (g.getGuideStatus() == GuideStatus.goToHouses)
+			{
+				if (g.getItemsSelectedList().size() < 3) {
+					g.setSelectionComplete(false);
+				}
 			}
 		}
 
@@ -128,7 +137,7 @@ public class ItemActivity extends Activity {
 
 	public void infoOnClickHandler(View v) {
 
-		// itemHolder.
+		Globals g = Globals.getInstance(getApplicationContext());
 
 		Item itemSelected = (Item) v.getTag();
 
@@ -142,28 +151,38 @@ public class ItemActivity extends Activity {
 		i.putExtra("rating", itemSelected.getRating());
 		// i.putExtra("position", String.valueOf(position + 1));
 		
-		this.detailViewedItems++;
-		if (this.detailViewedItems >= 2) {
-			this.isDetailsViewed = true;
-			
-			this.CheckTaskCompletion();
+		g.setDetailViewedItems(g.getDetailViewedItems() + 1);
+
+		if (g.getGuideStatus() == GuideStatus.goToHouses)
+		{
+			if (g.getDetailViewedItems() >= 2) {
+				g.setDetailsViewed(true);
+
+				this.CheckTaskCompletion();
+			}
 		}
 
 		// start the detail page
-		startActivityForResult(i, SET_RATING_REQUEST);
+		startActivityForResult(i, Globals.SET_RATING_REQUEST);
 
 	}
 	
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-		if (requestCode == SET_RATING_REQUEST) {
+		Globals g = Globals.getInstance(getApplicationContext());
+		
+		if (requestCode == Globals.SET_RATING_REQUEST) {
 			if (resultCode == RESULT_OK) {
-				this.ratedItems++;
-				if (this.ratedItems >= 2) {
-					this.isRatingComplete = true;
+				if (g.getGuideStatus() == GuideStatus.goToHouses)
+				{
+					g.setRatedItems(g.getRatedItems() + 1);
 					
-					this.CheckTaskCompletion();
+					if (g.getRatedItems() >= 2) {
+						g.setRatingComplete(true);
+
+						this.CheckTaskCompletion();
+					}
 				}
 			}
 		}
@@ -185,21 +204,26 @@ public class ItemActivity extends Activity {
 	}
 	
 	private void CheckTaskCompletion() {
-		if (isSelectionComplete && isDetailsViewed && isRatingComplete)
-	    {
-	    	Globals.getInstance(getApplicationContext()).setGuideStatus(GuideStatus.goToAnalysis);
-	    	
-	    	AlertDialog.Builder builder = new AlertDialog.Builder(ItemActivity.this);
-			builder.setMessage(R.string.alertContentGeneric)
+		
+		Globals g = Globals.getInstance(getApplicationContext());
+		if (g.getGuideStatus() == GuideStatus.goToHouses)
+		{
+			if (g.isSelectionComplete() && g.isDetailsViewed() && g.isRatingComplete())
+			{
+				g.setGuideStatus(GuideStatus.goToAnalysis);
+
+				AlertDialog.Builder builder = new AlertDialog.Builder(ItemActivity.this);
+				builder.setMessage(R.string.alertContentGeneric)
 				.setTitle(R.string.alert2header);
-			builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-				public void onClick(DialogInterface dialog, int id) {
-					// navigate to the guide tab
-					ItemActivity.this.onBackPressed();
-				}
-			});
-			AlertDialog dialog = builder.create();
-			dialog.show();
-	    }
+				builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int id) {
+						// navigate to the guide tab
+						ItemActivity.this.onBackPressed();
+					}
+				});
+				AlertDialog dialog = builder.create();
+				dialog.show();
+			}
+		}
 	}
 }

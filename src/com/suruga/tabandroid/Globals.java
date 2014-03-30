@@ -28,6 +28,33 @@ public class Globals {
 	private Context context;
 	private boolean forRent;
 	
+	private static final int NO_RESET = -1;
+	
+	//
+	// variables for tracking progress
+	//
+	
+	// Settings
+	private boolean isCitySelected = false;
+	private boolean isRentalSelected = false;
+	private boolean isMonthlySet = false;
+	private boolean isUpfrontSet = false;
+	
+	// Houses
+	private int ratedItems = 0;
+	private int detailViewedItems = 0;
+	private boolean isSelectionComplete = false;
+	private boolean isDetailsViewed = false;
+	private boolean isRatingComplete = false;
+	private ArrayList<String> itemsSelectedList = new ArrayList<String>();
+	
+	
+	protected static final int SET_CITY_REQUEST = 0;
+	protected static final int SET_RENTAL_REQUEST = 1;
+	protected static final int SET_MONTHLY_REQUEST = 2;
+	protected static final int SET_UPFRONT_REQUEST = 3;
+	protected static final int SET_RATING_REQUEST = 4;
+	
 	protected static enum GuideStatus {
 		goToSettings,
 		goToHouses,
@@ -38,21 +65,80 @@ public class Globals {
 	private GuideStatus guideStatus;
 	
 	private HashMap<String, ArrayList<Item>> items = new HashMap<String, ArrayList<Item>>();
-	
+
 
 	// Restrict the constructor from being instantiated
-	private Globals(Context cxt) {
+	private Globals(Context cxt, int resetSettingPosition) {
 		this.context = cxt;
 		Resources res = this.context.getResources();
 		String[] cityNames = res.getStringArray(R.array.city_arrays);
 		
-		// randomly auto select a default city
-		this.selectedCity = cityNames[(int) Math.floor(Math.random()*(cityNames.length - 1))];
-		this.monthly = 2000;
-		this.savings = 25000;
+		// we are resetting, do not randomize everything
+		if (resetSettingPosition != NO_RESET) {
+			switch(resetSettingPosition) {
+			case 0:
+			{
+				this.setCitySelected(true);
+				
+				this.setForRent(instance.isForRent());
+				this.setMonthly(instance.getMonthly());
+				this.setSavings(instance.getSavings());
+				
+				this.setRentalSelected(true);
+				this.setMonthlySet(true);
+				this.setUpfrontSet(true);
+			}
+			case 1:
+			{
+				this.setRentalSelected(true);
+
+				this.setCity(instance.getCity());
+				this.setMonthly(instance.getMonthly());
+				this.setSavings(instance.getSavings());
+				
+				this.setCitySelected(true);
+				this.setMonthlySet(true);
+				this.setUpfrontSet(true);
+			}
+			case 2:
+			{
+				this.setMonthlySet(true);
+
+				this.setCity(instance.getCity());
+				this.setForRent(instance.isForRent());
+				this.setSavings(instance.getSavings());
+				
+				this.setCitySelected(true);
+				this.setRentalSelected(true);
+				this.setUpfrontSet(true);
+			}
+			case 3:
+			{
+				this.setUpfrontSet(true);
+
+				this.setCity(instance.getCity());
+				this.setForRent(instance.isForRent());
+				this.setMonthly(instance.getMonthly());
+				
+				this.setCitySelected(true);
+				this.setRentalSelected(true);
+				this.setMonthlySet(true);
+			}
+			}
+		}
 		
-		// randomize default for buying/renting
-		this.forRent = Math.floor(Math.random() + 0.5) >= 1.0;
+		// otherwise, randomize default settings, but do not flag values as set
+		else {
+			this.selectedCity = cityNames[(int) Math.floor(Math.random()*(cityNames.length - 1))];
+			this.forRent = Math.floor(Math.random() + 0.5) >= 1.0;
+			this.monthly = 2000;
+			this.savings = 25000;
+			
+			this.setCitySelected(false);
+			this.setRentalSelected(false);
+			this.setMonthlySet(false);
+			this.setUpfrontSet(false);
+		}
 
 		this.setGuideStatus(GuideStatus.goToSettings);
 		
@@ -171,9 +257,14 @@ public class Globals {
 
 	public static synchronized Globals getInstance(Context context) {
 		if (instance == null) {
-			instance = new Globals(context);
+			instance = new Globals(context, NO_RESET);
 		}
 		return instance;
+	}
+	
+	public static synchronized void reset(Context context, int position) {
+		Globals newInstance = new Globals(context, position);
+		instance = newInstance;
 	}
 
 	public GuideStatus getGuideStatus() {
@@ -190,5 +281,85 @@ public class Globals {
 
 	public void setForRent(boolean forRent) {
 		this.forRent = forRent;
+	}
+
+	public boolean isCitySelected() {
+		return isCitySelected;
+	}
+
+	public void setCitySelected(boolean isCitySelected) {
+		this.isCitySelected = isCitySelected;
+	}
+
+	public boolean isRentalSelected() {
+		return isRentalSelected;
+	}
+
+	public void setRentalSelected(boolean isRentalSelected) {
+		this.isRentalSelected = isRentalSelected;
+	}
+
+	public boolean isMonthlySet() {
+		return isMonthlySet;
+	}
+
+	public void setMonthlySet(boolean isMonthlySet) {
+		this.isMonthlySet = isMonthlySet;
+	}
+
+	public boolean isUpfrontSet() {
+		return isUpfrontSet;
+	}
+
+	public void setUpfrontSet(boolean isUpfrontSet) {
+		this.isUpfrontSet = isUpfrontSet;
+	}
+
+	public int getRatedItems() {
+		return ratedItems;
+	}
+
+	public void setRatedItems(int ratedItems) {
+		this.ratedItems = ratedItems;
+	}
+
+	public int getDetailViewedItems() {
+		return detailViewedItems;
+	}
+
+	public void setDetailViewedItems(int detailViewedItems) {
+		this.detailViewedItems = detailViewedItems;
+	}
+
+	public boolean isSelectionComplete() {
+		return isSelectionComplete;
+	}
+
+	public void setSelectionComplete(boolean isSelectionComplete) {
+		this.isSelectionComplete = isSelectionComplete;
+	}
+
+	public boolean isDetailsViewed() {
+		return isDetailsViewed;
+	}
+
+	public void setDetailsViewed(boolean isDetailsViewed) {
+		this.isDetailsViewed = isDetailsViewed;
+	}
+
+	public boolean isRatingComplete() {
+		return isRatingComplete;
+	}
+
+	public void setRatingComplete(boolean isRatingComplete) {
+		this.isRatingComplete = isRatingComplete;
+	}
+
+	public ArrayList<String> getItemsSelectedList() {
+		return itemsSelectedList;
+	}
+
+	public void setItemsSelectedList(ArrayList<String> itemsSelectedList) {
+		this.itemsSelectedList = itemsSelectedList;
 	}
 }

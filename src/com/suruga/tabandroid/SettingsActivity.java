@@ -1,6 +1,8 @@
 package com.suruga.tabandroid;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 import com.suruga.tabandroid.Globals.GuideStatus;
 
@@ -17,19 +19,6 @@ public class SettingsActivity extends Activity {
 
 	private SettingListAdapter adapter;
 	private ArrayList<String> itemsSelected = new ArrayList<String>();
-	
-	boolean isCitySelected = false;
-	boolean isRentalSelected = false;
-	boolean isMonthlySet = false;
-	boolean isUpfrontSet = false;
-	
-	static final int SET_CITY_REQUEST = 0;
-	static final int SET_RENTAL_REQUEST = 1;
-	static final int SET_MONTHLY_REQUEST = 2;
-	static final int SET_UPFRONT_REQUEST = 3;
-	
-
-	// private boolean selected=false;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -78,65 +67,64 @@ public class SettingsActivity extends Activity {
 		SettingListAdapter.ItemHolder settingHolder = (SettingListAdapter.ItemHolder) v
 				.getTag();
 		int position = settingHolder.setting.getId();
+		Globals g = Globals.getInstance(getApplicationContext());
+		
+		if (g.getGuideStatus() != GuideStatus.goToSettings)
+		{
+			AndroidTabLayoutActivity.selectedHouses.clear();
+			
+			Globals.reset(getApplicationContext(), position);
+		}
 
 		Intent i = new Intent();
-		
-		if (Globals.getInstance(getApplicationContext()).getGuideStatus()
-				!= GuideStatus.goToSettings)
-		{
-			// TODO:
-			// We had gone past this already, need to reset all state
-			// reset the globals
-			// reset the houses and compare tabs (RESTART them?)
-			//	- may need to move the activity stored booleans to Globals and have the reset there (easier)
-		}
 
 		if (position == 0) {
 			i.setClass(SettingsActivity.this,
 					com.suruga.tabandroid.selections.CityActivity.class);
-			startActivityForResult(i, SET_CITY_REQUEST);
+			startActivityForResult(i, Globals.SET_CITY_REQUEST);
 		} else if (position == 1) {
 			i.setClass(SettingsActivity.this,
 					com.suruga.tabandroid.selections.InterestActivity.class);
-			startActivityForResult(i, SET_RENTAL_REQUEST);
+			startActivityForResult(i, Globals.SET_RENTAL_REQUEST);
 		} else if (position == 2){
 			i.setClass(SettingsActivity.this,
 					com.suruga.tabandroid.selections.MonthlyActivity.class);
-			startActivityForResult(i, SET_MONTHLY_REQUEST);
+			startActivityForResult(i, Globals.SET_MONTHLY_REQUEST);
 		} else if (position == 3){
 			i.setClass(SettingsActivity.this,
 					com.suruga.tabandroid.selections.SavingsActivity.class);
-			startActivityForResult(i, SET_UPFRONT_REQUEST);
+			startActivityForResult(i, Globals.SET_UPFRONT_REQUEST);
 		}
 	}
 	
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 	    
-		if (Globals.getInstance(getApplicationContext()).getGuideStatus()
+		Globals g = Globals.getInstance(getApplicationContext());
+		if (g.getGuideStatus()
 				== GuideStatus.goToSettings)
 		{
-			if (requestCode == SET_CITY_REQUEST) {
+			if (requestCode == Globals.SET_CITY_REQUEST) {
 				if (resultCode == RESULT_OK) {
-					isCitySelected = true;
+					g.setCitySelected(true);
 				}
 			}
 
-			else if (requestCode == SET_RENTAL_REQUEST) {
+			else if (requestCode == Globals.SET_RENTAL_REQUEST) {
 				if (resultCode == RESULT_OK) {
-					isRentalSelected = true;
+					g.setRentalSelected(true);
 				}
 			}
 
-			else if (requestCode == SET_MONTHLY_REQUEST) {
+			else if (requestCode == Globals.SET_MONTHLY_REQUEST) {
 				if (resultCode == RESULT_OK) {
-					isMonthlySet = true;
+					g.setMonthlySet(true);
 				}
 			}
 
-			else if (requestCode == SET_UPFRONT_REQUEST) {
+			else if (requestCode == Globals.SET_UPFRONT_REQUEST) {
 				if (resultCode == RESULT_OK) {
-					isUpfrontSet = true;
+					g.setUpfrontSet(true);
 				}
 			}
 		}
@@ -145,12 +133,13 @@ public class SettingsActivity extends Activity {
 	}
 	
 	private void CheckTaskCompletion() {
+		
+		Globals g = Globals.getInstance(getApplicationContext());
 
-		if (Globals.getInstance(getApplicationContext()).getGuideStatus()
-				== GuideStatus.goToSettings)
+		if (g.getGuideStatus() == GuideStatus.goToSettings)
 		{
-			if (isCitySelected && isRentalSelected && 
-					isMonthlySet && isUpfrontSet)
+			if (g.isCitySelected() && g.isRentalSelected() && 
+					g.isMonthlySet() && g.isUpfrontSet())
 			{
 				Globals.getInstance(getApplicationContext()).setGuideStatus(GuideStatus.goToHouses);
 
