@@ -13,6 +13,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.suruga.tabandroid.Globals.GuideStatus;
 
@@ -61,10 +62,24 @@ public class AnalysisActivity extends Activity {
 		{
 			g.setBudgetDiagnosisSeen(true);
 			this.CheckTaskCompletion();
-		}
 
-		// start the detail page
-		startActivityForResult(i, Globals.VIEW_RECOMMENDATION_REQUEST);
+			// start the detail page
+			startActivityForResult(i, Globals.VIEW_RECOMMENDATION_REQUEST);
+		}
+		else if (g.getGuideStatus() == GuideStatus.goToSettings
+				|| g.getGuideStatus() == GuideStatus.goToHouses){
+			AlertDialog.Builder builder = new AlertDialog.Builder(AnalysisActivity.this);
+			builder.setMessage(R.string.alertContentGeneric)
+			.setTitle(R.string.alertPendingHeader);
+			builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+				public void onClick(DialogInterface dialog, int id) {
+					// navigate to the guide tab
+					AnalysisActivity.this.onBackPressed();
+				}
+			});
+			AlertDialog dialog = builder.create();
+			dialog.show();
+		}
 	}
 	
 	@Override
@@ -93,6 +108,20 @@ public class AnalysisActivity extends Activity {
 		setupListViewAdapter();
 		Globals g = Globals.getInstance(getApplicationContext());
 		items = g.getItems(g.getCity());
+		
+		TextView forBudgetHeader =(TextView) findViewById(R.id.budgetBeforeHeader);
+		TextView afterBudgetHeader = (TextView) findViewById(R.id.budgetAfterHeader);
+		
+		if (g.isForRent())
+		{
+			forBudgetHeader.setText(R.string.preRentalBudget);
+			afterBudgetHeader.setText(R.string.postRentalBudget);
+		}
+		else
+		{
+			forBudgetHeader.setText(R.string.preBuyingBudget);
+			afterBudgetHeader.setText(R.string.postBuyingBudget);
+		}
 
 		itemsToDisplay = new ArrayList<Item>();
 

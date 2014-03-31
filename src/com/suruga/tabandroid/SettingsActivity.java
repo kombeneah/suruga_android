@@ -54,11 +54,6 @@ public class SettingsActivity extends Activity {
 		for (int i = 0; i < settings.size(); i++) {
 			adapter.insert(settings.get(i), i);
 		}
-
-		// adapter.insert(itemsToDisplay.get(i), i);
-
-		// Toast.makeText(getApplicationContext(), city,
-		// Toast.LENGTH_LONG).show();
 	}
 
 	@SuppressLint("NewApi")
@@ -71,7 +66,9 @@ public class SettingsActivity extends Activity {
 		
 		if (g.getGuideStatus() != GuideStatus.goToSettings)
 		{
-			AndroidTabLayoutActivity.selectedHouses.clear();
+			if (AndroidTabLayoutActivity.selectedHouses != null) {
+				AndroidTabLayoutActivity.selectedHouses.clear();
+			}
 			
 			Globals.reset(getApplicationContext(), position);
 		}
@@ -127,9 +124,9 @@ public class SettingsActivity extends Activity {
 					g.setUpfrontSet(true);
 				}
 			}
-		}
 
-		this.CheckTaskCompletion();
+			this.CheckTaskCompletion();
+		}
 	}
 	
 	private void CheckTaskCompletion() {

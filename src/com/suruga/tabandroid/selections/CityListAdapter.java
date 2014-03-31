@@ -2,6 +2,7 @@ package com.suruga.tabandroid.selections;
 
 import java.util.List;
 
+import com.suruga.tabandroid.Globals;
 import com.suruga.tabandroid.R;
 
 import android.app.Activity;
@@ -56,6 +57,12 @@ public class CityListAdapter extends ArrayAdapter<City> {
 
 		holder.name = (TextView)row.findViewById(R.id.tvName);
 		
+		if (holder.city.getName().equals
+				(Globals.getInstance(row.getContext().getApplicationContext()).getCity()))
+		{
+			holder.arrow.setImageResource(R.drawable.check_medium);
+			holder.arrow.setVisibility(View.VISIBLE);
+		}
 
 	    //row.findViewById(R.id.cellOnClick).setTag(position);
 

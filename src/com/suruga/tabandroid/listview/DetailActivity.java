@@ -93,9 +93,9 @@ public class DetailActivity extends Activity {
 					(iconUri, null, getApplicationContext().getPackageName());
 			thumbnail.setImageResource(imageResource);
 		}
-        
+		
         ArrayList<Detail> details = new ArrayList<Detail>();
-		details.add(new Detail(0, "Size (m"+Html.fromHtml("<sup><small>2</small></sup>")+")", String.valueOf(item.getSize()), item.getSelected()));
+		details.add(new Detail(0, getResources().getString(R.string.sizem2), String.valueOf(item.getSize()), item.getSelected()));
 		details.add(new Detail(0, "Layout", item.getLayout(), item.getSelected()));
 		details.add(new Detail(0, "Nearest Station", item.getNearestStation(), item.getSelected()));
 		details.add(new Detail(0, "Time to Station", String.valueOf(item.getTimeToStation()), item.getSelected()));
@@ -108,19 +108,16 @@ public class DetailActivity extends Activity {
 		else {
 			details.add(new Detail(0, "Cost after buying", String.valueOf(item.getBuyingMonthly()), item.getSelected()));
 			details.add(new Detail(0, "Cost for buying", String.valueOf(item.getBuyingUpfront()), item.getSelected()));
+
+			details.add(new Detail(0, "House mortgage", String.valueOf(item.getMortgageLoan()), item.getSelected()));
 		}
 		
-		details.add(new Detail(0, "House mortgage", String.valueOf(item.getMortgageLoan()), item.getSelected()));
-		
 		setupListViewAdapter();
-		
-		// Toast.makeText(getApplicationContext(), details.get(0).getName(), Toast.LENGTH_LONG).show();
 
 
 		for (int i = 0; i < details.size(); i++) {
 			adapter.insert(details.get(i), i);
 		}
-
         
 		try {
 			
@@ -147,7 +144,6 @@ public class DetailActivity extends Activity {
 		ListView list = (ListView) findViewById(R.id.detaillist);
 
 		list.setAdapter(adapter);
-
 	}
 	 
     @Override

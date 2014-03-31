@@ -160,10 +160,23 @@ public class ItemActivity extends Activity {
 
 				this.CheckTaskCompletion();
 			}
-		}
 
-		// start the detail page
-		startActivityForResult(i, Globals.SET_RATING_REQUEST);
+			// start the detail page
+			startActivityForResult(i, Globals.SET_RATING_REQUEST);
+		}
+		else if (g.getGuideStatus() == GuideStatus.goToSettings) {
+			AlertDialog.Builder builder = new AlertDialog.Builder(ItemActivity.this);
+			builder.setMessage(R.string.alertContentGeneric)
+			.setTitle(R.string.alertPendingHeader);
+			builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+				public void onClick(DialogInterface dialog, int id) {
+					// navigate to the guide tab
+					ItemActivity.this.onBackPressed();
+				}
+			});
+			AlertDialog dialog = builder.create();
+			dialog.show();
+		}
 
 	}
 	

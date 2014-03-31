@@ -2,11 +2,13 @@ package com.suruga.tabandroid.selections;
 
 import java.util.List;
 
+import com.suruga.tabandroid.Globals;
 import com.suruga.tabandroid.R;
 
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,20 +46,21 @@ public class InterestListAdapter extends ArrayAdapter<City> {
 
 		holder = new ItemHolder();
 		
-		
 		holder.city = cities.get(position);
 		
 		holder.arrow=(ImageView)row.findViewById(R.id.arrow);
-		
-//		holder.info = (ImageButton)row.findViewById(R.id.imageButton);
-//		holder.info.setTag(holder.city);
-//		
-//		holder.info.setImageResource(R.drawable.information);
 
 		holder.name = (TextView)row.findViewById(R.id.tvName);
 		
-
-	    //row.findViewById(R.id.cellOnClick).setTag(position);
+		String interest = Globals.getInstance(row.getContext().getApplicationContext()).isForRent() ? "Renting" : "Buying";
+		
+		Log.i("Global interest: ", interest);
+		Log.i("App interest: ", holder.city.getName());
+		if (holder.city.getName().equals(interest))
+		{
+			holder.arrow.setImageResource(R.drawable.check_medium);
+			holder.arrow.setVisibility(View.VISIBLE);
+		}
 
 		row.setTag(holder);
 

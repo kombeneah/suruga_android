@@ -48,21 +48,12 @@ public class InterestActivity extends Activity {
 		CityListAdapter.ItemHolder itemHolder = (CityListAdapter.ItemHolder) v
 				.getTag();
 
-		// Intent i = new Intent();
-		// i.setClass(CityActivity.this,
-		// com.suruga.tabandroid.selections.City.class);
-		//
-		// startActivity(i);
-
 		itemHolder.arrow.setVisibility(View.VISIBLE);
 		itemHolder.arrow.setImageResource(R.drawable.check_medium);
 		
 		Globals g = Globals.getInstance(getApplicationContext());
-		boolean forRent = itemHolder.city.getName().equals("Renting");
+		boolean forRent = itemHolder.city.getName().equals(getResources().getString(R.string.renting));
 		g.setForRent(forRent);
-		
-		//editor.putString("city", itemHolder.city.getName());
-		//editor.commit();
 
 		if (oldItemHolder != null && oldItemHolder.equals(itemHolder) == false) {
 			oldItemHolder.arrow.setVisibility(View.INVISIBLE);
@@ -80,7 +71,6 @@ public class InterestActivity extends Activity {
 		ListView list = (ListView) findViewById(R.id.itemList);
 
 		list.setAdapter(adapter);
-
 	}
 
 }

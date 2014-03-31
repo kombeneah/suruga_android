@@ -40,6 +40,7 @@ public class WelcomeActivity extends Activity {
 		TextView descriptionText = (TextView) findViewById(R.id.contentTextView);
 		ImageView checkMark = (ImageView) findViewById(R.id.passCodeOK);
 		Button nextButton = (Button) findViewById(R.id.nextButton);
+		Button backButton = (Button) findViewById(R.id.backButton);
 		EditText pinEditText = (EditText) findViewById(R.id.welcomeEditText);
 		
 		switch(WelcomeActivity.this.activityStatus) {
@@ -48,6 +49,7 @@ public class WelcomeActivity extends Activity {
 		{
 			pinEditText.setVisibility(View.GONE);
 			checkMark.setVisibility(View.GONE);
+			backButton.setVisibility(View.GONE);
 			
 			headerText.setVisibility(View.VISIBLE);
 			descriptionText.setVisibility(View.VISIBLE);
@@ -69,6 +71,7 @@ public class WelcomeActivity extends Activity {
 			headerText.setVisibility(View.VISIBLE);
 			descriptionText.setVisibility(View.VISIBLE);
 			nextButton.setVisibility(View.VISIBLE);
+			backButton.setVisibility(View.VISIBLE);
 			
 			headerText.setText(R.string.overviewHeader);
 			descriptionText.setText(R.string.overviewMessage);
@@ -86,6 +89,7 @@ public class WelcomeActivity extends Activity {
 			headerText.setVisibility(View.VISIBLE);
 			descriptionText.setVisibility(View.VISIBLE);
 			nextButton.setVisibility(View.VISIBLE);
+			backButton.setVisibility(View.VISIBLE);
 			
 			headerText.setText(R.string.tasksHeader);
 			descriptionText.setText(R.string.tasksMessage);
@@ -103,6 +107,7 @@ public class WelcomeActivity extends Activity {
 			headerText.setVisibility(View.VISIBLE);
 			descriptionText.setVisibility(View.VISIBLE);
 			nextButton.setVisibility(View.GONE);
+			backButton.setVisibility(View.GONE);
 			
 			headerText.setText(R.string.welcome);
 			descriptionText.setText(R.string.codeEntryInstructions);
@@ -146,8 +151,8 @@ public class WelcomeActivity extends Activity {
 		
 		WelcomeActivity.this.activityStatus = WelcomeStatus.viewWelcome;
 		
-		final Button button = (Button) findViewById(R.id.nextButton);
-        button.setOnClickListener(new View.OnClickListener() {
+		final Button nextButton = (Button) findViewById(R.id.nextButton);
+        nextButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 switch (WelcomeActivity.this.activityStatus) {
                 
@@ -180,6 +185,51 @@ public class WelcomeActivity extends Activity {
                 case enterPinCode:
                 {
                 	// button not even visible in this state
+                	break;
+                }
+                
+                default:
+                {
+                	// do nothing
+                	break;
+                }
+                
+                }
+            }
+        });
+        
+        final Button backButton = (Button) findViewById(R.id.backButton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                switch (WelcomeActivity.this.activityStatus) {
+                
+                case viewWelcome:
+                {
+                	// not visible here
+                	break;
+                }
+                
+                case viewOverview:
+                {
+                	WelcomeActivity.this.activityStatus = WelcomeActivity.WelcomeStatus.viewWelcome;
+                	Log.i("ActivityStatus", "Regression: viewOverview -> viewWelcome");
+                	UpdateView();
+                	break;
+                }
+                
+                case viewTasks:
+                {
+                	WelcomeActivity.this.activityStatus = WelcomeActivity.WelcomeStatus.viewOverview;
+                	Log.i("ActivityStatus", "Regression: viewTasks -> viewOverview");
+                	UpdateView();
+                	break;
+                }
+                
+                case enterPinCode:
+                {
+                	WelcomeActivity.this.activityStatus = WelcomeActivity.WelcomeStatus.viewTasks;
+                	Log.i("ActivityStatus", "Regression: enterPinCode -> viewTasks");
+                	UpdateView();
                 	break;
                 }
                 

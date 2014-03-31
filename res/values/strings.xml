@@ -35,6 +35,7 @@
     <string name="tasksMessage">You have to do 3 tasks in this app.\n\nTask 1 is to set your location and budget.\n\nTask 2 is to look at some houses and select the ones you like.\n\nTask 3 is to get financial advice on the houses you like.\n\nWe will guide you through the tasks.</string>
     
     <string name="next">Next</string>
+    <string name="back">Back</string>
     
     <string name="guide">Guide</string>
     <string name="settings">Profile</string>
@@ -50,9 +51,19 @@
     <string name="alert3header">Congratulations!</string>
     <string name="alert3Content">You are almost done. Please go to the \"Guide\" tab to finish this task.</string>
     
+    <string name="alertPendingHeader">Previous task(s) still pending!</string>
+    
     <string name="monthlyMessage">Please enter your available monthly funds for housing expenses</string>
     <string name="savingsMessage">Please enter your available savings for the downpayment and initial cost of the house.</string>
     <string name="yenSign">¥</string>
+    
+    <string name="buying">Buying</string>
+    <string name="renting">Renting</string>
+    
+    <string name="preRentalBudget">Budget for renting</string>
+    <string name="postRentalBudget">Budget after renting</string>
+    <string name="preBuyingBudget">Budget for buying</string>
+    <string name="postBuyingBudget">Budget after buying</string>
     
     <string name="rentalUpfrontDesc">A sum of money you will be able to pay in a lump, when you rent a new home.  For example, money for a deposit/a key money, an agent commission, a prepaid rent, and fire insurance.</string>
     <string name="rentalMonthlyDesc">A sum of money you will able to pay every month, after you rent a new home.  For example, money for a rent fee, a management fee, and a parking fee.</string>
