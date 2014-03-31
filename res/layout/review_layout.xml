@@ -17,7 +17,7 @@
         android:layout_marginRight="15dp"
         android:textSize="24sp"
         android:textColor="@color/Black"
-        android:text="Tips" />
+        android:text="@string/tipsHeader" />
 
     <TextView
         android:id="@+id/tipDetail"

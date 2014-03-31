@@ -8,8 +8,10 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Point;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Display;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class ReviewActivity extends Activity {
 	@SuppressLint("NewApi")
@@ -18,9 +20,25 @@ public class ReviewActivity extends Activity {
 
 	    setContentView(R.layout.review_layout);
 	    
-	    Intent i = new Intent();
+	    int solutionNumber = getIntent().getIntExtra("solutionNumber", -1);
+	    int position = getIntent().getIntExtra("itemIndex", -1);
 	    
-	    int solutionNumber = i.getIntExtra("solutionNumber", 0);
+	    TextView tipView = (TextView) findViewById(R.id.tipDetail);
+	    TextView productView = (TextView) findViewById(R.id.recommDetail);
+	    
+	    String resourceTip = "tip" + String.valueOf(solutionNumber) + String.valueOf(position);
+	    int tipId = getResources().getIdentifier(resourceTip, "string", getApplicationContext().getPackageName());
+	    Log.i("tipURI", resourceTip);
+	    Log.i("tipId", String.valueOf(tipId));
+	    
+	    String resourceProduct = "product" + String.valueOf(solutionNumber) + String.valueOf(position);
+	    int productId = getResources().getIdentifier(resourceProduct, "string", getApplicationContext().getPackageName());
+	    Log.i("productURI", resourceProduct);
+	    Log.i("productId", String.valueOf(productId));
+	    
+	    tipView.setText(tipId);
+	    productView.setText(productId);
+	    
 	    
 	    /*
 	    ImageView surugaText = (ImageView) findViewById(R.id.surugaTextImage);

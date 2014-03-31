@@ -65,46 +65,27 @@ public class DetailReviewActivity extends Activity {
 		
 		// can absolutely afford.
 		if (downPayment <= savings && monthlyCost <= monthlyBudget) {
-			affordLabel.setText("This home is within your budget.");
-			solutions = 0;
-		}
-		
-		// absolutely have enough savings for down payment
-		// but monthly cost too high for budget.
-		else if (downPayment <= savings && monthlyCost > monthlyBudget){
-			affordLabel.setText("Need to review your monthly budget for making surplus in the monthly balance.");
+			affordLabel.setText(R.string.diagnosis1);
 			solutions = 1;
 		}
 		
-        // not enough savings for down payment
-        // but enough monthly budget for the monthly cost
-		else if (downPayment > savings && monthlyCost <= monthlyBudget) {
-
-            // trying to buy? 
-            if (!g.isForRent()) {
-            	
-            	// mortgage allows to buy?
-            	if (downPayment <= (savings + item.getMortgageLoan())) {
-            		affordLabel.setText("Need to review your initial budget for making surplus in the initial balance.");
-        			solutions = 2;
-            	}
-            	
-            	// can't even be helped by mortgage
-            	else {
-            		// TODO: What happens here?
-            	}
-            }
-
-            // otherwise renting
-            else {
-            	affordLabel.setText("Need to review your initial budget for making surplus in the initial balance.");
-    			solutions = 3;
-            }
-        }
+		// not enough monthly budget
+		else if (downPayment <= savings && monthlyCost > monthlyBudget){
+			affordLabel.setText(R.string.diagnosis2);
+			solutions = 2;
+		}
 		
-		//both negative
+		// not enough upfront (savings)
+		else if ((g.isForRent() && downPayment > savings && monthlyCost <= monthlyBudget)
+				|| (!g.isForRent() && downPayment > savings + item.getMortgageLoan() && monthlyCost <= monthlyBudget))
+		{
+			affordLabel.setText(R.string.diagnosis3);
+			solutions = 3;
+		}
+		
+		// not enough everything
 		else if (downPayment > savings && monthlyCost > monthlyBudget){
-			affordLabel.setText("Need to review your budget.");
+			affordLabel.setText(R.string.diagnosis4);
 			solutions = 4;
 		}
 		
@@ -114,16 +95,29 @@ public class DetailReviewActivity extends Activity {
 		}
 		
 		ArrayList<Detail> details = new ArrayList<Detail>();
+
+		if (solutions == 1) {
+			details.add(new Detail(0, getResources().getString(R.string.solution1), "img1", item.getSelected()));
+		}
 		
-        if (solutions==0) {
-        	
-        } else if (solutions==1) {
-		    
-		    details.add(new Detail(0, "Review your current loans", "img1", false));
-		    details.add(new Detail(1, "Review other expenses", "img1", false));
-		    details.add(new Detail(2, "Review your current insurance", "img1", false));
-        }
-        
+		else if (solutions == 2) {
+
+			details.add(new Detail(0, getResources().getString(R.string.solution21), "img1", item.getSelected()));
+			details.add(new Detail(1, getResources().getString(R.string.solution22), "img1", item.getSelected()));
+			details.add(new Detail(2, getResources().getString(R.string.solution23), "img1", item.getSelected()));
+		}
+
+		else if (solutions == 3) {
+
+			details.add(new Detail(0, getResources().getString(R.string.solution31), "img1", item.getSelected()));
+			details.add(new Detail(1, getResources().getString(R.string.solution32), "img1", item.getSelected()));
+			details.add(new Detail(2, getResources().getString(R.string.solution33), "img1", item.getSelected()));
+		}
+
+		else if (solutions == 4) {
+			details.add(new Detail(0, getResources().getString(R.string.solution4), "img1", item.getSelected()));
+		}
+
         setupListViewAdapter();
         
         for (int i = 0; i < details.size(); i++) {
@@ -180,7 +174,7 @@ public class DetailReviewActivity extends Activity {
 		DetailReviewListAdapter.ItemHolder itemHolder = 
 				(DetailReviewListAdapter.ItemHolder) v.getTag();
 		
-		int position = itemHolder.detail.getId();
+		int position = itemHolder.detail.getId() + 1;
 		
 		Intent i = new Intent();
 
@@ -188,6 +182,7 @@ public class DetailReviewActivity extends Activity {
 				com.suruga.tabandroid.listview.ReviewActivity.class);
 		
 		i.putExtra("solutionNumber", solutions);
+		i.putExtra("itemIndex", position);
 		
 		setResult(RESULT_OK);
 

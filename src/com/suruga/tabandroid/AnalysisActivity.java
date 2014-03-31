@@ -5,9 +5,6 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.suruga.tabandroid.Globals.GuideStatus;
-import com.suruga.tabandroid.listview.DetailActivity;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -15,11 +12,9 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.animation.AnimationUtils;
-import android.view.animation.RotateAnimation;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
+
+import com.suruga.tabandroid.Globals.GuideStatus;
 
 
 /**

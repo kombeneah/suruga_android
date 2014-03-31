@@ -15,7 +15,7 @@ public class AndroidTabLayoutActivity extends TabActivity {
 	
 	public static Set<String> selectedHouses;
 	
-	public static ArrayList<Item> items=new ArrayList<Item>();
+	public static ArrayList<Item> items = new ArrayList<Item>();
 	
 	
     /** Called when the activity is first created. */

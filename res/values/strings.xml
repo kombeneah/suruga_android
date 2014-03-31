@@ -27,6 +27,15 @@
     <string name="guideDoneHeader">4. Back to the Online Survey</string>
     <string name="guideDoneInfo">Thank you for trying out Suruga bank demo application. Please write the following code in your online survey and answer the last questions to complete your participation in this study.</string>
     
+    <string name="welcomeHeader">Hello!</string>
+    <string name="welcomeMessage">You\'re about to enter a prototype app developed by Suruga Bank.\n\nThis app is only accessible to participants of a currently ongoing market research study in Japan.\n\nIf you are part of this study, please keep going in this guide!</string>
+    <string name="overviewHeader">Overview</string>
+    <string name="overviewMessage">Imagine you are a person looking to rent or buy a house.\n\nThis app simulates the house search process.\n\nThe whole app experience should take 10 minutes.</string>
+    <string name="tasksHeader">Tasks</string>
+    <string name="tasksMessage">You have to do 3 tasks in this app.\n\nTask 1 is to set your location and budget.\n\nTask 2 is to look at some houses and select the ones you like.\n\nTask 3 is to get financial advice on the houses you like.\n\nWe will guide you through the tasks.</string>
+    
+    <string name="next">Next</string>
+    
     <string name="guide">Guide</string>
     <string name="settings">Profile</string>
     <string name="houses">Houses</string>
@@ -51,6 +60,41 @@
     <string name="buyingMonthlyDesc">A sum of money you will able to pay every month, after you buy a new home.  For example, money for a mortgage repayment, the real estate tax, a management fee, and a parking fee.</string>
     <string name="sizem2">Size (m²)</string>
     
+    <string name="diagnosis1">This home is within your budget.</string>
+    <string name="diagnosis2">Need to review your monthly budget for making surplus in the monthly balance.</string>
+    <string name="diagnosis3">Need to review your upfront budget for making surplus in the upfront balance.</string>
+    <string name="diagnosis4">Need to review your budget.</string>
+    
+    <string name="solution1">Improve your life!</string>
+    <string name="solution21">Review your current insurance</string>
+    <string name="solution22">Review your current loan</string>
+    <string name="solution23">Review other expenses</string>
+    <string name="solution31">Consider using or increasing a mortgage loan</string>
+    <string name="solution32">Consider using a card loan</string>
+    <string name="solution33">Review your savings</string>
+    <string name="solution4">Review your budget plan</string>
+    
+    <string name="tip11">With this chance, you might want to try making your financial plan for your future life events, such as child’s education or your retirement.</string>
+    <string name="product11">Life planning service</string>
+    
+    <string name="tip21">You need to review current insurances you take out, such as insurances for a life, a health and a casualty. A bank could help you to look into whether you have appropriate insurance products or amounts according to your life plan.</string>
+    <string name="product21">Insurance consulting service</string>
+    <string name="tip22">You need to review current personal loans you have, such as loans for a car, an education and an electronics.  By rearranging your some loans into one loan, you might decrease your monthly amount of repayment. A bank would offer a new loan plan for you.</string>
+    <string name="product22">Rearrangement Loan or Card loan</string>
+    <string name="tip23">You need to review your household budget, such as costs for a car, a mobile phone or a leisure. If you could not reduce your household expenses, you should look for another new home. For your future, a bank could help you to set up your financial plan with you.</string>
+    <string name="product23">Life planning service</string>
+    
+    <string name="tip31">You need to consider the use of a mortgage loan or increase the amount of a mortgage loan you plan.  By using the mortgage loan, it would resolve your shortage to buy a home. However, pay attention to increase your monthly expense when you use or increase the mortgage loan.</string>
+    <string name="product31">Mortgage Loan</string>
+    <string name="tip32">You need to consider the use of the card loan.  By making the most of the card loan, it would resolve your shortage to buy furniture,  electronics or utensil. However, pay attention to increase your monthly expense when you use the card loan.</string>
+    <string name="product32">Card loan</string>
+    <string name="tip33">You need to review the amount of your financial assets that you can use for a new home, such as a mutual funds, a stock or a bonds. You also need to think of a financial support from your parents. However, you should think of reserving money for the future such as an education, a retirement, or an illness. For your future, a bank could help you to set up your financial plan with you.</string>
+    <string name="product33">Life planning service</string>
+    
+    <string name="tip41">You should change current potential homes. To buy or rent a new home you hope, a bank would help you to review your budget plan.</string>
+    <string name="product41">Life planning service</string>
+    
+    <string name="tipsHeader">Tips</string>
     
      <!-- City and house data -->
     
