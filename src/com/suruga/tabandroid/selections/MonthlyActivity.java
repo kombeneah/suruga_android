@@ -48,7 +48,7 @@ public class MonthlyActivity extends Activity {
 			public boolean onKey(View v, int keyCode, KeyEvent event) {
 
 				if (event.getAction() == KeyEvent.ACTION_DOWN
-						&& keyCode == KeyEvent.KEYCODE_BACK) {
+						&& keyCode == KeyEvent.KEYCODE_ENTER) {
 
 					Globals g = Globals.getInstance(getApplicationContext());
 					
@@ -58,19 +58,19 @@ public class MonthlyActivity extends Activity {
 						g.setMonthly(monthly);
 						
 						setResult(RESULT_OK);
+						
+						MonthlyActivity.this.onBackPressed();
+						
+						return true;
 					} catch (NumberFormatException nfe) {
 						Log.e("MonthlyActivity", "Integer.parseInt() error parsing: "+editText1.getText().toString(), nfe);
+						
+						return false;
 					}
-					done();
-
-					return true;
 				}
 				return false;
 			}
 		});
 	}
 	
-	private void done() {
-		finish();
-	}
 }

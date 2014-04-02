@@ -329,8 +329,6 @@ public final class R {
         public static final int appCodeDesc=0x7f0a002c;
         public static final int arrow=0x7f0a0009;
         public static final int backButton=0x7f0a004f;
-        public static final int budgetAfterHeader=0x7f0a0003;
-        public static final int budgetBeforeHeader=0x7f0a0004;
         public static final int button_one=0x7f0a0044;
         public static final int button_three=0x7f0a0045;
         public static final int cell=0x7f0a0006;
@@ -357,6 +355,8 @@ public final class R {
         public static final int nearestStation=0x7f0a0036;
         public static final int nextButton=0x7f0a004e;
         public static final int passCodeOK=0x7f0a004d;
+        public static final int postBudgetHeader=0x7f0a0004;
+        public static final int preBudgetHeader=0x7f0a0003;
         public static final int presentedBy=0x7f0a003f;
         public static final int recomm=0x7f0a003d;
         public static final int recommDetail=0x7f0a003e;

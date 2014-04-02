@@ -85,36 +85,27 @@ public class AnalysisListAdapter extends ArrayAdapter<Item> {
 								.getPackageName());
 		Drawable red = row.getContext().getResources()
 				.getDrawable(imageResourceRed);
-        
-		if (g.isForRent()) {
-			
-			if (holder.item.getRentingMonthly() <= monthlyInt) {
-				holder.monthly.setImageDrawable(green);
-			} else {
-				holder.monthly.setImageDrawable(red);
-			}
-
-			if (holder.item.getRentingUpfront() <= savingsInt) {
-				holder.savings.setImageDrawable(green);
-			} else {
-				holder.savings.setImageDrawable(red);
-			}
+		
+		boolean isUpfrontAffordable = 
+				(g.isForRent() && holder.item.getRentingUpfront() <= g.getSavings()) ||
+				(!g.isForRent() && holder.item.getBuyingUpfront() <= g.getSavings() + holder.item.getMortgageLoan());
+		
+		boolean isMonthlyAffordable = 
+				(g.isForRent() && holder.item.getRentingMonthly() <= g.getMonthly()) ||
+				(!g.isForRent() && holder.item.getBuyingMonthly() <= g.getMonthly());
+		
+		if (isUpfrontAffordable)
+		{
+			holder.savings.setImageDrawable(green);
+		} else {
+			holder.savings.setImageDrawable(red);
 		}
 		
-		// buying
-		else {
-			
-			if (holder.item.getBuyingMonthly() <= monthlyInt) {
-				holder.monthly.setImageDrawable(green);
-			} else {
-				holder.monthly.setImageDrawable(red);
-			}
-
-			if (holder.item.getRentingUpfront() <= savingsInt + holder.item.getMortgageLoan()) {
-				holder.savings.setImageDrawable(green);
-			} else {
-				holder.savings.setImageDrawable(red);
-			}
+		if (isMonthlyAffordable)
+		{
+			holder.monthly.setImageDrawable(green);
+		} else {
+			holder.monthly.setImageDrawable(red);
 		}
 
 		// set up the image of a cell

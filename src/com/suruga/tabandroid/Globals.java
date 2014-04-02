@@ -131,12 +131,17 @@ public class Globals {
 			}
 		}
 		
-		// otherwise, randomize default settings, but do not flag values as set
+		// otherwise, default settings, but do not flag values as set
 		else {
-			this.selectedCity = cityNames[(int) Math.floor(Math.random()*(cityNames.length - 1))];
-			this.forRent = Math.floor(Math.random() + 0.5) >= 1.0;
-			this.monthly = 2000;
-			this.savings = 25000;
+			// default city = Tokyo
+			this.selectedCity = cityNames[0];
+			
+			// default interest = Renting
+			this.forRent = true;
+			
+			//
+			this.monthly = 0;
+			this.savings = 0;
 			
 			this.setCitySelected(false);
 			this.setRentalSelected(false);

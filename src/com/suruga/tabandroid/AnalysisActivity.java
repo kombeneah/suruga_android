@@ -66,6 +66,11 @@ public class AnalysisActivity extends Activity {
 			// start the detail page
 			startActivityForResult(i, Globals.VIEW_RECOMMENDATION_REQUEST);
 		}
+		else if (g.getGuideStatus() == GuideStatus.done)
+		{
+			// start the detail page
+			startActivity(i);
+		}
 		else if (g.getGuideStatus() == GuideStatus.goToSettings
 				|| g.getGuideStatus() == GuideStatus.goToHouses){
 			AlertDialog.Builder builder = new AlertDialog.Builder(AnalysisActivity.this);
@@ -109,8 +114,8 @@ public class AnalysisActivity extends Activity {
 		Globals g = Globals.getInstance(getApplicationContext());
 		items = g.getItems(g.getCity());
 		
-		TextView forBudgetHeader =(TextView) findViewById(R.id.budgetBeforeHeader);
-		TextView afterBudgetHeader = (TextView) findViewById(R.id.budgetAfterHeader);
+		TextView forBudgetHeader =(TextView) findViewById(R.id.preBudgetHeader);
+		TextView afterBudgetHeader = (TextView) findViewById(R.id.postBudgetHeader);
 		
 		if (g.isForRent())
 		{

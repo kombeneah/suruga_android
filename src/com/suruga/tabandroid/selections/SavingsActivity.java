@@ -51,7 +51,7 @@ public class SavingsActivity extends Activity {
 				Globals g = Globals.getInstance(getApplicationContext());
 
 				if (event.getAction() == KeyEvent.ACTION_DOWN
-						&& keyCode == KeyEvent.KEYCODE_BACK) {
+						&& keyCode == KeyEvent.KEYCODE_ENTER) {
 					
 					int savings = 0;
 					try {
@@ -59,13 +59,16 @@ public class SavingsActivity extends Activity {
 						g.setSavings(savings);
 						
 						setResult(RESULT_OK);
+
+						SavingsActivity.this.onBackPressed();
+						
+						return true;
+						
 					} catch (NumberFormatException nfe) {
 						Log.e("SavingsActivity", "Integer.parseInt() error parsing: "+editText1.getText().toString(), nfe);
+						
+						return false;
 					}
-
-					onBackPressed();
-
-					return true;
 				}
 				return false;
 			}

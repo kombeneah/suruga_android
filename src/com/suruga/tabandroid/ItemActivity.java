@@ -177,6 +177,12 @@ public class ItemActivity extends Activity {
 			AlertDialog dialog = builder.create();
 			dialog.show();
 		}
+		else if (g.getGuideStatus() == GuideStatus.done || 
+				g.getGuideStatus() == GuideStatus.goToAnalysis)
+		{
+			// start the detail page
+			startActivity(i);
+		}
 
 	}
 	

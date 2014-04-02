@@ -63,35 +63,43 @@ public class DetailReviewActivity extends Activity {
 		houseMonthly.setText(String.valueOf(monthlyCost) + " Yen");
 		houseUpfront.setText(String.valueOf(downPayment) + " Yen");
 		
+		boolean isUpfrontAffordable = 
+				(g.isForRent() && downPayment <= savings) ||
+				(!g.isForRent() && downPayment <= savings + item.getMortgageLoan());
+		
+		boolean isMonthlyAffordable = monthlyCost <= monthlyBudget;
+		
 		// can absolutely afford.
-		if (downPayment <= savings && monthlyCost <= monthlyBudget) {
+		if (isUpfrontAffordable && isMonthlyAffordable)
+		{
 			affordLabel.setText(R.string.diagnosis1);
 			solutions = 1;
 		}
 		
 		// not enough monthly budget
-		else if (downPayment <= savings && monthlyCost > monthlyBudget){
+		else if (isUpfrontAffordable && !isMonthlyAffordable)
+		{
 			affordLabel.setText(R.string.diagnosis2);
 			solutions = 2;
 		}
 		
 		// not enough upfront (savings)
-		else if ((g.isForRent() && downPayment > savings && monthlyCost <= monthlyBudget)
-				|| (!g.isForRent() && downPayment > savings + item.getMortgageLoan() && monthlyCost <= monthlyBudget))
+		else if (!isUpfrontAffordable && isMonthlyAffordable)
 		{
 			affordLabel.setText(R.string.diagnosis3);
 			solutions = 3;
 		}
 		
 		// not enough everything
-		else if (downPayment > savings && monthlyCost > monthlyBudget){
+		else if (!isUpfrontAffordable && !isMonthlyAffordable)
+		{
 			affordLabel.setText(R.string.diagnosis4);
 			solutions = 4;
 		}
 		
 		// we shouldn't ever get into this block
 		else {
-			Log.e("Analysis", "Failed to classify the user data into one of the suggetsion buckets");
+			Log.e("Analysis", "Failed to classify the user data into one of the suggestion buckets");
 		}
 		
 		ArrayList<Detail> details = new ArrayList<Detail>();

@@ -15,6 +15,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="15dp"
+        android:gravity="center"
         android:textSize="24sp"
         android:textColor="@color/Black"
         android:text="@string/tipsHeader" />
@@ -54,7 +55,7 @@
         android:layout_below="@+id/recomm"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="5dp"
-        android:textColor="@color/DeepSkyBlue"
+        android:textColor="@color/Black"
         android:text="Insurance consulting service"
         android:textSize="16sp" />
     
