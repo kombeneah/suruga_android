@@ -3,5 +3,658 @@
 <!-- Japanese strings -->
 
 <resources>
+    <string name="app_name">スルガ銀行</string>
+    
+    <string name="passcode">508689</string>
+    
+    <string name="appCode">215954</string>
+    
+    <string name="ok">OK</string>
+    
+    <string name="welcome">調査コードの入力</string>
+    <string name="codeEntryInstructions">このアプリ体験を始めるために、オンライン調査上に記載されている調査コードを入力して下さい。</string>
+    <string name="passcodeEntryHint">調査コードの入力</string>
+    
+    <string name="guideSettingsHeader">タスク１：プロファイル設定</string>
+    <string name="guideSettingsInfo">このプロファイル機能は、新居を内覧する前に利用します。\n\nこの機能において、ご希望のエリア・住居形態（賃貸または購入）、賃貸時/購入時にかかる予算、賃貸後/購入後にかかる予算を設定します。タスク１を完了するために、“プロファイル”タブを押し、上記の全項目を設定して下さい。</string>
+    
+    <string name="guideHousesHeader">タスク２：住居情報の登録</string>
+    <string name="guideHousesInfo">この住宅機能は、新居候補を内覧した時に利用します。ここでは、内覧した住居の基本情報、写真、住居に対する評価を保存しておくことができます。\n\nこの体験版では、すでに情報登録された６つの新居サンプルが提供されています。タスク２を完了するために、“住宅”タブを押し、下記を実施して下さい。\n\n　（１）新居サンプルのうち、最低２件の新居の詳細 情報を確認して下さい。詳細情報画面には、新居情報一覧画面の写　真の部分を押すと、移動することができます。\n\n （２）選んだ２件の新居の詳細情報画面上で各々 \nに評価（☆印で表示）をつけてみて下さい。\n\n （３）住居情報一覧ページに戻り、気に入った最低３件の新居をチェックBOXで選んで下さい。</string>
+    
+    <string name="guideFinancialsHeader">タスク３：　新居候補を比較する</string>
+    <string name="guideFinancialsInfo">比較機能は、新居候補を比較検討する際に利用します。ここでは、予算の状況及付けた評価を一覧で比較することができます。タスク３を完了するために、“比較”タブを押し、下記を実施して下さい。\n\n （１）比較一覧画面上で選択した新居候補が予算範囲内か否か確認して下さい。\n\n （２）１件の物件を選択し、その予算診断を確認下さい。予算診断画面には、比較一覧画面の写真の 部分を押すと、移動することができます。\n\n （３）予算診断画面上の下部において提示されている個別提案の１つを押し、金融アドバイスを確認して下さい。</string>
+    
+    <string name="guideDoneHeader">タスク4：調査に戻る</string>
+    <string name="guideDoneInfo">スルガ銀行の試作アプリを体験して頂き、ありがとうございました。下記のアプリコードをオンライン調査に登録し、オンライン調査の残りのご質問に引き続きお答えください。</string>
+    
+    <string name="welcomeHeader">はじめに</string>
+    <string name="welcomeMessage">アンケート調査の一環として、スルガ銀行が開発した試作アプリの体験をお願いして頂いております。\n\nしたがって、このアプリはアンケート調査の参加者の皆様のみアクセスすることができますようになっております。\n\n参加者の方であれば、この取扱い説明にそってアプリ体験を進めて下さい。</string>
+    <string name="overviewHeader">概要</string>
+    <string name="overviewMessage">アプリを体験するにあたって、賃貸もしくは購入のために新居を探している状況を想像して下さい。\n\nこの試作アプリによって、いくつかの候補の中からよりよい新居を選択するプロセスの模擬体験をすることができます。\n\n体験に際して、約１０分程度要しますので、ご了解下さい。</string>
+    <string name="tasksHeader">タスクについて</string>
+    <string name="tasksMessage">アプリ体験にあたって、３つのタスクに取組んで頂きます。\n\nタスク１は、新居の希望エリア・住居形態、予算を設定して頂きます。\n\nタスク２は、いくつかの新居サンプルの情報をご覧頂き、好みの新居を選択して頂きます。\n\nタスク３は、予算状況や評価の比較、そして予算の診断・アドバイスをご覧頂きます。\n\n詳細なタスクの進め方は、ガイドにて後ほどご案内いたします。</string>
+    
+    <string name="next">Next</string>
+    <string name="back">Back</string>
+    
+    <string name="guide">ガイド</string>
+    <string name="settings">プロファイル</string>
+    <string name="houses">住宅</string>
+    <string name="analysis">比較</string>
+    
+    <string name="appCodeDesc">アプリコード</string>
+    
+    <string name="alert1header">タスク１をクリアしました！</string>
+    <string name="alertContentGeneric">ガイドタブを押し、次のタスクをご確認ください。</string>
+    <string name="alert2header">タスク２をクリアしました！</string>
+    <string name="alert3header">おめでとうございます！</string>
+    <string name="alert3Content">タスクをほぼクリアしています。ガイドタブを押し、最後のタスクをご確認ください。</string>
+    
+    <string name="alertPendingHeader">タスクが終了していません。</string>
+    
+    <string name="yenSign">¥</string>
+    
+    <string name="buying">購入</string>
+    <string name="renting">賃貸</string>
+    <string name="yen">万円</string>
+    
+    <string name="preRentalBudget">賃貸時にかかる予算</string>
+    <string name="postRentalBudget">賃貸後にかかる予算</string>
+    <string name="preBuyingBudget">購入時にかかる予算</string>
+    <string name="postBuyingBudget">購入後にかかる予算</string>
+    
+    <string name="rentalUpfrontDesc">賃貸時に、新居のための敷金・礼金（保証金・敷引き）、仲介手数料、前払い家賃、火災保険等に対して、あなたが一括して支払うことができる金額。</string>
+    <string name="rentalMonthlyDesc">賃貸後に、新居のための家賃、管理費（共益費）、駐車場代等に対して、あなたが毎月支払うことができる金額。</string>
+    <string name="buyingUpfrontDesc">購入時に、新居のための頭金、登記関連費用、住宅ローン関連費用、税金（印紙税、登録免許税、不動産取得税）、仲介手数料、火災保険等に対して、あなたが一括して支払うことができる金額。</string>
+    <string name="buyingMonthlyDesc">購入後に、新居のための住宅ローン返済、固定資産税・都市計画税、管理費・修繕積立金、駐車場代等に対して、あなたが毎月支払うことができる金額。</string>
+    
+    <string name="sizem2">広さ（㎡）</string>
+    <string name="layout">間取り</string>
+    <string name="nearestStation">最寄駅</string>
+    <string name="justStation">最寄駅:</string>
+    <string name="timeToStation">最寄駅までの時間（分）</string>
+    <string name="address">住所</string>
+    <string name="rating">評価</string>
+    
+    <string name="costsForRenting">賃貸時にかかる費用</string>
+    <string name="costsAfterRenting">賃貸後にかかる費用</string>
+    <string name="costsForBuying">購入時にかかる費用\n（住宅価格含む）</string>
+    <string name="costsAfterBuying">購入後にかかる費用\n（住宅ローン返済額含む）</string>
+    
+    <string name="recommendations">推奨商品・サービス</string>
+    <string name="mortgageLoan">住宅ローン金額</string>
+    
+    <string name="houseCosts">住宅費</string>
+    <string name="yourBudget">ご予算</string>
+    
+    <string name="diagnosis1">この住宅は予算範囲内です</string>
+    <string name="diagnosis2">予算範囲内にするためには、月々の予算の見直しが必要です</string>
+    <string name="diagnosis3">予算範囲内にするためには、住宅購入もしくは賃貸時に支払う予算の見直しが必要です</string>
+    <string name="diagnosis4">予算の全体的な見直しが必要です</string>
+    
+    <string name="solution1">さらに生活を向上せるために将来設計を立てる！</string>
+    <string name="solution21">現在の保険の見直し</string>
+    <string name="solution22">現在の借入の見直し</string>
+    <string name="solution23">その他支出の見直し</string>
+    <string name="solution31">住宅ローンの利用もしくは増額の検討</string>
+    <string name="solution32">カードローン利用の検討</string>
+    <string name="solution33">貯蓄額の再確認</string>
+    <string name="solution4">予算案の見直し</string>
+    
+    <string name="tip11">今後のお子さまの教育費や退職後の生活等のライフイベントに備えるために、これを機にあなたの将来のライフプランを設計してみてはいかがでしょうか。</string>
+    <string name="product11">ライフプランニングサービス</string>
+    
+    <string name="tip21">現在加入されている保険（例えば生命保険、医療保険、損害保険）を見直しすることをお薦めします。あなたのライフプランにあった適切な保険商品・保険額に加入しているかどうか調べた方が良いでしょう。銀行は、ライフプランにあった保険に関する相談のお手伝いをすることができるでしょう。</string>
+    <string name="product21">保険相談サービス</string>
+    <string name="tip22">現在借入されているローン（例えば、オートローン、教育ローン、家電ローン）を見直すことをお薦めします。複数の借入れを一本化することによって毎月の返済額を軽減することができるかもしれません。銀行はあなたに相応しい新しいローンプランを提案するでしょう。</string>
+    <string name="product22">フリーローン、カードローン</string>
+    <string name="tip23">毎月の家計支出を見直すことをお薦めします。例えば、車の維持費、携帯通信費、レジャー費。もし、家計支出を減らすことができない場合、他の新居を探すことをお薦めいたします。銀行は、あなたの将来も含めたライフプラン（資金計画）作成のお手伝いをすることができるでしょう。</string>
+    <string name="product23">ライフプランニングサービス</string>
+    
+    <string name="tip31">住宅ローンの利用もしくは増額を検討することをお薦めします。住宅ローンを利用・増額することによって住宅購入時の資金不足を解決することができるでしょう。しかしながら、住宅ローンの利用もしくは増額することにより、毎月の家計支出（ローン返済金）が増えますのでご注意ください。</string>
+    <string name="product31">住宅ローン</string>
+    <string name="tip32">カードローンの利用を検討することをお薦めします。カードローンを利用することによって、家具・家電・インテリア購入等の新居のための諸経費の資金不足を解決することができます。しかしながら、カードローンを利用することにより、毎月の家計支出（ローン返済金）が増えますのでご注意ください。</string>
+    <string name="product32">カードローン</string>
+    <string name="tip33">新居のために利用することができる金融資産があるかどうか再確認をお薦めします。例えば、投資信託、株、債券など。また、ご両親からの資金援助の検討もした方がよいかもしれません。しかしながら、将来の子供の教育費、老後資金、万が一のときの資金などをしっかりと確保することを考慮しておく必要があります。銀行は、あなたの将来のためのライフプラン（資金計画）作成をお手伝いすることができるでしょう。</string>
+    <string name="product33">ライフプランニングサービス</string>
+    
+    <string name="tip41">現在検討されている新居を変更することをお薦めいたします。銀行は、ご希望の新居購入もしくは賃貸のための予算計画の見直し相談のお手伝いをすることができるでしょう。</string>
+    <string name="product41">ライフプランニングサービス</string>
+    
+    <string name="tipsHeader">アドバイス</string>
+    <string name="tipsBankRecommendation">銀行商品・サービスのご提案</string>
+    <string name="tipsPresentedBy">Presented by</string>
+    
+    <string name="city">エリア</string>
+    <string name="interestedIn">住居形態（賃貸もしくは購入）</string>
+    
+     <!-- City and house data -->
+    
+    <string-array name="city_arrays">
+        <item>首都圏</item>
+        <item>関西圏</item>
+        <item>中京圏</item>
+        <item>福岡</item>
+        <item>北海道</item>
+    </string-array>
+    
+    <string-array name="long_city_arrays">
+        <item>首都圏</item>
+        <item>関西圏</item>
+        <item>中京圏</item>
+        <item>福岡</item>
+        <item>北海道</item>
+    </string-array>
+     
+     <array name="citiesAndHousesData">
+         <item>@array/TokyoApts</item>
+         <item>@array/OsakaApts</item>
+         <item>@array/NagoyaApts</item>
+         <item>@array/FukuokaApts</item>
+         <item>@array/HokkaidoApts</item>
+     </array>
+     
+    <string-array name="aptAimages">
+        <item>a1</item>
+        <item>a2</item>
+        <item>a3</item>
+    </string-array>
+    <string-array name="aptBimages">
+        <item>b1</item>
+        <item>b2</item>
+        <item>b3</item>
+    </string-array>
+    <string-array name="aptCimages">
+        <item>c1</item>
+        <item>c2</item>
+        <item>c3</item>
+    </string-array>
+    <string-array name="aptDimages">
+        <item>d1</item>
+        <item>d2</item>
+        <item>d3</item>
+    </string-array>
+    <string-array name="aptEimages">
+        <item>e1</item>
+        <item>e2</item>
+        <item>e3</item>
+    </string-array>
+    <string-array name="aptFimages">
+        <item>f1</item>
+        <item>f2</item>
+        <item>f3</item>
+    </string-array>
+     
+    <!-- Tokyo -->
+     <array name="TokyoApts">
+         <item>@array/tokyoA</item>
+         <item>@array/tokyoB</item>
+         <item>@array/tokyoC</item>
+         <item>@array/tokyoD</item>
+         <item>@array/tokyoE</item>
+         <item>@array/tokyoF</item>
+     </array>
+     <array name="tokyoA">
+        <item>渋谷マンション</item>
+        <item>渋谷</item>
+        <item>東京都渋谷区</item>
+        <item>@array/aptAimages</item>
+        <item>50</item>
+        <item>2DK</item>
+        <item>3</item>
+        <item>2500</item>
+        <item>1000</item>
+        <item>250000</item>
+        <item>1050</item>
+        <item>225000</item>
+    </array>
+    <array name="tokyoB">
+        <item>千葉マンション</item>
+        <item>千葉</item>
+        <item>千葉県千葉市</item>
+        <item>@array/aptBimages</item>
+        <item>60</item>
+        <item>2DK</item>
+        <item>5</item>
+        <item>3000</item>
+        <item>1500</item>
+        <item>350000</item>
+        <item>1500</item>
+        <item>315000</item>
+    </array>
+    <array name="tokyoC">
+        <item>大宮ハウス</item>
+        <item>大宮</item>
+        <item>埼玉県さいたま市</item>
+        <item>@array/aptCimages</item>
+        <item>70</item>
+        <item>4LDK</item>
+        <item>3</item>
+        <item>6000</item>
+        <item>2000</item>
+        <item>450000</item>
+        <item>1920</item>
+        <item>405000</item>
+    </array>
+    <array name="tokyoD">
+        <item>東京マンション</item>
+        <item>東京</item>
+        <item>東京都中央区</item>
+        <item>@array/aptDimages</item>
+        <item>80</item>
+        <item>3LDK</item>
+        <item>8</item>
+        <item>7500</item>
+        <item>2500</item>
+        <item>650000</item>
+        <item>2772</item>
+        <item>585000</item>
+    </array>
+    <array name="tokyoE">
+        <item>横浜ハウス</item>
+        <item>横浜</item>
+        <item>神奈川県横浜市</item>
+        <item>@array/aptEimages</item>
+        <item>90</item>
+        <item>4LDK</item>
+        <item>5</item>
+        <item>10000</item>
+        <item>3000</item>
+        <item>850000</item>
+        <item>3624</item>
+        <item>765000</item>
+    </array>
+    <array name="tokyoF">
+        <item>六本木マンション</item>
+        <item>六本木</item>
+        <item>東京都港区</item>
+        <item>@array/aptFimages</item>
+        <item>70</item>
+        <item>2LDK</item>
+        <item>5</item>
+        <item>15000</item>
+        <item>5000</item>
+        <item>1100000</item>
+        <item>4692</item>
+        <item>990000</item>
+    </array>
+    
+    <!-- Osaka -->
+    <array name="OsakaApts">
+         <item>@array/osakaA</item>
+         <item>@array/osakaB</item>
+         <item>@array/osakaC</item>
+         <item>@array/osakaD</item>
+         <item>@array/osakaE</item>
+         <item>@array/osakaF</item>
+     </array>
+     <array name="osakaA">
+        <item>堂島マンション</item>
+        <item>大阪</item>
+        <item>大阪府大阪市</item>
+        <item>@array/aptAimages</item>
+        <item>50</item>
+        <item>2DK</item>
+        <item>8</item>
+        <item>2500</item>
+        <item>1000</item>
+        <item>250000</item>
+        <item>1050</item>
+        <item>225000</item>
+    </array>
+    <array name="osakaB">
+        <item>西宮マンション</item>
+        <item>西宮</item>
+        <item>兵庫県西宮市</item>
+        <item>@array/aptBimages</item>
+        <item>80</item>
+        <item>3LDK</item>
+        <item>4</item>
+        <item>7500</item>
+        <item>3000</item>
+        <item>650000</item>
+        <item>2772</item>
+        <item>585000</item>
+    </array>
+    <array name="osakaC">
+        <item>京都マンション</item>
+        <item>京都</item>
+        <item>京都府京都市</item>
+        <item>@array/aptCimages</item>
+        <item>80</item>
+        <item>2LDK</item>
+        <item>1</item>
+        <item>10000</item>
+        <item>4000</item>
+        <item>850000</item>
+        <item>3624</item>
+        <item>765000</item>
+    </array>
+    <array name="osakaD">
+        <item>梅田マンション</item>
+        <item>梅田</item>
+        <item>大阪府大阪市</item>
+        <item>@array/aptDimages</item>
+        <item>70</item>
+        <item>2LDK</item>
+        <item>2</item>
+        <item>15000</item>
+        <item>5000</item>
+        <item>1100000</item>
+        <item>4692</item>
+        <item>990000</item>
+    </array>
+    <array name="osakaE">
+        <item>堺ハウス</item>
+        <item>堺東</item>
+        <item>大阪府堺市</item>
+        <item>@array/aptEimages</item>
+        <item>90</item>
+        <item>4LDK</item>
+        <item>8</item>
+        <item>3000</item>
+        <item>1500</item>
+        <item>350000</item>
+        <item>1500</item>
+        <item>315000</item>
+    </array>
+    <array name="osakaF">
+        <item>豊中ハウス</item>
+        <item>豊中</item>
+        <item>大阪府豊中市</item>
+        <item>@array/aptFimages</item>
+        <item>100</item>
+        <item>4LDK</item>
+        <item>7</item>
+        <item>6000</item>
+        <item>2000</item>
+        <item>450000</item>
+        <item>1920</item>
+        <item>405000</item>
+    </array>
+    
+    <!-- Nagoya -->
+    <array name="NagoyaApts">
+         <item>@array/nagoyaA</item>
+         <item>@array/nagoyaB</item>
+         <item>@array/nagoyaC</item>
+         <item>@array/nagoyaD</item>
+         <item>@array/nagoyaE</item>
+         <item>@array/nagoyaF</item>
+     </array>
+     <array name="nagoyaA">
+        <item>安城マンション</item>
+        <item>安城</item>
+        <item>愛知県安城市</item>
+        <item>@array/aptAimages</item>
+        <item>70</item>
+        <item>2LDK</item>
+        <item>9</item>
+        <item>2500</item>
+        <item>1000</item>
+        <item>250000</item>
+        <item>1050</item>
+        <item>225000</item>
+    </array>
+    <array name="nagoyaB">
+        <item>四日市マンション</item>
+        <item>四日市</item>
+        <item>三重県四日市市</item>
+        <item>@array/aptBimages</item>
+        <item>80</item>
+        <item>2LDK</item>
+        <item>9</item>
+        <item>2500</item>
+        <item>1000</item>
+        <item>250000</item>
+        <item>1050</item>
+        <item>225000</item>
+    </array>
+    <array name="nagoyaC">
+        <item>矢場町マンション</item>
+        <item>矢場町</item>
+        <item>愛知県名古屋市</item>
+        <item>@array/aptCimages</item>
+        <item>80</item>
+        <item>2LDK</item>
+        <item>10</item>
+        <item>10000</item>
+        <item>3000</item>
+        <item>650000</item>
+        <item>2772</item>
+        <item>585000</item>
+    </array>
+    <array name="nagoyaD">
+        <item>栄マンション</item>
+        <item>栄</item>
+        <item>愛知県名古屋市</item>
+        <item>@array/aptDimages</item>
+        <item>80</item>
+        <item>2LDK</item>
+        <item>7</item>
+        <item>15000</item>
+        <item>3000</item>
+        <item>750000</item>
+        <item>3192</item>
+        <item>675000</item>
+    </array>
+    <array name="nagoyaE">
+        <item>岐阜ハウス</item>
+        <item>岐阜</item>
+        <item>岐阜県岐阜市</item>
+        <item>@array/aptEimages</item>
+        <item>90</item>
+        <item>3LDK</item>
+        <item>10</item>
+        <item>3000</item>
+        <item>1500</item>
+        <item>350000</item>
+        <item>1500</item>
+        <item>315000</item>
+    </array>
+    <array name="nagoyaF">
+        <item>豊橋ハウス</item>
+        <item>新川</item>
+        <item>愛知県豊橋市</item>
+        <item>@array/aptFimages</item>
+        <item>120</item>
+        <item>3LDK</item>
+        <item>3</item>
+        <item>7500</item>
+        <item>2500</item>
+        <item>550000</item>
+        <item>2340</item>
+        <item>495000</item>
+    </array>
+     
+    <!-- Fukuoka -->
+    <array name="FukuokaApts">
+         <item>@array/fukuokaA</item>
+         <item>@array/fukuokaB</item>
+         <item>@array/fukuokaC</item>
+         <item>@array/fukuokaD</item>
+         <item>@array/fukuokaE</item>
+         <item>@array/fukuokaF</item>
+     </array>
+     <array name="fukuokaA">
+        <item>北九州マンション</item>
+        <item>香春口三萩野</item>
+        <item>福岡県北九州市</item>
+        <item>@array/aptAimages</item>
+        <item>80</item>
+        <item>2LDK</item>
+        <item>8</item>
+        <item>2500</item>
+        <item>1000</item>
+        <item>250000</item>
+        <item>1050</item>
+        <item>225000</item>
+    </array>
+    <array name="fukuokaB">
+        <item>糸島マンション</item>
+        <item>筑前前原</item>
+        <item>福岡県糸島市</item>
+        <item>@array/aptBimages</item>
+        <item>70</item>
+        <item>2LDK</item>
+        <item>1</item>
+        <item>3000</item>
+        <item>1500</item>
+        <item>350000</item>
+        <item>1500</item>
+        <item>315000</item>
+    </array>
+    <array name="fukuokaC">
+        <item>博多マンション</item>
+        <item>博多</item>
+        <item>福岡県福岡市</item>
+        <item>@array/aptCimages</item>
+        <item>80</item>
+        <item>2LDK</item>
+        <item>4</item>
+        <item>6750</item>
+        <item>2500</item>
+        <item>550000</item>
+        <item>2340</item>
+        <item>495000</item>
+    </array>
+    <array name="fukuokaD">
+        <item>天神マンション</item>
+        <item>天神</item>
+        <item>福岡県福岡市</item>
+        <item>@array/aptDimages</item>
+        <item>80</item>
+        <item>3LDK</item>
+        <item>3</item>
+        <item>7500</item>
+        <item>2500</item>
+        <item>650000</item>
+        <item>2772</item>
+        <item>585000</item>
+    </array>
+    <array name="fukuokaE">
+        <item>久留米ハウス</item>
+        <item>西鉄久留米</item>
+        <item>福岡県久留米市</item>
+        <item>@array/aptEimages</item>
+        <item>100</item>
+        <item>4LDK</item>
+        <item>11</item>
+        <item>5000</item>
+        <item>2000</item>
+        <item>450000</item>
+        <item>1920</item>
+        <item>405000</item>
+    </array>
+    <array name="fukuokaF">
+        <item>福岡東ハウス</item>
+        <item>千早</item>
+        <item>福岡県福岡市</item>
+        <item>@array/aptFimages</item>
+        <item>100</item>
+        <item>4LDK</item>
+        <item>18</item>
+        <item>6000</item>
+        <item>2000</item>
+        <item>500000</item>
+        <item>2136</item>
+        <item>450000</item>
+    </array>
+    
+    <!-- Hokkaido -->
+    <array name="HokkaidoApts">
+         <item>@array/hokkaidoA</item>
+         <item>@array/hokkaidoB</item>
+         <item>@array/hokkaidoC</item>
+         <item>@array/hokkaidoD</item>
+         <item>@array/hokkaidoE</item>
+         <item>@array/hokkaidoF</item>
+     </array>
+     <array name="hokkaidoA">
+        <item>北広島マンション</item>
+        <item>北広島</item>
+        <item>北海道北広島市</item>
+        <item>@array/aptAimages</item>
+        <item>60</item>
+        <item>2DK</item>
+        <item>1</item>
+        <item>2500</item>
+        <item>1000</item>
+        <item>250000</item>
+        <item>1050</item>
+        <item>225000</item>
+    </array>
+    <array name="hokkaidoB">
+        <item>札幌東マンション</item>
+        <item>元町</item>
+        <item>北海道札幌市</item>
+        <item>@array/aptBimages</item>
+        <item>80</item>
+        <item>4LDK</item>
+        <item>4</item>
+        <item>6000</item>
+        <item>2000</item>
+        <item>500000</item>
+        <item>2136</item>
+        <item>450000</item>
+    </array>
+    <array name="hokkaidoC">
+        <item>北２条マンション</item>
+        <item>札幌</item>
+        <item>北海道札幌市</item>
+        <item>@array/aptCimages</item>
+        <item>80</item>
+        <item>2LDK</item>
+        <item>11</item>
+        <item>6750</item>
+        <item>2500</item>
+        <item>550000</item>
+        <item>2340</item>
+        <item>495000</item>
+    </array>
+    <array name="hokkaidoD">
+        <item>北４条マンション</item>
+        <item>札幌</item>
+        <item>北海道札幌市</item>
+        <item>@array/aptDimages</item>
+        <item>70</item>
+        <item>3LDK</item>
+        <item>5</item>
+        <item>7500</item>
+        <item>2500</item>
+        <item>650000</item>
+        <item>2772</item>
+        <item>585000</item>
+    </array>
+    <array name="hokkaidoE">
+        <item>函館ハウス</item>
+        <item>五稜郭</item>
+        <item>北海道函館市</item>
+        <item>@array/aptEimages</item>
+        <item>100</item>
+        <item>2LDK</item>
+        <item>38</item>
+        <item>3000</item>
+        <item>1500</item>
+        <item>350000</item>
+        <item>1500</item>
+        <item>315000</item>
+    </array>
+    <array name="hokkaidoF">
+        <item>帯広ハウス</item>
+        <item>帯広</item>
+        <item>北海道帯広市</item>
+        <item>@array/aptFimages</item>
+        <item>100</item>
+        <item>4LDK</item>
+        <item>10</item>
+        <item>5000</item>
+        <item>2000</item>
+        <item>450000</item>
+        <item>1920</item>
+        <item>405000</item>
+    </array>
+     
+     <!-- End of city and house data -->
     
 </resources>

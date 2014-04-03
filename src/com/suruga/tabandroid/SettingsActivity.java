@@ -170,13 +170,21 @@ public class SettingsActivity extends Activity {
 		int monthly = g.getMonthly();
 		int savings = g.getSavings();
 
-		settings.add(new Setting(0, "City", city));
+		settings.add(new Setting(0, getResources().getString(R.string.city), city));
 		
-		String buyOrRent = forRent ? "Renting" : "Buying";
-		settings.add(new Setting(1, "Interested In", buyOrRent));
+		String buyOrRent = forRent ? getResources().getString(R.string.renting) : getResources().getString(R.string.buying);
+		settings.add(new Setting(1, getResources().getString(R.string.interestedIn), buyOrRent));
 		
-		settings.add(new Setting(2, "Monthly Budget", String.valueOf(monthly)));
-		settings.add(new Setting(3, "Savings", String.valueOf(savings)));
+		if (g.isForRent())
+		{
+			settings.add(new Setting(2, getResources().getString(R.string.postRentalBudget), String.valueOf(monthly)));
+			settings.add(new Setting(3, getResources().getString(R.string.preRentalBudget), String.valueOf(savings)));
+		}
+		else
+		{
+			settings.add(new Setting(2, getResources().getString(R.string.postBuyingBudget), String.valueOf(monthly)));
+			settings.add(new Setting(3, getResources().getString(R.string.preBuyingBudget), String.valueOf(savings)));
+		}
 	}
 	
 	@Override

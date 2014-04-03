@@ -6,14 +6,12 @@
 	<string name="menu_settings">Settings</string>
     
     <string name="passcode">508689</string>
-    <string name="passcodeErrorTitle">Passcode Error</string>
-    <string name="passcodeErrorMessage">You provided a wrong passcode. Please try again.</string>
     
     <string name="ok">OK</string>
     
-    <string name="welcome">Welcome!</string>
-    <string name="codeEntryInstructions">Please enter your 6 digit survey code.</string>
-    <string name="passcodeEntryHint">Enter Code</string>
+    <string name="welcome">Enter your PIN</string>
+    <string name="codeEntryInstructions">To enter the app, please type the PIN given to you on the online survey.</string>
+    <string name="passcodeEntryHint">Enter PIN</string>
     
     <string name="guideSettingsHeader">Task 1： Setting profile</string>
     <string name="guideSettingsInfo">You can use a profile function before visiting a new home.\n\nIn this function, you set up city, housing type (renting or buying), budget for renting or buying, budget after renting or buying.\n\nTo complete task 1, please go to the <b>\"Profile\"</b> tab and fill out <b>all</b> the fields.</string>
@@ -59,6 +57,7 @@
     
     <string name="buying">Buying</string>
     <string name="renting">Renting</string>
+    <string name="yen">Yen</string>
     
     <string name="preRentalBudget">Budget for renting</string>
     <string name="postRentalBudget">Budget after renting</string>
@@ -69,7 +68,25 @@
     <string name="rentalMonthlyDesc">A sum of money you will able to pay every month, after you rent a new home.  For example, money for a rent fee, a management fee, and a parking fee.</string>
     <string name="buyingUpfrontDesc">A sum of money you will be able to pay in a lump, when you buy a new home.  For example, money for lump for a down payment, registration costs, mortgage costs, the stamp/license/real estate acquisition tax, an agent commission, and fire insurance.</string>
     <string name="buyingMonthlyDesc">A sum of money you will able to pay every month, after you buy a new home.  For example, money for a mortgage repayment, the real estate tax, a management fee, and a parking fee.</string>
+    
     <string name="sizem2">Size (m²)</string>
+    <string name="layout">Layout</string>
+    <string name="nearestStation">Nearest Station</string>
+    <string name="justStation">Station:</string>
+    <string name="timeToStation">Time to Station</string>
+    <string name="address">Address</string>
+    <string name="rating">Rating</string>
+    
+    <string name="costsForRenting">Costs for renting</string>
+    <string name="costsAfterRenting">Costs after renting</string>
+    <string name="costsForBuying">Costs for buying\n(include housing price)</string>
+    <string name="costsAfterBuying">Costs after buying\n(include loan repayment)</string>
+    
+    <string name="recommendations">Personalized Recommendations</string>
+    <string name="mortgageLoan">Mortgage Loan</string>
+    
+    <string name="houseCosts">House Costs</string>
+    <string name="yourBudget">Your Budget</string>
     
     <string name="diagnosis1">This home is within your budget.</string>
     <string name="diagnosis2">Need to review your monthly budget for making surplus in the monthly balance.</string>
@@ -106,6 +123,11 @@
     <string name="product41">Life planning service</string>
     
     <string name="tipsHeader">Tips</string>
+    <string name="tipsBankRecommendation">Recommendation of bank\'s product or service</string>
+    <string name="tipsPresentedBy">Presented by</string>
+    
+    <string name="city">City</string>
+    <string name="interestedIn">Interested in</string>
     
      <!-- City and house data -->
     

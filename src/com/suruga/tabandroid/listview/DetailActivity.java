@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.text.Html;
 import android.util.Log;
@@ -94,22 +95,29 @@ public class DetailActivity extends Activity {
 			thumbnail.setImageResource(imageResource);
 		}
 		
+		Resources res = getResources();
+		
         ArrayList<Detail> details = new ArrayList<Detail>();
-		details.add(new Detail(0, getResources().getString(R.string.sizem2), String.valueOf(item.getSize()), item.getSelected()));
-		details.add(new Detail(0, "Layout", item.getLayout(), item.getSelected()));
-		details.add(new Detail(0, "Nearest Station", item.getNearestStation(), item.getSelected()));
-		details.add(new Detail(0, "Time to Station", String.valueOf(item.getTimeToStation()), item.getSelected()));
-		details.add(new Detail(0, "Address", item.getAddress(), item.getSelected()));
+		details.add(new Detail(0, res.getString(R.string.sizem2), String.valueOf(item.getSize()), item.getSelected()));
+		details.add(new Detail(0, res.getString(R.string.layout), item.getLayout(), item.getSelected()));
+		details.add(new Detail(0, res.getString(R.string.nearestStation), item.getNearestStation(), item.getSelected()));
+		details.add(new Detail(0, res.getString(R.string.timeToStation), String.valueOf(item.getTimeToStation()), item.getSelected()));
+		details.add(new Detail(0, res.getString(R.string.address), item.getAddress(), item.getSelected()));
 		
 		if (g.isForRent()) {
-			details.add(new Detail(0, "Cost after renting", String.valueOf(item.getRentingMonthly()), item.getSelected()));
-			details.add(new Detail(0, "Cost for renting", String.valueOf(item.getRentingUpfront()), item.getSelected()));
+			details.add(new Detail(0, res.getString(R.string.costsAfterRenting), 
+					res.getString(R.string.yenSign) + " " + String.valueOf(item.getRentingMonthly()), item.getSelected()));
+			details.add(new Detail(0, res.getString(R.string.costsForRenting), 
+					res.getString(R.string.yenSign) + " " + String.valueOf(item.getRentingUpfront()), item.getSelected()));
 		}
 		else {
-			details.add(new Detail(0, "Cost after buying", String.valueOf(item.getBuyingMonthly()), item.getSelected()));
-			details.add(new Detail(0, "Cost for buying", String.valueOf(item.getBuyingUpfront()), item.getSelected()));
+			details.add(new Detail(0, res.getString(R.string.costsAfterBuying), 
+					res.getString(R.string.yenSign) + " " + String.valueOf(item.getBuyingMonthly()), item.getSelected()));
+			details.add(new Detail(0, res.getString(R.string.costsForBuying), 
+					res.getString(R.string.yenSign) + " " + String.valueOf(item.getBuyingUpfront()), item.getSelected()));
 
-			details.add(new Detail(0, "House mortgage", String.valueOf(item.getMortgageLoan()), item.getSelected()));
+			details.add(new Detail(0, res.getString(R.string.mortgageLoan), 
+					res.getString(R.string.yenSign) + " " + String.valueOf(item.getMortgageLoan()), item.getSelected()));
 		}
 		
 		setupListViewAdapter();
@@ -145,12 +153,6 @@ public class DetailActivity extends Activity {
 
 		list.setAdapter(adapter);
 	}
-	 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(com.suruga.tabandroid.R.menu.main, menu);
-        return true;
-    }
     
     public void onClickStar(View v) {
     	

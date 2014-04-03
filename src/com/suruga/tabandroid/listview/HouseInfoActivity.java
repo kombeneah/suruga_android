@@ -67,10 +67,4 @@ public class HouseInfoActivity extends Activity {
 		}
 		
     }
-	 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(com.suruga.tabandroid.R.menu.main, menu);
-        return true;
-    }
 }

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -45,6 +46,30 @@ public class DetailReviewActivity extends Activity {
 		final TextView houseUpfront = (TextView) findViewById(R.id.TextViewHouseUpfront);
 		final TextView yourMonthly = (TextView) findViewById(R.id.TextViewYourMonthly);
 		final TextView yourUpfront = (TextView) findViewById(R.id.TextViewYourUpfront);
+		
+		final TextView monthlyTitle = (TextView) findViewById(R.id.TextViewMonthlyTitle);
+		final TextView savingsTitle = (TextView) findViewById(R.id.TextViewUpfrontTitle);
+		
+		final TextView houseCostsTitle = (TextView) findViewById(R.id.TextViewHouseCosts);
+		final TextView yourBudgetTitle = (TextView) findViewById(R.id.TextViewYourBudget);
+		
+		final TextView recommendationsTitle = (TextView) findViewById(R.id.recsLabel);
+		
+		recommendationsTitle.setText(R.string.recommendations);
+		
+		houseCostsTitle.setText(R.string.houseCosts);
+		yourBudgetTitle.setText(R.string.yourBudget);
+		
+		if (g.isForRent())
+		{
+			monthlyTitle.setText(R.string.postRentalBudget);
+			savingsTitle.setText(R.string.preRentalBudget);
+		}
+		else
+		{
+			monthlyTitle.setText(R.string.postBuyingBudget);
+			savingsTitle.setText(R.string.preBuyingBudget);
+		}
 
 		Intent j = getIntent();
 
@@ -58,10 +83,12 @@ public class DetailReviewActivity extends Activity {
 		int downPayment = g.isForRent() ? item.getRentingUpfront() : item.getBuyingUpfront();
 		int monthlyCost = g.isForRent() ? item.getRentingMonthly() : item.getBuyingMonthly();
 		
-		yourMonthly.setText(String.valueOf(monthlyBudget) + " Yen");
-		yourUpfront.setText(String.valueOf(savings) + " Yen");
-		houseMonthly.setText(String.valueOf(monthlyCost) + " Yen");
-		houseUpfront.setText(String.valueOf(downPayment) + " Yen");
+		Resources res = getResources();
+		
+		yourMonthly.setText(String.valueOf(monthlyBudget) + " " + res.getString(R.string.yen));
+		yourUpfront.setText(String.valueOf(savings) + " " + res.getString(R.string.yen));
+		houseMonthly.setText(String.valueOf(monthlyCost) + " " + res.getString(R.string.yen));
+		houseUpfront.setText(String.valueOf(downPayment) + " " + res.getString(R.string.yen));
 		
 		boolean isUpfrontAffordable = 
 				(g.isForRent() && downPayment <= savings) ||
@@ -205,11 +232,5 @@ public class DetailReviewActivity extends Activity {
 
 		list.setAdapter(adapter);
 
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(com.suruga.tabandroid.R.menu.main, menu);
-		return true;
 	}
 }

@@ -268,20 +268,7 @@ public class WelcomeActivity extends Activity {
 						return true;
 					}
 
-					// incorrect passcode, show alert dialog
-					else {
-						AlertDialog.Builder builder = new AlertDialog.Builder(WelcomeActivity.this);
-						builder.setMessage(R.string.passcodeErrorMessage)
-							.setTitle(R.string.passcodeErrorTitle);
-						builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-							public void onClick(DialogInterface dialog, int id) {
-								// nothing special to do here
-							}
-						});
-						AlertDialog dialog = builder.create();
-						dialog.show();
-						return false;
-					}
+					// incorrect passcode: will show an "X" next to entry box
 					
 				}
 				

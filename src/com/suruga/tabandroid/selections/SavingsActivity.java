@@ -35,9 +35,11 @@ public class SavingsActivity extends Activity {
 		final EditText editText1;
 
 		editText1 = (EditText) findViewById(R.id.editText1);
-
-		editText1.setText(String.valueOf
-				(Globals.getInstance(getApplicationContext()).getSavings()));
+		int savings = Globals.getInstance(getApplicationContext()).getSavings();
+		if (savings != 0)
+		{
+			editText1.setText(String.valueOf(savings));
+		}
 
 		// automatically show the keypad for text input to the editBox.
 		final InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
