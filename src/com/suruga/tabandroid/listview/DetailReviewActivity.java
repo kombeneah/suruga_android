@@ -7,8 +7,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -126,7 +124,8 @@ public class DetailReviewActivity extends Activity {
 		
 		// we shouldn't ever get into this block
 		else {
-			Log.e("Analysis", "Failed to classify the user data into one of the suggestion buckets");
+			
+			// should never fail to classify the user data into one of the suggestion buckets!
 		}
 		
 		ArrayList<Detail> details = new ArrayList<Detail>();
@@ -190,16 +189,10 @@ public class DetailReviewActivity extends Activity {
 			Intent i = getIntent();
 
 			this.position = i.getStringExtra("position");
-			// this.rating_int=i;
-
-			String uri = "drawable/" + "d" + iconfile;
-			int imageBtnResource = getResources().getIdentifier(uri, null,
-					getPackageName());
-
 		}
 
 		catch (Exception ex) {
-			Log.e("Error", "Loading exception");
+			// shouldn't hit this 
 		}
 
 	}

@@ -1,10 +1,6 @@
 package com.suruga.tabandroid;
 
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
-
-import com.suruga.tabandroid.Globals.GuideStatus;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -14,6 +10,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
+
+import com.suruga.tabandroid.Globals.GuideStatus;
 
 public class SettingsActivity extends Activity {
 
@@ -46,9 +44,6 @@ public class SettingsActivity extends Activity {
 
 		ArrayList<Setting> settings = new ArrayList<Setting>();
 
-		// SharedPreferences prefs = this.getSharedPreferences(
-		// "com.suruga.tabandroid", Context.MODE_PRIVATE);
-		// String city = prefs.getString("city", "");
 		populateSettingsArray(settings);
 
 		for (int i = 0; i < settings.size(); i++) {
@@ -192,6 +187,14 @@ public class SettingsActivity extends Activity {
 		AndroidTabLayoutActivity parentActivity;
         parentActivity = (AndroidTabLayoutActivity) this.getParent();
         parentActivity.switchTab(0);
+	}
+
+	public ArrayList<String> getItemsSelected() {
+		return itemsSelected;
+	}
+
+	public void setItemsSelected(ArrayList<String> itemsSelected) {
+		this.itemsSelected = itemsSelected;
 	}
 
 }

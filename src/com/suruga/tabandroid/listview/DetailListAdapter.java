@@ -7,10 +7,10 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsoluteLayout;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.suruga.tabandroid.R;
@@ -62,7 +62,7 @@ public class DetailListAdapter extends ArrayAdapter<Detail> {
 		Detail detail;
 		TextView name;
 		TextView value;
-		AbsoluteLayout cell;
+		RelativeLayout cell;
 		ImageButton info;
 		ImageView arrow;
 		ImageView list_image;

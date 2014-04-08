@@ -4,24 +4,17 @@ import java.util.ArrayList;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 
 import com.suruga.tabandroid.Globals;
-import com.suruga.tabandroid.ItemListAdapter;
 import com.suruga.tabandroid.R;
 
 public class InterestActivity extends Activity {
 
 	private CityListAdapter adapter;
-	private ArrayList<String> itemsSelected = new ArrayList<String>();
-
-	// private boolean selected=false;
+	static ArrayList<String> itemsSelected = new ArrayList<String>();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -30,10 +23,10 @@ public class InterestActivity extends Activity {
 
 		setupListViewAdapter();
 
-		// add all the house items
+		// add the buying/renting interest items (abstracted as *City* types)
 		ArrayList<City> cities = new ArrayList<City>();
 		cities.add(new City(0, "Buying", "img1", false));
-		cities.add(new City(0, "Renting", "img1", false));
+		cities.add(new City(1, "Renting", "img1", false));
 
 		for (int i = 0; i < cities.size(); i++) {
 			adapter.insert(cities.get(i), i);

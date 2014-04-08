@@ -7,10 +7,10 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsoluteLayout;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.suruga.tabandroid.R;
@@ -29,9 +29,6 @@ public class DetailReviewListAdapter extends ArrayAdapter<Detail> {
 		this.context = context;
 		this.details = details;
 	}
-	
-	
-	
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
@@ -50,14 +47,11 @@ public class DetailReviewListAdapter extends ArrayAdapter<Detail> {
 
 		holder.name = (TextView)row.findViewById(R.id.tvName);
 		
-
 		row.setTag(holder);
 
 		setupItem(holder);
 		return row;
 	}
-	
-	
 
 	private void setupItem(ItemHolder holder) {
 		holder.name.setText(holder.detail.getName());		
@@ -67,7 +61,7 @@ public class DetailReviewListAdapter extends ArrayAdapter<Detail> {
 		Detail detail;
 		TextView name;
 		TextView value;
-		AbsoluteLayout cell;
+		RelativeLayout cell;
 		ImageButton info;
 		ImageView arrow;
 		ImageView list_image;

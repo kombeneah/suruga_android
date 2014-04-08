@@ -2,21 +2,16 @@ package com.suruga.tabandroid.selections;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnKeyListener;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
-import android.widget.TabHost.TabSpec;
 import android.widget.TextView;
 
 import com.suruga.tabandroid.Globals;
-import com.suruga.tabandroid.GuideActivity;
 import com.suruga.tabandroid.R;
-import com.suruga.tabandroid.SettingsActivity;
 
 public class MonthlyActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
@@ -66,7 +61,7 @@ public class MonthlyActivity extends Activity {
 						
 						return true;
 					} catch (NumberFormatException nfe) {
-						Log.e("MonthlyActivity", "Integer.parseInt() error parsing: "+editText1.getText().toString(), nfe);
+						// Error parsing
 						
 						return false;
 					}

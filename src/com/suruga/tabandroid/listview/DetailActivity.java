@@ -7,9 +7,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.text.Html;
-import android.util.Log;
-import android.view.Menu;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -127,21 +124,14 @@ public class DetailActivity extends Activity {
 			adapter.insert(details.get(i), i);
 		}
         
-		try {
-			
+		try {		
 	        Intent i = getIntent();
 	        
-	        this.position = i.getStringExtra("position");
-	        //this.rating_int=i;
-            
-	        
-	        String uri = "drawable/"+ "d" + iconfile;
-	       // int imageBtnResource = getResources().getIdentifier(uri, null, getPackageName());
-			
+	        this.position = i.getStringExtra("position");	
 		}
 		
 		catch (Exception ex) {
-			Log.e("Error", "Loading exception");
+			// shouldn't get into this
 		}
 		
     }

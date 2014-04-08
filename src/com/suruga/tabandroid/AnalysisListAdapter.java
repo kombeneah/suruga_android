@@ -8,10 +8,10 @@ import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsoluteLayout;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class AnalysisListAdapter extends ArrayAdapter<Item> {
@@ -56,9 +56,6 @@ public class AnalysisListAdapter extends ArrayAdapter<Item> {
 		holder.value.setText(String.valueOf(holder.item.getRating()));
 
 		Globals g = Globals.getInstance(context);
-
-		int monthlyInt = g.getMonthly();
-		int savingsInt = g.getSavings();
 
 		String uriGreen = "drawable/affordable";
 		int imageResourceGreen = row
@@ -139,7 +136,7 @@ public class AnalysisListAdapter extends ArrayAdapter<Item> {
 		Item item;
 		TextView name;
 		TextView value;
-		AbsoluteLayout cell;
+		RelativeLayout cell;
 		ImageButton info;
 		ImageView arrow;
 		ImageView list_image;

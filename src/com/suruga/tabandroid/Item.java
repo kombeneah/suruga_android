@@ -2,8 +2,6 @@ package com.suruga.tabandroid;
 
 import java.io.Serializable;
 
-import android.content.res.TypedArray;
-
 public class Item implements Serializable {
 	private static final long serialVersionUID = -5435670920302756945L;
 	

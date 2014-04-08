@@ -2,21 +2,20 @@ package com.suruga.tabandroid.selections;
 
 import java.util.List;
 
-import com.suruga.tabandroid.Globals;
-import com.suruga.tabandroid.R;
-
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsoluteLayout;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.suruga.tabandroid.Globals;
+import com.suruga.tabandroid.R;
 
 public class InterestListAdapter extends ArrayAdapter<City> {
 
@@ -32,9 +31,6 @@ public class InterestListAdapter extends ArrayAdapter<City> {
 		this.context = context;
 		this.cities = cities;
 	}
-	
-	
-	
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
@@ -79,7 +75,7 @@ public class InterestListAdapter extends ArrayAdapter<City> {
 		City city;
 		TextView name;
 		TextView value;
-		AbsoluteLayout cell;
+		RelativeLayout cell;
 		ImageButton info;
 		ImageView arrow;
 		ImageView list_image;

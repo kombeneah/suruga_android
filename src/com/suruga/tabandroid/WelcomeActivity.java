@@ -1,14 +1,11 @@
 package com.suruga.tabandroid;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnKeyListener;
@@ -58,8 +55,6 @@ public class WelcomeActivity extends Activity {
 			headerText.setText(R.string.welcomeHeader);
 			descriptionText.setText(R.string.welcomeMessage);
 			
-			Log.i("ActivityStatus", "viewWelcome");
-			
 			break;
 		}
 		
@@ -76,8 +71,6 @@ public class WelcomeActivity extends Activity {
 			headerText.setText(R.string.overviewHeader);
 			descriptionText.setText(R.string.overviewMessage);
 			
-			Log.i("ActivityStatus", "viewOverview");
-			
 			break;
 		}
 		
@@ -93,8 +86,6 @@ public class WelcomeActivity extends Activity {
 			
 			headerText.setText(R.string.tasksHeader);
 			descriptionText.setText(R.string.tasksMessage);
-			
-			Log.i("ActivityStatus", "viewTasks");
 			
 			break;
 		}
@@ -120,15 +111,12 @@ public class WelcomeActivity extends Activity {
 			final InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 			imm.showSoftInput(pinEditText, InputMethodManager.SHOW_IMPLICIT);
 			
-			Log.i("ActivityStatus", "enterPinCode");
-			
 			break;
 		}
 		
 		default:
 		{
 			// do nothing here
-			Log.i("ActivityStatus", "default");
 			
 			break;
 		}
@@ -159,8 +147,6 @@ public class WelcomeActivity extends Activity {
                 case viewWelcome:
                 {
                 	WelcomeActivity.this.activityStatus = WelcomeActivity.WelcomeStatus.viewOverview;
-                	
-                	Log.i("ActivityStatus", "Progression: viewWelcome -> viewOverview");
                 	UpdateView();
                 	
                 	break;
@@ -169,7 +155,6 @@ public class WelcomeActivity extends Activity {
                 case viewOverview:
                 {
                 	WelcomeActivity.this.activityStatus = WelcomeActivity.WelcomeStatus.viewTasks;
-                	Log.i("ActivityStatus", "Progression: viewOverview -> viewTasks");
                 	UpdateView();
                 	break;
                 }
@@ -177,7 +162,6 @@ public class WelcomeActivity extends Activity {
                 case viewTasks:
                 {
                 	WelcomeActivity.this.activityStatus = WelcomeActivity.WelcomeStatus.enterPinCode;
-                	Log.i("ActivityStatus", "Progression: viewTasks -> enterPinCode");
                 	UpdateView();
                 	break;
                 }
@@ -212,7 +196,6 @@ public class WelcomeActivity extends Activity {
                 case viewOverview:
                 {
                 	WelcomeActivity.this.activityStatus = WelcomeActivity.WelcomeStatus.viewWelcome;
-                	Log.i("ActivityStatus", "Regression: viewOverview -> viewWelcome");
                 	UpdateView();
                 	break;
                 }
@@ -220,7 +203,6 @@ public class WelcomeActivity extends Activity {
                 case viewTasks:
                 {
                 	WelcomeActivity.this.activityStatus = WelcomeActivity.WelcomeStatus.viewOverview;
-                	Log.i("ActivityStatus", "Regression: viewTasks -> viewOverview");
                 	UpdateView();
                 	break;
                 }
@@ -228,7 +210,6 @@ public class WelcomeActivity extends Activity {
                 case enterPinCode:
                 {
                 	WelcomeActivity.this.activityStatus = WelcomeActivity.WelcomeStatus.viewTasks;
-                	Log.i("ActivityStatus", "Regression: enterPinCode -> viewTasks");
                 	UpdateView();
                 	break;
                 }
@@ -304,14 +285,14 @@ public class WelcomeActivity extends Activity {
 			@Override
 			public void beforeTextChanged(CharSequence arg0, int arg1,
 					int arg2, int arg3) {
-				// TODO Auto-generated method stub
+				// nothing here for now
 
 			}
 
 			@Override
 			public void onTextChanged(CharSequence arg0, int arg1, int arg2,
 					int arg3) {
-				// TODO Auto-generated method stub
+				// nothing here for now
 
 			}
 		});

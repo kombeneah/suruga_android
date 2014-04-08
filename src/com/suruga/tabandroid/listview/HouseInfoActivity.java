@@ -2,10 +2,8 @@ package com.suruga.tabandroid.listview;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -46,19 +44,6 @@ public class HouseInfoActivity extends Activity {
 	        this.temperature =  i.getStringExtra("temperature");
 	        this.windSpeed =  i.getStringExtra("windspeed");
 	        this.iconfile = i.getStringExtra("icon");
-	        
-	        String uri = "drawable/"+ "d" + iconfile;
-	        int imageBtnResource = getResources().getIdentifier(uri, null, getPackageName());
-		    Drawable dimgbutton = getResources().getDrawable(imageBtnResource);
-		
-		    
-		    //text elements
-		    //tvcity.setText(city);
-
-		    
-		    //thumb_image.setImageDrawable(image);
-		    //imgWeatherIcon.setImageDrawable(dimgbutton);
-		
 			
 		}
 		

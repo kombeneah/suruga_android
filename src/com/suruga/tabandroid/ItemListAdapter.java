@@ -5,14 +5,12 @@ import java.util.List;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsoluteLayout;
 import android.widget.ArrayAdapter;
-import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class ItemListAdapter extends ArrayAdapter<Item> {
@@ -93,7 +91,7 @@ public class ItemListAdapter extends ArrayAdapter<Item> {
 		Item item;
 		TextView name;
 		TextView station;
-		AbsoluteLayout cell;
+		RelativeLayout cell;
 		ImageView list_image;
 		ImageView checkbox;
 		ImageView check_area;

@@ -11,6 +11,7 @@ import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
 import android.widget.TextView;
 
+@SuppressWarnings("deprecation")
 public class AndroidTabLayoutActivity extends TabActivity {
 	
 	public static Set<String> selectedHouses;
