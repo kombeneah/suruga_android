@@ -25,7 +25,7 @@ import com.suruga.tabandroid.listview.DetailActivity;
 public class ItemActivity extends Activity {
 
 	private ItemListAdapter adapter;
-	private static Set<Integer> ratedIndices;
+	private Set<Integer> ratedIndices;
 
 	/**
 	 * onCreate is the method called when the activity is created

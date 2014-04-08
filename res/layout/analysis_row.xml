@@ -39,7 +39,7 @@
         android:layout_centerVertical="true"
         android:layout_marginRight="10dp"
         android:layout_toLeftOf="@+id/arrow"
-        android:src="@drawable/green" />
+        android:src="@drawable/unaffordable" />
 
     <ImageView
         android:id="@+id/monthly"
@@ -48,7 +48,7 @@
         android:layout_centerVertical="true"
         android:layout_marginRight="30dp"
         android:layout_toLeftOf="@+id/savings"
-        android:src="@drawable/green" />
+        android:src="@drawable/unaffordable" />
 
     <TextView
         android:id="@+id/analysisRating"
