@@ -25,8 +25,8 @@ public class InterestActivity extends Activity {
 
 		// add the buying/renting interest items (abstracted as *City* types)
 		ArrayList<City> cities = new ArrayList<City>();
-		cities.add(new City(0, "Buying", "img1", false));
-		cities.add(new City(1, "Renting", "img1", false));
+		cities.add(new City(0, getResources().getString(R.string.buying), "img1", false));
+		cities.add(new City(1, getResources().getString(R.string.renting), "img1", false));
 
 		for (int i = 0; i < cities.size(); i++) {
 			adapter.insert(cities.get(i), i);

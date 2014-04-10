@@ -108,7 +108,7 @@ public class SettingsActivity extends Activity {
 				}
 			}
 
-			else if (requestCode == Globals.SET_MONTHLY_REQUEST) {
+			if (requestCode == Globals.SET_MONTHLY_REQUEST) {
 				if (resultCode == RESULT_OK) {
 					g.setMonthlySet(true);
 				}
@@ -130,8 +130,7 @@ public class SettingsActivity extends Activity {
 
 		if (g.getGuideStatus() == GuideStatus.goToSettings)
 		{
-			if (g.isCitySelected() && g.isRentalSelected() && 
-					g.isMonthlySet() && g.isUpfrontSet())
+			if (g.isMonthlySet() && g.isUpfrontSet())
 			{
 				Globals.getInstance(getApplicationContext()).setGuideStatus(GuideStatus.goToHouses);
 

@@ -34,8 +34,8 @@
     <string name="tasksHeader">タスクについて</string>
     <string name="tasksMessage">アプリ体験にあたって、３つのタスクに取組んで頂きます。\n\nタスク１は、新居の希望エリア・住居形態、予算を設定して頂きます。\n\nタスク２は、いくつかの新居サンプルの情報をご覧頂き、好みの新居を選択して頂きます。\n\nタスク３は、予算状況や評価の比較、そして予算の診断・アドバイスをご覧頂きます。\n\n詳細なタスクの進め方は、ガイドにて後ほどご案内いたします。</string>
     
-    <string name="next">Next</string>
-    <string name="back">Back</string>
+    <string name="next">次</string>
+    <string name="back">前</string>
     
     <string name="guide">ガイド</string>
     <string name="settings">プロファイル</string>

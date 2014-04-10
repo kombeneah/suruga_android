@@ -11,6 +11,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -84,6 +85,10 @@ public class AnalysisActivity extends Activity {
 			});
 			AlertDialog dialog = builder.create();
 			dialog.show();
+			
+			Log.i("favorites selected", String.valueOf(g.isSelectionComplete()));
+			Log.i("rating complete", String.valueOf(g.isRatingComplete()));
+			Log.i("viewing complete", String.valueOf(g.isDetailsViewed()));
 		}
 	}
 	

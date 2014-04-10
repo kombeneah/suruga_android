@@ -25,7 +25,6 @@ import com.suruga.tabandroid.listview.DetailActivity;
 public class ItemActivity extends Activity {
 
 	private ItemListAdapter adapter;
-	private Set<Integer> ratedIndices;
 
 	/**
 	 * onCreate is the method called when the activity is created
@@ -47,7 +46,6 @@ public class ItemActivity extends Activity {
 				adapter.insert(items.get(i), i);
 			}
 		}
-		// TODO: suggest filling out the settings info first
 	}
 	
 	@SuppressLint("NewApi")
@@ -156,12 +154,7 @@ public class ItemActivity extends Activity {
 
 		if (g.getGuideStatus() == GuideStatus.goToHouses)
 		{
-			if (ratedIndices == null)
-			{
-				ratedIndices = new HashSet<Integer>();
-			}
-			
-			if (ratedIndices.contains(itemSelected.getId()))
+			if (g.getRatedIndices().contains(itemSelected.getId()))
 			{
 				startActivity(i);
 			}
@@ -174,7 +167,9 @@ public class ItemActivity extends Activity {
 				}
 				
 				// add this item to already rated items, to avoud finishing task by rating the same item twice
+				HashSet<Integer> ratedIndices = (HashSet<Integer>) g.getRatedIndices();
 				ratedIndices.add(itemSelected.getId());
+				g.setRatedIndices(ratedIndices);
 
 				// start the detail page
 				startActivityForResult(i, Globals.SET_RATING_REQUEST);

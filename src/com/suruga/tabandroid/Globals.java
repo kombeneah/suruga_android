@@ -2,6 +2,7 @@ package com.suruga.tabandroid;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Set;
 
 import android.content.Context;
@@ -45,6 +46,7 @@ public class Globals {
 	private boolean isDetailsViewed = false;
 	private boolean isRatingComplete = false;
 	private ArrayList<String> itemsSelectedList = new ArrayList<String>();
+	private Set<Integer> ratedIndices = new HashSet<Integer>();
 	
 	// Comparison
 	private boolean isBudgetDiagnosisSeen = false;
@@ -384,5 +386,13 @@ public class Globals {
 
 	public void setRecommendationSeen(boolean isRecommendationSeen) {
 		this.isRecommendationSeen = isRecommendationSeen;
+	}
+
+	public Set<Integer> getRatedIndices() {
+		return ratedIndices;
+	}
+
+	public void setRatedIndices(Set<Integer> ratedIndices) {
+		this.ratedIndices = ratedIndices;
 	}
 }
