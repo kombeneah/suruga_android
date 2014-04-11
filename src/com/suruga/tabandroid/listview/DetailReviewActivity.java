@@ -84,8 +84,16 @@ public class DetailReviewActivity extends Activity {
 		Resources res = getResources();
 		
 		yourMonthly.setText(String.valueOf(monthlyBudget) + " " + res.getString(R.string.yen));
-		yourUpfront.setText(String.valueOf(savings) + " " + res.getString(R.string.yen));
+		
+		if (g.isForRent()) {
+			yourUpfront.setText(String.valueOf(savings) + " " + res.getString(R.string.yen));
+		}
+		else {
+			yourUpfront.setText(String.valueOf(savings + item.getMortgageLoan()) + " " + res.getString(R.string.yen));
+		}
+		
 		houseMonthly.setText(String.valueOf(monthlyCost) + " " + res.getString(R.string.yen));
+		
 		houseUpfront.setText(String.valueOf(downPayment) + " " + res.getString(R.string.yen));
 		
 		boolean isUpfrontAffordable = 
@@ -142,10 +150,15 @@ public class DetailReviewActivity extends Activity {
 		}
 
 		else if (solutions == 3) {
-
-			details.add(new Detail(0, getResources().getString(R.string.solution31), "img1", item.getSelected()));
-			details.add(new Detail(1, getResources().getString(R.string.solution32), "img1", item.getSelected()));
-			details.add(new Detail(2, getResources().getString(R.string.solution33), "img1", item.getSelected()));
+			if (g.isForRent()) {
+				details.add(new Detail(1, getResources().getString(R.string.solution32), "img1", item.getSelected()));
+				details.add(new Detail(2, getResources().getString(R.string.solution33), "img1", item.getSelected()));
+			}
+			else {
+				details.add(new Detail(0, getResources().getString(R.string.solution31), "img1", item.getSelected()));
+				details.add(new Detail(1, getResources().getString(R.string.solution32), "img1", item.getSelected()));
+				details.add(new Detail(2, getResources().getString(R.string.solution33), "img1", item.getSelected()));
+			}
 		}
 
 		else if (solutions == 4) {

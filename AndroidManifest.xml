@@ -13,11 +13,11 @@
 
     <application
         android:icon="@drawable/icon"
-        android:label="Suruga"
+        android:label="Dream Move"
         android:allowBackup="false">
         
         <activity android:name=".AndroidTabLayoutActivity"
-                  android:label="Suruga"
+                  android:label="Dream Move"
                   >
             
         </activity>
@@ -31,7 +31,7 @@
         <activity android:name=".AnalysisActivity" />
         <activity android:name="com.suruga.tabandroid.listview.DetailActivity"></activity>
         <activity android:name=".WelcomeActivity"
-                   android:label="Suruga"
+                   android:label="Dream Move"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

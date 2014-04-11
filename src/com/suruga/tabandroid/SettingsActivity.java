@@ -171,13 +171,17 @@ public class SettingsActivity extends Activity {
 		
 		if (g.isForRent())
 		{
-			settings.add(new Setting(2, getResources().getString(R.string.postRentalBudget), String.valueOf(monthly)));
-			settings.add(new Setting(3, getResources().getString(R.string.preRentalBudget), String.valueOf(savings)));
+			settings.add(new Setting(2, getResources().getString(R.string.postRentalBudget), 
+					String.valueOf(monthly) + " " + getResources().getString(R.string.yen)));
+			settings.add(new Setting(3, getResources().getString(R.string.preRentalBudget), 
+					String.valueOf(savings) + " " + getResources().getString(R.string.yen)));
 		}
 		else
 		{
-			settings.add(new Setting(2, getResources().getString(R.string.postBuyingBudget), String.valueOf(monthly)));
-			settings.add(new Setting(3, getResources().getString(R.string.preBuyingBudget), String.valueOf(savings)));
+			settings.add(new Setting(2, getResources().getString(R.string.postBuyingBudget),
+					String.valueOf(monthly) + " " + getResources().getString(R.string.yen)));
+			settings.add(new Setting(3, getResources().getString(R.string.preBuyingBudget), 
+					String.valueOf(savings) + " " + getResources().getString(R.string.yen)));
 		}
 	}
 	

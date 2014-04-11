@@ -43,37 +43,7 @@ public class DetailActivity extends Activity {
 	public void onResume() {
 		super.onResume();
 		
-		item = g.getItems(g.getCity()).get(getIntent().getIntExtra("index", -1));
-		
-		rating_int=item.getRating();
-
-		int filledStarId = getApplicationContext().getResources().getIdentifier
-				("filledstar", "drawable", getApplicationContext().getPackageName());
-		int emptyStarId = getApplicationContext().getResources().getIdentifier
-				("emptystar", "drawable", getApplicationContext().getPackageName());
-        
-        for (int i = 1; i <= 5; i++) {
-        	String viewUri = "starRating"+String.valueOf(i);
-			int viewId = getApplicationContext().getResources().getIdentifier
-					(viewUri, "id", getApplicationContext().getPackageName());
-			ImageView star = (ImageView) findViewById(viewId);
-			
-        	if (rating_int >= i) {
-        		star.setImageResource(filledStarId);
-        	}
-        	else {
-        		star.setImageResource(emptyStarId);
-        	}
-        }
-	}
-	
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(com.suruga.tabandroid.R.layout.detailpage);
-        g = Globals.getInstance(getApplicationContext());
-
-        Intent j = getIntent();
+Intent j = getIntent();
         
         int index = j.getIntExtra("index", -1); // -1 is invalid index
         item = g.getItems(g.getCity()).get(index);
@@ -103,18 +73,18 @@ public class DetailActivity extends Activity {
 		
 		if (g.isForRent()) {
 			details.add(new Detail(0, res.getString(R.string.costsAfterRenting), 
-					res.getString(R.string.yenSign) + " " + String.valueOf(item.getRentingMonthly()), item.getSelected()));
+					String.valueOf(item.getRentingMonthly()) + " " + res.getString(R.string.yen), item.getSelected()));
 			details.add(new Detail(0, res.getString(R.string.costsForRenting), 
-					res.getString(R.string.yenSign) + " " + String.valueOf(item.getRentingUpfront()), item.getSelected()));
+					String.valueOf(item.getRentingUpfront()) + " " + res.getString(R.string.yen), item.getSelected()));
 		}
 		else {
 			details.add(new Detail(0, res.getString(R.string.costsAfterBuying), 
-					res.getString(R.string.yenSign) + " " + String.valueOf(item.getBuyingMonthly()), item.getSelected()));
+					String.valueOf(item.getBuyingMonthly()) + " " + res.getString(R.string.yen), item.getSelected()));
 			details.add(new Detail(0, res.getString(R.string.costsForBuying), 
-					res.getString(R.string.yenSign) + " " + String.valueOf(item.getBuyingUpfront()), item.getSelected()));
+					String.valueOf(item.getBuyingUpfront()) + " " + res.getString(R.string.yen), item.getSelected()));
 
 			details.add(new Detail(0, res.getString(R.string.mortgageLoan), 
-					res.getString(R.string.yenSign) + " " + String.valueOf(item.getMortgageLoan()), item.getSelected()));
+					String.valueOf(item.getMortgageLoan()) + " " + res.getString(R.string.yen), item.getSelected()));
 		}
 		
 		setupListViewAdapter();
@@ -134,6 +104,36 @@ public class DetailActivity extends Activity {
 			// shouldn't get into this
 		}
 		
+		
+		item = g.getItems(g.getCity()).get(getIntent().getIntExtra("index", -1));
+		
+		rating_int=item.getRating();
+
+		int filledStarId = getApplicationContext().getResources().getIdentifier
+				("filledstar", "drawable", getApplicationContext().getPackageName());
+		int emptyStarId = getApplicationContext().getResources().getIdentifier
+				("emptystar", "drawable", getApplicationContext().getPackageName());
+        
+        for (int i = 1; i <= 5; i++) {
+        	String viewUri = "starRating"+String.valueOf(i);
+			int viewId = getApplicationContext().getResources().getIdentifier
+					(viewUri, "id", getApplicationContext().getPackageName());
+			ImageView star = (ImageView) findViewById(viewId);
+			
+        	if (rating_int >= i) {
+        		star.setImageResource(filledStarId);
+        	}
+        	else {
+        		star.setImageResource(emptyStarId);
+        	}
+        }
+	}
+	
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(com.suruga.tabandroid.R.layout.detailpage);
+        g = Globals.getInstance(getApplicationContext());		
     }
     
     private void setupListViewAdapter() {
