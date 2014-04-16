@@ -53,6 +53,8 @@ public class DetailReviewActivity extends Activity {
 		
 		final TextView recommendationsTitle = (TextView) findViewById(R.id.recsLabel);
 		
+		final TextView mortgageLabel = (TextView) findViewById(R.id.mortgageLabel);
+		
 		recommendationsTitle.setText(R.string.recommendations);
 		
 		houseCostsTitle.setText(R.string.houseCosts);
@@ -62,11 +64,13 @@ public class DetailReviewActivity extends Activity {
 		{
 			monthlyTitle.setText(R.string.postRentalBudget);
 			savingsTitle.setText(R.string.preRentalBudget);
+			mortgageLabel.setVisibility(View.GONE);
 		}
 		else
 		{
 			monthlyTitle.setText(R.string.postBuyingBudget);
 			savingsTitle.setText(R.string.preBuyingBudget);
+			mortgageLabel.setVisibility(View.VISIBLE);
 		}
 
 		Intent j = getIntent();

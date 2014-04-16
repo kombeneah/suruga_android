@@ -120,6 +120,17 @@
         android:dividerHeight="1dp"
         android:listSelector="@drawable/list_selector" >
     </ListView>
+    
+    <TextView
+        android:id="@+id/mortgageLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/table"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:text="@string/withinMortgage"
+        android:textColor="@android:color/black" />
 
     <TextView
         android:id="@+id/affordLabel"
@@ -127,7 +138,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/table"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="40dp"
         android:layout_marginLeft="20dp"
         android:text="Need to review your budget."
         android:textColor="@android:color/black"

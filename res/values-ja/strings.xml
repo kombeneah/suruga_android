@@ -128,6 +128,8 @@
     <string name="city">エリア</string>
     <string name="interestedIn">住居形態（賃貸もしくは購入）</string>
     
+    <string name="withinMortgage">(住宅ローン含む）</string>
+    
      <!-- City and house data -->
     
     <string-array name="city_arrays">
@@ -202,11 +204,11 @@
         <item>50</item>
         <item>2DK</item>
         <item>3</item>
+        <item>25</item>
+        <item>10</item>
         <item>2500</item>
-        <item>1000</item>
-        <item>250000</item>
-        <item>1050</item>
-        <item>225000</item>
+        <item>11</item>
+        <item>2250</item>
     </array>
     <array name="tokyoB">
         <item>千葉マンション</item>
@@ -216,11 +218,11 @@
         <item>60</item>
         <item>2DK</item>
         <item>5</item>
-        <item>3000</item>
-        <item>1500</item>
-        <item>350000</item>
-        <item>1500</item>
-        <item>315000</item>
+        <item>30</item>
+        <item>15</item>
+        <item>3500</item>
+        <item>15</item>
+        <item>3150</item>
     </array>
     <array name="tokyoC">
         <item>大宮ハウス</item>
@@ -230,11 +232,11 @@
         <item>70</item>
         <item>4LDK</item>
         <item>3</item>
-        <item>6000</item>
-        <item>2000</item>
-        <item>450000</item>
-        <item>1920</item>
-        <item>405000</item>
+        <item>60</item>
+        <item>20</item>
+        <item>4500</item>
+        <item>20</item>
+        <item>4050</item>
     </array>
     <array name="tokyoD">
         <item>東京マンション</item>
@@ -244,11 +246,11 @@
         <item>80</item>
         <item>3LDK</item>
         <item>8</item>
-        <item>7500</item>
-        <item>2500</item>
-        <item>650000</item>
-        <item>2772</item>
-        <item>585000</item>
+        <item>75</item>
+        <item>25</item>
+        <item>6500</item>
+        <item>28</item>
+        <item>5850</item>
     </array>
     <array name="tokyoE">
         <item>横浜ハウス</item>
@@ -258,11 +260,11 @@
         <item>90</item>
         <item>4LDK</item>
         <item>5</item>
-        <item>10000</item>
-        <item>3000</item>
-        <item>850000</item>
-        <item>3624</item>
-        <item>765000</item>
+        <item>100</item>
+        <item>30</item>
+        <item>8500</item>
+        <item>36</item>
+        <item>7650</item>
     </array>
     <array name="tokyoF">
         <item>六本木マンション</item>
@@ -272,11 +274,11 @@
         <item>70</item>
         <item>2LDK</item>
         <item>5</item>
-        <item>15000</item>
-        <item>5000</item>
-        <item>1100000</item>
-        <item>4692</item>
-        <item>990000</item>
+        <item>150</item>
+        <item>50</item>
+        <item>11000</item>
+        <item>47</item>
+        <item>9900</item>
     </array>
     
     <!-- Osaka -->
@@ -296,11 +298,11 @@
         <item>50</item>
         <item>2DK</item>
         <item>8</item>
+        <item>25</item>
+        <item>10</item>
         <item>2500</item>
-        <item>1000</item>
-        <item>250000</item>
-        <item>1050</item>
-        <item>225000</item>
+        <item>11</item>
+        <item>2250</item>
     </array>
     <array name="osakaB">
         <item>西宮マンション</item>
@@ -310,11 +312,11 @@
         <item>80</item>
         <item>3LDK</item>
         <item>4</item>
-        <item>7500</item>
-        <item>3000</item>
-        <item>650000</item>
-        <item>2772</item>
-        <item>585000</item>
+        <item>75</item>
+        <item>25</item>
+        <item>6500</item>
+        <item>28</item>
+        <item>5850</item>
     </array>
     <array name="osakaC">
         <item>京都マンション</item>
@@ -324,11 +326,11 @@
         <item>80</item>
         <item>2LDK</item>
         <item>1</item>
-        <item>10000</item>
-        <item>4000</item>
-        <item>850000</item>
-        <item>3624</item>
-        <item>765000</item>
+        <item>100</item>
+        <item>30</item>
+        <item>8500</item>
+        <item>36</item>
+        <item>7650</item>
     </array>
     <array name="osakaD">
         <item>梅田マンション</item>
@@ -338,11 +340,11 @@
         <item>70</item>
         <item>2LDK</item>
         <item>2</item>
-        <item>15000</item>
-        <item>5000</item>
-        <item>1100000</item>
-        <item>4692</item>
-        <item>990000</item>
+        <item>150</item>
+        <item>50</item>
+        <item>11000</item>
+        <item>47</item>
+        <item>9900</item>
     </array>
     <array name="osakaE">
         <item>堺ハウス</item>
@@ -352,11 +354,11 @@
         <item>90</item>
         <item>4LDK</item>
         <item>8</item>
-        <item>3000</item>
-        <item>1500</item>
-        <item>350000</item>
-        <item>1500</item>
-        <item>315000</item>
+        <item>30</item>
+        <item>15</item>
+        <item>3500</item>
+        <item>15</item>
+        <item>3150</item>
     </array>
     <array name="osakaF">
         <item>豊中ハウス</item>
@@ -366,11 +368,11 @@
         <item>100</item>
         <item>4LDK</item>
         <item>7</item>
-        <item>6000</item>
-        <item>2000</item>
-        <item>450000</item>
-        <item>1920</item>
-        <item>405000</item>
+        <item>60</item>
+        <item>20</item>
+        <item>4500</item>
+        <item>20</item>
+        <item>4050</item>
     </array>
     
     <!-- Nagoya -->
@@ -390,11 +392,11 @@
         <item>70</item>
         <item>2LDK</item>
         <item>9</item>
+        <item>25</item>
+        <item>10</item>
         <item>2500</item>
-        <item>1000</item>
-        <item>250000</item>
-        <item>1050</item>
-        <item>225000</item>
+        <item>11</item>
+        <item>2250</item>
     </array>
     <array name="nagoyaB">
         <item>四日市マンション</item>
@@ -404,11 +406,11 @@
         <item>80</item>
         <item>2LDK</item>
         <item>9</item>
-        <item>2500</item>
-        <item>1000</item>
-        <item>250000</item>
-        <item>1050</item>
-        <item>225000</item>
+        <item>60</item>
+        <item>20</item>
+        <item>4500</item>
+        <item>20</item>
+        <item>4050</item>
     </array>
     <array name="nagoyaC">
         <item>矢場町マンション</item>
@@ -418,11 +420,11 @@
         <item>80</item>
         <item>2LDK</item>
         <item>10</item>
-        <item>10000</item>
-        <item>3000</item>
-        <item>650000</item>
-        <item>2772</item>
-        <item>585000</item>
+        <item>100</item>
+        <item>30</item>
+        <item>6500</item>
+        <item>28</item>
+        <item>5850</item>
     </array>
     <array name="nagoyaD">
         <item>栄マンション</item>
@@ -432,11 +434,11 @@
         <item>80</item>
         <item>2LDK</item>
         <item>7</item>
-        <item>15000</item>
-        <item>3000</item>
-        <item>750000</item>
-        <item>3192</item>
-        <item>675000</item>
+        <item>150</item>
+        <item>30</item>
+        <item>7500</item>
+        <item>32</item>
+        <item>6750</item>
     </array>
     <array name="nagoyaE">
         <item>岐阜ハウス</item>
@@ -446,11 +448,11 @@
         <item>90</item>
         <item>3LDK</item>
         <item>10</item>
-        <item>3000</item>
-        <item>1500</item>
-        <item>350000</item>
-        <item>1500</item>
-        <item>315000</item>
+        <item>30</item>
+        <item>15</item>
+        <item>3500</item>
+        <item>15</item>
+        <item>3150</item>
     </array>
     <array name="nagoyaF">
         <item>豊橋ハウス</item>
@@ -460,11 +462,11 @@
         <item>120</item>
         <item>3LDK</item>
         <item>3</item>
-        <item>7500</item>
-        <item>2500</item>
-        <item>550000</item>
-        <item>2340</item>
-        <item>495000</item>
+        <item>75</item>
+        <item>25</item>
+        <item>5500</item>
+        <item>24</item>
+        <item>4950</item>
     </array>
      
     <!-- Fukuoka -->
@@ -484,11 +486,11 @@
         <item>80</item>
         <item>2LDK</item>
         <item>8</item>
+        <item>25</item>
+        <item>10</item>
         <item>2500</item>
-        <item>1000</item>
-        <item>250000</item>
-        <item>1050</item>
-        <item>225000</item>
+        <item>11</item>
+        <item>2250</item>
     </array>
     <array name="fukuokaB">
         <item>糸島マンション</item>
@@ -498,11 +500,11 @@
         <item>70</item>
         <item>2LDK</item>
         <item>1</item>
-        <item>3000</item>
-        <item>1500</item>
-        <item>350000</item>
-        <item>1500</item>
-        <item>315000</item>
+        <item>30</item>
+        <item>15</item>
+        <item>3500</item>
+        <item>15</item>
+        <item>3150</item>
     </array>
     <array name="fukuokaC">
         <item>博多マンション</item>
@@ -512,11 +514,11 @@
         <item>80</item>
         <item>2LDK</item>
         <item>4</item>
-        <item>6750</item>
-        <item>2500</item>
-        <item>550000</item>
-        <item>2340</item>
-        <item>495000</item>
+        <item>70</item>
+        <item>25</item>
+        <item>5500</item>
+        <item>24</item>
+        <item>4950</item>
     </array>
     <array name="fukuokaD">
         <item>天神マンション</item>
@@ -526,11 +528,11 @@
         <item>80</item>
         <item>3LDK</item>
         <item>3</item>
-        <item>7500</item>
-        <item>2500</item>
-        <item>650000</item>
-        <item>2772</item>
-        <item>585000</item>
+        <item>75</item>
+        <item>25</item>
+        <item>6500</item>
+        <item>28</item>
+        <item>5850</item>
     </array>
     <array name="fukuokaE">
         <item>久留米ハウス</item>
@@ -540,11 +542,11 @@
         <item>100</item>
         <item>4LDK</item>
         <item>11</item>
-        <item>5000</item>
-        <item>2000</item>
-        <item>450000</item>
-        <item>1920</item>
-        <item>405000</item>
+        <item>50</item>
+        <item>20</item>
+        <item>4500</item>
+        <item>20</item>
+        <item>4050</item>
     </array>
     <array name="fukuokaF">
         <item>福岡東ハウス</item>
@@ -554,11 +556,11 @@
         <item>100</item>
         <item>4LDK</item>
         <item>18</item>
-        <item>6000</item>
-        <item>2000</item>
-        <item>500000</item>
-        <item>2136</item>
-        <item>450000</item>
+        <item>60</item>
+        <item>20</item>
+        <item>5000</item>
+        <item>22</item>
+        <item>4500</item>
     </array>
     
     <!-- Hokkaido -->
@@ -578,11 +580,11 @@
         <item>60</item>
         <item>2DK</item>
         <item>1</item>
+        <item>25</item>
+        <item>10</item>
         <item>2500</item>
-        <item>1000</item>
-        <item>250000</item>
-        <item>1050</item>
-        <item>225000</item>
+        <item>11</item>
+        <item>2250</item>
     </array>
     <array name="hokkaidoB">
         <item>札幌東マンション</item>
@@ -592,11 +594,11 @@
         <item>80</item>
         <item>4LDK</item>
         <item>4</item>
-        <item>6000</item>
-        <item>2000</item>
-        <item>500000</item>
-        <item>2136</item>
-        <item>450000</item>
+        <item>60</item>
+        <item>20</item>
+        <item>5000</item>
+        <item>22</item>
+        <item>4500</item>
     </array>
     <array name="hokkaidoC">
         <item>北２条マンション</item>
@@ -606,11 +608,11 @@
         <item>80</item>
         <item>2LDK</item>
         <item>11</item>
-        <item>6750</item>
-        <item>2500</item>
-        <item>550000</item>
-        <item>2340</item>
-        <item>495000</item>
+        <item>70</item>
+        <item>25</item>
+        <item>5500</item>
+        <item>24</item>
+        <item>4950</item>
     </array>
     <array name="hokkaidoD">
         <item>北４条マンション</item>
@@ -620,11 +622,11 @@
         <item>70</item>
         <item>3LDK</item>
         <item>5</item>
-        <item>7500</item>
-        <item>2500</item>
-        <item>650000</item>
-        <item>2772</item>
-        <item>585000</item>
+        <item>75</item>
+        <item>25</item>
+        <item>6500</item>
+        <item>28</item>
+        <item>5850</item>
     </array>
     <array name="hokkaidoE">
         <item>函館ハウス</item>
@@ -634,11 +636,11 @@
         <item>100</item>
         <item>2LDK</item>
         <item>38</item>
-        <item>3000</item>
-        <item>1500</item>
-        <item>350000</item>
-        <item>1500</item>
-        <item>315000</item>
+        <item>30</item>
+        <item>15</item>
+        <item>3500</item>
+        <item>15</item>
+        <item>3150</item>
     </array>
     <array name="hokkaidoF">
         <item>帯広ハウス</item>
@@ -648,11 +650,11 @@
         <item>100</item>
         <item>4LDK</item>
         <item>10</item>
-        <item>5000</item>
-        <item>2000</item>
-        <item>450000</item>
-        <item>1920</item>
-        <item>405000</item>
+        <item>50</item>
+        <item>20</item>
+        <item>4500</item>
+        <item>20</item>
+        <item>4050</item>
     </array>
      
      <!-- End of city and house data -->

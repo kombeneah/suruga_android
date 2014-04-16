@@ -57,7 +57,7 @@
     
     <string name="buying">Buying</string>
     <string name="renting">Renting</string>
-    <string name="yen">Yen</string>
+    <string name="yen">$ (USD)</string>
     
     <string name="preRentalBudget">Budget for renting</string>
     <string name="postRentalBudget">Budget after renting</string>
@@ -128,6 +128,8 @@
     
     <string name="city">City</string>
     <string name="interestedIn">Interested in</string>
+    
+    <string name="withinMortgage">(Within the mortgage loan)</string>
     
      <!-- City and house data -->
     
@@ -403,13 +405,13 @@
         <item>Yottukaichi, Mie</item>
         <item>@array/aptBimages</item>
         <item>80</item>
-        <item>2LDK</item>
-        <item>9</item>
-        <item>2500</item>
-        <item>1000</item>
-        <item>250000</item>
-        <item>1050</item>
-        <item>225000</item>
+        <item>3LDK</item>
+        <item>5</item>
+        <item>6000</item>
+        <item>2000</item>
+        <item>450000</item>
+        <item>1920</item>
+        <item>405000</item>
     </array>
     <array name="nagoyaC">
         <item>Apt. Yabacho</item>
